@@ -12,12 +12,11 @@ namespace OStronghold
         
         public struct strongholdStats 
         {
-            public int population;
-            public int numberOfIdleCitizens;
+            public int currentPopulation;            
         } //Statistics for Stronghold
 
         public strongholdStats _stats; //number of people currently living in Stronghold
-        public Hashtable _citizens;
+        public Hashtable _citizens; //hashtable to hold the citizens themselves
 
         #endregion
 
@@ -25,8 +24,7 @@ namespace OStronghold
 
         public StrongholdClass()
         {
-            _stats.population = 0;
-            _stats.numberOfIdleCitizens = 0;
+            _stats.currentPopulation = 0;            
             _citizens = new Hashtable();
         }//Constructor
 
@@ -39,18 +37,31 @@ namespace OStronghold
             for (int i = 0; i < numberofCitizensToProduce; i++)
             {
                 CharacterClass citizen = new CharacterClass();
-                citizen._name = "Citizen" + _stats.population;
-                citizen._state = Consts.characterState.Idle;
-                _stats.numberOfIdleCitizens++;
-                _citizens.Add(_stats.population, citizen);
-                _stats.population++;
+                citizen._id = _stats.currentPopulation;
+                citizen._name = "Citizen" + citizen._id;
+                citizen._state = Consts.characterState.Idle;                
+                _citizens.Add(_stats.currentPopulation, citizen);
+                _stats.currentPopulation++;                
             }
         }//Populating by giving birth to x people
 
-        public void chooseStrongholdLeader()
+        public void printPopulation()
         {
+            for (int i = 0; i < _stats.currentPopulation; i++)
+            {
+                Console.WriteLine(((CharacterClass)_citizens[i])._name + " (" + ((CharacterClass)_citizens[i])._gender + ") is " + ((CharacterClass)_citizens[i])._state);
+            }
+        }//Prints in output all the citizen information
 
-        }//Choosing of Stronghold Leader
+        public void activateIdleCitizens()
+        {
+            //Randomly choosing a citizen and makes him Busy
+            //TODO: Decide what each citizen should be doing.
+            Random rand = new Random((int)DateTime.Now.Ticks);
+            int x = rand.Next(0, _stats.currentPopulation);
+
+            ((CharacterClass)_citizens[x])._state = Consts.characterState.Busy;
+        }//Decide what idle citizens should be doing
 
         #endregion
     }
