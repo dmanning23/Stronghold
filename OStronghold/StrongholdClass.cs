@@ -12,7 +12,8 @@ namespace OStronghold
         
         public struct strongholdStats 
         {
-            public int population; 
+            public int population;
+            public int numberOfIdleCitizens;
         } //Statistics for Stronghold
 
         public strongholdStats _stats; //number of people currently living in Stronghold
@@ -25,6 +26,7 @@ namespace OStronghold
         public StrongholdClass()
         {
             _stats.population = 0;
+            _stats.numberOfIdleCitizens = 0;
             _citizens = new Hashtable();
         }//Constructor
 
@@ -39,10 +41,16 @@ namespace OStronghold
                 CharacterClass citizen = new CharacterClass();
                 citizen._name = "Citizen" + _stats.population;
                 citizen._state = Consts.characterState.Idle;
+                _stats.numberOfIdleCitizens++;
                 _citizens.Add(_stats.population, citizen);
                 _stats.population++;
             }
         }//Populating by giving birth to x people
+
+        public void chooseStrongholdLeader()
+        {
+
+        }//Choosing of Stronghold Leader
 
         #endregion
     }

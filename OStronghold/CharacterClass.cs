@@ -11,6 +11,7 @@ namespace OStronghold
 
         public string _name;
         public Consts.characterState _state;
+        public int _fame;
 
         #endregion
 
@@ -20,6 +21,7 @@ namespace OStronghold
         {
             _name = "";
             _state = Consts.characterState.Undefined;
+            _fame = 0;
         }
 
         #endregion
