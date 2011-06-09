@@ -9,6 +9,9 @@ namespace OStronghold
     {
         static void Main(string[] args)
         {
+            StrongholdClass aStronghold = new StrongholdClass();
+
+            aStronghold.populate(10);
         }
     }
 }

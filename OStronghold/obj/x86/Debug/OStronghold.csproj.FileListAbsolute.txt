@@ -1,1 +1,6 @@
 C:\Users\RONI\Stronghold\OStronghold\bin\Debug\OStronghold.exe.config
+C:\Users\RONI\Stronghold\OStronghold\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\RONI\Stronghold\OStronghold\bin\Debug\OStronghold.exe
+C:\Users\RONI\Stronghold\OStronghold\bin\Debug\OStronghold.pdb
+C:\Users\RONI\Stronghold\OStronghold\obj\x86\Debug\OStronghold.exe
+C:\Users\RONI\Stronghold\OStronghold\obj\x86\Debug\OStronghold.pdb
