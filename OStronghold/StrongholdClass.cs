@@ -16,7 +16,7 @@ namespace OStronghold
         } //Statistics for Stronghold
 
         public strongholdStats _stats; //number of people currently living in Stronghold
-        public Hashtable _citizens; //hashtable to hold the citizens themselves
+        public Hashtable _commoners; //hashtable to hold the commoners themselves
 
         #endregion
 
@@ -25,22 +25,23 @@ namespace OStronghold
         public StrongholdClass()
         {
             _stats.currentPopulation = 0;            
-            _citizens = new Hashtable();
+            _commoners = new Hashtable();
         }//Constructor
 
         #endregion
 
         #region Methods
 
-        public void populate(int numberofCitizensToProduce)
+        public void populate(int numberofCommonersToProduce)
         {
-            for (int i = 0; i < numberofCitizensToProduce; i++)
+            for (int i = 0; i < numberofCommonersToProduce; i++)
             {
-                CharacterClass citizen = new CharacterClass();
-                citizen._id = _stats.currentPopulation;
-                citizen._name = "Citizen" + citizen._id;
-                citizen._state = Consts.characterState.Idle;                
-                _citizens.Add(_stats.currentPopulation, citizen);
+                CharacterClass commoner = new CharacterClass();
+                commoner._id = _stats.currentPopulation;
+                commoner._name = "Citizen" + commoner._id;
+                commoner._age = 18;
+                commoner._state = Consts.characterState.Idle;                
+                _commoners.Add(_stats.currentPopulation, commoner);
                 _stats.currentPopulation++;                
             }
         }//Populating by giving birth to x people
@@ -49,19 +50,19 @@ namespace OStronghold
         {
             for (int i = 0; i < _stats.currentPopulation; i++)
             {
-                Console.WriteLine(((CharacterClass)_citizens[i])._name + " (" + ((CharacterClass)_citizens[i])._gender + ") is " + ((CharacterClass)_citizens[i])._state);
+                Console.WriteLine(((CharacterClass)_commoners[i])._name + " (" + ((CharacterClass)_commoners[i])._gender + ") is " + ((CharacterClass)_commoners[i])._state);
             }
-        }//Prints in output all the citizen information
+        }//Prints in output all the commoner information
 
-        public void activateIdleCitizens()
+        public void activateIdleCommoners()
         {
-            //Randomly choosing a citizen and makes him Busy
-            //TODO: Decide what each citizen should be doing.
+            //Randomly choosing a commoner and makes him Busy
+            //TODO: Decide what each commoner should be doing.
             Random rand = new Random((int)DateTime.Now.Ticks);
             int x = rand.Next(0, _stats.currentPopulation);
 
-            ((CharacterClass)_citizens[x])._state = Consts.characterState.Busy;
-        }//Decide what idle citizens should be doing
+            ((CharacterClass)_commoners[x])._state = Consts.characterState.Busy;
+        }//Decide what idle commoners should be doing
 
         #endregion
     }

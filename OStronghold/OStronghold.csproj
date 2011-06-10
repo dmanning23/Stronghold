@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CharacterClass.cs" />
+    <Compile Include="CharacterMindset.cs" />
     <Compile Include="Consts.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -12,7 +12,7 @@ namespace OStronghold
         {
             StrongholdClass aStronghold = new StrongholdClass();            
 
-            aStronghold.populate(20);
+            aStronghold.populate(5);
 
             while (true)
             {
@@ -21,7 +21,7 @@ namespace OStronghold
                 Thread.Sleep(1000);
 
                 //Thread responsible for find Idle Citizens and making them do something.
-                Thread activateIdleCitizensThread = new Thread(new ThreadStart(aStronghold.activateIdleCitizens));
+                Thread activateIdleCitizensThread = new Thread(new ThreadStart(aStronghold.activateIdleCommoners));
                 activateIdleCitizensThread.Start();
             }
 

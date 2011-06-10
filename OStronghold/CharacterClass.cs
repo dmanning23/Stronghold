@@ -16,6 +16,7 @@ namespace OStronghold
         public Consts.gender _gender; //character gender
         public Consts.characterState _state; //what is the character currently doing
         public int _fame; //how famous the character is
+        public CharacterMindset _mindset; //character personality
 
         #endregion
 
@@ -27,6 +28,8 @@ namespace OStronghold
             _id = 0;
             _state = Consts.characterState.Undefined;
             _fame = 0;
+            _age = 0;
+            _mindset = new CharacterMindset();
 
             //determining gender 50-50
             if (Consts.rand.Next(1, 1000) > 500)
