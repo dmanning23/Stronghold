@@ -13,13 +13,13 @@ namespace OStronghold
     // - fame (fame over money and xp) i.e: be honorable, fight to become famous, fight well known battles only
     // - xp (xp over fame and money) i.e: fight big battles, train and practice hard, to become skilled
     //
-    //i.e: money = 25%
-    //     fame = 50%
-    //     xp = 25%
+    //i.e: money = 25%                                                  money = 0%
+    //     fame = 50%                                                   fame = 100%
+    //     xp = 25%                                                     xp = 0%
     //
     //decision time: 1d100
     //
-    //result = 1-25 -> character decides on money option
+    //result = 1-25 -> character decides on money option                result = 1-100 -> fame
     //result = 26-75 -> character decides on fame option
     //result = 76-100 -> character decides on xp option
 

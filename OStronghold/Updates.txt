@@ -7,9 +7,15 @@
 - Added Character class.
 - Added Consts class.
 - Added CharacterMindset class.
+- Added attributes for CharacterMindsetClass (money,fame,xp)
+- Added CharacterBodyNeeds class.
+- Added hunger event.
+- Added Gametime class (operator overloading)
 
 [doing]
-- Adding attributes for character mindset (money,fame,xp). Each one is %. So basically character decision is based on 1/3 * %
+- Adding food last ate time to become relevant (activateIdleCommoners). Trying to control people
+  to eat and have hungrytimer take effect.
 
 [to do]
-- 
+- Add thirst, sleep state
+- Add priority for actions 
