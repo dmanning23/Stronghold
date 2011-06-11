@@ -27,8 +27,7 @@ namespace OStronghold
                 {                                       
                     _day++;
                     _hour -= 24;
-                }
-                OnHourPassed(System.EventArgs.Empty);
+                }                
             }
 
         }
@@ -68,6 +67,12 @@ namespace OStronghold
         public int getTotalHours()
         {
             return ((_day * 24) + _hour);
+        }
+
+        public void incOneHour()
+        {
+            Hour++;
+            OnHourPassed(System.EventArgs.Empty);
         }
 
         #endregion

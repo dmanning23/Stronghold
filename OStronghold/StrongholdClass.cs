@@ -48,7 +48,9 @@ namespace OStronghold
                 commoner._name = "P#" + commoner._id;
                 commoner._age = 18;
                 commoner._hungerflowaction = Consts.characterHungerFlowActions.Idle;
-                commoner._bodyneeds.HungerState = Consts.hungerState.Full;                
+                commoner._bodyneeds.HungerState = Consts.hungerState.Full;
+                commoner._health.defineHP(20);
+                commoner._health.defineStamina(10);
                 _commoners.Add(_stats.currentPopulation, commoner);
                 _stats.currentPopulation++;                
             }

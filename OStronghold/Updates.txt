@@ -2,21 +2,22 @@
 ========================================
 
 [done]
-
-- Added Stronghold class.
-- Added Character class.
-- Added Consts class.
-- Added CharacterMindset class.
-- Added attributes for CharacterMindsetClass (money,fame,xp)
-- Added CharacterBodyNeeds class.
-- Added hunger event.
-- Added Gametime class.
-- Added hourPassed event.
-- Added Character hunger flow.
+(01) - Added Stronghold class.
+(02) - Added Character class.
+(03) - Added Consts class.
+(04) - Added CharacterMindset class.
+(05) - Added attributes for CharacterMindsetClass (money,fame,xp)
+(06) - Added CharacterBodyNeeds class.
+(07) - Added hunger event.
+(08) - Added Gametime class.
+(09) - Added hourPassed event.
+(10) - Added Character hunger flow.
+(11) - Added CharacterHealth class.
 
 [doing]
-
+- Adding sleep state
+- Adding stamina usage for actions performed.
 
 [to do]
-- Add thirst, sleep state
+- Add thirst state
 - Add priority for actions 

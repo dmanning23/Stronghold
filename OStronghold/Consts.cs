@@ -19,6 +19,8 @@ namespace OStronghold
 
         public int[] characterHungerFlowActionDuration = new int[(int)characterHungerFlowActions.Count];
 
+        public enum characterSleepFlowActions { Undefined, Awake, Asleep};
+
         public enum gender { Male, Female };
 
         public enum hungerState { Hungry, Normal, Full };
@@ -41,7 +43,7 @@ namespace OStronghold
             characterHungerFlowActionDuration[(int)characterHungerFlowActions.Idle] = 0;
             characterHungerFlowActionDuration[(int)characterHungerFlowActions.GettingHungry] = 1;
             characterHungerFlowActionDuration[(int)characterHungerFlowActions.LookingForFood] = 1;
-            characterHungerFlowActionDuration[(int)characterHungerFlowActions.Eating] = 3;
+            characterHungerFlowActionDuration[(int)characterHungerFlowActions.Eating] = 2;
             characterHungerFlowActionDuration[(int)characterHungerFlowActions.FinishedEating] = 1;
         }
 

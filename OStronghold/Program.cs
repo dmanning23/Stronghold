@@ -23,7 +23,7 @@ namespace OStronghold
             {
                 _gametime = test;
 
-                Console.Clear();                
+                //Console.Clear();                
                 Console.WriteLine("Game time: Day " + _gametime.Day + " Hour " + _gametime.Hour);
                 Console.WriteLine();
                 _aStronghold.printPopulation();
@@ -33,7 +33,7 @@ namespace OStronghold
                 //activateIdleCommonersThread.Start();
 
                 Thread.Sleep(1000);
-                _gametime.Hour++;
+                _gametime.incOneHour();
 
                 //random population generation
                 /*if (_aStronghold._stats.currentPopulation <= 20)

@@ -19,6 +19,7 @@ namespace OStronghold
         public CharacterMindsetClass _mindset; //character personality
         public CharacterBodyNeeds _bodyneeds; //character body needs (i.e: hunger, sleep, etc)        
         public Gametime _currentActionFinishTime;
+        public CharacterHealth _health; //character health related
 
         #endregion
 
@@ -34,6 +35,7 @@ namespace OStronghold
             _mindset = new CharacterMindsetClass();
             _bodyneeds = new CharacterBodyNeeds();
             _currentActionFinishTime = new Gametime(0, 0);
+            _health = new CharacterHealth();
 
             //eating events
             _bodyneeds._hungryEvent += this.OnHungryEventHandler; //hungry event listener

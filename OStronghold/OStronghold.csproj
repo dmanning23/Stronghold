@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="CharacterBodyNeeds.cs" />
     <Compile Include="CharacterClass.cs" />
+    <Compile Include="CharacterHealth.cs" />
     <Compile Include="CharacterMindsetClass.cs" />
     <Compile Include="Consts.cs" />
     <Compile Include="Gametime.cs" />
