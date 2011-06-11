@@ -14,10 +14,11 @@ namespace OStronghold
         public int _id; //character id
         public int _age; //character age
         public Consts.gender _gender; //character gender
-        public Consts.characterState _state; //what is the character currently doing
+        public Consts.characterHungerFlowActions _hungerflowaction; //what is the character currently doing (hunger-wise)
         public int _fame; //how famous the character is
         public CharacterMindsetClass _mindset; //character personality
         public CharacterBodyNeeds _bodyneeds; //character body needs (i.e: hunger, sleep, etc)        
+        public Gametime _currentActionFinishTime;
 
         #endregion
 
@@ -27,11 +28,12 @@ namespace OStronghold
         {
             _name = "";
             _id = 0;
-            _state = Consts.characterState.Undefined;
+            _hungerflowaction = Consts.characterHungerFlowActions.Undefined;
             _fame = 0;
             _age = 0;
             _mindset = new CharacterMindsetClass();
-            _bodyneeds = new CharacterBodyNeeds();            
+            _bodyneeds = new CharacterBodyNeeds();
+            _currentActionFinishTime = new Gametime(0, 0);
 
             //eating events
             _bodyneeds._hungryEvent += this.OnHungryEventHandler; //hungry event listener
@@ -50,21 +52,10 @@ namespace OStronghold
 
         public void eatAction()
         {
-            StrongholdClass._buildings.foodStorage--;
-            _state = Consts.characterState.Eating;            
-            switch (_bodyneeds.HungerState)
-            {
-                case Consts.hungerState.Hungry:
-                    _bodyneeds.HungerState = Consts.hungerState.Full;                    
-                    break;
-                case Consts.hungerState.Normal:
-                    _bodyneeds.HungerState = Consts.hungerState.Full;                    
-                    break;
-            }
-            _bodyneeds.LastAteTime.CopyGameTime(Program._gametime);
-            _state = Consts.characterState.Idle;
-            StrongholdClass._buildings.foodStorage++;
-        }//character eats and hunger status changes
+            Program._aStronghold._buildings.foodStorage--;
+            _hungerflowaction = Consts.characterHungerFlowActions.Eating;
+            _currentActionFinishTime = Program._gametime + +Program._consts.characterHungerFlowActionDuration[(int)Consts.characterHungerFlowActions.Eating];      
+        }//character eats
 
         #endregion
 
@@ -72,11 +63,8 @@ namespace OStronghold
 
         public void OnHungryEventHandler(object sender, EventArgs e)
         {            
-            if (StrongholdClass._buildings.foodStorage > 0)
-            {
-                _state = Consts.characterState.LookingForFood;                
-                eatAction();                
-            }
+            _hungerflowaction = Consts.characterHungerFlowActions.LookingForFood;
+            _currentActionFinishTime = Program._gametime + +Program._consts.characterHungerFlowActionDuration[(int)Consts.characterHungerFlowActions.LookingForFood];          
         }//actions to do when character is hungry
 
         #endregion

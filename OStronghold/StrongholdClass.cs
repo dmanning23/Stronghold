@@ -22,7 +22,7 @@ namespace OStronghold
 
         public strongholdStats _stats; //number of people currently living in Stronghold
         public Hashtable _commoners; //hashtable to hold the commoners themselves
-        public static strongholdBuildings _buildings;
+        public strongholdBuildings _buildings;
 
         #endregion
 
@@ -45,9 +45,9 @@ namespace OStronghold
             {
                 CharacterClass commoner = new CharacterClass();
                 commoner._id = _stats.currentPopulation;
-                commoner._name = "P #" + commoner._id;
+                commoner._name = "P#" + commoner._id;
                 commoner._age = 18;
-                commoner._state = Consts.characterState.Idle;
+                commoner._hungerflowaction = Consts.characterHungerFlowActions.Idle;
                 commoner._bodyneeds.HungerState = Consts.hungerState.Full;                
                 _commoners.Add(_stats.currentPopulation, commoner);
                 _stats.currentPopulation++;                
@@ -58,29 +58,16 @@ namespace OStronghold
         {
             CharacterClass person = new CharacterClass();
             
-            Console.WriteLine("Food storage: " + _buildings.foodStorage);
-
+            Console.WriteLine("Food storage: " + _buildings.foodStorage);            
             for (int i = 0; i < _stats.currentPopulation; i++)
             {
                 person = ((CharacterClass)_commoners[i]);
-                Console.WriteLine(person._name + " is " + person._state + " (" + person._bodyneeds.HungerState + ") - " + person._bodyneeds.LastAteTime);
-
+                Console.WriteLine(person._name + " is " + person._bodyneeds.HungerState + " and " + person._hungerflowaction + " until " + person._currentActionFinishTime);                
             }
         }//Prints in output all the commoner information
 
         public void activateIdleCommoners()
-        {                                  
-            CharacterClass person = new CharacterClass();
-            for (int x = 0; x < _stats.currentPopulation; x++)
-            {
-                Console.WriteLine(x);
-                person = ((CharacterClass)_commoners[x]);
-
-                if (Program._gametime > (person._bodyneeds.LastAteTime + (int)person._bodyneeds.HungryTimer))
-                {
-                    person._bodyneeds.HungerState = Consts.hungerState.Hungry;
-                }                
-            }
+        {                                                        
         }//Decide what idle commoners should be doing
 
         #endregion

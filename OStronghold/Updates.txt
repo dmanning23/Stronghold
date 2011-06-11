@@ -10,11 +10,12 @@
 - Added attributes for CharacterMindsetClass (money,fame,xp)
 - Added CharacterBodyNeeds class.
 - Added hunger event.
-- Added Gametime class (operator overloading)
+- Added Gametime class.
+- Added hourPassed event.
+- Added Character hunger flow.
 
 [doing]
-- Adding food last ate time to become relevant (activateIdleCommoners). Trying to control people
-  to eat and have hungrytimer take effect.
+
 
 [to do]
 - Add thirst, sleep state
