@@ -48,9 +48,11 @@ namespace OStronghold
 
         public void printPopulation()
         {
+            CharacterClass person = new CharacterClass(); 
             for (int i = 0; i < _stats.currentPopulation; i++)
             {
-                Console.WriteLine(((CharacterClass)_commoners[i])._name + " (" + ((CharacterClass)_commoners[i])._gender + ") is " + ((CharacterClass)_commoners[i])._state);
+                person = ((CharacterClass)_commoners[i]);
+                Console.WriteLine(person._name + " (" + person._gender + ") is " + person._state + "(" + person._mindset._moneyScale + "," + person._mindset._fameScale + "," + person._mindset._xpScale + ")");
             }
         }//Prints in output all the commoner information
 
