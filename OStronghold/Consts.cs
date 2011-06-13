@@ -28,7 +28,7 @@ namespace OStronghold
         //Normal - can perform other actions (eating is medium priority)
         //Full - don't need to eat (eating is lowest priority or no priority)
 
-        public enum hungerTimer { Hungry = 0, Normal = 4, Full = 8 }; //hours           
+        public enum hungerTimer { Hungry = 0, Normal = 240, Full = 450 }; //minutes
 
         public static Random rand = new Random((int)DateTime.Now.Ticks);
 
@@ -38,13 +38,13 @@ namespace OStronghold
 
         public Consts()
         {
-            //configures duration for hunger flow actions
+            //configures duration for hunger flow actions in minutes
             characterHungerFlowActionDuration[(int)characterHungerFlowActions.Undefined] = 0;
             characterHungerFlowActionDuration[(int)characterHungerFlowActions.Idle] = 0;
-            characterHungerFlowActionDuration[(int)characterHungerFlowActions.GettingHungry] = 1;
-            characterHungerFlowActionDuration[(int)characterHungerFlowActions.LookingForFood] = 1;
-            characterHungerFlowActionDuration[(int)characterHungerFlowActions.Eating] = 2;
-            characterHungerFlowActionDuration[(int)characterHungerFlowActions.FinishedEating] = 1;
+            characterHungerFlowActionDuration[(int)characterHungerFlowActions.GettingHungry] = 60;
+            characterHungerFlowActionDuration[(int)characterHungerFlowActions.LookingForFood] = 60;
+            characterHungerFlowActionDuration[(int)characterHungerFlowActions.Eating] = 120;
+            characterHungerFlowActionDuration[(int)characterHungerFlowActions.FinishedEating] = 60;
         }
 
         #endregion

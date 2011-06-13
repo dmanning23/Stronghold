@@ -34,7 +34,7 @@ namespace OStronghold
             _age = 0;
             _mindset = new CharacterMindsetClass();
             _bodyneeds = new CharacterBodyNeeds();
-            _currentActionFinishTime = new Gametime(0, 0);
+            _currentActionFinishTime = new Gametime(0, 0, 0);
             _health = new CharacterHealth();
 
             //eating events

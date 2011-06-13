@@ -9,9 +9,37 @@ namespace OStronghold
     {
         #region Members
 
+        private long _lastgametick;
+        private long _elapsedticks;
+
+        private int _minute;
         private int _day;
         private int _hour;
 
+        public long LastGameTick
+        {
+            get { return _lastgametick; }
+            set { _lastgametick = value; }
+        }
+        public long ElapsedTicks
+        {
+            get { return _elapsedticks; }
+            set { _elapsedticks = value; }
+        }
+
+        public int Minute
+        {
+            get { return _minute; }
+            set 
+            { 
+                _minute = value;
+                while (_minute >= 60)
+                {
+                    incOneHour();
+                    _minute -= 60;
+                }
+            }
+        }
         public int Day
         {
             get { return _day; }
@@ -25,7 +53,7 @@ namespace OStronghold
                 _hour = value;
                 while (_hour >= 24)
                 {                                       
-                    _day++;
+                    Day++;
                     _hour -= 24;
                 }                
             }
@@ -38,20 +66,37 @@ namespace OStronghold
 
         public Gametime()
         {
+            _lastgametick = DateTime.Now.Ticks;
+            _gametickPassedEvent += this.OnGameTickPassedHandler;
             _anHourPassedEvent += this.OnHourPassedEventHandler;
-        }
+        }        
 
         public Gametime(int dayvalue, int hourvalue)
         {
+            _lastgametick = DateTime.Now.Ticks;
+            Minute = 0;
             Day = dayvalue;
             Hour = hourvalue;
             _anHourPassedEvent += this.OnHourPassedEventHandler;
+            _gametickPassedEvent += this.OnGameTickPassedHandler;
         }
 
-        public Gametime(int hourvalue)
+        public Gametime(int minvalue)
         {
-            Hour = hourvalue;//automatically updates the day value in the hour encapsulation
+            _lastgametick = DateTime.Now.Ticks;
+            Minute = minvalue;//automatically updates the day value in the hour encapsulation
             _anHourPassedEvent += this.OnHourPassedEventHandler;
+            _gametickPassedEvent += this.OnGameTickPassedHandler;
+        }
+
+        public Gametime(int dayvalue, int hourvalue, int minutevalue)
+        {
+            _lastgametick = DateTime.Now.Ticks;
+            Minute = minutevalue;
+            Day = dayvalue;
+            Hour = hourvalue;
+            _anHourPassedEvent += this.OnHourPassedEventHandler;
+            _gametickPassedEvent += this.OnGameTickPassedHandler;
         }
 
         #endregion
@@ -60,6 +105,7 @@ namespace OStronghold
 
         public void CopyGameTime(Gametime target)
         {
+            _minute = target.Minute;
             _day = target.Day;
             _hour = target.Hour;
         }
@@ -67,6 +113,16 @@ namespace OStronghold
         public int getTotalHours()
         {
             return ((_day * 24) + _hour);
+        }
+
+        public int getTotalMinutes()
+        {
+            return (getTotalHours() * 60);
+        }
+
+        public void incXMinutes(int minutes)
+        {
+            Minute += minutes;
         }
 
         public void incOneHour()
@@ -81,35 +137,35 @@ namespace OStronghold
 
         public override string ToString()
         {
-            return ("Day " + _day + " Hour " + _hour);
+            return ("Day " + _day + " Hour " + _hour + " Minutes " + _minute);
         }
 
         public static Gametime operator +(Gametime t1, Gametime t2)
         {
-            return (new Gametime(t1.Day + t2.Day, t1.Hour + t2.Hour));
+            return (new Gametime(t1.Day + t2.Day, t1.Hour + t2.Hour, t1.Minute + t2.Minute));
         }
 
-        public static Gametime operator +(Gametime t1, int hours)
+        public static Gametime operator +(Gametime t1, int minutes)
         {
-            return (new Gametime(t1.Day, t1.Hour + hours));
+            return (new Gametime(t1.getTotalMinutes() + minutes));
         }
 
         public static Gametime operator -(Gametime t1, Gametime t2)
         {
-            int t1Hours = t1.getTotalHours();
-            int t2Hours = t2.getTotalHours();
+            int t1Minutes = t1.getTotalMinutes();
+            int t2Minutes = t2.getTotalMinutes();
 
-            if (t1Hours >= t2Hours)
+            if (t1Minutes >= t2Minutes)
             {
-                return new Gametime(t1Hours - t2Hours);
+                return new Gametime(t1Minutes - t2Minutes);
             }
-            else return new Gametime(t2Hours - t1Hours); 
+            else return new Gametime(t2Minutes - t1Minutes); 
 
         }
 
         public static bool operator ==(Gametime t1, Gametime t2)
         {
-            return (t1.Day == t2.Day && t1.Hour == t2.Hour);
+            return (t1.Day == t2.Day && t1.Hour == t2.Hour && t1.Minute == t2.Minute);
         }
 
         public static bool operator !=(Gametime t1, Gametime t2)
@@ -119,7 +175,7 @@ namespace OStronghold
 
         public static bool operator >=(Gametime t1, Gametime t2)
         {
-            return (t1.getTotalHours() >= t2.getTotalHours());
+            return (t1.getTotalMinutes() >= t2.getTotalMinutes());
         }
 
         public static bool operator <(Gametime t1, Gametime t2)
@@ -129,7 +185,7 @@ namespace OStronghold
 
         public static bool operator <=(Gametime t1, Gametime t2)
         {
-            return (t1.getTotalHours() <= t2.getTotalHours());
+            return (t1.getTotalMinutes() <= t2.getTotalMinutes());
         }
 
         public static bool operator >(Gametime t1, Gametime t2)
@@ -151,8 +207,26 @@ namespace OStronghold
 
         #region Events
 
+        public delegate void gametickPassedHandler(object sender, EventArgs e);
+        public event gametickPassedHandler _gametickPassedEvent;
+
         public delegate void hourPassedHandler(object sender, EventArgs e);
         public event hourPassedHandler _anHourPassedEvent;
+
+        protected virtual void OnGameTickPassed(System.EventArgs e)
+        {
+            if (_gametickPassedEvent != null)
+            {
+                _gametickPassedEvent(this, e);
+            }
+        }
+
+        public void OnGameTickPassedHandler(object sender, EventArgs e)
+        {
+            Console.WriteLine("Game ticked.");
+            //what to perform on every gametick.
+        }
+
 
         protected virtual void OnHourPassed(System.EventArgs e)
         {

@@ -13,6 +13,12 @@
 (09) - Added hourPassed event.
 (10) - Added Character hunger flow.
 (11) - Added CharacterHealth class.
+(12) - Added minutes to gametime.
+	 - Added game ticks to gametime (i.e: one game tick = 10 seconds = 1 game hour)
+
+[problems]
+- Figure a way to use onhour event update but for minutes.
+- eating flow updates only on the hour.
 
 [doing]
 - Adding sleep state
