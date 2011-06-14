@@ -24,8 +24,9 @@ namespace OStronghold
                     _gametime.LastGameTick = DateTime.Now.Ticks;
                     _gametime.incXMinutes(Consts.gametickIncreaseMinutes);
                 }
+                
 
-                //Console.Clear();
+                Console.Clear();
                 Console.WriteLine("Game time: " + _gametime.ToString());
                 Console.WriteLine();
                 _aStronghold.printPopulation();
@@ -34,7 +35,7 @@ namespace OStronghold
                 //Thread activateIdleCommonersThread = new Thread(new ThreadStart(_aStronghold.activateIdleCommoners));
                 //activateIdleCommonersThread.Start();
 
-                Thread.Sleep(1000);
+                Thread.Sleep(1000*Consts.gametickperSecond);
 
                 //random population generation
                 /*if (_aStronghold._stats.currentPopulation <= 20)

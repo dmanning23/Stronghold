@@ -254,7 +254,7 @@ namespace OStronghold
                             break;
                         //character is done looking for food - character will start eating if there are enough food, if not he/she will have to wait til next hour
                         case Consts.characterHungerFlowActions.LookingForFood:
-                            person._health.staminaUsedThisTick = 1; //looking for food takes 1 stamina
+                            person._health.staminaUsedThisTick = 3; //looking for food takes 3 stamina
                             if (Program._aStronghold._buildings.foodStorage > 0)
                             {
                                 person.eatAction();

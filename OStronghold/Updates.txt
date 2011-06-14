@@ -16,18 +16,17 @@
 (00012) - Added minutes to gametime.
         - Added game ticks to gametime (i.e: one game tick = 10 seconds = 1 game hour)
 (00013) - Modified game ticks only at hour level
+        - Added stamina usage for actions performed.
+        - Added hp, mp, stamina regeneration.
 
 [problems]
-- stamina not updating correctly
 
 [doing]
 (00013+)
-- Adding stamina usage for actions performed.
-- Adding hp,mp,stamina regeneration
+- Add priority for actions 
 
 [to do]
 - Add sleep, thirst state
-- Add priority for actions 
 
 
 [future thoughts]

@@ -21,6 +21,7 @@ namespace OStronghold
         public Gametime _currentActionFinishTime;
         public CharacterHealth _health; //character health related
 
+
         #endregion
 
         #region Constructor

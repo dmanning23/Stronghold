@@ -32,7 +32,7 @@ namespace OStronghold
         {
             _stats.currentPopulation = 0;            
             _commoners = new Hashtable();
-            _buildings.foodStorage = 4;
+            _buildings.foodStorage = 5;
         }//Constructor
 
         #endregion
