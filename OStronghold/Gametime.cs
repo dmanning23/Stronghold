@@ -123,12 +123,12 @@ namespace OStronghold
         public void incXMinutes(int minutes)
         {
             Minute += minutes;
+            OnGameTickPassed(System.EventArgs.Empty);
         }
 
-        public void incOneHour()
+        private void incOneHour()
         {
-            Hour++;
-            OnHourPassed(System.EventArgs.Empty);
+            Hour++;            
         }
 
         #endregion
@@ -223,24 +223,10 @@ namespace OStronghold
 
         public void OnGameTickPassedHandler(object sender, EventArgs e)
         {
-            Console.WriteLine("Game ticked.");
-            //what to perform on every gametick.
-        }
-
-
-        protected virtual void OnHourPassed(System.EventArgs e)
-        {
-            if (_anHourPassedEvent != null)
-            {
-                _anHourPassedEvent(this, e);
-            }
-        }
-
-        public void OnHourPassedEventHandler(object sender, EventArgs e)
-        {
             for (int x = 0; x < Program._aStronghold._stats.currentPopulation; x++)
             {
                 CharacterClass person = ((CharacterClass)Program._aStronghold._commoners[x]);
+
 
                 if (person._currentActionFinishTime > Program._gametime)
                 {
@@ -251,7 +237,7 @@ namespace OStronghold
                     switch (person._hungerflowaction)
                     {
                         //character done being idle - need to check when he/she is going to become hungry
-                        case Consts.characterHungerFlowActions.Idle:                            
+                        case Consts.characterHungerFlowActions.Idle:
                             if (Program._gametime >= (person._bodyneeds.LastAteTime + (int)person._bodyneeds.HungryTimer))
                             {
                                 person._hungerflowaction = Consts.characterHungerFlowActions.GettingHungry;
@@ -268,6 +254,7 @@ namespace OStronghold
                             break;
                         //character is done looking for food - character will start eating if there are enough food, if not he/she will have to wait til next hour
                         case Consts.characterHungerFlowActions.LookingForFood:
+                            person._health.staminaUsedThisTick = 1; //looking for food takes 1 stamina
                             if (Program._aStronghold._buildings.foodStorage > 0)
                             {
                                 person.eatAction();
@@ -285,17 +272,37 @@ namespace OStronghold
                                     break;
                             }
                             person._hungerflowaction = Consts.characterHungerFlowActions.FinishedEating;
-                            person._currentActionFinishTime = Program._gametime + +Program._consts.characterHungerFlowActionDuration[(int)Consts.characterHungerFlowActions.FinishedEating];
+                            person._currentActionFinishTime = Program._gametime + Program._consts.characterHungerFlowActionDuration[(int)Consts.characterHungerFlowActions.FinishedEating];
                             break;
                         //character is done finishing eating - update last ate time and hunger state
                         case Consts.characterHungerFlowActions.FinishedEating:
                             person._bodyneeds.LastAteTime.CopyGameTime(Program._gametime);
                             Program._aStronghold._buildings.foodStorage++;
                             person._hungerflowaction = Consts.characterHungerFlowActions.Idle;
-                            break;  
+                            break;
                     }
                 }//action is finished - do results of the action
+
+                //person health is updated at the end of each tick
+                person._health.hp.Current += person._health.hp.Regeneration;
+                person._health.mp.Current += person._health.mp.Regeneration;
+                person._health.stamina.Current = person._health.stamina.Current + person._health.stamina.Regeneration - person._health.staminaUsedThisTick;
+                person._health.staminaUsedThisTick = 0; //reset the stamina usage at the end of gametick
             }
+        }//actions to do in every game tick
+
+
+        protected virtual void OnHourPassed(System.EventArgs e)
+        {
+            if (_anHourPassedEvent != null)
+            {
+                _anHourPassedEvent(this, e);
+            }
+        }
+
+        public void OnHourPassedEventHandler(object sender, EventArgs e)
+        {
+            
         }//every hour passed must perform actions       
         #endregion
     }//game time

@@ -1,29 +1,35 @@
 ﻿Stronghold - Simcity/Arena-like RPG game
 ========================================
 
-[done]
-(01) - Added Stronghold class.
-(02) - Added Character class.
-(03) - Added Consts class.
-(04) - Added CharacterMindset class.
-(05) - Added attributes for CharacterMindsetClass (money,fame,xp)
-(06) - Added CharacterBodyNeeds class.
-(07) - Added hunger event.
-(08) - Added Gametime class.
-(09) - Added hourPassed event.
-(10) - Added Character hunger flow.
-(11) - Added CharacterHealth class.
-(12) - Added minutes to gametime.
-	 - Added game ticks to gametime (i.e: one game tick = 10 seconds = 1 game hour)
+(update)  [done]
+(00001) - Added Stronghold class.
+(00002) - Added Character class.
+(00003) - Added Consts class.
+(00004) - Added CharacterMindset class.
+(00005) - Added attributes for CharacterMindsetClass (money,fame,xp)
+(00006) - Added CharacterBodyNeeds class.
+(00007) - Added hunger event.
+(00008) - Added Gametime class.
+(00009) - Added hourPassed event.
+(00010) - Added Character hunger flow.
+(00011) - Added CharacterHealth class.
+(00012) - Added minutes to gametime.
+        - Added game ticks to gametime (i.e: one game tick = 10 seconds = 1 game hour)
+(00013) - Modified game ticks only at hour level
 
 [problems]
-- Figure a way to use onhour event update but for minutes.
-- eating flow updates only on the hour.
+- stamina not updating correctly
 
 [doing]
-- Adding sleep state
+(00013+)
 - Adding stamina usage for actions performed.
+- Adding hp,mp,stamina regeneration
 
 [to do]
-- Add thirst state
+- Add sleep, thirst state
 - Add priority for actions 
+
+
+[future thoughts]
+- Add areas - good for multithreading update (thread update per area for area population).
+- Change hp,mp,stamina to decimals for regen to work better

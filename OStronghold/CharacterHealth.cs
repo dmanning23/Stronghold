@@ -11,8 +11,9 @@ namespace OStronghold
 
         public struct status
         {
-            private int current;
-            private int max;
+            private int current; //current value
+            private int max; //max value
+            private int regeneration; //how much is regenerated over 1 game tick            
 
             public int Current
             {
@@ -36,11 +37,18 @@ namespace OStronghold
                 get { return max; }
                 set { max = value; }
             }
+
+            public int Regeneration
+            {
+                get { return regeneration; }
+                set { regeneration = value; }
+            }
         }
 
         public status hp;
         public status mp;
-        public status stamina;        
+        public status stamina;
+        public int staminaUsedThisTick;
 
         #endregion
 
@@ -50,33 +58,40 @@ namespace OStronghold
         {
             hp.Current = 0;
             hp.Max = 0;
+            hp.Regeneration = 0;
             mp.Current = 0;
             mp.Max = 0;
+            mp.Regeneration = 0;
             stamina.Current = 0;
             stamina.Max = 0;
+            stamina.Regeneration = 0;
+            staminaUsedThisTick = 0;
         }
 
         #endregion
 
         #region Methods
 
-        public void defineHP(int value)
+        public void defineHP(int value, int regenValue)
         {
-            hp.Current = value;
             hp.Max = value;
+            hp.Current = value;
+            hp.Regeneration = regenValue;
         }
 
-        public void defineMP(int value)
+        public void defineMP(int value, int regenValue)
         {
-            mp.Current = value;
             mp.Max = value;
+            mp.Current = value;
+            mp.Regeneration = regenValue;
         }
 
-        public void defineStamina(int value)
+        public void defineStamina(int value, int regenValue)
         {
-            stamina.Current = value;
             stamina.Max = value;
-        }
+            stamina.Current = value;
+            stamina.Regeneration = regenValue;
+        }        
 
         #endregion
     }//character health related

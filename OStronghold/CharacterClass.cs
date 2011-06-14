@@ -56,6 +56,7 @@ namespace OStronghold
         {
             Program._aStronghold._buildings.foodStorage--;
             _hungerflowaction = Consts.characterHungerFlowActions.Eating;
+            _health.staminaUsedThisTick = 2; //eating takes 2 stamina
             _currentActionFinishTime = Program._gametime + +Program._consts.characterHungerFlowActionDuration[(int)Consts.characterHungerFlowActions.Eating];      
         }//character eats
 

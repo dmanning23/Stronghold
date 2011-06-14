@@ -19,13 +19,13 @@ namespace OStronghold
             while (true)
             {
                 TimeSpan _timespan = new TimeSpan(DateTime.Now.Ticks - _gametime.LastGameTick);
-                if (_timespan.TotalSeconds >= 1)
+                if (_timespan.TotalSeconds >= Consts.gametickperSecond)
                 {
                     _gametime.LastGameTick = DateTime.Now.Ticks;
-                    _gametime.incXMinutes(15);
+                    _gametime.incXMinutes(Consts.gametickIncreaseMinutes);
                 }
 
-                Console.Clear();
+                //Console.Clear();
                 Console.WriteLine("Game time: " + _gametime.ToString());
                 Console.WriteLine();
                 _aStronghold.printPopulation();

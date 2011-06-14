@@ -32,6 +32,9 @@ namespace OStronghold
 
         public static Random rand = new Random((int)DateTime.Now.Ticks);
 
+        public static int gametickperSecond = 2; //how many real time seconds are there in a game tick
+        public static int gametickIncreaseMinutes = 60; //how many game minutes are increased in every game tick
+
         #endregion
 
         #region Constructor

@@ -49,8 +49,8 @@ namespace OStronghold
                 commoner._age = 18;
                 commoner._hungerflowaction = Consts.characterHungerFlowActions.Idle;
                 commoner._bodyneeds.HungerState = Consts.hungerState.Full;
-                commoner._health.defineHP(20);
-                commoner._health.defineStamina(10);
+                commoner._health.defineHP(20,0);
+                commoner._health.defineStamina(100,1);
                 _commoners.Add(_stats.currentPopulation, commoner);
                 _stats.currentPopulation++;                
             }
@@ -64,7 +64,7 @@ namespace OStronghold
             for (int i = 0; i < _stats.currentPopulation; i++)
             {
                 person = ((CharacterClass)_commoners[i]);
-                Console.WriteLine(person._name + " is " + person._bodyneeds.HungerState + " and " + person._hungerflowaction + " until " + person._currentActionFinishTime);                
+                Console.WriteLine(person._name + " (" + person._health.hp.Current + "|" + person._health.stamina.Current + ") is " + person._bodyneeds.HungerState + " and " + person._hungerflowaction + " until " + person._currentActionFinishTime);
             }
         }//Prints in output all the commoner information
 
