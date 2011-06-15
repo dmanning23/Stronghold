@@ -18,12 +18,16 @@
 (00013) - Modified game ticks only at hour level
         - Added stamina usage for actions performed.
         - Added hp, mp, stamina regeneration.
+(00014) - Removed hungerflowactions.
 
 [problems]
 
 [doing]
 (00013+)
-- Add priority for actions 
+- Work on insert procedure in MyPriorityQueue
+- Adding priorityqueue for character actions 
+- Need to test priority relevance
+
 
 [to do]
 - Add sleep, thirst state

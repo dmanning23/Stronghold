@@ -8,7 +8,7 @@ namespace OStronghold
 {
     class Program
     {
-        public static Gametime _gametime = new Gametime(0, 7, 0);
+        public static Gametime _gametime = new Gametime(0, 3, 0);
         public static StrongholdClass _aStronghold = new StrongholdClass();
         public static Consts _consts = new Consts();
 

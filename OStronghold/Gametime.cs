@@ -222,7 +222,7 @@ namespace OStronghold
         }
 
         public void OnGameTickPassedHandler(object sender, EventArgs e)
-        {
+        {            
             for (int x = 0; x < Program._aStronghold._stats.currentPopulation; x++)
             {
                 CharacterClass person = ((CharacterClass)Program._aStronghold._commoners[x]);
@@ -234,52 +234,41 @@ namespace OStronghold
                 }//person is doing something - wait until action is over
                 else
                 {
-                    switch (person._hungerflowaction)
+                    if (person._characterActions.Count > 0)
                     {
-                        //character done being idle - need to check when he/she is going to become hungry
-                        case Consts.characterHungerFlowActions.Idle:
-                            if (Program._gametime >= (person._bodyneeds.LastAteTime + (int)person._bodyneeds.HungryTimer))
+                        if (person._characterActions.First.Value.Action == Consts.characterGeneralActions.Idle)
+                        {
+                            #region Hunger check
+                            //Check if hungry
+                            if (person._bodyneeds.HungerState == Consts.hungerState.JustAte)
                             {
-                                person._hungerflowaction = Consts.characterHungerFlowActions.GettingHungry;
+                                person._bodyneeds.HungerState = Consts.hungerState.Full;
+                            }
+                            else if (person._bodyneeds.HungerState == Consts.hungerState.Full &&
+                                Program._gametime >= person._bodyneeds.LastAteTime + (int)Consts.hungerTimer.Normal)
+                            {
                                 person._bodyneeds.HungerState = Consts.hungerState.Normal;
-                                person._currentActionFinishTime = Program._gametime + Program._consts.characterHungerFlowActionDuration[(int)Consts.characterHungerFlowActions.GettingHungry];
-                            }//person is getting hungry since he passed the hungry timer
-                            break;
-                        //character done getting hungry - need to check if hungry timer passed
-                        case Consts.characterHungerFlowActions.GettingHungry:
-                            if (Program._gametime > (person._bodyneeds.LastAteTime + (int)person._bodyneeds.HungryTimer))
+                            }
+                            else if (person._bodyneeds.HungerState == Consts.hungerState.Normal &&
+                                Program._gametime >= person._bodyneeds.LastAteTime + (int)Consts.hungerTimer.Full)
                             {
                                 person._bodyneeds.HungerState = Consts.hungerState.Hungry;
                             }
-                            break;
-                        //character is done looking for food - character will start eating if there are enough food, if not he/she will have to wait til next hour
-                        case Consts.characterHungerFlowActions.LookingForFood:
+                            #endregion
+                        }
+                        else if (person._characterActions.First.Value.Action == Consts.characterGeneralActions.Eat)
+                        {
                             person._health.staminaUsedThisTick = 3; //looking for food takes 3 stamina
                             if (Program._aStronghold._buildings.foodStorage > 0)
                             {
                                 person.eatAction();
                             }
-                            break;
-                        //character is done eating - hunger state changed and person will be finishing eating
-                        case Consts.characterHungerFlowActions.Eating:
-                            switch (person._bodyneeds.HungerState)
-                            {
-                                case Consts.hungerState.Hungry:
-                                    person._bodyneeds.HungerState = Consts.hungerState.Full;
-                                    break;
-                                case Consts.hungerState.Normal:
-                                    person._bodyneeds.HungerState = Consts.hungerState.Full;
-                                    break;
-                            }
-                            person._hungerflowaction = Consts.characterHungerFlowActions.FinishedEating;
-                            person._currentActionFinishTime = Program._gametime + Program._consts.characterHungerFlowActionDuration[(int)Consts.characterHungerFlowActions.FinishedEating];
-                            break;
-                        //character is done finishing eating - update last ate time and hunger state
-                        case Consts.characterHungerFlowActions.FinishedEating:
+                            person._bodyneeds.HungerState = Consts.hungerState.JustAte;                            
                             person._bodyneeds.LastAteTime.CopyGameTime(Program._gametime);
-                            Program._aStronghold._buildings.foodStorage++;
-                            person._hungerflowaction = Consts.characterHungerFlowActions.Idle;
-                            break;
+                            person._currentActionFinishTime = Program._gametime;
+                            person._characterActions.RemoveFirst();
+                            person._characterActions.insertBeginningofQueue(new CharacterAction(Consts.characterGeneralActions.Idle, 1));                                                        
+                        }
                     }
                 }//action is finished - do results of the action
 
