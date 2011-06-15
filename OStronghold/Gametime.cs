@@ -243,31 +243,28 @@ namespace OStronghold
                             if (person._bodyneeds.HungerState == Consts.hungerState.JustAte)
                             {
                                 person._bodyneeds.HungerState = Consts.hungerState.Full;
-                            }
+                            }//just ate last round, this round character is full
                             else if (person._bodyneeds.HungerState == Consts.hungerState.Full &&
                                 Program._gametime >= person._bodyneeds.LastAteTime + (int)Consts.hungerTimer.Normal)
                             {
                                 person._bodyneeds.HungerState = Consts.hungerState.Normal;
-                            }
+                            }//pass normal hunger time
                             else if (person._bodyneeds.HungerState == Consts.hungerState.Normal &&
                                 Program._gametime >= person._bodyneeds.LastAteTime + (int)Consts.hungerTimer.Full)
                             {
                                 person._bodyneeds.HungerState = Consts.hungerState.Hungry;
-                            }
+                            }//pass hungry hunger time
                             #endregion
                         }
                         else if (person._characterActions.First.Value.Action == Consts.characterGeneralActions.Eat)
-                        {
-                            person._health.staminaUsedThisTick = 3; //looking for food takes 3 stamina
-                            if (Program._aStronghold._buildings.foodStorage > 0)
-                            {
-                                person.eatAction();
-                            }
-                            person._bodyneeds.HungerState = Consts.hungerState.JustAte;                            
+                        {                            
+                            person._health.staminaUsedThisTick = 3; //looking for food takes 3 stamina                                
+                            person.eatAction();                                
+                            person._bodyneeds.HungerState = Consts.hungerState.JustAte;
                             person._bodyneeds.LastAteTime.CopyGameTime(Program._gametime);
                             person._currentActionFinishTime = Program._gametime;
                             person._characterActions.RemoveFirst();
-                            person._characterActions.insertBeginningofQueue(new CharacterAction(Consts.characterGeneralActions.Idle, 1));                                                        
+                            person._characterActions.insertBeginningofQueue(new CharacterAction(Consts.characterGeneralActions.Idle, 1));                                                                                    
                         }
                     }
                 }//action is finished - do results of the action

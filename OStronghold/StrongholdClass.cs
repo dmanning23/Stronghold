@@ -12,7 +12,7 @@ namespace OStronghold
 
         public struct strongholdBuildings
         {
-            public int foodStorage;
+            
         }//Stronghold buildings
 
         public struct strongholdStats 
@@ -31,8 +31,7 @@ namespace OStronghold
         public StrongholdClass()
         {
             _stats.currentPopulation = 0;            
-            _commoners = new Hashtable();
-            _buildings.foodStorage = 5;
+            _commoners = new Hashtable();            
         }//Constructor
 
         #endregion
@@ -59,12 +58,11 @@ namespace OStronghold
         public void printPopulation()
         {
             CharacterClass person = new CharacterClass();
-            
-            Console.WriteLine("Food storage: " + _buildings.foodStorage);            
+                        
             for (int i = 0; i < _stats.currentPopulation; i++)
             {
                 person = ((CharacterClass)_commoners[i]);
-                Console.WriteLine(person._name + " (" + person._health.hp.Current + "|" + person._health.stamina.Current + ") is " + person._bodyneeds.HungerState + " and " + person._bodyneeds.LastAteTime);
+                Console.WriteLine(person._name + " (" + person._health.hp.Current + "|" + person._health.stamina.Current + ") is " + person._characterActions.First.Value.Action + " and " + person._bodyneeds.LastAteTime);
             }
         }//Prints in output all the commoner information
 

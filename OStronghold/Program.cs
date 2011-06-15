@@ -8,7 +8,7 @@ namespace OStronghold
 {
     class Program
     {
-        public static Gametime _gametime = new Gametime(0, 3, 0);
+        public static Gametime _gametime = new Gametime(0, 7, 0);
         public static StrongholdClass _aStronghold = new StrongholdClass();
         public static Consts _consts = new Consts();
 
@@ -29,6 +29,7 @@ namespace OStronghold
                 Console.Clear();
                 Console.WriteLine("Game time: " + _gametime.ToString());
                 Console.WriteLine();
+                ((CharacterClass)_aStronghold._commoners[0])._characterActions.insertItem(new CharacterAction(Consts.characterGeneralActions.Idle, Consts.rand.Next(1, 10)));
                 _aStronghold.printPopulation();
 
                 //Thread responsible for find Idle Commoners and making them do something.

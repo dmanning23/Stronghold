@@ -19,6 +19,7 @@
         - Added stamina usage for actions performed.
         - Added hp, mp, stamina regeneration.
 (00014) - Removed hungerflowactions.
+        - Removed Stronghold foodstorage building and food deduction when eating.
 
 [problems]
 

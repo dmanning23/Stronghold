@@ -55,9 +55,7 @@ namespace OStronghold
         #region Methods        
 
         public void eatAction()
-        {
-            Program._aStronghold._buildings.foodStorage--;                                    
-            _health.staminaUsedThisTick = 2; //eating takes 2 stamina            
+        {                        
         }//character eats
 
         #endregion
