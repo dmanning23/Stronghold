@@ -45,11 +45,12 @@ namespace OStronghold
                 CharacterClass commoner = new CharacterClass();
                 commoner._id = _stats.currentPopulation;
                 commoner._name = "P#" + commoner._id;
-                commoner._age = 18;
-                commoner._characterActions.insertBeginningofQueue(new CharacterAction(Consts.characterGeneralActions.Idle, 1));
+                commoner._age = 18;                
                 commoner._bodyneeds.HungerState = Consts.hungerState.Full;
+                commoner._bodyneeds.SleepState = Consts.sleepState.Awake;
                 commoner._health.defineHP(20,0);
                 commoner._health.defineStamina(100,1);
+                commoner._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Idle, Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionPriority, Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionDuration));
                 _commoners.Add(_stats.currentPopulation, commoner);
                 _stats.currentPopulation++;                
             }
@@ -62,7 +63,11 @@ namespace OStronghold
             for (int i = 0; i < _stats.currentPopulation; i++)
             {
                 person = ((CharacterClass)_commoners[i]);
-                Console.WriteLine(person._name + " (" + person._health.hp.Current + "|" + person._health.stamina.Current + ") is " + person._characterActions.First.Value.Action + " and " + person._bodyneeds.LastAteTime);
+                foreach (CharacterAction val in person._characterActions)
+                {
+                    Console.WriteLine(val.Action + " (" + val.Priority + ") ");
+                }
+                Console.WriteLine(person._name + " (" + person._health.hp.Current + "|" + person._health.stamina.Current + ") is " + person._characterActions.Peek().Action + " and " + person._bodyneeds.HungerState + " and " + person._bodyneeds.SleepState);
             }
         }//Prints in output all the commoner information
 

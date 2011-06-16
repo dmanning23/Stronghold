@@ -99,6 +99,11 @@ namespace OStronghold
             _gametickPassedEvent += this.OnGameTickPassedHandler;
         }
 
+        public Gametime(Gametime target)
+        {
+            this.CopyGameTime(target);
+        }
+
         #endregion
 
         #region Methods
@@ -227,47 +232,71 @@ namespace OStronghold
             {
                 CharacterClass person = ((CharacterClass)Program._aStronghold._commoners[x]);
 
+                person._currentActionFinishTime = person._characterActions.Peek().FinishTime;
 
                 if (person._currentActionFinishTime > Program._gametime)
                 {
                     //wait
                 }//person is doing something - wait until action is over
-                else
+                else //person is finished doing action, do results
                 {
-                    if (person._characterActions.Count > 0)
+                    switch (person._characterActions.Peek().Action)
                     {
-                        if (person._characterActions.First.Value.Action == Consts.characterGeneralActions.Idle)
-                        {
-                            #region Hunger check
-                            //Check if hungry
-                            if (person._bodyneeds.HungerState == Consts.hungerState.JustAte)
-                            {
-                                person._bodyneeds.HungerState = Consts.hungerState.Full;
-                            }//just ate last round, this round character is full
-                            else if (person._bodyneeds.HungerState == Consts.hungerState.Full &&
-                                Program._gametime >= person._bodyneeds.LastAteTime + (int)Consts.hungerTimer.Normal)
-                            {
-                                person._bodyneeds.HungerState = Consts.hungerState.Normal;
-                            }//pass normal hunger time
-                            else if (person._bodyneeds.HungerState == Consts.hungerState.Normal &&
-                                Program._gametime >= person._bodyneeds.LastAteTime + (int)Consts.hungerTimer.Full)
-                            {
-                                person._bodyneeds.HungerState = Consts.hungerState.Hungry;
-                            }//pass hungry hunger time
-                            #endregion
-                        }
-                        else if (person._characterActions.First.Value.Action == Consts.characterGeneralActions.Eat)
-                        {                            
-                            person._health.staminaUsedThisTick = 3; //looking for food takes 3 stamina                                
-                            person.eatAction();                                
+                        case Consts.characterGeneralActions.Eating:
                             person._bodyneeds.HungerState = Consts.hungerState.JustAte;
                             person._bodyneeds.LastAteTime.CopyGameTime(Program._gametime);
-                            person._currentActionFinishTime = Program._gametime;
-                            person._characterActions.RemoveFirst();
-                            person._characterActions.insertBeginningofQueue(new CharacterAction(Consts.characterGeneralActions.Idle, 1));                                                                                    
-                        }
+                            person._characterActions.Dequeue(); //action is finished 
+                            break;
+                        case Consts.characterGeneralActions.Sleeping:
+                            person._bodyneeds.SleepState = Consts.sleepState.Awake;
+                            person._bodyneeds.LastSleptTime.CopyGameTime(Program._gametime);
+                            person._characterActions.Dequeue();
+                            break;
+                    }                    
+                }
+
+                if (person._characterActions.Count > 0)
+                {
+                    if (person._characterActions.Peek().Action == Consts.characterGeneralActions.Idle)
+                    {
+                        Gametime finishTime;
+                        #region Hunger check
+                        //Check if hungry
+                        if (person._bodyneeds.HungerState == Consts.hungerState.JustAte)
+                        {
+                            person._bodyneeds.HungerState = Consts.hungerState.Full;
+                        }//just ate last round, this round character is full
+                        else if (person._bodyneeds.HungerState == Consts.hungerState.Full &&
+                            Program._gametime >= person._bodyneeds.LastAteTime + (int)Consts.hungerTimer.Normal)
+                        {
+                            person._bodyneeds.HungerState = Consts.hungerState.Normal;
+                        }//pass normal hunger time
+                        else if (person._bodyneeds.HungerState == Consts.hungerState.Normal &&
+                            Program._gametime > person._bodyneeds.LastAteTime + (int)Consts.hungerTimer.Full)
+                        {
+                            person._bodyneeds.HungerState = Consts.hungerState.Hungry;
+                        }//pass hungry hunger time
+                        #endregion
+
+                        #region Sleep check
+                        if (Program._gametime > person._bodyneeds.LastSleptTime + (int)Consts.sleepTimer.Awake)
+                        {
+                            person._bodyneeds.SleepState = Consts.sleepState.MustSleep;
+                            finishTime = Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.Sleeping]._actionDuration;
+                            person._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Sleeping, Consts.actionsData[(int)Consts.characterGeneralActions.Sleeping]._actionPriority,finishTime));                            
+                        }                        
+                        #endregion
                     }
-                }//action is finished - do results of the action
+                    else if (person._characterActions.Peek().Action == Consts.characterGeneralActions.Eating)
+                    {                            
+                        person._health.staminaUsedThisTick = 3;                        
+                        person.eatAction();                                                        
+                    }
+                    else if (person._characterActions.Peek().Action == Consts.characterGeneralActions.Sleeping)
+                    {
+                        
+                    }                
+                }
 
                 //person health is updated at the end of each tick
                 person._health.hp.Current += person._health.hp.Regeneration;

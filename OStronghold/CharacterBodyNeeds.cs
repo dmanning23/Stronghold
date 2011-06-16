@@ -9,11 +9,12 @@ namespace OStronghold
     {
         #region Members
 
+        #region eating related
         private struct eatingStruct
         {
             public Consts.hungerState _hungerState; //current hunger state
             public Consts.hungerTimer _hungryTimer; //hungry timer
-            public Gametime lastAteTime;
+            public Gametime _lastAteTime;
         }//everything related to eating
         private eatingStruct _eating;        
 
@@ -44,9 +45,31 @@ namespace OStronghold
         }//readonly
         public Gametime LastAteTime
         {
-            get { return _eating.lastAteTime; }
-            set { _eating.lastAteTime.CopyGameTime(value); }
+            get { return _eating._lastAteTime; }
+            set { _eating._lastAteTime.CopyGameTime(value); }
         }
+        #endregion
+
+        #region sleeping related
+        private struct sleepingStruct
+        {
+            public Consts.sleepState _sleepState;
+            public Gametime _lastSleptTime;
+        }//everything related to sleeping
+        private sleepingStruct _sleeping;
+
+        public Consts.sleepState SleepState
+        {
+            get { return _sleeping._sleepState; }
+            set { _sleeping._sleepState = value; }
+        }
+        public Gametime LastSleptTime
+        {
+            get { return _sleeping._lastSleptTime; }
+            set { _sleeping._lastSleptTime = value; }
+        }
+
+        #endregion
 
         #endregion
 
@@ -54,7 +77,10 @@ namespace OStronghold
 
         public CharacterBodyNeeds()
         {
-            _eating.lastAteTime = new Gametime();
+            _eating._lastAteTime = new Gametime();
+            _eating._lastAteTime.CopyGameTime(Program._gametime);
+            _sleeping._lastSleptTime = new Gametime();
+            _sleeping._lastSleptTime.CopyGameTime(Program._gametime);
         }
 
         #endregion

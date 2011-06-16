@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OStronghold.Generic
 {
-    public class MyPriorityQueue : LinkedList<CharacterAction>
+    public class MyPriorityQueue : Queue<CharacterAction>
     {
         #region Members       
         #endregion
@@ -20,38 +20,50 @@ namespace OStronghold.Generic
 
         #region Methods
 
-        public void insertBeginningofQueue(CharacterAction item)
-        {            
-            AddFirst(item);
-        }
-
-        public void insertItem(CharacterAction item)
+        public void Clone(MyPriorityQueue target)
         {
-            LinkedListNode<CharacterAction> existElement;            
-            LinkedListNode<CharacterAction> newElement;
-            //inserts the item according to priority into the queue. if same priority then it will be the first of all the same priority #
-            if (Count == 0)
+            this.Clear();
+            foreach (CharacterAction val in target)
             {
-                AddFirst(item);
+                this.Enqueue(val);
             }
-            else if (this.ElementAt(Count - 1).Priority < item.Priority)
+        }
+        
+        public void insertItemIntoQueue(CharacterAction newItem)
+        {
+            MyPriorityQueue temp = new MyPriorityQueue();            
+            bool flag = false;
+
+            if (this.Count == 0)
             {
-                AddLast(item);
+                this.Enqueue(newItem);
             }
             else
             {
-                for (int i = 0; i < this.Count; i++)
+                foreach (CharacterAction queueItem in this)
                 {
-                    existElement = new LinkedListNode<CharacterAction>(this.ElementAt(i));
-
-                    if (this.ElementAt(i).Priority >= item.Priority)
+                    if (!flag) //new item is not inserted yet
                     {
-                        this.AddBefore(existElement, item);
-
+                        if (queueItem.Priority >= newItem.Priority)
+                        {
+                            temp.Enqueue(newItem);
+                            temp.Enqueue(queueItem);
+                            flag = true;                            
+                        }
+                        else temp.Enqueue(queueItem);
                     }
+                    else
+                    {
+                        temp.Enqueue(queueItem);
+                    }                    
                 }
+                if (!flag)
+                {
+                    temp.Enqueue(newItem); //if flag remains false then newItem has highest priority                    
+                }                
+                this.Clone(temp);
             }
-        }//inserts item into queue
+        }//inserts item into queue based on priority
 
         #endregion
     }

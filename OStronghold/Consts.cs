@@ -13,10 +13,22 @@ namespace OStronghold
         {
             Undefined = 1,
             Idle,
-            Eat
+            Eating,
+            Sleeping,
+            Count
         };//generic character actions
 
-        public enum characterSleepFlowActions { Undefined, Awake, Asleep};
+        public struct actionStruct
+        {
+            public int _actionDuration; //in minutes
+            public int _actionPriority; //the lower the number and higher the priority
+        }
+        public static actionStruct[] actionsData;
+        
+
+        public enum sleepState { MustSleep, Awake };
+        //MustSleep - must sleep - stops everything
+        //Awake - normal awake
 
         public enum gender { Male, Female };
 
@@ -27,10 +39,11 @@ namespace OStronghold
         //JustAte - just ate
 
         public enum hungerTimer { Hungry = 0, Normal = 240, Full = 420 }; //minutes
+        public enum sleepTimer { Awake = 1080 };
 
         public static Random rand = new Random((int)DateTime.Now.Ticks);
 
-        public static int gametickperSecond = 2; //how many real time seconds are there in a game tick
+        public static int gametickperSecond = 1; //how many real time seconds are there in a game tick
         public static int gametickIncreaseMinutes = 60; //how many game minutes are increased in every game tick
 
         #endregion
@@ -39,6 +52,13 @@ namespace OStronghold
 
         public Consts()
         {
+            actionsData = new actionStruct[(int)Consts.characterGeneralActions.Count];
+            actionsData[(int)Consts.characterGeneralActions.Eating]._actionDuration = 180;
+            actionsData[(int)Consts.characterGeneralActions.Eating]._actionPriority = 5;
+            actionsData[(int)Consts.characterGeneralActions.Sleeping]._actionDuration = 480;
+            actionsData[(int)Consts.characterGeneralActions.Sleeping]._actionPriority = 10;
+            actionsData[(int)Consts.characterGeneralActions.Idle]._actionDuration = 0;
+            actionsData[(int)Consts.characterGeneralActions.Idle]._actionPriority = 99;
         }
 
         #endregion

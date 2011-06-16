@@ -38,6 +38,7 @@ namespace OStronghold
             _currentActionFinishTime = new Gametime(0, 0, 0);
             _health = new CharacterHealth();
             _characterActions = new MyPriorityQueue(); //the list of actions the character wants to do
+                        
 
             //eating events
             _bodyneeds._hungryEvent += this.OnHungryEventHandler; //hungry event listener
@@ -55,7 +56,7 @@ namespace OStronghold
         #region Methods        
 
         public void eatAction()
-        {                        
+        {            
         }//character eats
 
         #endregion
@@ -64,7 +65,8 @@ namespace OStronghold
 
         public void OnHungryEventHandler(object sender, EventArgs e)
         {
-            _characterActions.insertBeginningofQueue(new CharacterAction(Consts.characterGeneralActions.Eat, 1));
+            Gametime finishTime = Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.Eating]._actionDuration;
+            _characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Eating, Consts.actionsData[(int)Consts.characterGeneralActions.Eating]._actionPriority, finishTime));
         }//actions to do when character is hungry
 
         #endregion
