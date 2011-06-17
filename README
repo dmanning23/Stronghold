@@ -1,2 +1,14 @@
 Stronghold - a Simcity/Arena-like RPG game.
 Copyright 2011
+
+Table of Contents
+=================
+1. Background
+2. Character
+3. Treasury
+
+
+
+2. Character
+------------
+The actual population of Stronghold is represented by Characters. These characters (NPCs) are controlled automatically by the game AI and decide what is best for them. They act exactly like normal people. They need to eat, sleep and each even have a personality of their own. They will act and behave according to what they believe in - even to the death.

@@ -28,6 +28,7 @@ namespace OStronghold
                 Console.Clear();
                 Console.WriteLine("----------------------------------------------------------");
                 Console.WriteLine("Game time: " + _gametime.ToString());
+                Console.WriteLine("Stronghold GP: " + _aStronghold.Treasury.Gold);
                 Console.WriteLine();                
                 _aStronghold.printPopulation();
 

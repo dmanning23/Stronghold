@@ -13,8 +13,7 @@ namespace OStronghold.Generic
 
         public int Gold
         {
-            get { return _gold; }
-            set { _gold = value; }
+            get { return _gold; }            
         }
         
         #endregion
@@ -28,6 +27,20 @@ namespace OStronghold.Generic
         public Treasury(int startingGold)
         {
             _gold = startingGold;
+        }
+
+        #endregion
+
+        #region Methods
+
+        public void depositGold(int amount)
+        {
+            _gold += amount;
+        }
+
+        public bool haveEnoughToWithdraw(int amount)
+        {
+            return (amount <= _gold);
         }
 
         #endregion
