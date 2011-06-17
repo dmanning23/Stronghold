@@ -27,6 +27,7 @@ namespace OStronghold
         public strongholdStats _stats; //number of people currently living in Stronghold
         public Hashtable _commoners; //hashtable to hold the commoners themselves
         public strongholdBuildings _buildings;
+        public StrongholdLeader _leader;
         public Treasury Treasury
         {
             get { return _treasury; }
@@ -41,6 +42,18 @@ namespace OStronghold
             _stats.currentPopulation = 0;            
             _commoners = new Hashtable();
             _treasury = new Treasury(100);
+            _leader = new StrongholdLeader();
+
+            //configure leader
+            _leader._id = 9999;
+            _leader._name = "SHLeader";
+            _leader._age = 34;
+            _leader._bodyneeds.HungerState = Consts.hungerState.Full;
+            _leader._bodyneeds.SleepState = Consts.sleepState.Awake;
+            _leader._health.defineHP(50, 0);
+            _leader._health.defineStamina(100, 1);
+            _leader._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Idle, Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionPriority, Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionDuration));
+            _leader._characterinventory.putInInventory(new Generic.InventoryItem("Food", 1, 0.0, 10));            
         }//Constructor
 
         #endregion
@@ -82,6 +95,11 @@ namespace OStronghold
                 Console.WriteLine(person._name + " (" + person._health.hp.Current + "|" + person._health.stamina.Current + ") is " + person._characterActions.Peek().Action + " and " + person._bodyneeds.HungerState + " and " + person._bodyneeds.LastAteTime + " has: " + person._characterinventory.ToString());
             }
         }//Prints in output all the commoner information
+
+        public void printStrongholdLeader()
+        {
+            Console.WriteLine(_leader._name + " (" + _leader._health.hp.Current + "|" + _leader._health.stamina.Current + ") is " + _leader._characterActions.Peek().Action + " and " + _leader._bodyneeds.HungerState + " and " + _leader._bodyneeds.LastAteTime + " has: " + _leader._characterinventory.ToString());
+        }
 
         public void activateIdleCommoners()
         {                                                        

@@ -2,11 +2,13 @@
 ========================================
 [doing]
 (00016+)
+- Stronghold - figure why can't compile - get error.
 - Stronghold -> Add Stronghold leader and autocontrol of Stronghold economy
 
 [to do]
 - Character -> Add location for Character (Area class) -> walking action
 - Character -> Add attributes (i.e: Strength, Intelligence, etc.)
+- Character -> Add level (how level up affect stats)
 - Stronghold -> Start populating characters in Stronghold and create daily life routines.
 - Stronghold -> Add shops
 - Stronghold -> Add Arena for battles
