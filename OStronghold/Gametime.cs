@@ -230,11 +230,11 @@ namespace OStronghold
         {            
             for (int x = 0; x < Program._aStronghold._stats.currentPopulation; x++)
             {
-                CharacterClass person = ((CharacterClass)Program._aStronghold._commoners[x]);
+                Character person = ((Character)Program._aStronghold._commoners[x]);
 
                 person._currentActionFinishTime = person._characterActions.Peek().FinishTime;
 
-                if (person._currentActionFinishTime > Program._gametime)
+                  if (person._currentActionFinishTime > Program._gametime)
                 {
                     //wait
                 }//person is doing something - wait until action is over
@@ -289,12 +289,11 @@ namespace OStronghold
                     }
                     else if (person._characterActions.Peek().Action == Consts.characterGeneralActions.Eating)
                     {                            
-                        person._health.staminaUsedThisTick = 3;                        
-                        person.eatAction();                                                        
+                        person._health.staminaUsedThisTick = 3;                                                
                     }
                     else if (person._characterActions.Peek().Action == Consts.characterGeneralActions.Sleeping)
                     {
-                        
+                        //sleeping
                     }                
                 }
 

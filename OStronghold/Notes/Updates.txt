@@ -1,0 +1,45 @@
+﻿Stronghold - Simcity/Arena-like RPG game
+========================================
+
+[doing]
+(00015+)
+- Need to check eatAction() will run when even there is no food left.
+- Need to add inventory for character (food)
+- Need to add inventory item class.
+
+[to do]
+- Character -> Need to add location for Character (Area class)
+- Stronghold -> Start populating characters in Stronghold and create daily life routines.
+- CharacterMindSet -> Enhance character mindset thinking into effects.
+- InventoryItem -> Add Categories for Items
+
+[future thoughts]
+- Add areas - good for multithreading update (thread update per area for area population).
+- Change hp,mp,stamina to decimals for regen to work better
+- constants will change according to mindset or personality
+- Foods has satiety rate
+
+====================================================================================================
+(update)  [notes]
+
+(00015) - Added PriorityQueue class for character actions.
+        - Added Sleep state
+(00014) - Removed hungerflowactions.
+        - Removed Stronghold foodstorage building and food deduction when eating.
+(00013) - Modified game ticks only at hour level
+        - Added stamina usage for actions performed.
+        - Added hp, mp, stamina regeneration.
+(00012) - Added minutes to gametime.
+        - Added game ticks to gametime (i.e: one game tick = 10 seconds = 1 game hour)
+(00011) - Added CharacterHealth class.
+(00010) - Added Character hunger flow.
+(00009) - Added hourPassed event.
+(00008) - Added Gametime class.
+(00007) - Added hunger event.
+(00006) - Added CharacterBodyNeeds class.
+(00005) - Added attributes for CharacterMindsetClass (money,fame,xp)
+(00004) - Added CharacterMindset class.
+(00003) - Added Consts class.
+(00002) - Added Character class.
+(00001) - Added Stronghold class.
+====================================================================================================

@@ -9,6 +9,7 @@ namespace OStronghold
     {
         #region Members
 
+        #region action related
         public enum characterGeneralActions
         {
             Undefined = 1,
@@ -24,14 +25,17 @@ namespace OStronghold
             public int _actionPriority; //the lower the number and higher the priority
         }
         public static actionStruct[] actionsData;
-        
+        #endregion
 
+        #region sleep related
         public enum sleepState { MustSleep, Awake };
         //MustSleep - must sleep - stops everything
         //Awake - normal awake
+        #endregion
 
         public enum gender { Male, Female };
 
+        #region food related
         public enum hungerState { Hungry, Normal, Full ,JustAte};        
         //Hungry - needs to eat immediately (eating is highest priority)
         //Normal - can perform other actions (eating is medium priority)
@@ -39,12 +43,21 @@ namespace OStronghold
         //JustAte - just ate
 
         public enum hungerTimer { Hungry = 0, Normal = 240, Full = 420 }; //minutes
+
+        #endregion
+
         public enum sleepTimer { Awake = 1080 };
 
         public static Random rand = new Random((int)DateTime.Now.Ticks);
 
         public static int gametickperSecond = 1; //how many real time seconds are there in a game tick
         public static int gametickIncreaseMinutes = 60; //how many game minutes are increased in every game tick
+
+        #region inventory related
+
+        public static int startCharInventoryMaxCapacity = 10;
+
+        #endregion
 
         #endregion
 

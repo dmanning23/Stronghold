@@ -9,12 +9,12 @@ namespace OStronghold
     class Program
     {
         public static Gametime _gametime = new Gametime(0, 0, 0);
-        public static StrongholdClass _aStronghold = new StrongholdClass();
+        public static Stronghold _aStronghold = new Stronghold();
         public static Consts _consts = new Consts();
 
         static void Main(string[] args)
         {                       
-            _aStronghold.populate(1);            
+            _aStronghold.populate(10);            
             while (true)
             {
                 TimeSpan _timespan = new TimeSpan(DateTime.Now.Ticks - _gametime.LastGameTick);
@@ -25,7 +25,7 @@ namespace OStronghold
                 }
                 
 
-                //Console.Clear();
+                Console.Clear();
                 Console.WriteLine("----------------------------------------------------------");
                 Console.WriteLine("Game time: " + _gametime.ToString());
                 Console.WriteLine();                
