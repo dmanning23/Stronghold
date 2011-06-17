@@ -1,15 +1,15 @@
 ﻿Stronghold - Simcity/Arena-like RPG game
 ========================================
-
 [doing]
-(00015+)
-- Need to check eatAction() will run when even there is no food left.
-- Need to add inventory for character (food)
-- Need to add inventory item class.
+(00016+)
+- Adding Treasury (for Stronghold and future guilds)
 
 [to do]
-- Character -> Need to add location for Character (Area class)
+- CharacterInventory -> Add Gold into game (need shops first)
+- Character -> Need to add location for Character (Area class) -> walking action
 - Stronghold -> Start populating characters in Stronghold and create daily life routines.
+- Stronghold -> Add shops
+- Stronghold -> Add Stronghold leader and autocontrol of Stronghold economy
 - CharacterMindSet -> Enhance character mindset thinking into effects.
 - InventoryItem -> Add Categories for Items
 
@@ -18,10 +18,11 @@
 - Change hp,mp,stamina to decimals for regen to work better
 - constants will change according to mindset or personality
 - Foods has satiety rate
-
 ====================================================================================================
 (update)  [notes]
 
+(00016) - Added CharacterInventory class.
+        - Added InventoryItem class.        
 (00015) - Added PriorityQueue class for character actions.
         - Added Sleep state
 (00014) - Removed hungerflowactions.

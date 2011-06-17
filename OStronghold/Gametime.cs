@@ -276,6 +276,10 @@ namespace OStronghold
                         {
                             person._bodyneeds.HungerState = Consts.hungerState.Hungry;
                         }//pass hungry hunger time
+                        else if (person._bodyneeds.HungerState == Consts.hungerState.Hungry)
+                        {
+                            person._bodyneeds.HungerState = Consts.hungerState.Hungry;
+                        }//if hungry and then remains hungry
                         #endregion
 
                         #region Sleep check

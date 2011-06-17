@@ -51,7 +51,8 @@ namespace OStronghold
                 commoner._health.defineHP(20,0);
                 commoner._health.defineStamina(100,1);
                 commoner._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Idle, Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionPriority, Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionDuration));
-                commoner._characterinventory.putInInventory(new Generic.InventoryItem("Food", 1, 0.0, 1));                
+                commoner._characterinventory.putInInventory(new Generic.InventoryItem("Food", 1, 0.0, 10));
+                commoner._characterinventory.putInInventory(new Generic.InventoryItem("Gold", 2, 0.0, 50));
 
                 _commoners.Add(_stats.currentPopulation, commoner);                
                 _stats.currentPopulation++;                
@@ -69,7 +70,7 @@ namespace OStronghold
                 //{
                 //    Console.WriteLine(val.Action + " (" + val.Priority + ") ");
                 //}
-                Console.WriteLine(person._name + " (" + person._health.hp.Current + "|" + person._health.stamina.Current + ") is " + person._characterActions.Peek().Action + " and " + person._bodyneeds.HungerState + " has: " + person._characterinventory.ToString());
+                Console.WriteLine(person._name + " (" + person._health.hp.Current + "|" + person._health.stamina.Current + ") is " + person._characterActions.Peek().Action + " and " + person._bodyneeds.HungerState + " and " + person._bodyneeds.LastAteTime + " has: " + person._characterinventory.ToString());
             }
         }//Prints in output all the commoner information
 

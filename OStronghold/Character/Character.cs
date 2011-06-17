@@ -57,11 +57,16 @@ namespace OStronghold
 
         #region Methods        
 
+        public LinkedList<InventoryItem> getFoodFromInventory()
+        {
+            LinkedList<InventoryItem> foods = _characterinventory.searchForItemsByName("Food");
+            return (foods);
+        }
+
         public bool eatAction()
         {
-            LinkedList<InventoryItem> foods = _characterinventory.retrieveItemInInventory("Food",-1);            
-
-            if (foods.Count == 0)
+            LinkedList<InventoryItem> foods = _characterinventory.retrieveItemInInventory("Food", -1);
+            if (foods.Count > 0)
             {
                 foreach (InventoryItem food in foods)
                 {
@@ -91,10 +96,13 @@ namespace OStronghold
         #region Events
 
         public void OnHungryEventHandler(object sender, EventArgs e)
-        {            
-            Gametime finishTime = Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.Eating]._actionDuration;
-            _characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Eating, Consts.actionsData[(int)Consts.characterGeneralActions.Eating]._actionPriority, finishTime));
-            eatAction();
+        {
+            if (getFoodFromInventory().Count > 0)
+            {
+                Gametime finishTime = Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.Eating]._actionDuration;
+                _characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Eating, Consts.actionsData[(int)Consts.characterGeneralActions.Eating]._actionPriority, finishTime));
+                eatAction();
+            }//eat only if there is enough food in inventory otherwise stay hungry
         }//actions to do when character is hungry
 
         #endregion

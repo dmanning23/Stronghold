@@ -55,7 +55,7 @@ namespace OStronghold
 
         #region inventory related
 
-        public static int startCharInventoryMaxCapacity = 10;
+        public static int startCharInventoryMaxCapacity = 1000;
 
         #endregion
 

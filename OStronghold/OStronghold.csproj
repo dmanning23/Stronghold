@@ -57,6 +57,7 @@
     <Compile Include="Gametime.cs" />
     <Compile Include="Generic\InventoryItem.cs" />
     <Compile Include="Generic\MyPriorityQueue.cs" />
+    <Compile Include="Generic\Treasury.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stronghold.cs" />

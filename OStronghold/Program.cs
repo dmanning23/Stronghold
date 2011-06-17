@@ -33,8 +33,7 @@ namespace OStronghold
 
                 //Thread responsible for find Idle Commoners and making them do something.
                 //Thread activateIdleCommonersThread = new Thread(new ThreadStart(_aStronghold.activateIdleCommoners));
-                //activateIdleCommonersThread.Start();
-
+                //activateIdleCommonersThread.Start();                
                 Thread.Sleep(1000*Consts.gametickperSecond);
 
                 //random population generation
