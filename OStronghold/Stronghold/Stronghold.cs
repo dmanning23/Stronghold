@@ -32,6 +32,7 @@ namespace OStronghold
         {
             get { return _treasury; }
         }
+        public LinkedList<Job> _jobs;
 
         #endregion
 
@@ -54,6 +55,11 @@ namespace OStronghold
             _leader._health.defineStamina(100, 1);
             _leader._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Idle, Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionPriority, Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionDuration));
             _leader._characterinventory.putInInventory(new Generic.InventoryItem("Food", 1, 0.0, 10));            
+
+            //testing out job
+            Job newJob = new Job(1, 9999, -1, "Farmer", Program._gametime, Program._gametime + 3600, Program._gametime, Program._gametime + 120, 10, Consts.JobStatus.Available);
+            _jobs = new LinkedList<Job>();
+            _jobs.AddLast(newJob);
         }//Constructor
 
         #endregion
@@ -99,6 +105,14 @@ namespace OStronghold
         public void printStrongholdLeader()
         {
             Console.WriteLine(_leader._name + " (" + _leader._health.hp.Current + "|" + _leader._health.stamina.Current + ") is " + _leader._characterActions.Peek().Action + " and " + _leader._bodyneeds.HungerState + " and " + _leader._bodyneeds.LastAteTime + " has: " + _leader._characterinventory.ToString());
+        }
+
+        public void printJobs()
+        {
+            foreach (Job job in _jobs)
+            {
+                Console.WriteLine("Name: " + job.JobName + " Status: " + job.JobStatus + " Payroll: " + job.Payroll);
+            }
         }
 
         public void activateIdleCommoners()

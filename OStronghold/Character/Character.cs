@@ -23,7 +23,7 @@ namespace OStronghold
         public CharacterHealth _health; //character health related
         public MyPriorityQueue _characterActions; //character actions
         public CharacterInventory _characterinventory; //character inventory
-        
+        public int _jobID; // job ID , -1 if not working
 
         #endregion
 
@@ -35,6 +35,7 @@ namespace OStronghold
             _id = 0;            
             _fame = 0;
             _age = 0;
+            _jobID = -1;
             _mindset = new CharacterMindset();
             _bodyneeds = new CharacterBodyNeeds();
             _currentActionFinishTime = new Gametime(0, 0, 0);
@@ -90,6 +91,34 @@ namespace OStronghold
                 //character cannot eat
             }
         }//character eats , return true if ate , false if not ate
+
+        public void applyForJob(int jobID)
+        {
+            //search if jobID exists
+            //check for qualifications for job (minimum requirements?)
+            //need confirmation from owner of job.
+            //if all successful - character gets job
+            bool foundJob = false;
+            Job result = null;
+
+            foreach (Job job in Program._aStronghold._jobs)
+            {
+                if (job.JobID == jobID)
+                {
+                    foundJob = true;
+                    result = new Job(job);
+                    break;
+                }
+            }            
+            if (foundJob && result != null) //found the correct job
+            {
+                if (result.JobStatus == Consts.JobStatus.Available)
+                {
+                    this._jobID = result.JobID;
+                    (Program._aStronghold._jobs.Find(result)).Value.JobStatus = Consts.JobStatus.Taken; dfdfd
+                }
+            }
+        }//applies for job
 
         #endregion
 

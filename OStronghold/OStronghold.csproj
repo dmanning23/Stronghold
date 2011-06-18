@@ -55,8 +55,11 @@
     <Compile Include="Character\CharacterMindset.cs" />
     <Compile Include="Consts.cs" />
     <Compile Include="Gametime.cs" />
+    <Compile Include="Generic\Building.cs" />
     <Compile Include="Generic\InventoryItem.cs" />
+    <Compile Include="Generic\Job.cs" />
     <Compile Include="Generic\MyPriorityQueue.cs" />
+    <Compile Include="Generic\Status.cs" />
     <Compile Include="Generic\Treasury.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

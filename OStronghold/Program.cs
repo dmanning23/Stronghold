@@ -8,9 +8,9 @@ namespace OStronghold
 {
     class Program
     {
-        public static Gametime _gametime = new Gametime(0, 0, 0);
-        public static Stronghold _aStronghold = new Stronghold();
         public static Consts _consts = new Consts();
+        public static Gametime _gametime = new Gametime(0, 0, 0);
+        public static Stronghold _aStronghold = new Stronghold();        
 
         static void Main(string[] args)
         {                       
@@ -29,10 +29,11 @@ namespace OStronghold
                 Console.WriteLine("----------------------------------------------------------");
                 Console.WriteLine("Game time: " + _gametime.ToString());
                 Console.WriteLine("Stronghold GP: " + _aStronghold.Treasury.Gold);
+                Console.WriteLine("Jobs available: " + _aStronghold._jobs.Count);
+                _aStronghold.printJobs();
                 Console.WriteLine();                
                 //_aStronghold.printPopulation();
-                _aStronghold.printStrongholdLeader();
-
+                //_aStronghold.printStrongholdLeader();                
                 //Thread responsible for find Idle Commoners and making them do something.
                 //Thread activateIdleCommonersThread = new Thread(new ThreadStart(_aStronghold.activateIdleCommoners));
                 //activateIdleCommonersThread.Start();                

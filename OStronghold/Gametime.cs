@@ -290,6 +290,13 @@ namespace OStronghold
                             person._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Sleeping, Consts.actionsData[(int)Consts.characterGeneralActions.Sleeping]._actionPriority,finishTime));                            
                         }                        
                         #endregion
+
+                        #region Employment check
+                        if (person._jobID == -1) //&& person wants to look for job)
+                        {
+                            person.applyForJob(Program._aStronghold._jobs.First.Value.JobID);
+                        }
+                        #endregion
                     }
                     else if (person._characterActions.Peek().Action == Consts.characterGeneralActions.Eating)
                     {                            

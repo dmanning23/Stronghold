@@ -16,6 +16,8 @@ namespace OStronghold
             Idle,
             Eating,
             Sleeping,
+            LookingForWork,
+            Working,
             Count
         };//generic character actions
 
@@ -56,6 +58,18 @@ namespace OStronghold
         #region inventory related
 
         public static int startCharInventoryMaxCapacity = 1000;
+
+        #endregion
+
+        #region building related
+
+        public enum BuildingTypes { Equipment };
+
+        #endregion
+
+        #region job related
+
+        public enum JobStatus { Available, Taken };
 
         #endregion
 
