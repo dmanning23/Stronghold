@@ -227,7 +227,9 @@ namespace OStronghold
         }
 
         public void OnGameTickPassedHandler(object sender, EventArgs e)
-        {            
+        {
+            Generic.InventoryItem item;
+
             for (int x = 0; x < Program._aStronghold._stats.currentPopulation; x++)
             {
                 Character person = ((Character)Program._aStronghold._commoners[x]);
@@ -294,8 +296,29 @@ namespace OStronghold
                         #region Employment check
                         if (person._jobID == -1) //&& person wants to look for job)
                         {
-                            person.applyForJob(Program._aStronghold._jobs.First.Value.JobID);
-                        }
+                            LinkedList<Generic.Job> listOfAvailableJobs = Program._aStronghold.getAllAvailableJobs();
+                            if (listOfAvailableJobs.Count > 0)
+                            {
+                                person.applyForJob(Program._aStronghold.getAllAvailableJobs().First.Value.JobID); //need to decide how the person determines what job he/she wants to apply for
+                            }
+                        }//person applies for first job in the list
+                        else
+                        {
+                            Generic.Job job = Program._aStronghold.searchJobByID(person._jobID);
+                            if (job != null)
+                            {
+                                item = person._characterinventory.searchForItemByID(Consts.GOLD_ID);
+                                if (item != null)
+                                {
+                                    item.Quantity += job.Payroll;
+                                    person._characterinventory.putInInventory(item);
+                                }//person has gold
+                                else
+                                {
+                                    person._characterinventory.putInInventory(new Generic.InventoryItem(Consts.GOLD_NAME, Consts.GOLD_ID, Consts.GOLD_WEIGHT, job.Payroll));
+                                }//person doesn't have gold, put gold into inventory
+                            }//person is already employed
+                        }//person already employed or doesn't want to work
                         #endregion
                     }
                     else if (person._characterActions.Peek().Action == Consts.characterGeneralActions.Eating)

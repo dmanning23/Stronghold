@@ -1,8 +1,10 @@
 ﻿Stronghold - Simcity/Arena-like RPG game
 ========================================
 [doing]
-(00017)
+(00017+)
 - Stronghold -> Add jobs (simulate job and simulate population trying to apply to job, add job experience?) - need to figure out how to do this.
+             -> Updated in gametime about jobs (need to determine how person chooses what job to apply for - currently first job in list)
+			 -> Need to change gametime working hours for person
 - Stronghold -> Add shops/buildings (planning + construction phase + hiring people, etc.)
 - Stronghold -> Setup economy with buildings and shops
 - StrongholdLeader -> Autocontrol economy
@@ -23,6 +25,7 @@
 [future thoughts]
 - Add guilds (sort of a mini Stronghold according to class)
 - Add raw materials for building construction
+- Put weight into factor.
 - Add areas - good for multithreading update (thread update per area for area population).
 - Change hp,mp,stamina to decimals for regen to work better
 - constants will change according to mindset or personality

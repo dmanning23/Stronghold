@@ -32,7 +32,7 @@ namespace OStronghold
         {
             get { return _treasury; }
         }
-        public LinkedList<Job> _jobs;
+        public LinkedList<Job> _allJobs;
 
         #endregion
 
@@ -54,12 +54,18 @@ namespace OStronghold
             _leader._health.defineHP(50, 0);
             _leader._health.defineStamina(100, 1);
             _leader._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Idle, Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionPriority, Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionDuration));
-            _leader._characterinventory.putInInventory(new Generic.InventoryItem("Food", 1, 0.0, 10));            
+            _leader._characterinventory.putInInventory(new Generic.InventoryItem(Consts.FOOD_NAME, Consts.FOOD_ID, Consts.FOOD_WEIGHT, 10));
 
             //testing out job
-            Job newJob = new Job(1, 9999, -1, "Farmer", Program._gametime, Program._gametime + 3600, Program._gametime, Program._gametime + 120, 10, Consts.JobStatus.Available);
-            _jobs = new LinkedList<Job>();
-            _jobs.AddLast(newJob);
+            Job job;
+            _allJobs = new LinkedList<Job>();
+            for (int i = 1; i <= 10; i++)
+            {
+                job = new Job(i, 9999, -1, "Farmer#" + i, Program._gametime, Program._gametime + 3600, Program._gametime, Program._gametime + 120, 10, Consts.JobStatus.Available);
+                _allJobs.AddLast(job);
+            }
+            
+                        
         }//Constructor
 
         #endregion
@@ -79,8 +85,8 @@ namespace OStronghold
                 commoner._health.defineHP(20,0);
                 commoner._health.defineStamina(100,1);
                 commoner._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Idle, Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionPriority, Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionDuration));
-                commoner._characterinventory.putInInventory(new Generic.InventoryItem("Food", 1, 0.0, 10));
-                commoner._characterinventory.putInInventory(new Generic.InventoryItem("Gold", 2, 0.0, 50));
+                commoner._characterinventory.putInInventory(new Generic.InventoryItem(Consts.FOOD_NAME, Consts.FOOD_ID, Consts.FOOD_WEIGHT, 10));
+                commoner._characterinventory.putInInventory(new Generic.InventoryItem(Consts.GOLD_NAME, Consts.GOLD_ID, Consts.GOLD_WEIGHT, 50));
 
                 _commoners.Add(_stats.currentPopulation, commoner);                
                 _stats.currentPopulation++;                
@@ -90,6 +96,7 @@ namespace OStronghold
         public void printPopulation()
         {
             Character person = new Character();
+            Job job;
                         
             for (int i = 0; i < _stats.currentPopulation; i++)
             {
@@ -98,7 +105,15 @@ namespace OStronghold
                 //{
                 //    Console.WriteLine(val.Action + " (" + val.Priority + ") ");
                 //}
-                Console.WriteLine(person._name + " (" + person._health.hp.Current + "|" + person._health.stamina.Current + ") is " + person._characterActions.Peek().Action + " and " + person._bodyneeds.HungerState + " and " + person._bodyneeds.LastAteTime + " has: " + person._characterinventory.ToString());
+                job = searchJobByID(person._jobID);
+                if (job == null)
+                {
+                    Console.WriteLine(person._name + " is currently "+ person._characterActions.Peek().Action +" and has " + person._characterinventory.searchForItemByID(Consts.GOLD_ID).Quantity + " Gold.");
+                }
+                else
+                {
+                    Console.WriteLine(person._name + " is currently " + person._characterActions.Peek().Action + " as a " + job.JobName + " and has " + person._characterinventory.searchForItemByID(Consts.GOLD_ID).Quantity + " Gold.");
+                }
             }
         }//Prints in output all the commoner information
 
@@ -109,7 +124,7 @@ namespace OStronghold
 
         public void printJobs()
         {
-            foreach (Job job in _jobs)
+            foreach (Job job in _allJobs)
             {
                 Console.WriteLine("Name: " + job.JobName + " Status: " + job.JobStatus + " Payroll: " + job.Payroll);
             }
@@ -118,6 +133,31 @@ namespace OStronghold
         public void activateIdleCommoners()
         {                                                        
         }//Decide what idle commoners should be doing
+
+        public Job searchJobByID(int jobID)
+        {
+            foreach (Job job in _allJobs)
+            {
+                if (job.JobID == jobID)
+                {
+                    return job;
+                }
+            }
+            return null;
+        }
+
+        public LinkedList<Job> getAllAvailableJobs()
+        {
+            LinkedList<Job> list = new LinkedList<Job>();
+            foreach (Job job in _allJobs)
+            {
+                if (job.JobStatus == Consts.JobStatus.Available)
+                {
+                    list.AddLast(job);
+                }
+            }
+            return list;
+        }
 
         #endregion
     }

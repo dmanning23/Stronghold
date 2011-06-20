@@ -77,52 +77,45 @@ namespace OStronghold
             return true;
         }//puts an item into the inventory and returns results.
 
-        public LinkedList<InventoryItem> searchForItemsByName(string targetName)
-        {
-            LinkedList<InventoryItem> result = new LinkedList<InventoryItem>();
-            
+        public InventoryItem searchForItemByName(string targetName)
+        {                        
             foreach (InventoryItem item in _inventory)
             {
                 if (item.Name.CompareTo(targetName) == 0)
                 {
-                    result.AddLast(item);                    
+                    return item;
                 }
             }
-            return result;
+            return null;
         }//searches the inventory for all the items that match the target string and returns the objects in a linklist
 
-        public LinkedList<InventoryItem> searchForItemsByID(int targetID)
-        {
-            LinkedList<InventoryItem> result = new LinkedList<InventoryItem>();
-
+        public InventoryItem searchForItemByID(int targetID)
+        {            
             foreach (InventoryItem item in _inventory)
             {
                 if (item.ID == targetID)
                 {
-                    result.AddLast(item);
+                    return item;
                 }
             }
-            return result;
+            return null;
         }//searches the inventory for all the items that match the target ID and returns the objects in a linklist
 
-        public LinkedList<InventoryItem> retrieveItemInInventory(string targetName, int targetID)
+        public InventoryItem retrieveItemInInventory(string targetName, int targetID)
         {
-            LinkedList<InventoryItem> result = new LinkedList<InventoryItem>();
-            if (targetName == null) result = searchForItemsByID(targetID);
-            else if (targetID == -1) result = searchForItemsByName(targetName);
-            else result = null; //error because rule is to have either search by name or id
-
-            if (result != null)
+            InventoryItem itemSearched = new InventoryItem(); ;
+            if (targetName == null || targetName == "")
             {
-                foreach (InventoryItem item in result)
-                {
-                    _currentInventoryCapacity -= item.Quantity; //frees up inventory capacity
-                    _inventory.Remove(item);                    
-                }
-            }//need to remove the found objects from the inventory
-
-            return result;
-        }//if targetName = null, then searchbyID else if targetID = -1 then search by Name
+                itemSearched = searchForItemByID(targetID);                
+            }
+            else if (targetID == -1)
+            {
+                itemSearched = searchForItemByName(targetName);
+            }
+            _currentInventoryCapacity -= itemSearched.Quantity; //frees up inventory capacity
+            _inventory.Remove(itemSearched);
+            return itemSearched;            
+        }//if targetName = null or "", then searchbyID else if targetID = -1 then search by Name
 
         public bool IsEmpty()
         {
@@ -138,7 +131,7 @@ namespace OStronghold
             }
             return output;
         }
-
+        
         #endregion
     }//character inventory
 }

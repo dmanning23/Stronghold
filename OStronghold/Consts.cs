@@ -73,6 +73,18 @@ namespace OStronghold
 
         #endregion
 
+        #region ID numbers for inventory
+
+        public static int GOLD_ID = 10000;
+        public static string GOLD_NAME = "Gold";
+        public static double GOLD_WEIGHT = 0.1;
+
+        public static int FOOD_ID = 10001;
+        public static string FOOD_NAME = "Food";
+        public static double FOOD_WEIGHT = 0.1;
+
+        #endregion
+
         #endregion
 
         #region Constructor

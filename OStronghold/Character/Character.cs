@@ -23,7 +23,7 @@ namespace OStronghold
         public CharacterHealth _health; //character health related
         public MyPriorityQueue _characterActions; //character actions
         public CharacterInventory _characterinventory; //character inventory
-        public int _jobID; // job ID , -1 if not working
+        public int _jobID; // job ID , -1 if not working       
 
         #endregion
 
@@ -58,33 +58,27 @@ namespace OStronghold
 
         #region Methods        
 
-        public LinkedList<InventoryItem> getFoodFromInventory()
+        public InventoryItem getFoodFromInventory()
         {
-            LinkedList<InventoryItem> foods = _characterinventory.searchForItemsByName("Food");
-            return (foods);
+            return _characterinventory.searchForItemByID(Consts.FOOD_ID);
         }
 
         public bool eatAction()
         {
-            LinkedList<InventoryItem> foods = _characterinventory.retrieveItemInInventory("Food", -1);
-            if (foods.Count > 0)
+            InventoryItem food = _characterinventory.retrieveItemInInventory(Consts.FOOD_NAME, -1);
+
+            if (food.Quantity > 0)
             {
-                foreach (InventoryItem food in foods)
+                food.DeductQuantity(1);
+                if (food.Quantity == 0)
                 {
-                    if (food.Quantity > 0)
-                    {
-                        food.DeductQuantity(1);
-                        if (food.Quantity == 0)
-                        {
-                            foods.Remove(food);
-                        }
-                        break;
-                    }//if food quantity is greater than 1 then deduct one and put back to inventory
-                    //if food quantity is exactly 1 then food is finished and no need to put back to inventory                                        
+                    _characterinventory.Inventory.Remove(food);
                 }
-                _characterinventory.putInInventory(foods);
+                //if food quantity is greater than 1 then deduct one and put back to inventory
+                //if food quantity is exactly 1 then food is finished and no need to put back to inventory                                        
+                _characterinventory.putInInventory(food);
                 return true;
-            }//there is food
+            }
             else
             {
                 return false;
@@ -92,33 +86,25 @@ namespace OStronghold
             }
         }//character eats , return true if ate , false if not ate
 
-        public void applyForJob(int jobID)
+        public bool applyForJob(int jobID)
         {
             //search if jobID exists
             //check for qualifications for job (minimum requirements?)
             //need confirmation from owner of job.
-            //if all successful - character gets job
-            bool foundJob = false;
-            Job result = null;
+            //if all successful - character gets job     
 
-            foreach (Job job in Program._aStronghold._jobs)
+            foreach (Job job in Program._aStronghold._allJobs) 
             {
-                if (job.JobID == jobID)
+                if (job.JobStatus == Consts.JobStatus.Available && job.JobID == jobID)
                 {
-                    foundJob = true;
-                    result = new Job(job);
-                    break;
-                }
-            }            
-            if (foundJob && result != null) //found the correct job
-            {
-                if (result.JobStatus == Consts.JobStatus.Available)
-                {
-                    this._jobID = result.JobID;
-                    (Program._aStronghold._jobs.Find(result)).Value.JobStatus = Consts.JobStatus.Taken; dfdfd
+                    this._jobID = job.JobID;
+                    job.JobStatus = Consts.JobStatus.Taken;                                                            
+                    job.WorkerID = this._id;
+                    return true;
                 }
             }
-        }//applies for job
+            return false;
+        }//applies for job - true = successfully applied, false = failed to apply
 
         #endregion
 
@@ -126,7 +112,7 @@ namespace OStronghold
 
         public void OnHungryEventHandler(object sender, EventArgs e)
         {
-            if (getFoodFromInventory().Count > 0)
+            if (getFoodFromInventory().Quantity > 0)
             {
                 Gametime finishTime = Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.Eating]._actionDuration;
                 _characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Eating, Consts.actionsData[(int)Consts.characterGeneralActions.Eating]._actionPriority, finishTime));

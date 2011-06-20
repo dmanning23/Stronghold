@@ -17,7 +17,7 @@ namespace OStronghold.Generic
         private Gametime _endDate; //date when job is not relevant anymore
         private Gametime _startTime; //time when character must start to work
         private Gametime _endTime; //time when character stops to work
-        private int _payroll; //amount of money character receives per game tick
+        private int _payroll; //amount of money character receives per starttime to endtime
         private Consts.JobStatus _jobStatus; //status of the Job - taken or available
 
         public int JobID
@@ -26,11 +26,12 @@ namespace OStronghold.Generic
         }
         public int OwnerID
         {
-            get { return _ownerID; }
+            get { return _ownerID; }            
         }        
         public int WorkerID
         {
             get { return _workerID; }
+            set { _workerID = value; }
         }
         public string JobName
         {
@@ -39,10 +40,12 @@ namespace OStronghold.Generic
         public Gametime StartDate
         {
             get { return _startDate; }
+            set { _startDate = value; }
         }
         public Gametime EndDate
         {
             get { return _endDate; }
+            set { _endDate = value; }
         }
         public Gametime StartTime
         {

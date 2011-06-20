@@ -29,10 +29,10 @@ namespace OStronghold
                 Console.WriteLine("----------------------------------------------------------");
                 Console.WriteLine("Game time: " + _gametime.ToString());
                 Console.WriteLine("Stronghold GP: " + _aStronghold.Treasury.Gold);
-                Console.WriteLine("Jobs available: " + _aStronghold._jobs.Count);
+                Console.WriteLine("Jobs available: " + _aStronghold.getAllAvailableJobs().Count);
                 _aStronghold.printJobs();
                 Console.WriteLine();                
-                //_aStronghold.printPopulation();
+                _aStronghold.printPopulation();
                 //_aStronghold.printStrongholdLeader();                
                 //Thread responsible for find Idle Commoners and making them do something.
                 //Thread activateIdleCommonersThread = new Thread(new ThreadStart(_aStronghold.activateIdleCommoners));
