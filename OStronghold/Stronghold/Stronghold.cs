@@ -59,9 +59,9 @@ namespace OStronghold
             //testing out job
             Job job;
             _allJobs = new LinkedList<Job>();
-            for (int i = 1; i <= 10; i++)
+            for (int i = 1; i <= 1; i++)
             {
-                job = new Job(i, 9999, -1, "Farmer#" + i, Program._gametime, Program._gametime + 3600, Program._gametime, Program._gametime + 120, 10, Consts.JobStatus.Available);
+                job = new Job(i, 9999, -1, "Farmer#" + i, Program._gametime, Program._gametime + 3600, new Gametime(0, 8), new Gametime(0, 17), 10, Consts.JobStatus.Available);
                 _allJobs.AddLast(job);
             }
             
@@ -101,10 +101,10 @@ namespace OStronghold
             for (int i = 0; i < _stats.currentPopulation; i++)
             {
                 person = ((Character)_commoners[i]);
-                //foreach (CharacterAction val in person._characterActions)
-                //{
-                //    Console.WriteLine(val.Action + " (" + val.Priority + ") ");
-                //}
+                foreach (CharacterAction val in person._characterActions)
+                {
+                    Console.WriteLine(val.Action + " (" + val.Priority + ") ");
+                }
                 job = searchJobByID(person._jobID);
                 if (job == null)
                 {
@@ -112,7 +112,7 @@ namespace OStronghold
                 }
                 else
                 {
-                    Console.WriteLine(person._name + " is currently " + person._characterActions.Peek().Action + " as a " + job.JobName + " and has " + person._characterinventory.searchForItemByID(Consts.GOLD_ID).Quantity + " Gold.");
+                    Console.WriteLine(person._name + " is currently " + person._characterActions.Peek().Action + " as a " + job.JobName + " and has " + person._characterinventory.searchForItemByID(Consts.GOLD_ID).Quantity + " Gold (" + person._characterActions.Peek().FinishTime + ")");
                 }
             }
         }//Prints in output all the commoner information

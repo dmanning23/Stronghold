@@ -4,7 +4,8 @@
 (00017+)
 - Stronghold -> Add jobs (simulate job and simulate population trying to apply to job, add job experience?) - need to figure out how to do this.
              -> Updated in gametime about jobs (need to determine how person chooses what job to apply for - currently first job in list)
-			 -> Need to change gametime working hours for person
+			 -> Person is working according to job begin end time and finishes work according to begin end date. 
+			 -> Need to add when end date arrives job is not relevant and remove from list of available jobs. simulate with more jobs.
 - Stronghold -> Add shops/buildings (planning + construction phase + hiring people, etc.)
 - Stronghold -> Setup economy with buildings and shops
 - StrongholdLeader -> Autocontrol economy

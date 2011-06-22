@@ -98,8 +98,8 @@ namespace OStronghold
                 if (job.JobStatus == Consts.JobStatus.Available && job.JobID == jobID)
                 {
                     this._jobID = job.JobID;
-                    job.JobStatus = Consts.JobStatus.Taken;                                                            
-                    job.WorkerID = this._id;
+                    job.JobStatus = Consts.JobStatus.Taken;
+                    job.WorkerID = this._id;                    
                     return true;
                 }
             }

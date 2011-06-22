@@ -125,6 +125,21 @@ namespace OStronghold
             return (getTotalHours() * 60);
         }
 
+        public int compareTimeOnly(Gametime targetTime)
+        {
+            int thisTotalMinutes = this._hour * 60 + this._minute;
+            int targetTimeTotalMinutes = targetTime._hour * 60 + targetTime._minute;
+
+            if (thisTotalMinutes == targetTimeTotalMinutes) return 0;
+            else if (thisTotalMinutes > targetTimeTotalMinutes) return -1;
+            else return 1;
+        }//compares the times of the both gametime objects and return 0 if equal, -1 if this object is greater , 1 if targetTime is greater
+
+        public void incOneDay()
+        {
+            Day++;
+        }
+
         public void incXMinutes(int minutes)
         {
             Minute += minutes;
@@ -134,7 +149,7 @@ namespace OStronghold
         private void incOneHour()
         {
             Hour++;            
-        }
+        }        
 
         #endregion
 
@@ -229,10 +244,13 @@ namespace OStronghold
         public void OnGameTickPassedHandler(object sender, EventArgs e)
         {
             Generic.InventoryItem item;
+            Generic.Job job;
+            Character person;
 
             for (int x = 0; x < Program._aStronghold._stats.currentPopulation; x++)
             {
-                Character person = ((Character)Program._aStronghold._commoners[x]);
+                person = ((Character)Program._aStronghold._commoners[x]);
+                job = Program._aStronghold.searchJobByID(person._jobID);
 
                 person._currentActionFinishTime = person._characterActions.Peek().FinishTime;
 
@@ -253,6 +271,19 @@ namespace OStronghold
                             person._bodyneeds.SleepState = Consts.sleepState.Awake;
                             person._bodyneeds.LastSleptTime.CopyGameTime(Program._gametime);
                             person._characterActions.Dequeue();
+                            break;
+                        case Consts.characterGeneralActions.Working:                            
+                            person._characterActions.Dequeue();
+                            item = person._characterinventory.retrieveItemInInventory(null, Consts.GOLD_ID);                            
+                            if (item != null)
+                            {
+                                item.Quantity += job.Payroll;
+                                person._characterinventory.putInInventory(item);
+                            }//person has gold
+                            else
+                            {
+                                person._characterinventory.putInInventory(new Generic.InventoryItem(Consts.GOLD_NAME, Consts.GOLD_ID, Consts.GOLD_WEIGHT, job.Payroll));
+                            }//person doesn't have gold, put gold into inventory                            
                             break;
                     }                    
                 }
@@ -303,23 +334,26 @@ namespace OStronghold
                             }
                         }//person applies for first job in the list
                         else
-                        {
-                            Generic.Job job = Program._aStronghold.searchJobByID(person._jobID);
+                        {                            
                             if (job != null)
                             {
-                                item = person._characterinventory.searchForItemByID(Consts.GOLD_ID);
-                                if (item != null)
+                                if (Program._gametime >= job.StartDate && Program._gametime <= job.EndDate)
                                 {
-                                    item.Quantity += job.Payroll;
-                                    person._characterinventory.putInInventory(item);
-                                }//person has gold
-                                else
-                                {
-                                    person._characterinventory.putInInventory(new Generic.InventoryItem(Consts.GOLD_NAME, Consts.GOLD_ID, Consts.GOLD_WEIGHT, job.Payroll));
-                                }//person doesn't have gold, put gold into inventory
+                                    if (Program._gametime.compareTimeOnly(job.StartTime) <= 0 && //gametime >= job start time
+                                        Program._gametime.compareTimeOnly(job.EndTime) > 0) //gametime <= job end time
+                                    {
+                                        Gametime workTimeRelative = new Gametime(Program._gametime.Day, job.EndTime.Hour, job.EndTime.Minute);
+                                        if (job.EndDate >= workTimeRelative)
+                                        {
+                                            finishTime = workTimeRelative;
+                                        }
+                                        else finishTime = job.EndDate;
+                                        person._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Working, Consts.actionsData[(int)Consts.characterGeneralActions.Working]._actionPriority, finishTime));
+                                    }//gametime is between job start time and end time
+                                }//job position is open                                
                             }//person is already employed
                         }//person already employed or doesn't want to work
-                        #endregion
+                        #endregion                        
                     }
                     else if (person._characterActions.Peek().Action == Consts.characterGeneralActions.Eating)
                     {                            
@@ -328,7 +362,11 @@ namespace OStronghold
                     else if (person._characterActions.Peek().Action == Consts.characterGeneralActions.Sleeping)
                     {
                         //sleeping
-                    }                
+                    }
+                    else if (person._characterActions.Peek().Action == Consts.characterGeneralActions.Working)
+                    {
+                        person._health.staminaUsedThisTick = 10;
+                    }
                 }
 
                 //person health is updated at the end of each tick

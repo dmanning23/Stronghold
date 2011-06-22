@@ -92,10 +92,11 @@ namespace OStronghold
         public Consts()
         {
             actionsData = new actionStruct[(int)Consts.characterGeneralActions.Count];
-            actionsData[(int)Consts.characterGeneralActions.Eating]._actionDuration = 180;
+            actionsData[(int)Consts.characterGeneralActions.Eating]._actionDuration = 60;
             actionsData[(int)Consts.characterGeneralActions.Eating]._actionPriority = 5;
             actionsData[(int)Consts.characterGeneralActions.Sleeping]._actionDuration = 480;
-            actionsData[(int)Consts.characterGeneralActions.Sleeping]._actionPriority = 10;
+            actionsData[(int)Consts.characterGeneralActions.Sleeping]._actionPriority = 10;            
+            actionsData[(int)Consts.characterGeneralActions.Working]._actionPriority = 50;
             actionsData[(int)Consts.characterGeneralActions.Idle]._actionDuration = 0;
             actionsData[(int)Consts.characterGeneralActions.Idle]._actionPriority = 99;
         }

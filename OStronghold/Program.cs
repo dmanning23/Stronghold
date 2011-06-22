@@ -14,7 +14,7 @@ namespace OStronghold
 
         static void Main(string[] args)
         {                       
-            _aStronghold.populate(10);            
+            _aStronghold.populate(1);            
             while (true)
             {
                 TimeSpan _timespan = new TimeSpan(DateTime.Now.Ticks - _gametime.LastGameTick);
@@ -25,7 +25,7 @@ namespace OStronghold
                 }
                 
 
-                Console.Clear();
+                //Console.Clear();
                 Console.WriteLine("----------------------------------------------------------");
                 Console.WriteLine("Game time: " + _gametime.ToString());
                 Console.WriteLine("Stronghold GP: " + _aStronghold.Treasury.Gold);
