@@ -55,6 +55,16 @@ namespace OStronghold.Generic
             _quantity = quantityValue;
         }
 
+        public InventoryItem(InventoryItem target)
+        {
+            this._name = String.Copy(target.Name);
+            this._id = target.ID;
+            this._weight = target.Weight;
+            this._quantity = target.Quantity;
+        }
+
+        #region Methods
+
         public void DeductQuantity(int amount)
         {
             if (_quantity - amount < 0)
@@ -63,8 +73,6 @@ namespace OStronghold.Generic
             }
             _quantity -= amount;
         }
-
-        #region Methods
 
         #endregion
 

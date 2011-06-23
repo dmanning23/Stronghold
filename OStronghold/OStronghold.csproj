@@ -56,6 +56,8 @@
     <Compile Include="Consts.cs" />
     <Compile Include="Gametime.cs" />
     <Compile Include="Generic\Building.cs" />
+    <Compile Include="Generic\BuildingForLiving.cs" />
+    <Compile Include="Generic\BuildingForTrade.cs" />
     <Compile Include="Generic\InventoryItem.cs" />
     <Compile Include="Generic\Job.cs" />
     <Compile Include="Generic\MyPriorityQueue.cs" />

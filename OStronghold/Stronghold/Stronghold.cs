@@ -11,12 +11,7 @@ namespace OStronghold
     public class Stronghold
     {
         #region Members
-
-        public struct strongholdBuildings
-        {
-            
-        }//Stronghold buildings
-
+        
         private Treasury _treasury;
 
         public struct strongholdStats 
@@ -26,7 +21,7 @@ namespace OStronghold
 
         public strongholdStats _stats; //number of people currently living in Stronghold
         public Hashtable _commoners; //hashtable to hold the commoners themselves
-        public strongholdBuildings _buildings;
+        LinkedList<LinkedList<Building>> _buildingsList; //list of buildings (each node contains a building type plus quantity)
         public StrongholdLeader _leader;
         public Treasury Treasury
         {
@@ -64,6 +59,10 @@ namespace OStronghold
                 job = new Job(i, 9999, -1, "Farmer#" + i, Program._gametime, Program._gametime + Consts.rand.Next(0, 3600), new Gametime(0, Consts.rand.Next(0, 8)), new Gametime(0, Consts.rand.Next(12, 23)), Consts.rand.Next(1, 15), Consts.JobStatus.Available);
                 _allJobs.AddLast(job);
             }
+
+            //buildings
+            _buildingsList = new LinkedList<LinkedList<Building>>();
+            
             
                         
         }//Constructor

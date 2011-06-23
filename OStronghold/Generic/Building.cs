@@ -11,12 +11,37 @@ namespace OStronghold.Generic
 
         private string _name; //name of building
         private Status _hp; //hp of buildling
-        private int _cost; //cost to build building for each level
-        private int _level; //level of building
-        private Gametime startBuildTime; //timestamp of when started to build
-        private Gametime endBuildTime; //timestamp of when building finish
-        private LinkedList<Job> _jobs; //list of jobs the building offers
-        private LinkedList<InventoryItem> _inventory; //building's inventory (list of goods)
+        private int _costToBuild; //cost to build building for each level
+        private Status _level; //level of building
+        private Gametime _startBuildTime; //timestamp of when started to build
+        private Gametime _endBuildTime; //timestamp of when building finish
+
+
+        public string Name
+        {
+            get { return _name; }
+        }
+        public Status HP
+        {
+            get { return _hp; }
+        }
+        public int CostToBuild
+        {
+            get { return _costToBuild; }
+        }
+        public Status Level
+        {
+            get { return _level; }
+        }
+        public Gametime StartBuildTime
+        {
+            get { return _startBuildTime; }
+        }
+        public Gametime EndBuildTime
+        {
+            get { return _endBuildTime; }
+        }
+
 
         #endregion
 
@@ -24,7 +49,18 @@ namespace OStronghold.Generic
 
         public Building()
         {
-        }               
+        }
+
+        public Building(string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
+                        Gametime endBuildTimeValue)
+        {
+            _name = String.Copy(nameValue);
+            _hp.Clone(hpValue);
+            _costToBuild = costToBuildValue;
+            _level = levelValue;
+            _startBuildTime.CopyGameTime(startBuildTimeValue);
+            _endBuildTime.CopyGameTime(endBuildTimeValue);
+        }
 
         #endregion
 

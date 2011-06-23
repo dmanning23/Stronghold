@@ -2,7 +2,7 @@
 ========================================
 [doing]
 (00018+)
-- Stronghold -> Add buildings
+- Stronghold -> Add buildings (2 dimension linklist??)
 
 [to do]
 - Game -> Add load/save
@@ -31,6 +31,8 @@
 - Foods has satiety rate
 ====================================================================================================
 (update)  [notes]
+(00018+)- Added Day event
+        - Added Building types Class (BuildingForLiving, BuildlingForTrade)
 (00018) - Modified Gametick to include Job and job time relevance.
         - Modified Gametick to randomize commoner update.
 (00017) - Added StrongholdLeader class.

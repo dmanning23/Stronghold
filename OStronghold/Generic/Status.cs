@@ -46,12 +46,32 @@ namespace OStronghold.Generic
         public Status(int beginningValue)
         {            
             _max = beginningValue;
-            _current = _max;
-            
+            _current = _max;            
+        }
+
+        public Status(int currentValue, int maxValue)
+        {
+            _current = currentValue;
+            _max = maxValue;
+        }
+
+
+        public Status(Status target)
+        {
+            Clone(target);
         }
 
         #endregion
 
+        #region Methods
+
+        public void Clone(Status targetStatus)
+        {
+            this.Current = targetStatus.Current;
+            this.Max = targetStatus.Max;
+        }
+
+        #endregion
 
     }//status class
 }

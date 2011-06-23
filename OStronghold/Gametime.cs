@@ -70,6 +70,7 @@ namespace OStronghold
             _lastgametick = DateTime.Now.Ticks;
             _gametickPassedEvent += this.OnGameTickPassedHandler;
             _anHourPassedEvent += this.OnHourPassedEventHandler;
+            _aDayPassedEvent += this.OnDayPassedEventHandler;
         }        
 
         public Gametime(int dayvalue, int hourvalue)
@@ -80,6 +81,7 @@ namespace OStronghold
             Hour = hourvalue;
             _anHourPassedEvent += this.OnHourPassedEventHandler;
             _gametickPassedEvent += this.OnGameTickPassedHandler;
+            _aDayPassedEvent += this.OnDayPassedEventHandler;
         }
 
         public Gametime(int minvalue)
@@ -88,6 +90,7 @@ namespace OStronghold
             Minute = minvalue;//automatically updates the day value in the hour encapsulation
             _anHourPassedEvent += this.OnHourPassedEventHandler;
             _gametickPassedEvent += this.OnGameTickPassedHandler;
+            _aDayPassedEvent += this.OnDayPassedEventHandler;
         }
 
         public Gametime(int dayvalue, int hourvalue, int minutevalue)
@@ -98,6 +101,7 @@ namespace OStronghold
             Hour = hourvalue;
             _anHourPassedEvent += this.OnHourPassedEventHandler;
             _gametickPassedEvent += this.OnGameTickPassedHandler;
+            _aDayPassedEvent += this.OnDayPassedEventHandler;
         }
 
         public Gametime(Gametime target)
@@ -233,6 +237,9 @@ namespace OStronghold
 
         public delegate void hourPassedHandler(object sender, EventArgs e);
         public event hourPassedHandler _anHourPassedEvent;
+
+        public delegate void dayPassedHandler(object sender, EventArgs e);
+        public event dayPassedHandler _aDayPassedEvent;
 
         protected virtual void OnGameTickPassed(System.EventArgs e)
         {
@@ -414,6 +421,19 @@ namespace OStronghold
         {
             
         }//every hour passed must perform actions       
+
+        protected virtual void OnDayPassed(System.EventArgs e)
+        {
+            if (_aDayPassedEvent != null)
+            {
+                _aDayPassedEvent(this, e);
+            }
+        }
+
+        public void OnDayPassedEventHandler(object sender, EventArgs e)
+        {
+
+        }//every day passed must perform actions       
         #endregion
     }//game time
 }
