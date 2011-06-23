@@ -59,9 +59,9 @@ namespace OStronghold
             //testing out job
             Job job;
             _allJobs = new LinkedList<Job>();
-            for (int i = 1; i <= 1; i++)
+            for (int i = 1; i <= 5; i++)
             {
-                job = new Job(i, 9999, -1, "Farmer#" + i, Program._gametime, Program._gametime + 3600, new Gametime(0, 8), new Gametime(0, 17), 10, Consts.JobStatus.Available);
+                job = new Job(i, 9999, -1, "Farmer#" + i, Program._gametime, Program._gametime + Consts.rand.Next(0, 3600), new Gametime(0, Consts.rand.Next(0, 8)), new Gametime(0, Consts.rand.Next(12, 23)), Consts.rand.Next(1, 15), Consts.JobStatus.Available);
                 _allJobs.AddLast(job);
             }
             
@@ -101,10 +101,10 @@ namespace OStronghold
             for (int i = 0; i < _stats.currentPopulation; i++)
             {
                 person = ((Character)_commoners[i]);
-                foreach (CharacterAction val in person._characterActions)
-                {
-                    Console.WriteLine(val.Action + " (" + val.Priority + ") ");
-                }
+                //foreach (characteraction val in person._characteractions)
+                //{
+                //    console.writeline(val.action + " (" + val.priority + ") ");
+                //}
                 job = searchJobByID(person._jobID);
                 if (job == null)
                 {
@@ -126,7 +126,10 @@ namespace OStronghold
         {
             foreach (Job job in _allJobs)
             {
-                Console.WriteLine("Name: " + job.JobName + " Status: " + job.JobStatus + " Payroll: " + job.Payroll);
+                if (job.JobStatus == Consts.JobStatus.Available)
+                {
+                    Console.WriteLine("Name: " + job.JobName + " Status: " + job.JobStatus + " Payroll: " + job.Payroll + " End date: " + job.EndDate);
+                }
             }
         }
 

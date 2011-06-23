@@ -75,20 +75,24 @@ namespace OStronghold.Generic
 
         public Job(int jobID, int ownerID, int workerID, string jobName, Gametime startDate, Gametime endDate, Gametime startTime, Gametime endTime, int payroll, Consts.JobStatus jobStatus)
         {
-            _jobID = jobID;
-            _ownerID = ownerID;
-            _workerID = workerID;
-            _jobName = String.Copy(jobName);
-            _startDate = new Gametime();
-            _startDate.CopyGameTime(startDate);
-            _endDate = new Gametime();
-            _endDate.CopyGameTime(endDate);
-            _startTime = new Gametime();
-            _startTime.CopyGameTime(startTime);
-            _endTime = new Gametime();
-            _endTime.CopyGameTime(endTime);
-            _payroll = payroll;
-            _jobStatus = jobStatus;
+            if (startDate <= endDate &&
+                startTime <= endTime)
+            {
+                _jobID = jobID;
+                _ownerID = ownerID;
+                _workerID = workerID;
+                _jobName = String.Copy(jobName);
+                _startDate = new Gametime();
+                _startDate.CopyGameTime(startDate);
+                _endDate = new Gametime();
+                _endDate.CopyGameTime(endDate);
+                _startTime = new Gametime();
+                _startTime.CopyGameTime(startTime);
+                _endTime = new Gametime();
+                _endTime.CopyGameTime(endTime);
+                _payroll = payroll;
+                _jobStatus = jobStatus;
+            }
         }
 
         public Job(Job targetJob)

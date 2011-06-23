@@ -1,14 +1,8 @@
 ﻿Stronghold - Simcity/Arena-like RPG game
 ========================================
 [doing]
-(00017+)
-- Stronghold -> Add jobs (simulate job and simulate population trying to apply to job, add job experience?) - need to figure out how to do this.
-             -> Updated in gametime about jobs (need to determine how person chooses what job to apply for - currently first job in list)
-			 -> Person is working according to job begin end time and finishes work according to begin end date. 
-			 -> Need to add when end date arrives job is not relevant and remove from list of available jobs. simulate with more jobs.
+(00018+)
 - Stronghold -> Add shops/buildings (planning + construction phase + hiring people, etc.)
-- Stronghold -> Setup economy with buildings and shops
-- StrongholdLeader -> Autocontrol economy
 
 [to do]
 - Character -> Add location for Character (Area class) -> walking action
@@ -17,6 +11,9 @@
 - Stronghold -> Add list for all population (includes commoners AND stronghold leader for example) - since SHleader doesn't get hungry now.
 - Stronghold -> Start populating characters in Stronghold and create daily life routines.
 - Stronghold -> Add Arena for battles
+- Stronghold -> Setup economy with buildings and shops
+- Stronghold -> Need to think about multiple job applicants (job experience?)
+- StrongholdLeader -> Autocontrol economy
 - CharacterMindSet -> Enhance character mindset thinking into effects.
 - InventoryItem -> Add Categories for Items
 - Classes - Add classes (i.e: Fighter, Mage, Priest, Thief)
@@ -33,6 +30,8 @@
 - Foods has satiety rate
 ====================================================================================================
 (update)  [notes]
+(00018) - Modified Gametick to include Job and job time relevance.
+        - Modified Gametick to randomize commoner update.
 (00017) - Added StrongholdLeader class.
         - Added Status Class (Generic).
         - Added Job Class (Generic).

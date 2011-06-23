@@ -69,7 +69,7 @@ namespace OStronghold
 
         #region job related
 
-        public enum JobStatus { Available, Taken };
+        public enum JobStatus { Available, Taken , Closed};
 
         #endregion
 

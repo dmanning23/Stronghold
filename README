@@ -1,14 +1,40 @@
 Stronghold - a Simcity/Arena-like RPG game.
-Copyright 2011
+Copyright 2011 , version 1.0
 
 Table of Contents
 =================
 1. Background
-2. Character
-3. Treasury
+2. Stronghold (macro)
+3. Character (micro)
+4. Economy
+5. Fighting
+6. Buildings
 
+1. Background
+-------------
+Kaliet fled his royal parents when he was only in his youths in order to pursue adventure and challenges. He came up an abandoned fortress destroyed in the previous Lost Wars. After persuading several of his loyal followers, they renovated the fortress and named it Stronghold.
+You, along with the rest of the loyal followers, came to Stronghold to live a new life and try to become something of yourself. You start of as one of the small commoners in Stronghold trying to struggle to live the very basic life. As time progresses, you will be able to earn money and fame through trading and fighting. Eventually your ultimate goal will be to take control of Stronghold and rule the lands.
 
+2. Stronghold (macro)
+---------------------
+Stronghold is a fortress where Lord Kaliet found during his early youth years. Along with him came several loyals that believed in Lord Kaliet and serve him wherever he goes. 
+In the start, Stronghold consists of only very basic buildings:
+	- Lord Kaliet's keep
+	- Wall	
 
-2. Character
+3. Character (micro)
+--------------------
+
+4. Economy
+----------
+
+5. Fighting
+-----------
+
+6. Buildings
 ------------
-The actual population of Stronghold is represented by Characters. These characters (NPCs) are controlled automatically by the game AI and decide what is best for them. They act exactly like normal people. They need to eat, sleep and each even have a personality of their own. They will act and behave according to what they believe in - even to the death.
+6.1 Lord Kaliet's keep (Level 1)
+	This keep is where the Lord of Stronghold confines (Lord Kaliet in the start of the game). The Stronghold treasury resides in the keep to avoid looting and theft.
+
+6.2 Wall (Level 1)
+	A very simple wall to separate wild animals from the people living in Stronghold.

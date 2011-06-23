@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Collections;
 
 namespace OStronghold
 {
@@ -243,13 +244,31 @@ namespace OStronghold
 
         public void OnGameTickPassedHandler(object sender, EventArgs e)
         {
+            LinkedList<int> numberLinkList = new LinkedList<int>();
+            int[] commonerUpdateOrder = new int[Program._aStronghold._commoners.Count];
+            int index;
             Generic.InventoryItem item;
             Generic.Job job;
             Character person;
 
+            //create commonerUpdateOrderArray
+            for (int x = 0; x < Program._aStronghold._commoners.Count; x++)
+            {
+                numberLinkList.AddLast(x);
+            }//build the link list so we can randomize off it.
+
+            for (int x = 0; x < Program._aStronghold._commoners.Count; x++)
+            {
+                index = Consts.rand.Next(0, numberLinkList.Count);
+                commonerUpdateOrder[x] = numberLinkList.ElementAt(index);
+                numberLinkList.Remove(commonerUpdateOrder[x]);
+            }//picking randomly from numberlist and populating the order in the array 
+            //-
+
+
             for (int x = 0; x < Program._aStronghold._stats.currentPopulation; x++)
             {
-                person = ((Character)Program._aStronghold._commoners[x]);
+                person = ((Character)Program._aStronghold._commoners[commonerUpdateOrder[x]]); //goes through commoner order list
                 job = Program._aStronghold.searchJobByID(person._jobID);
 
                 person._currentActionFinishTime = person._characterActions.Peek().FinishTime;
@@ -273,7 +292,7 @@ namespace OStronghold
                             person._characterActions.Dequeue();
                             break;
                         case Consts.characterGeneralActions.Working:                            
-                            person._characterActions.Dequeue();
+                            person._characterActions.Dequeue();                            
                             item = person._characterinventory.retrieveItemInInventory(null, Consts.GOLD_ID);                            
                             if (item != null)
                             {
@@ -283,7 +302,7 @@ namespace OStronghold
                             else
                             {
                                 person._characterinventory.putInInventory(new Generic.InventoryItem(Consts.GOLD_NAME, Consts.GOLD_ID, Consts.GOLD_WEIGHT, job.Payroll));
-                            }//person doesn't have gold, put gold into inventory                            
+                            }//person doesn't have gold, put gold into inventory        
                             break;
                     }                    
                 }
@@ -337,7 +356,7 @@ namespace OStronghold
                         {                            
                             if (job != null)
                             {
-                                if (Program._gametime >= job.StartDate && Program._gametime <= job.EndDate)
+                                if (Program._gametime >= job.StartDate && Program._gametime < job.EndDate)
                                 {
                                     if (Program._gametime.compareTimeOnly(job.StartTime) <= 0 && //gametime >= job start time
                                         Program._gametime.compareTimeOnly(job.EndTime) > 0) //gametime <= job end time
@@ -350,7 +369,12 @@ namespace OStronghold
                                         else finishTime = job.EndDate;
                                         person._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Working, Consts.actionsData[(int)Consts.characterGeneralActions.Working]._actionPriority, finishTime));
                                     }//gametime is between job start time and end time
-                                }//job position is open                                
+                                }//job position is open     
+                                else
+                                {
+                                    Program._aStronghold._allJobs.Find(job).Value.JobStatus = Consts.JobStatus.Closed;
+                                    person._jobID = -1;
+                                }//job is no longer available - taken off the market
                             }//person is already employed
                         }//person already employed or doesn't want to work
                         #endregion                        

@@ -14,7 +14,7 @@ namespace OStronghold
 
         static void Main(string[] args)
         {                       
-            _aStronghold.populate(1);            
+            _aStronghold.populate(5);            
             while (true)
             {
                 TimeSpan _timespan = new TimeSpan(DateTime.Now.Ticks - _gametime.LastGameTick);
@@ -33,6 +33,18 @@ namespace OStronghold
                 _aStronghold.printJobs();
                 Console.WriteLine();                
                 _aStronghold.printPopulation();
+
+                if (_gametime.Hour == 0)
+                {
+                    int end = Consts.rand.Next(1, 5);
+                    for (int i = 0; i < end; i++)
+                    {
+                        int jobId = _aStronghold._allJobs.Count + 1;
+                        Generic.Job job = new Generic.Job(jobId, 9999, -1, "Farmer#" + jobId, Program._gametime, Program._gametime + Consts.rand.Next(0, 3600), new Gametime(0, Consts.rand.Next(0, 8)), new Gametime(0, Consts.rand.Next(12, 23)), Consts.rand.Next(1, 15), Consts.JobStatus.Available);
+                        _aStronghold._allJobs.AddLast(job);
+                    }
+                }
+
                 //_aStronghold.printStrongholdLeader();                
                 //Thread responsible for find Idle Commoners and making them do something.
                 //Thread activateIdleCommonersThread = new Thread(new ThreadStart(_aStronghold.activateIdleCommoners));
