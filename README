@@ -34,7 +34,15 @@ In the start, Stronghold consists of only very basic buildings:
 6. Buildings
 ------------
 6.1 Lord Kaliet's keep (Level 1)
-	This keep is where the Lord of Stronghold confines (Lord Kaliet in the start of the game). The Stronghold treasury resides in the keep to avoid looting and theft.
+This keep is where the Lord of Stronghold confines (Lord Kaliet in the start of the game). The Stronghold treasury resides in the keep to avoid looting and theft. Game ends when Lord Kaliet's keep is destroyed.
+
+Category: Stronghold
+HP: 5000
 
 6.2 Wall (Level 1)
-	A very simple wall to separate wild animals from the people living in Stronghold.
+A very simple wall to separate wild animals from the people living in Stronghold.
+
+Category: Defense
+HP: 25
+
+6.3 Hut (Level 1)

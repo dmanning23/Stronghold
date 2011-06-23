@@ -2,9 +2,10 @@
 ========================================
 [doing]
 (00018+)
-- Stronghold -> Add shops/buildings (planning + construction phase + hiring people, etc.)
+- Stronghold -> Add buildings
 
 [to do]
+- Game -> Add load/save
 - Character -> Add location for Character (Area class) -> walking action
 - Character -> Add attributes (i.e: Strength, Intelligence, etc.)
 - Character -> Add level (how level up affect stats)
