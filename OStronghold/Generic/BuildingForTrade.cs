@@ -30,9 +30,9 @@ namespace OStronghold.Generic
         {
         }
 
-        public BuildingForTrade(string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
+        public BuildingForTrade(int idValue, string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
                                 Gametime endBuildTimeValue, LinkedList<Job> jobsList, LinkedList<InventoryItem> inventoryList)
-            : base(nameValue, hpValue, costToBuildValue, levelValue, startBuildTimeValue, endBuildTimeValue)
+            : base(idValue, nameValue, hpValue, costToBuildValue, levelValue, startBuildTimeValue, endBuildTimeValue)
         {
             Job tempJob;
             foreach (Job job in jobsList)

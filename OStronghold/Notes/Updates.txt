@@ -6,6 +6,7 @@
 
 [to do]
 - Game -> Add load/save
+- Game -> Move constants in code to xml files
 - Character -> Add location for Character (Area class) -> walking action
 - Character -> Add attributes (i.e: Strength, Intelligence, etc.)
 - Character -> Add level (how level up affect stats)

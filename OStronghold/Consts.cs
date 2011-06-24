@@ -63,7 +63,7 @@ namespace OStronghold
 
         #region building related
 
-        public enum BuildingTypes { Equipment };
+        
 
         #endregion
 
@@ -73,17 +73,30 @@ namespace OStronghold
 
         #endregion
 
-        #region ID numbers for inventory
+        #region ID numbers reserved (1-99)
+        #endregion
+        #region ID numbers for buildings (100 -> 500)
 
-        public static int GOLD_ID = 10000;
+        public static int HUT_ID = 100;
+        public static string HUT_NAME = "Hut";
+        public static OStronghold.Generic.Status HUT_HP;
+        public static int HUT_COSTTOBUILD = 25;
+        public static int HUT_MAXLEVEL = 5;
+
+        #endregion
+        #region ID numbers for inventory (1000 -> 5000)
+
+        public static int GOLD_ID = 1000;
         public static string GOLD_NAME = "Gold";
         public static double GOLD_WEIGHT = 0.1;
 
-        public static int FOOD_ID = 10001;
+        public static int FOOD_ID = 1001;
         public static string FOOD_NAME = "Food";
         public static double FOOD_WEIGHT = 0.1;
 
         #endregion
+
+        
 
         #endregion
 
@@ -99,6 +112,8 @@ namespace OStronghold
             actionsData[(int)Consts.characterGeneralActions.Working]._actionPriority = 50;
             actionsData[(int)Consts.characterGeneralActions.Idle]._actionDuration = 0;
             actionsData[(int)Consts.characterGeneralActions.Idle]._actionPriority = 99;
+
+            HUT_HP = new Generic.Status(100);
         }
 
         #endregion

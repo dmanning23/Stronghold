@@ -17,9 +17,9 @@ namespace OStronghold.Generic
 
         #region Constructor
 
-        public BuildingForLiving(string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
+        public BuildingForLiving(int idValue, string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
                                  Gametime endBuildTimeValue, Status tenantsValue)
-            : base(nameValue, hpValue, costToBuildValue, levelValue, startBuildTimeValue, endBuildTimeValue)
+            : base(idValue, nameValue, hpValue, costToBuildValue, levelValue, startBuildTimeValue, endBuildTimeValue)
         {
             Tenants.Clone(tenantsValue);
         }

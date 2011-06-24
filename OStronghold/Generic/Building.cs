@@ -9,6 +9,7 @@ namespace OStronghold.Generic
     {
         #region Members       
 
+        private int _id; //building id
         private string _name; //name of building
         private Status _hp; //hp of buildling
         private int _costToBuild; //cost to build building for each level
@@ -17,6 +18,10 @@ namespace OStronghold.Generic
         private Gametime _endBuildTime; //timestamp of when building finish
 
 
+        public int ID
+        {
+            get { return _id; }
+        }
         public string Name
         {
             get { return _name; }
@@ -51,9 +56,10 @@ namespace OStronghold.Generic
         {
         }
 
-        public Building(string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
+        public Building(int idValue, string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
                         Gametime endBuildTimeValue)
         {
+            _id = idValue;
             _name = String.Copy(nameValue);
             _hp.Clone(hpValue);
             _costToBuild = costToBuildValue;

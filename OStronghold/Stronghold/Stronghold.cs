@@ -62,8 +62,8 @@ namespace OStronghold
 
             //buildings
             _buildingsList = new LinkedList<LinkedList<Building>>();
-            
-            
+
+            BuildingForLiving hut = new BuildingForLiving(Consts.HUT_ID, Consts.HUT_NAME, Consts.HUT_HP, Consts.HUT_COSTTOBUILD, new Status(1, Consts.HUT_MAXLEVEL), Program._gametime, Program._gametime, new Status(0, 10));
                         
         }//Constructor
 
