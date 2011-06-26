@@ -61,11 +61,11 @@ namespace OStronghold.Generic
         {
             _id = idValue;
             _name = String.Copy(nameValue);
-            _hp.Clone(hpValue);
+            _hp = new Status(hpValue);            
             _costToBuild = costToBuildValue;
-            _level = levelValue;
-            _startBuildTime.CopyGameTime(startBuildTimeValue);
-            _endBuildTime.CopyGameTime(endBuildTimeValue);
+            _level = new Status(levelValue);
+            _startBuildTime = new Gametime(startBuildTimeValue);
+            _endBuildTime = new Gametime(endBuildTimeValue);            
         }
 
         #endregion

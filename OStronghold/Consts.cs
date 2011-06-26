@@ -96,8 +96,6 @@ namespace OStronghold
 
         #endregion
 
-        
-
         #endregion
 
         #region Constructor
@@ -114,6 +112,15 @@ namespace OStronghold
             actionsData[(int)Consts.characterGeneralActions.Idle]._actionPriority = 99;
 
             HUT_HP = new Generic.Status(100);
+        }
+
+        #endregion
+
+        #region Methods
+
+        public static void printMessage(string message)
+        {
+            Console.WriteLine(message);
         }
 
         #endregion

@@ -1,7 +1,8 @@
 ﻿Stronghold - Simcity/Arena-like RPG game
 ========================================
 [doing]
-(00018+)
+(00019)
+- Game -> Continue with debug menu
 - Stronghold -> Add buildings (2 dimension linklist??)
 
 [to do]
@@ -32,6 +33,7 @@
 - Foods has satiety rate
 ====================================================================================================
 (update)  [notes]
+(00019) - Added debug menu for Console
 (00018+)- Added Day event
         - Added Building types Class (BuildingForLiving, BuildlingForTrade)
 (00018) - Modified Gametick to include Job and job time relevance.

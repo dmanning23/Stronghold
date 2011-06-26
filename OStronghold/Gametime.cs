@@ -259,7 +259,7 @@ namespace OStronghold
             Character person;
 
             //create commonerUpdateOrderArray
-            for (int x = 0; x < Program._aStronghold._commoners.Count; x++)
+            for (int x = 1; x <= Program._aStronghold._commoners.Count; x++)
             {
                 numberLinkList.AddLast(x);
             }//build the link list so we can randomize off it.
@@ -273,7 +273,7 @@ namespace OStronghold
             //-
 
 
-            for (int x = 0; x < Program._aStronghold._stats.currentPopulation; x++)
+            for (int x = 0; x < Program._aStronghold._commoners.Count; x++)
             {
                 person = ((Character)Program._aStronghold._commoners[commonerUpdateOrder[x]]); //goes through commoner order list
                 job = Program._aStronghold.searchJobByID(person._jobID);

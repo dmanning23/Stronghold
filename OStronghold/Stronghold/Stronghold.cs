@@ -14,14 +14,8 @@ namespace OStronghold
         
         private Treasury _treasury;
 
-        public struct strongholdStats 
-        {
-            public int currentPopulation;            
-        } //Statistics for Stronghold
-
-        public strongholdStats _stats; //number of people currently living in Stronghold
         public Hashtable _commoners; //hashtable to hold the commoners themselves
-        LinkedList<LinkedList<Building>> _buildingsList; //list of buildings (each node contains a building type plus quantity)
+        public LinkedList<Building> _buildingsList; //list of buildings (each node contains a building type plus quantity)
         public StrongholdLeader _leader;
         public Treasury Treasury
         {
@@ -29,13 +23,13 @@ namespace OStronghold
         }
         public LinkedList<Job> _allJobs;
 
+
         #endregion
 
         #region Constructor
 
         public Stronghold()
-        {
-            _stats.currentPopulation = 0;            
+        {            
             _commoners = new Hashtable();
             _treasury = new Treasury(100);
             _leader = new StrongholdLeader();
@@ -49,7 +43,7 @@ namespace OStronghold
             _leader._health.defineHP(50, 0);
             _leader._health.defineStamina(100, 1);
             _leader._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Idle, Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionPriority, Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionDuration));
-            _leader._characterinventory.putInInventory(new Generic.InventoryItem(Consts.FOOD_NAME, Consts.FOOD_ID, Consts.FOOD_WEIGHT, 10));
+            _leader._characterinventory.putInInventory(new Generic.InventoryItem(Consts.FOOD_NAME, Consts.FOOD_ID, Consts.FOOD_WEIGHT, 10));            
 
             //testing out job
             Job job;
@@ -61,10 +55,10 @@ namespace OStronghold
             }
 
             //buildings
-            _buildingsList = new LinkedList<LinkedList<Building>>();
+            _buildingsList = new LinkedList<Building>();
 
-            BuildingForLiving hut = new BuildingForLiving(Consts.HUT_ID, Consts.HUT_NAME, Consts.HUT_HP, Consts.HUT_COSTTOBUILD, new Status(1, Consts.HUT_MAXLEVEL), Program._gametime, Program._gametime, new Status(0, 10));
-                        
+            
+                       
         }//Constructor
 
         #endregion
@@ -73,22 +67,23 @@ namespace OStronghold
 
         public void populate(int numberofCommonersToProduce)
         {
-            for (int i = 0; i < numberofCommonersToProduce; i++)
+            int count = _commoners.Count;
+            for (int i = count + 1; i < count + 1 + numberofCommonersToProduce; i++)
             {
                 Character commoner = new Character();
-                commoner._id = _stats.currentPopulation;
+                commoner._id = i;
                 commoner._name = "P#" + commoner._id;
-                commoner._age = 18;                
+                commoner._age = 18;
                 commoner._bodyneeds.HungerState = Consts.hungerState.Full;
                 commoner._bodyneeds.SleepState = Consts.sleepState.Awake;
-                commoner._health.defineHP(20,0);
-                commoner._health.defineStamina(100,1);
+                commoner._health.defineHP(20, 0);
+                commoner._health.defineStamina(100, 1);
                 commoner._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Idle, Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionPriority, Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionDuration));
                 commoner._characterinventory.putInInventory(new Generic.InventoryItem(Consts.FOOD_NAME, Consts.FOOD_ID, Consts.FOOD_WEIGHT, 10));
                 commoner._characterinventory.putInInventory(new Generic.InventoryItem(Consts.GOLD_NAME, Consts.GOLD_ID, Consts.GOLD_WEIGHT, 50));
 
-                _commoners.Add(_stats.currentPopulation, commoner);                
-                _stats.currentPopulation++;                
+                _commoners.Add(commoner._id, commoner);
+
             }
         }//Populating by giving birth to x people
 
@@ -96,29 +91,39 @@ namespace OStronghold
         {
             Character person = new Character();
             Job job;
-                        
-            for (int i = 0; i < _stats.currentPopulation; i++)
+
+            for (int i = 0; i < _commoners.Count; i++)
             {
                 person = ((Character)_commoners[i]);
                 //foreach (characteraction val in person._characteractions)
                 //{
-                //    console.writeline(val.action + " (" + val.priority + ") ");
+                //    Consts.printMessage(val.action + " (" + val.priority + ") ");
                 //}
                 job = searchJobByID(person._jobID);
                 if (job == null)
                 {
-                    Console.WriteLine(person._name + " is currently "+ person._characterActions.Peek().Action +" and has " + person._characterinventory.searchForItemByID(Consts.GOLD_ID).Quantity + " Gold.");
+                    Consts.printMessage(person._name + " is currently " + person._characterActions.Peek().Action + " and has " + person._characterinventory.searchForItemByID(Consts.GOLD_ID).Quantity + " Gold.");
                 }
                 else
                 {
-                    Console.WriteLine(person._name + " is currently " + person._characterActions.Peek().Action + " as a " + job.JobName + " and has " + person._characterinventory.searchForItemByID(Consts.GOLD_ID).Quantity + " Gold (" + person._characterActions.Peek().FinishTime + ")");
+                    Consts.printMessage(person._name + " is currently " + person._characterActions.Peek().Action + " as a " + job.JobName + " and has " + person._characterinventory.searchForItemByID(Consts.GOLD_ID).Quantity + " Gold (" + person._characterActions.Peek().FinishTime + ")");
                 }
             }
         }//Prints in output all the commoner information
 
-        public void printStrongholdLeader()
+        public void printPerson(int ID)
         {
-            Console.WriteLine(_leader._name + " (" + _leader._health.hp.Current + "|" + _leader._health.stamina.Current + ") is " + _leader._characterActions.Peek().Action + " and " + _leader._bodyneeds.HungerState + " and " + _leader._bodyneeds.LastAteTime + " has: " + _leader._characterinventory.ToString());
+            Character person = ((Character)_commoners[ID]);
+            Job job = searchJobByID(person._jobID);
+
+            if (job == null)
+            {
+                Consts.printMessage(person._name + " is currently " + person._characterActions.Peek().Action + " and has " + person._characterinventory.searchForItemByID(Consts.GOLD_ID).Quantity + " Gold.");
+            }
+            else
+            {
+                Consts.printMessage(person._name + " is currently " + person._characterActions.Peek().Action + " as a " + job.JobName + " and has " + person._characterinventory.searchForItemByID(Consts.GOLD_ID).Quantity + " Gold (" + person._characterActions.Peek().FinishTime + ")");
+            }
         }
 
         public void printJobs()
@@ -127,7 +132,7 @@ namespace OStronghold
             {
                 if (job.JobStatus == Consts.JobStatus.Available)
                 {
-                    Console.WriteLine("Name: " + job.JobName + " Status: " + job.JobStatus + " Payroll: " + job.Payroll + " End date: " + job.EndDate);
+                    Consts.printMessage("Name: " + job.JobName + " Status: " + job.JobStatus + " Payroll: " + job.Payroll + " End date: " + job.EndDate);
                 }
             }
         }
@@ -159,6 +164,30 @@ namespace OStronghold
                 }
             }
             return list;
+        }
+
+        public void doSomething()
+        {
+
+            //Console.Clear();
+            //Consts.printMessage("----------------------------------------------------------");
+            //Consts.printMessage("Game time: " + Program._gametime.ToString());
+            //Consts.printMessage("Stronghold GP: " + Program._aStronghold.Treasury.Gold);
+            //Consts.printMessage("Jobs available: " + Program._aStronghold.getAllAvailableJobs().Count);
+            //Program._aStronghold.printJobs();
+            //Consts.printMessage();
+            //Program._aStronghold.printPopulation();
+
+            if (Program._gametime.Hour == 0)
+            {
+                int end = Consts.rand.Next(1, 5);
+                for (int i = 0; i < end; i++)
+                {
+                    int jobId = Program._aStronghold._allJobs.Count + 1;
+                    Generic.Job job = new Generic.Job(jobId, 9999, -1, "Farmer#" + jobId, Program._gametime, Program._gametime + Consts.rand.Next(0, 3600), new Gametime(0, Consts.rand.Next(0, 8)), new Gametime(0, Consts.rand.Next(12, 23)), Consts.rand.Next(1, 15), Consts.JobStatus.Available);
+                    Program._aStronghold._allJobs.AddLast(job);
+                }
+            }
         }
 
         #endregion
