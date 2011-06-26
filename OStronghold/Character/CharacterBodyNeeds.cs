@@ -86,7 +86,17 @@ namespace OStronghold
         #endregion
 
         #region Methods
-        
+
+        public string getCharacterBodyNeedsString()
+        {
+            string result = "";
+            result += "Hunger state: " + _eating._hungerState + "\n";
+            result += "Hunger timer: " + _eating._hungryTimer + "\n";
+            result += "Last ate: " + _eating._lastAteTime + "\n";
+            
+            return result;
+        }
+
         #endregion
 
         #region Events

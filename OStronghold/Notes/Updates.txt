@@ -1,8 +1,8 @@
 ﻿Stronghold - Simcity/Arena-like RPG game
 ========================================
 [doing]
-(00019)
-- Game -> Continue with debug menu
+(00020)
+- Dump to file in debug mode
 - Stronghold -> Add buildings (2 dimension linklist??)
 
 [to do]

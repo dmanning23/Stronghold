@@ -45,5 +45,18 @@ namespace OStronghold
 
         #endregion
 
+        #region Methods
+
+        public string getCharacterMindsetString()
+        {
+            string result = "";
+            result += "Money scale: " + this._moneyScale + "\n";
+            result += "Fame scale: " + this._fameScale + "\n";
+            result += "XP scale: " + this._xpScale + "\n";
+
+            return result;
+        }
+
+        #endregion
     }
 }

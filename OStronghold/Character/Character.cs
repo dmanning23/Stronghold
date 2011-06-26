@@ -106,6 +106,37 @@ namespace OStronghold
             return false;
         }//applies for job - true = successfully applied, false = failed to apply
 
+        public string getCharacterString()
+        {
+            string result = "";
+            result += "ID: " + this._id + "\n";
+            result += "Name: " + this._name + "\n";
+            result += "Age: " + this._age + "\n";
+            result += "Gender: " + this._gender + "\n";
+            result += "Fame: " + this._fame + "\n";
+            result += _mindset.getCharacterMindsetString();
+            result += _bodyneeds.getCharacterBodyNeedsString();
+            result += "Current Action Finish time: " + _currentActionFinishTime.ToString() + "\n";
+            result += _health.getCharacterHealthString();
+            result += "Character actions: \n";            
+            foreach (CharacterAction action in this._characterActions)
+            {
+                result += action.Action + " (" + action.Priority + ") " + action.FinishTime + "\n";
+            }
+            result += "Character inventory: \n";
+            result += "capacity: " + _characterinventory.CurrentInventoryCapacity + "/" + _characterinventory.MaxInventoryCapacity + "\n";
+            foreach (InventoryItem item in this._characterinventory.Inventory)
+            {
+                result += "Item ID: " + item.ID + "\n";
+                result += "Item name: " + item.Name + "\n";
+                result += "Item weight: " + item.Weight + "\n";
+                result += "Item quantity: " + item.Quantity + "\n";
+            }
+            result += "Job ID: " + this._jobID + "\n";
+
+            return result;
+        }
+
         #endregion
 
         #region Events

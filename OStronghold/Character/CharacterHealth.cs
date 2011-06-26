@@ -91,7 +91,18 @@ namespace OStronghold
             stamina.Max = value;
             stamina.Current = value;
             stamina.Regeneration = regenValue;
-        }        
+        }
+
+        public string getCharacterHealthString()
+        {
+            string result = "";
+            result += "HP: " + this.hp.Current + "/" + this.hp.Max + " (" + this.hp.Regeneration + ") \n";
+            result += "MP: " + this.mp.Current + "/" + this.mp.Max + " (" + this.mp.Regeneration + ") \n";
+            result += "Stamina: " + this.stamina.Current + "/" + this.stamina.Max + " (" + this.stamina.Regeneration + ") \n";
+            result += "Stamina used this tick: " + this.staminaUsedThisTick + "\n";
+
+            return result;
+        }
 
         #endregion
     }//character health related

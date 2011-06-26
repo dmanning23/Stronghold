@@ -23,10 +23,11 @@ namespace OStronghold
                 Console.Clear();
                 Consts.printMessage("------------------------------------------------");                
                 Consts.printMessage("                 Debug Menu");
-                Consts.printMessage("------------------------------------------------");                
-                Consts.printMessage("<show|suspend|resume|stop> game time");
-                Consts.printMessage("<add|show> person <number>");
+                Consts.printMessage("------------------------------------------------");
                 Consts.printMessage("<add|show> hut");
+                Consts.printMessage("<add|show> person <number>");
+                Consts.printMessage("dump <person|building|job>");
+                Consts.printMessage("<show|suspend|resume|stop> game time");
                 Consts.printMessage("quit");
                 Consts.printMessage("");
                 Console.Write("Enter input: ");
@@ -49,6 +50,15 @@ namespace OStronghold
                             Generic.BuildingForLiving hut = new Generic.BuildingForLiving(Consts.HUT_ID, Consts.HUT_NAME, Consts.HUT_HP, Consts.HUT_COSTTOBUILD, new Generic.Status(1, Consts.HUT_MAXLEVEL), Program._gametime, Program._gametime, new Generic.Status(0, 10));
                             _aStronghold._buildingsList.AddLast(hut);
                             Consts.printMessage("Hut added.");
+                        }
+                        break;
+                    case "dump":
+                        if (words[1] == "person")
+                        {
+                            foreach (Character ch in _aStronghold._commoners)
+                            {
+                                Consts.printMessage(ch.getCharacterString());
+                            }
                         }
                         break;
                     case "resume":
