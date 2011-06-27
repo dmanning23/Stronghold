@@ -24,7 +24,8 @@ namespace OStronghold
         public MyPriorityQueue _characterActions; //character actions
         public CharacterInventory _characterinventory; //character inventory
         public int _jobID; // job ID , -1 if not working       
-        
+        public int _homeID; //home ID - where the person sleeps at night
+        public int _locationID; //location ID where the person is currently located
 
         #endregion
 
@@ -42,7 +43,9 @@ namespace OStronghold
             _currentActionFinishTime = new Gametime(0, 0, 0);
             _health = new CharacterHealth();
             _characterActions = new MyPriorityQueue(); //the list of actions the character wants to do
-            _characterinventory = new CharacterInventory();                   
+            _characterinventory = new CharacterInventory();
+            _locationID = Consts.STRONGHOLD_YARD;
+            _homeID = Consts.STRONGHOLD_YARD;
 
             //eating events
             _bodyneeds._hungryEvent += this.OnHungryEventHandler; //hungry event listener
@@ -128,20 +131,31 @@ namespace OStronghold
             result += "capacity: " + _characterinventory.CurrentInventoryCapacity + "/" + _characterinventory.MaxInventoryCapacity + "\n";
             foreach (InventoryItem item in this._characterinventory.Inventory)
             {
-                result += "Item ID: " + item.ID + "\n";
-                result += "Item name: " + item.Name + "\n";
-                result += "Item weight: " + item.Weight + "\n";
-                result += "Item quantity: " + item.Quantity + "\n";
+                result += item.getInventoryItemString();
             }
             result += "Job ID: " + this._jobID + "\n";
+            result += "Location ID: " + this._locationID + "\n";
+            result += "Home ID: " + this._homeID + "\n";
 
             return result;
         }
 
-        public bool findPlaceToLive()
+        public int findPlaceToLive()
         {
-            return false;
-        }//return if character successfully finds a place to live
+            foreach (BuildingForLiving building in Program._aStronghold._buildingsList)
+            {
+                if (building.Type == Consts.ACCOMONDATION)
+                {
+                    if (building.isPopulable(1))
+                    {
+                        building.populateLivingBuilding(1);
+                        return building.ID;                        
+                    }
+                }//found place to live
+            }
+
+            return Consts.STRONGHOLD_YARD;
+        }
 
         #endregion
 

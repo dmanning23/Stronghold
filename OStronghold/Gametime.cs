@@ -253,7 +253,7 @@ namespace OStronghold
         {
             LinkedList<int> numberLinkList = new LinkedList<int>();
             int[] commonerUpdateOrder = new int[Program._aStronghold._commoners.Count];
-            int index;
+            int index, buildingID;
             Generic.InventoryItem item;
             Generic.Job job;
             Character person;
@@ -299,6 +299,22 @@ namespace OStronghold
                                 person._bodyneeds.HungerState = Consts.hungerState.JustAte;
                                 person._bodyneeds.LastAteTime.CopyGameTime(Program._gametime);
                                 person._characterActions.Dequeue(); //action is finished 
+                                break;
+                            case Consts.characterGeneralActions.LookingForPlaceToLive:
+                                if (person._homeID == Consts.STRONGHOLD_YARD)
+                                {
+                                    buildingID = person.findPlaceToLive();
+                                    person._homeID = buildingID;
+                                }//person is looking for place to live, returns STRONGHOLD_YARD if does not find any
+              
+                                if (person._homeID != Consts.STRONGHOLD_YARD)
+                                {
+                                    person._characterActions.Dequeue();
+                                }//person found place to live
+                                else
+                                {
+                                    //do nothing
+                                }//do not dequeue the action and remains for next update - person did not find any accomondations
                                 break;
                             case Consts.characterGeneralActions.Sleeping:
                                 person._bodyneeds.SleepState = Consts.sleepState.Awake;
@@ -350,7 +366,7 @@ namespace OStronghold
                                 person._health.hp.Regeneration = -1;
                             }//if hungry and then remains hungry and loses hp every game tick
                             #endregion
-                            #region Sleep check
+                            #region Sleep check                            
                             if (Program._gametime > person._bodyneeds.LastSleptTime + (int)Consts.sleepTimer.Awake)
                             {
                                 person._bodyneeds.SleepState = Consts.sleepState.MustSleep;
@@ -393,10 +409,23 @@ namespace OStronghold
                                 }//person is already employed
                             }//person already employed or doesn't want to work
                             #endregion
+                            #region Accomondation check
+
+                            if (person._locationID == Consts.STRONGHOLD_YARD)
+                            {
+                                finishTime = Program._gametime;
+                                person._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.LookingForPlaceToLive, Consts.actionsData[(int)Consts.characterGeneralActions.LookingForPlaceToLive]._actionPriority, finishTime));
+                            }
+
+                            #endregion
                         }
                         else if (person._characterActions.Peek().Action == Consts.characterGeneralActions.Eating)
                         {
                             person._health.staminaUsedThisTick = 3;
+                        }
+                        else if (person._characterActions.Peek().Action == Consts.characterGeneralActions.LookingForPlaceToLive)
+                        {
+                            person._health.staminaUsedThisTick = 5;
                         }
                         else if (person._characterActions.Peek().Action == Consts.characterGeneralActions.Sleeping)
                         {
@@ -406,6 +435,7 @@ namespace OStronghold
                         {
                             person._health.staminaUsedThisTick = 10;
                         }
+
                     }
 
                     //person health is updated at the end of each tick

@@ -67,8 +67,8 @@ namespace OStronghold.Generic
 
         public void Clone(Status targetStatus)
         {
-            this.Current = targetStatus.Current;
             this.Max = targetStatus.Max;
+            this.Current = targetStatus.Current;            
         }
 
         #endregion

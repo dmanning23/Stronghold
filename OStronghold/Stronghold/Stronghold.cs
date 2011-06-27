@@ -153,11 +153,11 @@ namespace OStronghold
             return null;
         }//search job according to id
 
-        public Building searchBuildingByType(int buildingType)
+        public Building searchBuildingByID(int buildingID)
         {
             foreach (Building building in _buildingsList)
             {
-                if (building.Type == buildingType)
+                if (building.ID == buildingID)
                 {
                     return building;
                 }

@@ -20,9 +20,9 @@ namespace OStronghold.Generic
 
         #region Constructor
 
-        public BuildingForLiving(int typeValue, string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
+        public BuildingForLiving(int idValue, int typeValue, string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
                                  Gametime endBuildTimeValue, Status tenantsValue)
-            : base(typeValue, nameValue, hpValue, costToBuildValue, levelValue, startBuildTimeValue, endBuildTimeValue)
+            : base(idValue, typeValue, nameValue, hpValue, costToBuildValue, levelValue, startBuildTimeValue, endBuildTimeValue)
         {
             _tenants = new Status(tenantsValue);                       
         }
@@ -31,23 +31,33 @@ namespace OStronghold.Generic
 
         #region Methods
 
-        public int populateLivingBuilding(int numberOfNewTenants)
+        public bool isPopulable(int numberOfNewTenants)
         {
             if (numberOfNewTenants > (Tenants.Max - Tenants.Current))
+            {
+                return false;
+            }//overpopulating building
+            else return true;
+        }
+
+        public int populateLivingBuilding(int numberOfNewTenants)
+        {
+            if (isPopulable(numberOfNewTenants))
+            {
+                Tenants.Current += numberOfNewTenants;
+                return 0;                
+            }
+            else
             {
                 Tenants.Current = Tenants.Max;
                 return (numberOfNewTenants - (Tenants.Max - Tenants.Current));
             }// overpopulating the buildling - returns the amount not populated
-            else
-            {
-                Tenants.Current += numberOfNewTenants;
-                return 0;
-            }
         }//returns the number of unsuccessful populated tenants (i.e: 8/10 hut and populates 3 ppl will return 1. popuating 1 or 2 will return 0.
 
         public override string getBuildingString()
         {
             string result = "";
+            result += "Building ID: " + base.ID + "\n";
             result += "Building type: " + base.Type + "\n";
             result += "Building name: " + base.Name + "\n";
             result += "Building HP: " + base.HP.Current + "/" + base.HP.Max + "\n";

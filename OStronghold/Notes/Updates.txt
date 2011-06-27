@@ -3,7 +3,7 @@
 [doing]
 (00020)
 - Stronghold -> Add buildings
-- Game -> change all building id to building type
+- Stronghold -> Update location id for each action
 
 [to do]
 - Game -> Add load/save (Serializable)
@@ -36,6 +36,8 @@
 (00020) - Added dump to file option in debug.
         - Added negative health regeneration when hungry, no regeneration when normal and positive regeneration when full.
         - Added health state for person (dead or alive).
+        - Added location id for Character class in order to keep track of person.        
+        - Added new Character action: LookForPlaceToLive.
 (00019) - Added debug menu for Console.
 (00018+)- Added Day event.
         - Added Building types Class (BuildingForLiving, BuildlingForTrade).

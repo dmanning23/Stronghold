@@ -24,6 +24,11 @@ In the start, Stronghold consists of only very basic buildings:
 
 3. Character (micro)
 --------------------
+A character must comply to the following requirements:
+	- Needs to eat every 8 hours.
+	- Needs to sleep 6 hours per day (but must find a suitable accomondation to sleep)
+	- Rest of the day - up to the character to decide (i.e: work and earn money, fight and earn fame, etc.)
+
 
 4. Economy
 ----------
@@ -36,13 +41,8 @@ In the start, Stronghold consists of only very basic buildings:
 6.1 Lord Kaliet's keep (Level 1)
 This keep is where the Lord of Stronghold confines (Lord Kaliet in the start of the game). The Stronghold treasury resides in the keep to avoid looting and theft. Game ends when Lord Kaliet's keep is destroyed.
 
-Category: Stronghold
-HP: 5000
-
 6.2 Wall (Level 1)
 A very simple wall to separate wild animals from the people living in Stronghold.
 
-Category: Defense
-HP: 25
-
 6.3 Hut (Level 1)
+A straw hut made to accomondate 10 people. It only provides some protection from the night's cold and allow the person to rest completely.

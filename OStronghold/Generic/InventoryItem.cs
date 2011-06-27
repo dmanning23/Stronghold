@@ -74,6 +74,17 @@ namespace OStronghold.Generic
             _quantity -= amount;
         }
 
+        public string getInventoryItemString()
+        {
+            string result = "";                       
+            result += "Item ID: " + this.ID + "\n";
+            result += "Item name: " + this.Name + "\n";
+            result += "Item weight: " + this.Weight + "\n";
+            result += "Item quantity: " + this.Quantity + "\n";
+
+            return result;
+        }
+
         #endregion
 
         #endregion

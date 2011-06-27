@@ -30,9 +30,9 @@ namespace OStronghold.Generic
         {
         }
 
-        public BuildingForTrade(int typeValue, string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
+        public BuildingForTrade(int idValue, int typeValue, string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
                                 Gametime endBuildTimeValue, LinkedList<Job> jobsList, LinkedList<InventoryItem> inventoryList)
-            : base(typeValue, nameValue, hpValue, costToBuildValue, levelValue, startBuildTimeValue, endBuildTimeValue)
+            : base(idValue, typeValue, nameValue, hpValue, costToBuildValue, levelValue, startBuildTimeValue, endBuildTimeValue)
         {
             Job tempJob;
             foreach (Job job in jobsList)
@@ -47,6 +47,35 @@ namespace OStronghold.Generic
                 tempItem = new InventoryItem(item);
                 _inventory.AddLast(tempItem);
             }
+        }
+
+        #endregion
+
+        #region Methods
+
+        public override string getBuildingString()
+        {
+            string result = "";
+            result += "Building ID: " + base.ID + "\n";
+            result += "Building type: " + base.Type + "\n";
+            result += "Building name: " + base.Name + "\n";
+            result += "Building HP: " + base.HP.Current + "/" + base.HP.Max + "\n";
+            result += "Cost to build: " + base.CostToBuild + "\n";
+            result += "Building level: " + base.Level.Current + "/" + base.Level.Max + "\n";
+            result += "Start build time: " + base.StartBuildTime + "\n";
+            result += "End build time: " + base.EndBuildTime + "\n";
+            result += "Jobs: " + base.EndBuildTime + "\n";
+            foreach (Job job in Jobs)
+            {
+                result += job.getJobString();
+            }
+            result += "Inventory: " + base.EndBuildTime + "\n";
+            foreach (InventoryItem item in Inventory)
+            {
+                result += item.getInventoryItemString();
+            }
+
+            return result;
         }
 
         #endregion

@@ -61,9 +61,10 @@ namespace OStronghold.Generic
         {
         }
 
-        public Building(int typeValue, string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
+        public Building(int idValue, int typeValue, string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
                         Gametime endBuildTimeValue)
         {
+            _id = idValue;
             _type = typeValue;
             _name = String.Copy(nameValue);
             _hp = new Status(hpValue);            

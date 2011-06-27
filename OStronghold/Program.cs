@@ -47,7 +47,7 @@ namespace OStronghold
                         }
                         else if (words[1] == "hut")
                         {
-                            Generic.BuildingForLiving hut = new Generic.BuildingForLiving(Consts.HUT_TYPE, Consts.HUT_NAME, Consts.HUT_HP, Consts.HUT_COSTTOBUILD, new Generic.Status(1, Consts.HUT_MAXLEVEL), Program._gametime, Program._gametime, new Generic.Status(0, 10));
+                            Generic.BuildingForLiving hut = new Generic.BuildingForLiving(_aStronghold._buildingsList.Count + 1, Consts.ACCOMONDATION, Consts.HUT_NAME, Consts.HUT_HP, Consts.HUT_COSTTOBUILD, new Generic.Status(1, Consts.HUT_MAXLEVEL), Program._gametime, Program._gametime, new Generic.Status(0, 10));
                             _aStronghold._buildingsList.AddLast(hut);
                             Consts.printMessage("Hut added.");
                         }
@@ -72,7 +72,7 @@ namespace OStronghold
                                 else if (words.Length == 3)
                                 {
                                     numberParam = Int32.Parse(words[2]);
-                                    if (numberParam > Consts.HUT_TYPE + _aStronghold._commoners.Count)
+                                    if (numberParam > Consts.ACCOMONDATION + _aStronghold._commoners.Count)
                                     {
                                         Consts.printMessage("Invalid command.");
                                     }
@@ -132,13 +132,13 @@ namespace OStronghold
                                 else if (words.Length == 3)
                                 {
                                     numberParam = Int32.Parse(words[2]);
-                                    if (numberParam != Consts.HUT_TYPE    )
+                                    if (numberParam > _aStronghold._buildingsList.Count)
                                     {
                                         Consts.printMessage("Invalid command.");
                                     }
                                     else
                                     {
-                                        Consts.writeToDebugLog(_aStronghold.searchBuildingByType(numberParam).getBuildingString());
+                                        Consts.writeToDebugLog(_aStronghold.searchBuildingByID(numberParam).getBuildingString());
                                     }
                                 }
                                 else Consts.printMessage("Invalid command.");

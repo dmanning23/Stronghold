@@ -13,11 +13,12 @@ namespace OStronghold
         #region action related
         public enum characterGeneralActions
         {
-            Undefined = 1,
-            Idle,
+            Undefined = 1,            
             Eating,
-            Sleeping,
+            Idle,           
+            LookingForPlaceToLive,
             LookingForWork,
+            Sleeping,
             Working,
             Count
         };//generic character actions
@@ -77,13 +78,12 @@ namespace OStronghold
 
         #region ID numbers reserved (1-99)
         #endregion
-        #region ID numbers for buildings (100 -> 500)
+        #region ID types for buildings (100 -> 500)
 
-        public static int HUT_TYPE = 100;
-        public static string HUT_NAME = "Hut";
-        public static OStronghold.Generic.Status HUT_HP;
-        public static int HUT_COSTTOBUILD = 25;
-        public static int HUT_MAXLEVEL = 5;
+        public static int ACCOMONDATION = 100;
+
+        public static int STRONGHOLD_YARD = 5000;        
+
 
         #endregion
         #region ID numbers for inventory (1000 -> 5000)
@@ -95,6 +95,15 @@ namespace OStronghold
         public static int FOOD_ID = 1001;
         public static string FOOD_NAME = "Food";
         public static double FOOD_WEIGHT = 0.1;
+
+        #endregion
+
+        #region Building information
+
+        public static string HUT_NAME = "Hut";
+        public static OStronghold.Generic.Status HUT_HP;
+        public static int HUT_COSTTOBUILD = 25;
+        public static int HUT_MAXLEVEL = 5;
 
         #endregion
 
@@ -112,15 +121,16 @@ namespace OStronghold
             actionsData = new actionStruct[(int)Consts.characterGeneralActions.Count];
             actionsData[(int)Consts.characterGeneralActions.Eating]._actionDuration = 60;
             actionsData[(int)Consts.characterGeneralActions.Eating]._actionPriority = 5;
+            actionsData[(int)Consts.characterGeneralActions.LookingForPlaceToLive]._actionPriority = 10;
             actionsData[(int)Consts.characterGeneralActions.Sleeping]._actionDuration = 480;
-            actionsData[(int)Consts.characterGeneralActions.Sleeping]._actionPriority = 10;            
+            actionsData[(int)Consts.characterGeneralActions.Sleeping]._actionPriority = 20;            
             actionsData[(int)Consts.characterGeneralActions.Working]._actionPriority = 50;
             actionsData[(int)Consts.characterGeneralActions.Idle]._actionDuration = 0;
             actionsData[(int)Consts.characterGeneralActions.Idle]._actionPriority = 99;
 
             HUT_HP = new Generic.Status(100);
 
-            debugSW = new StreamWriter(@"d:\\\NSN\\Code\\C#\\Stronghold\\OStronghold\\logs\\debug.log");
+            debugSW = new StreamWriter(@"..\\..\\logs\\debug.log");
         }
 
         #endregion
