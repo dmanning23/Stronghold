@@ -121,8 +121,23 @@ namespace OStronghold.Generic
             _payroll = targetJob.Payroll;
             _jobStatus = targetJob.JobStatus;
         }
-        
 
+        public string getJobString()
+        {
+            string result = "";
+            result += "Job ID: " + _jobID + "\n";
+            result += "Owner ID: " + _ownerID + "\n";
+            result += "Worker ID: " + _workerID + "\n";
+            result += "Job Name: " + _jobName + "\n";
+            result += "Start date: " + _startDate + "\n";
+            result += "End date: " + _endDate + "\n";
+            result += "Start time: " + _startTime + "\n";
+            result += "End time: " + _endTime + "\n";
+            result += "Payroll: " + _payroll + "\n";
+            result += "Job status: " + _jobStatus + "\n";
+
+            return result;
+        }
 
         #endregion
     }

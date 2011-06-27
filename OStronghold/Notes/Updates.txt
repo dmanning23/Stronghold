@@ -2,11 +2,11 @@
 ========================================
 [doing]
 (00020)
-- Dump to file in debug mode
-- Stronghold -> Add buildings (2 dimension linklist??)
+- Stronghold -> Add buildings
+- Game -> change all building id to building type
 
 [to do]
-- Game -> Add load/save
+- Game -> Add load/save (Serializable)
 - Game -> Move constants in code to xml files
 - Character -> Add location for Character (Area class) -> walking action
 - Character -> Add attributes (i.e: Strength, Intelligence, etc.)
@@ -33,9 +33,12 @@
 - Foods has satiety rate
 ====================================================================================================
 (update)  [notes]
-(00019) - Added debug menu for Console
-(00018+)- Added Day event
-        - Added Building types Class (BuildingForLiving, BuildlingForTrade)
+(00020) - Added dump to file option in debug.
+        - Added negative health regeneration when hungry, no regeneration when normal and positive regeneration when full.
+        - Added health state for person (dead or alive).
+(00019) - Added debug menu for Console.
+(00018+)- Added Day event.
+        - Added Building types Class (BuildingForLiving, BuildlingForTrade).
 (00018) - Modified Gametick to include Job and job time relevance.
         - Modified Gametick to randomize commoner update.
 (00017) - Added StrongholdLeader class.
@@ -45,23 +48,23 @@
 (00016) - Added CharacterInventory class.
         - Added InventoryItem class (Generic).        
 		- Added Treasury class (Generic).
-		- Added Gold into game (Character inventory + Treasury)
+		- Added Gold into game (Character inventory + Treasury).
 (00015) - Added PriorityQueue class for character actions (Generic).
-        - Added Sleep state
+        - Added Sleep state.
 (00014) - Removed hungerflowactions.
         - Removed Stronghold foodstorage building and food deduction when eating.
-(00013) - Modified game ticks only at hour level
+(00013) - Modified game ticks only at hour level.
         - Added stamina usage for actions performed.
         - Added hp, mp, stamina regeneration.
 (00012) - Added minutes to gametime.
-        - Added game ticks to gametime (i.e: one game tick = 10 seconds = 1 game hour)
+        - Added game ticks to gametime (i.e: one game tick = 10 seconds = 1 game hour).
 (00011) - Added CharacterHealth class.
 (00010) - Added Character hunger flow.
 (00009) - Added hourPassed event.
 (00008) - Added Gametime class.
 (00007) - Added hunger event.
 (00006) - Added CharacterBodyNeeds class.
-(00005) - Added attributes for CharacterMindsetClass (money,fame,xp)
+(00005) - Added attributes for CharacterMindsetClass (money,fame,xp).
 (00004) - Added CharacterMindset class.
 (00003) - Added Consts class.
 (00002) - Added Character class.

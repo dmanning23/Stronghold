@@ -24,6 +24,7 @@ namespace OStronghold
         public MyPriorityQueue _characterActions; //character actions
         public CharacterInventory _characterinventory; //character inventory
         public int _jobID; // job ID , -1 if not working       
+        
 
         #endregion
 
@@ -136,6 +137,11 @@ namespace OStronghold
 
             return result;
         }
+
+        public bool findPlaceToLive()
+        {
+            return false;
+        }//return if character successfully finds a place to live
 
         #endregion
 

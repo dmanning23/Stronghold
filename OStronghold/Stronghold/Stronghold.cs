@@ -151,7 +151,19 @@ namespace OStronghold
                 }
             }
             return null;
-        }
+        }//search job according to id
+
+        public Building searchBuildingByType(int buildingType)
+        {
+            foreach (Building building in _buildingsList)
+            {
+                if (building.Type == buildingType)
+                {
+                    return building;
+                }
+            }
+            return null;
+        }//search building according to id
 
         public LinkedList<Job> getAllAvailableJobs()
         {
@@ -164,7 +176,7 @@ namespace OStronghold
                 }
             }
             return list;
-        }
+        }//returns list of all jobs with status of available
 
         public void doSomething()
         {
@@ -189,7 +201,7 @@ namespace OStronghold
                 }
             }
         }
-
+        
         #endregion
     }
 }

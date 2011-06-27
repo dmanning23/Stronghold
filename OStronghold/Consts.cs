@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 
 namespace OStronghold
 {
@@ -36,6 +37,7 @@ namespace OStronghold
         #endregion
 
         public enum gender { Male, Female };
+        public enum healthState { Dead, Alive };
 
         #region food related
         public enum hungerState { Hungry, Normal, Full ,JustAte};        
@@ -77,7 +79,7 @@ namespace OStronghold
         #endregion
         #region ID numbers for buildings (100 -> 500)
 
-        public static int HUT_ID = 100;
+        public static int HUT_TYPE = 100;
         public static string HUT_NAME = "Hut";
         public static OStronghold.Generic.Status HUT_HP;
         public static int HUT_COSTTOBUILD = 25;
@@ -96,6 +98,11 @@ namespace OStronghold
 
         #endregion
 
+        #region streamwriter
+
+        public static StreamWriter debugSW;
+
+        #endregion
         #endregion
 
         #region Constructor
@@ -112,6 +119,8 @@ namespace OStronghold
             actionsData[(int)Consts.characterGeneralActions.Idle]._actionPriority = 99;
 
             HUT_HP = new Generic.Status(100);
+
+            debugSW = new StreamWriter(@"d:\\\NSN\\Code\\C#\\Stronghold\\OStronghold\\logs\\debug.log");
         }
 
         #endregion
@@ -120,7 +129,13 @@ namespace OStronghold
 
         public static void printMessage(string message)
         {
-            Console.WriteLine(message);
+            Console.WriteLine(message);            
+        }
+
+        public static void writeToDebugLog(string message)
+        {            
+            debugSW.WriteLine(message);
+            debugSW.Flush();
         }
 
         #endregion

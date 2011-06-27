@@ -8,40 +8,48 @@ namespace OStronghold
     public class CharacterHealth
     {
         #region Members
-
+        
         public struct status
         {
-            private int current; //current value
-            private int max; //max value
-            private int regeneration; //how much is regenerated over 1 game tick            
+            private int _current; //current value
+            private int _max; //max value
+            private int _regeneration; //how much is regenerated over 1 game tick                       
+            private Consts.healthState _healthState; //health state of the person
 
             public int Current
             {
-                get { return current; }
+                get { return _current; }
                 set 
-                {                     
-                    current = value;
-                    if (current > max)
+                {
+                    _healthState = Consts.healthState.Alive;   
+                    _current = value;
+                    if (_current > _max)
                     {
-                        current = max;
+                        _current = _max;
                     }
-                    if (current < 0)
+                    if (_current < 0)
                     {
-                        current = 0;
+                        _current = 0;
+                        _healthState = Consts.healthState.Dead;        
                     }
                 }
             }
 
             public int Max
             {
-                get { return max; }
-                set { max = value; }
+                get { return _max; }
+                set { _max = value; }
             }
 
             public int Regeneration
             {
-                get { return regeneration; }
-                set { regeneration = value; }
+                get { return _regeneration; }
+                set { _regeneration = value; }
+            }
+
+            public Consts.healthState HealthState
+            {
+                get { return _healthState; }
             }
         }
 
@@ -49,6 +57,7 @@ namespace OStronghold
         public status mp;
         public status stamina;
         public int staminaUsedThisTick;
+        
 
         #endregion
 
@@ -65,7 +74,7 @@ namespace OStronghold
             stamina.Current = 0;
             stamina.Max = 0;
             stamina.Regeneration = 0;
-            staminaUsedThisTick = 0;
+            staminaUsedThisTick = 0;            
         }
 
         #endregion
@@ -76,7 +85,7 @@ namespace OStronghold
         {
             hp.Max = value;
             hp.Current = value;
-            hp.Regeneration = regenValue;
+            hp.Regeneration = regenValue;            
         }
 
         public void defineMP(int value, int regenValue)
@@ -100,6 +109,7 @@ namespace OStronghold
             result += "MP: " + this.mp.Current + "/" + this.mp.Max + " (" + this.mp.Regeneration + ") \n";
             result += "Stamina: " + this.stamina.Current + "/" + this.stamina.Max + " (" + this.stamina.Regeneration + ") \n";
             result += "Stamina used this tick: " + this.staminaUsedThisTick + "\n";
+            result += "Health state: " + this.hp.HealthState + "\n";
 
             return result;
         }
