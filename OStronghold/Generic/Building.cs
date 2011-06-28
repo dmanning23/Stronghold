@@ -9,7 +9,8 @@ namespace OStronghold.Generic
     {
         #region Members       
 
-        private int _id; //building id
+        private int _buildingID; //building id
+        private int _ownerID; //owner id of building
         private int _type; //building type
         private string _name; //name of building
         private Status _hp; //hp of buildling
@@ -17,11 +18,15 @@ namespace OStronghold.Generic
         private Status _level; //level of building
         private Gametime _startBuildTime; //timestamp of when started to build
         private Gametime _endBuildTime; //timestamp of when building finish
+        private Consts.buildingState _buildingState; //state of the building
 
-
-        public int ID
+        public int BuildingID
         {
-            get { return _id; }
+            get { return _buildingID; }
+        }
+        public int OwnerID
+        {
+            get { return _ownerID; }
         }
         public int Type
         {
@@ -51,6 +56,11 @@ namespace OStronghold.Generic
         {
             get { return _endBuildTime; }
         }
+        public Consts.buildingState BuildingState
+        {
+            get { return _buildingState; }
+            set { _buildingState = value; }
+        }
 
 
         #endregion
@@ -61,17 +71,19 @@ namespace OStronghold.Generic
         {
         }
 
-        public Building(int idValue, int typeValue, string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
-                        Gametime endBuildTimeValue)
+        public Building(int buildingIDValue, int ownerIDValue, int typeValue, string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
+                        Gametime endBuildTimeValue, Consts.buildingState buildStateValue)
         {
-            _id = idValue;
+            _buildingID = buildingIDValue;
+            _ownerID = ownerIDValue;
             _type = typeValue;
             _name = String.Copy(nameValue);
             _hp = new Status(hpValue);            
             _costToBuild = costToBuildValue;
             _level = new Status(levelValue);
             _startBuildTime = new Gametime(startBuildTimeValue);
-            _endBuildTime = new Gametime(endBuildTimeValue);            
+            _endBuildTime = new Gametime(endBuildTimeValue);
+            _buildingState = buildStateValue;
         }
 
         #endregion

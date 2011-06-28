@@ -258,6 +258,16 @@ namespace OStronghold
             Generic.Job job;
             Character person;
 
+            try
+            {
+                Consts.writeToDebugLog("==========================================================================");
+                Consts.writeToDebugLog(Program._gametime.ToString());
+                Consts.writeToDebugLog(((Character)Program._aStronghold._commoners[1]).getCharacterString());
+                Consts.writeToDebugLog(Program._aStronghold.searchBuildingByID(1).getBuildingString());
+            }
+            catch (Exception ex)
+            {
+            }
             #region randomize update order for characters
             //create commonerUpdateOrderArray
             for (int x = 1; x <= Program._aStronghold._commoners.Count; x++)
@@ -301,13 +311,14 @@ namespace OStronghold
                                 person._characterActions.Dequeue(); //action is finished 
                                 break;
                             case Consts.characterGeneralActions.LookingForPlaceToLive:
-                                if (person._homeID == Consts.STRONGHOLD_YARD)
+                                if (person._homeID == Consts.stronghold_yard)
                                 {
                                     buildingID = person.findPlaceToLive();
                                     person._homeID = buildingID;
+                                    person._locationID = buildingID;
                                 }//person is looking for place to live, returns STRONGHOLD_YARD if does not find any
               
-                                if (person._homeID != Consts.STRONGHOLD_YARD)
+                                if (person._homeID != Consts.stronghold_yard)
                                 {
                                     person._characterActions.Dequeue();
                                 }//person found place to live
@@ -411,7 +422,7 @@ namespace OStronghold
                             #endregion
                             #region Accomondation check
 
-                            if (person._locationID == Consts.STRONGHOLD_YARD)
+                            if (person._locationID == Consts.stronghold_yard)
                             {
                                 finishTime = Program._gametime;
                                 person._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.LookingForPlaceToLive, Consts.actionsData[(int)Consts.characterGeneralActions.LookingForPlaceToLive]._actionPriority, finishTime));
@@ -429,11 +440,13 @@ namespace OStronghold
                         }
                         else if (person._characterActions.Peek().Action == Consts.characterGeneralActions.Sleeping)
                         {
+                            person._locationID = person._homeID;
                             //sleeping
                         }
                         else if (person._characterActions.Peek().Action == Consts.characterGeneralActions.Working)
                         {
                             person._health.staminaUsedThisTick = 10;
+                            person._locationID = job.BuildingID;                            
                         }
 
                     }
@@ -450,7 +463,17 @@ namespace OStronghold
 
             #region update building actions
 
-
+            foreach (Generic.Building building in Program._aStronghold._buildingsList)
+            {
+                if (Program._gametime >= building.StartBuildTime && Program._gametime < building.EndBuildTime)
+                {
+                    building.BuildingState = Consts.buildingState.UnderConstruction;
+                }//building is underconstruction
+                else if (Program._gametime >= building.EndBuildTime)
+                {
+                    building.BuildingState = Consts.buildingState.Built;
+                }//building is finished
+            }
 
             #endregion
         }//actions to do in every game tick

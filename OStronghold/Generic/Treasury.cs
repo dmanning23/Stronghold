@@ -38,6 +38,11 @@ namespace OStronghold.Generic
             _gold += amount;
         }
 
+        public void withdrawGold(int amount)
+        {
+            _gold -= amount;
+        }
+
         public bool haveEnoughToWithdraw(int amount)
         {
             return (amount <= _gold);

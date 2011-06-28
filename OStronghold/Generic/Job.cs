@@ -11,6 +11,7 @@ namespace OStronghold.Generic
 
         private int _jobID; //job id (unique)
         private int _ownerID; //id of job owner - the one who is paying
+        private int _buildingID; //id of buildling where job is done
         private int _workerID; //id of worker - the one who is working and getting paid
         private string _jobName; //job name                
         private Gametime _startDate; //date when job is available
@@ -27,7 +28,11 @@ namespace OStronghold.Generic
         public int OwnerID
         {
             get { return _ownerID; }            
-        }        
+        }
+        public int BuildingID
+        {
+            get { return _buildingID; }
+        }
         public int WorkerID
         {
             get { return _workerID; }

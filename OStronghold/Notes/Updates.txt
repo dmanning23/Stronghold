@@ -1,9 +1,9 @@
 ﻿Stronghold - Simcity/Arena-like RPG game
 ========================================
 [doing]
-(00020)
+(00021)
 - Stronghold -> Add buildings
-- Stronghold -> Update location id for each action
+- Stronghold -> Update building phases and building providing work (farm). think of charging money for rent - auto calculate according to cost + returns.
 
 [to do]
 - Game -> Add load/save (Serializable)
@@ -33,6 +33,8 @@
 - Foods has satiety rate
 ====================================================================================================
 (update)  [notes]
+(00021) - Added ownerID and buildingState in Building Class.
+
 (00020) - Added dump to file option in debug.
         - Added negative health regeneration when hungry, no regeneration when normal and positive regeneration when full.
         - Added health state for person (dead or alive).

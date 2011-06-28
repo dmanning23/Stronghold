@@ -55,8 +55,15 @@ namespace OStronghold
 
         public static Random rand = new Random((int)DateTime.Now.Ticks);
 
+        #region time related
+
         public static int gametickperSecond = 1; //how many real time seconds are there in a game tick
         public static int gametickIncreaseMinutes = 60; //how many game minutes are increased in every game tick
+        public static int oneHour = 60;
+        public static int halfDay = 720;
+        public static int oneDay = 1440;
+
+        #endregion
 
         #region inventory related
 
@@ -66,7 +73,7 @@ namespace OStronghold
 
         #region building related
 
-        
+        public enum buildingState { Planned, UnderConstruction, Built, Destroyed };
 
         #endregion
 
@@ -80,9 +87,10 @@ namespace OStronghold
         #endregion
         #region ID types for buildings (100 -> 500)
 
-        public static int ACCOMONDATION = 100;
+        public static int accomodation = 100;
+        public static int farm = 101;
 
-        public static int STRONGHOLD_YARD = 5000;        
+        public static int stronghold_yard = 5000;        
 
 
         #endregion
@@ -100,10 +108,16 @@ namespace OStronghold
 
         #region Building information
 
-        public static string HUT_NAME = "Hut";
-        public static OStronghold.Generic.Status HUT_HP;
-        public static int HUT_COSTTOBUILD = 25;
-        public static int HUT_MAXLEVEL = 5;
+        public static string hut_name = "Hut";
+        public static OStronghold.Generic.Status hut_hp;
+        public static int hut_costtobuild = 25;
+        public static int hut_maxlevel = 5;
+        public static int hut_buildtime = halfDay;
+
+        public static string farm_name = "Farm";
+        public static OStronghold.Generic.Status farm_hp;
+        public static int farm_costtobuild = 20;
+        public static int farm_maxlevel = 3;
 
         #endregion
 
@@ -128,7 +142,8 @@ namespace OStronghold
             actionsData[(int)Consts.characterGeneralActions.Idle]._actionDuration = 0;
             actionsData[(int)Consts.characterGeneralActions.Idle]._actionPriority = 99;
 
-            HUT_HP = new Generic.Status(100);
+            hut_hp = new Generic.Status(100);
+            farm_hp = new Generic.Status(50);
 
             debugSW = new StreamWriter(@"..\\..\\logs\\debug.log");
         }

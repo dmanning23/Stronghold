@@ -44,8 +44,8 @@ namespace OStronghold
             _health = new CharacterHealth();
             _characterActions = new MyPriorityQueue(); //the list of actions the character wants to do
             _characterinventory = new CharacterInventory();
-            _locationID = Consts.STRONGHOLD_YARD;
-            _homeID = Consts.STRONGHOLD_YARD;
+            _locationID = Consts.stronghold_yard;
+            _homeID = Consts.stronghold_yard;
 
             //eating events
             _bodyneeds._hungryEvent += this.OnHungryEventHandler; //hungry event listener
@@ -144,17 +144,17 @@ namespace OStronghold
         {
             foreach (BuildingForLiving building in Program._aStronghold._buildingsList)
             {
-                if (building.Type == Consts.ACCOMONDATION)
+                if (building.Type == Consts.accomodation && building.BuildingState == Consts.buildingState.Built)
                 {
                     if (building.isPopulable(1))
                     {
                         building.populateLivingBuilding(1);
-                        return building.ID;                        
+                        return building.BuildingID;                        
                     }
                 }//found place to live
             }
 
-            return Consts.STRONGHOLD_YARD;
+            return Consts.stronghold_yard;
         }
 
         #endregion

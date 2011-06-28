@@ -44,12 +44,13 @@ namespace OStronghold
                             else numberParam = Int32.Parse(words[2]);
                             _aStronghold.populate(numberParam);
                             Consts.printMessage(numberParam + " Person(s) added.");
+                            Consts.writeToDebugLog(numberParam + " Person(s) added.");
                         }
                         else if (words[1] == "hut")
                         {
-                            Generic.BuildingForLiving hut = new Generic.BuildingForLiving(_aStronghold._buildingsList.Count + 1, Consts.ACCOMONDATION, Consts.HUT_NAME, Consts.HUT_HP, Consts.HUT_COSTTOBUILD, new Generic.Status(1, Consts.HUT_MAXLEVEL), Program._gametime, Program._gametime, new Generic.Status(0, 10));
-                            _aStronghold._buildingsList.AddLast(hut);
+                            _aStronghold.buildHut();
                             Consts.printMessage("Hut added.");
+                            Consts.writeToDebugLog("Hut added.");
                         }
                         else Consts.printMessage("Invalid command.");
                         break;
@@ -72,7 +73,7 @@ namespace OStronghold
                                 else if (words.Length == 3)
                                 {
                                     numberParam = Int32.Parse(words[2]);
-                                    if (numberParam > Consts.ACCOMONDATION + _aStronghold._commoners.Count)
+                                    if (numberParam > Consts.accomodation + _aStronghold._commoners.Count)
                                     {
                                         Consts.printMessage("Invalid command.");
                                     }

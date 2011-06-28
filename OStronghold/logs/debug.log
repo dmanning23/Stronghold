@@ -1,262 +1,45 @@
+==========================================================================
+Day 0 Hour 1 Minutes 0
+Hut added.
+==========================================================================
+Day 0 Hour 2 Minutes 0
+==========================================================================
+Day 0 Hour 3 Minutes 0
+==========================================================================
+Day 0 Hour 4 Minutes 0
+==========================================================================
+Day 0 Hour 5 Minutes 0
+Hut added.
+==========================================================================
+Day 0 Hour 6 Minutes 0
+==========================================================================
+Day 0 Hour 7 Minutes 0
+==========================================================================
+Day 0 Hour 8 Minutes 0
+==========================================================================
+Day 0 Hour 9 Minutes 0
+1 Person(s) added.
+==========================================================================
+Day 0 Hour 10 Minutes 0
 ID: 1
 Name: P#1
 Age: 18
 Gender: Male
 Fame: 0
-Money scale: 32
-Fame scale: 65
-XP scale: 3
-Hunger state: Hungry
-Hunger timer: Hungry
-Last ate: Day 0 Hour 6 Minutes 0
-Current Action Finish time: Day 0 Hour 16 Minutes 0
-HP: 20/20 (0) 
-MP: 0/0 (0) 
-Stamina: 39/100 (1) 
-Stamina used this tick: 0
-Health state: Alive
-Character actions: 
-Eating (5) Day 0 Hour 18 Minutes 0
-LookingForPlaceToLive (10) Day 0 Hour 17 Minutes 0
-Idle (99) Day 0 Hour 6 Minutes 0
-Character inventory: 
-capacity: 66/1000
-Item ID: 1000
-Item name: Gold
-Item weight: 0.1
-Item quantity: 57
-Item ID: 1001
-Item name: Food
-Item weight: 0.1
-Item quantity: 9
-Job ID: 3
-Location ID: 5000
-Home ID: 1
-
-ID: 2
-Name: P#2
-Age: 18
-Gender: Male
-Fame: 0
-Money scale: 39
-Fame scale: 56
-XP scale: 5
-Hunger state: Full
-Hunger timer: Full
-Last ate: Day 0 Hour 15 Minutes 0
-Current Action Finish time: Day 0 Hour 16 Minutes 0
-HP: 20/20 (1) 
-MP: 0/0 (0) 
-Stamina: 64/100 (1) 
-Stamina used this tick: 0
-Health state: Alive
-Character actions: 
-LookingForPlaceToLive (10) Day 0 Hour 17 Minutes 0
-Idle (99) Day 0 Hour 6 Minutes 0
-Character inventory: 
-capacity: 67/1000
-Item ID: 1000
-Item name: Gold
-Item weight: 0.1
-Item quantity: 58
-Item ID: 1001
-Item name: Food
-Item weight: 0.1
-Item quantity: 9
-Job ID: 4
-Location ID: 5000
-Home ID: 1
-
-ID: 3
-Name: P#3
-Age: 18
-Gender: Female
-Fame: 0
-Money scale: 24
-Fame scale: 10
-XP scale: 66
-Hunger state: Full
-Hunger timer: Full
-Last ate: Day 0 Hour 6 Minutes 0
-Current Action Finish time: Day 0 Hour 22 Minutes 0
-HP: 20/20 (0) 
-MP: 0/0 (0) 
-Stamina: 19/100 (1) 
-Stamina used this tick: 0
-Health state: Alive
-Character actions: 
-Working (50) Day 0 Hour 22 Minutes 0
-Idle (99) Day 0 Hour 6 Minutes 0
-Character inventory: 
-capacity: 60/1000
-Item ID: 1001
-Item name: Food
-Item weight: 0.1
-Item quantity: 10
-Item ID: 1000
-Item name: Gold
-Item weight: 0.1
-Item quantity: 50
-Job ID: 5
-Location ID: 5000
-Home ID: 1
-
-ID: 4
-Name: P#4
-Age: 18
-Gender: Male
-Fame: 0
-Money scale: 73
-Fame scale: 2
-XP scale: 25
-Hunger state: Full
-Hunger timer: Full
-Last ate: Day 0 Hour 15 Minutes 0
-Current Action Finish time: Day 0 Hour 16 Minutes 0
-HP: 20/20 (1) 
-MP: 0/0 (0) 
-Stamina: 74/100 (1) 
-Stamina used this tick: 0
-Health state: Alive
-Character actions: 
-LookingForPlaceToLive (10) Day 0 Hour 17 Minutes 0
-Idle (99) Day 0 Hour 6 Minutes 0
-Character inventory: 
-capacity: 65/1000
-Item ID: 1000
-Item name: Gold
-Item weight: 0.1
-Item quantity: 56
-Item ID: 1001
-Item name: Food
-Item weight: 0.1
-Item quantity: 9
-Job ID: 2
-Location ID: 5000
-Home ID: 1
-
-ID: 5
-Name: P#5
-Age: 18
-Gender: Male
-Fame: 0
-Money scale: 77
-Fame scale: 8
-XP scale: 15
-Hunger state: Full
-Hunger timer: Full
-Last ate: Day 0 Hour 15 Minutes 0
-Current Action Finish time: Day 0 Hour 16 Minutes 0
-HP: 20/20 (1) 
-MP: 0/0 (0) 
-Stamina: 64/100 (1) 
-Stamina used this tick: 0
-Health state: Alive
-Character actions: 
-LookingForPlaceToLive (10) Day 0 Hour 17 Minutes 0
-Idle (99) Day 0 Hour 6 Minutes 0
-Character inventory: 
-capacity: 60/1000
-Item ID: 1000
-Item name: Gold
-Item weight: 0.1
-Item quantity: 51
-Item ID: 1001
-Item name: Food
-Item weight: 0.1
-Item quantity: 9
-Job ID: 1
-Location ID: 5000
-Home ID: 1
-
-ID: 6
-Name: P#6
-Age: 18
-Gender: Male
-Fame: 0
-Money scale: 52
-Fame scale: 33
-XP scale: 15
-Hunger state: Normal
-Hunger timer: Normal
-Last ate: Day 0 Hour 12 Minutes 0
-Current Action Finish time: Day 0 Hour 16 Minutes 0
-HP: 20/20 (0) 
-MP: 0/0 (0) 
-Stamina: 100/100 (1) 
-Stamina used this tick: 0
-Health state: Alive
-Character actions: 
-LookingForPlaceToLive (10) Day 0 Hour 17 Minutes 0
-Idle (99) Day 0 Hour 12 Minutes 0
-Character inventory: 
-capacity: 60/1000
-Item ID: 1001
-Item name: Food
-Item weight: 0.1
-Item quantity: 10
-Item ID: 1000
-Item name: Gold
-Item weight: 0.1
-Item quantity: 50
-Job ID: -1
-Location ID: 5000
-Home ID: 2
-
-ID: 7
-Name: P#7
-Age: 18
-Gender: Male
-Fame: 0
-Money scale: 58
-Fame scale: 12
-XP scale: 30
-Hunger state: Normal
-Hunger timer: Normal
-Last ate: Day 0 Hour 12 Minutes 0
-Current Action Finish time: Day 0 Hour 16 Minutes 0
-HP: 20/20 (0) 
-MP: 0/0 (0) 
-Stamina: 100/100 (1) 
-Stamina used this tick: 0
-Health state: Alive
-Character actions: 
-LookingForPlaceToLive (10) Day 0 Hour 17 Minutes 0
-Idle (99) Day 0 Hour 12 Minutes 0
-Character inventory: 
-capacity: 60/1000
-Item ID: 1001
-Item name: Food
-Item weight: 0.1
-Item quantity: 10
-Item ID: 1000
-Item name: Gold
-Item weight: 0.1
-Item quantity: 50
-Job ID: -1
-Location ID: 5000
-Home ID: 2
-
-ID: 8
-Name: P#8
-Age: 18
-Gender: Female
-Fame: 0
-Money scale: 48
-Fame scale: 13
+Money scale: 36
+Fame scale: 25
 XP scale: 39
-Hunger state: Normal
-Hunger timer: Normal
-Last ate: Day 0 Hour 12 Minutes 0
-Current Action Finish time: Day 0 Hour 16 Minutes 0
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 9 Minutes 0
+Current Action Finish time: Day 0 Hour 0 Minutes 0
 HP: 20/20 (0) 
 MP: 0/0 (0) 
 Stamina: 100/100 (1) 
 Stamina used this tick: 0
 Health state: Alive
 Character actions: 
-LookingForPlaceToLive (10) Day 0 Hour 17 Minutes 0
-Idle (99) Day 0 Hour 12 Minutes 0
+Idle (99) Day 0 Hour 9 Minutes 0
 Character inventory: 
 capacity: 60/1000
 Item ID: 1001
@@ -269,161 +52,350 @@ Item weight: 0.1
 Item quantity: 50
 Job ID: -1
 Location ID: 5000
-Home ID: 1
-
-ID: 9
-Name: P#9
-Age: 18
-Gender: Female
-Fame: 0
-Money scale: 32
-Fame scale: 66
-XP scale: 2
-Hunger state: Normal
-Hunger timer: Normal
-Last ate: Day 0 Hour 12 Minutes 0
-Current Action Finish time: Day 0 Hour 16 Minutes 0
-HP: 20/20 (0) 
-MP: 0/0 (0) 
-Stamina: 100/100 (1) 
-Stamina used this tick: 0
-Health state: Alive
-Character actions: 
-LookingForPlaceToLive (10) Day 0 Hour 17 Minutes 0
-Idle (99) Day 0 Hour 12 Minutes 0
-Character inventory: 
-capacity: 60/1000
-Item ID: 1001
-Item name: Food
-Item weight: 0.1
-Item quantity: 10
-Item ID: 1000
-Item name: Gold
-Item weight: 0.1
-Item quantity: 50
-Job ID: -1
-Location ID: 5000
-Home ID: 1
-
-ID: 10
-Name: P#10
-Age: 18
-Gender: Male
-Fame: 0
-Money scale: 71
-Fame scale: 2
-XP scale: 27
-Hunger state: Normal
-Hunger timer: Normal
-Last ate: Day 0 Hour 12 Minutes 0
-Current Action Finish time: Day 0 Hour 16 Minutes 0
-HP: 20/20 (0) 
-MP: 0/0 (0) 
-Stamina: 100/100 (1) 
-Stamina used this tick: 0
-Health state: Alive
-Character actions: 
-LookingForPlaceToLive (10) Day 0 Hour 17 Minutes 0
-Idle (99) Day 0 Hour 12 Minutes 0
-Character inventory: 
-capacity: 60/1000
-Item ID: 1001
-Item name: Food
-Item weight: 0.1
-Item quantity: 10
-Item ID: 1000
-Item name: Gold
-Item weight: 0.1
-Item quantity: 50
-Job ID: -1
-Location ID: 5000
-Home ID: 1
-
-ID: 11
-Name: P#11
-Age: 18
-Gender: Female
-Fame: 0
-Money scale: 74
-Fame scale: 23
-XP scale: 3
-Hunger state: Normal
-Hunger timer: Normal
-Last ate: Day 0 Hour 12 Minutes 0
-Current Action Finish time: Day 0 Hour 16 Minutes 0
-HP: 20/20 (0) 
-MP: 0/0 (0) 
-Stamina: 100/100 (1) 
-Stamina used this tick: 0
-Health state: Alive
-Character actions: 
-LookingForPlaceToLive (10) Day 0 Hour 17 Minutes 0
-Idle (99) Day 0 Hour 12 Minutes 0
-Character inventory: 
-capacity: 60/1000
-Item ID: 1001
-Item name: Food
-Item weight: 0.1
-Item quantity: 10
-Item ID: 1000
-Item name: Gold
-Item weight: 0.1
-Item quantity: 50
-Job ID: -1
-Location ID: 5000
-Home ID: 1
-
-ID: 12
-Name: P#12
-Age: 18
-Gender: Female
-Fame: 0
-Money scale: 43
-Fame scale: 16
-XP scale: 41
-Hunger state: Normal
-Hunger timer: Normal
-Last ate: Day 0 Hour 12 Minutes 0
-Current Action Finish time: Day 0 Hour 16 Minutes 0
-HP: 20/20 (0) 
-MP: 0/0 (0) 
-Stamina: 100/100 (1) 
-Stamina used this tick: 0
-Health state: Alive
-Character actions: 
-LookingForPlaceToLive (10) Day 0 Hour 17 Minutes 0
-Idle (99) Day 0 Hour 12 Minutes 0
-Character inventory: 
-capacity: 60/1000
-Item ID: 1001
-Item name: Food
-Item weight: 0.1
-Item quantity: 10
-Item ID: 1000
-Item name: Gold
-Item weight: 0.1
-Item quantity: 50
-Job ID: -1
-Location ID: 5000
-Home ID: 1
+Home ID: 5000
 
 Building ID: 1
+Owner ID: 9999
 Building type: 100
 Building name: Hut
 Building HP: 100/100
 Cost to build: 25
 Building level: 1/5
 Start build time: Day 0 Hour 1 Minutes 0
-End build time: Day 0 Hour 1 Minutes 0
-Tenants: 10/10
+End build time: Day 0 Hour 13 Minutes 0
+Building state: UnderConstruction
+Tenants: 0/10
 
-Building ID: 2
+==========================================================================
+Day 0 Hour 11 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 36
+Fame scale: 25
+XP scale: 39
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 9 Minutes 0
+Current Action Finish time: Day 0 Hour 9 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (1) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+LookingForPlaceToLive (10) Day 0 Hour 10 Minutes 0
+Idle (99) Day 0 Hour 9 Minutes 0
+Character inventory: 
+capacity: 60/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 10
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: -1
+Location ID: 5000
+Home ID: 5000
+
+Building ID: 1
+Owner ID: 9999
 Building type: 100
 Building name: Hut
 Building HP: 100/100
 Cost to build: 25
 Building level: 1/5
-Start build time: Day 0 Hour 8 Minutes 0
-End build time: Day 0 Hour 8 Minutes 0
-Tenants: 2/10
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 13 Minutes 0
+Building state: UnderConstruction
+Tenants: 0/10
+
+==========================================================================
+Day 0 Hour 12 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 36
+Fame scale: 25
+XP scale: 39
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 9 Minutes 0
+Current Action Finish time: Day 0 Hour 10 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 96/100 (1) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+LookingForPlaceToLive (10) Day 0 Hour 10 Minutes 0
+Idle (99) Day 0 Hour 9 Minutes 0
+Character inventory: 
+capacity: 60/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 10
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: -1
+Location ID: 5000
+Home ID: 5000
+
+Building ID: 1
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 13 Minutes 0
+Building state: UnderConstruction
+Tenants: 0/10
+
+==========================================================================
+Day 0 Hour 13 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 36
+Fame scale: 25
+XP scale: 39
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 9 Minutes 0
+Current Action Finish time: Day 0 Hour 10 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 92/100 (1) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+LookingForPlaceToLive (10) Day 0 Hour 10 Minutes 0
+Idle (99) Day 0 Hour 9 Minutes 0
+Character inventory: 
+capacity: 60/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 10
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: -1
+Location ID: 5000
+Home ID: 5000
+
+Building ID: 1
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 13 Minutes 0
+Building state: UnderConstruction
+Tenants: 0/10
+
+==========================================================================
+Day 0 Hour 14 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 36
+Fame scale: 25
+XP scale: 39
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 9 Minutes 0
+Current Action Finish time: Day 0 Hour 10 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 88/100 (1) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+LookingForPlaceToLive (10) Day 0 Hour 10 Minutes 0
+Idle (99) Day 0 Hour 9 Minutes 0
+Character inventory: 
+capacity: 60/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 10
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: -1
+Location ID: 5000
+Home ID: 5000
+
+Building ID: 1
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 13 Minutes 0
+Building state: Built
+Tenants: 0/10
+
+==========================================================================
+Day 0 Hour 15 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 36
+Fame scale: 25
+XP scale: 39
+Hunger state: Normal
+Hunger timer: Normal
+Last ate: Day 0 Hour 9 Minutes 0
+Current Action Finish time: Day 0 Hour 10 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 89/100 (1) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 9 Minutes 0
+Character inventory: 
+capacity: 60/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 10
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: -1
+Location ID: 1
+Home ID: 1
+
+Building ID: 1
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 13 Minutes 0
+Building state: Built
+Tenants: 1/10
+
+==========================================================================
+Day 0 Hour 16 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 36
+Fame scale: 25
+XP scale: 39
+Hunger state: Normal
+Hunger timer: Normal
+Last ate: Day 0 Hour 9 Minutes 0
+Current Action Finish time: Day 0 Hour 9 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 90/100 (1) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 9 Minutes 0
+Character inventory: 
+capacity: 60/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 10
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: -1
+Location ID: 1
+Home ID: 1
+
+Building ID: 1
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 13 Minutes 0
+Building state: Built
+Tenants: 1/10
+
+==========================================================================
+Day 0 Hour 17 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 36
+Fame scale: 25
+XP scale: 39
+Hunger state: Normal
+Hunger timer: Normal
+Last ate: Day 0 Hour 9 Minutes 0
+Current Action Finish time: Day 0 Hour 9 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 91/100 (1) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 9 Minutes 0
+Character inventory: 
+capacity: 60/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 10
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: -1
+Location ID: 1
+Home ID: 1
+
+Building ID: 1
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 13 Minutes 0
+Building state: Built
+Tenants: 1/10
 

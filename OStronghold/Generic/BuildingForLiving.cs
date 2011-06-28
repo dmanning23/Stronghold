@@ -20,9 +20,9 @@ namespace OStronghold.Generic
 
         #region Constructor
 
-        public BuildingForLiving(int idValue, int typeValue, string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
-                                 Gametime endBuildTimeValue, Status tenantsValue)
-            : base(idValue, typeValue, nameValue, hpValue, costToBuildValue, levelValue, startBuildTimeValue, endBuildTimeValue)
+        public BuildingForLiving(int idValue,int ownerIDValue, int typeValue, string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
+                                 Gametime endBuildTimeValue, Status tenantsValue, Consts.buildingState buildingStateValue)
+            : base(idValue, ownerIDValue, typeValue, nameValue, hpValue, costToBuildValue, levelValue, startBuildTimeValue, endBuildTimeValue, buildingStateValue)
         {
             _tenants = new Status(tenantsValue);                       
         }
@@ -57,7 +57,8 @@ namespace OStronghold.Generic
         public override string getBuildingString()
         {
             string result = "";
-            result += "Building ID: " + base.ID + "\n";
+            result += "Building ID: " + base.BuildingID + "\n";
+            result += "Owner ID: " + base.OwnerID + "\n";
             result += "Building type: " + base.Type + "\n";
             result += "Building name: " + base.Name + "\n";
             result += "Building HP: " + base.HP.Current + "/" + base.HP.Max + "\n";
@@ -65,6 +66,7 @@ namespace OStronghold.Generic
             result += "Building level: " + base.Level.Current + "/" + base.Level.Max + "\n";
             result += "Start build time: " + base.StartBuildTime + "\n";
             result += "End build time: " + base.EndBuildTime + "\n";
+            result += "Building state: " + base.BuildingState + "\n";
             result += "Tenants: " + Tenants.Current + "/" + Tenants.Max + "\n";            
             
             return result;

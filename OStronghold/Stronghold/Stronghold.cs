@@ -46,13 +46,14 @@ namespace OStronghold
             _leader._characterinventory.putInInventory(new Generic.InventoryItem(Consts.FOOD_NAME, Consts.FOOD_ID, Consts.FOOD_WEIGHT, 10));            
 
             //testing out job
-            Job job;
+
             _allJobs = new LinkedList<Job>();
-            for (int i = 1; i <= 5; i++)
-            {
-                job = new Job(i, 9999, -1, "Farmer#" + i, Program._gametime, Program._gametime + Consts.rand.Next(0, 3600), new Gametime(0, Consts.rand.Next(0, 8)), new Gametime(0, Consts.rand.Next(12, 23)), Consts.rand.Next(1, 15), Consts.JobStatus.Available);
-                _allJobs.AddLast(job);
-            }
+            //Job job;
+            //for (int i = 1; i <= 5; i++)
+            //{
+            //    job = new Job(i, 9999, -1, "Farmer#" + i, Program._gametime, Program._gametime + Consts.rand.Next(0, 3600), new Gametime(0, Consts.rand.Next(0, 8)), new Gametime(0, Consts.rand.Next(12, 23)), Consts.rand.Next(1, 15), Consts.JobStatus.Available);
+            //    _allJobs.AddLast(job);
+            //}
 
             //buildings
             _buildingsList = new LinkedList<Building>();
@@ -157,7 +158,7 @@ namespace OStronghold
         {
             foreach (Building building in _buildingsList)
             {
-                if (building.ID == buildingID)
+                if (building.BuildingID == buildingID)
                 {
                     return building;
                 }
@@ -203,5 +204,35 @@ namespace OStronghold
         }
         
         #endregion
+
+        #region Methods for constructing buildings
+
+        public void buildHut()
+        {
+            if (Treasury.haveEnoughToWithdraw(Consts.hut_costtobuild))
+            {
+                Generic.BuildingForLiving hut =
+                    new Generic.BuildingForLiving(Program._aStronghold._buildingsList.Count + 1, //building ID
+                                                  _leader._id, //owner ID
+                                                  Consts.accomodation, //building type
+                                                  Consts.hut_name, //building name
+                                                  Consts.hut_hp, //building HP
+                                                  Consts.hut_costtobuild, //building cost to build
+                                                  new Generic.Status(1, Consts.hut_maxlevel), //building level
+                                                  Program._gametime, //building start build time
+                                                  Program._gametime + Consts.hut_buildtime, //building end build time
+                                                  new Generic.Status(0, 10), //building tenants
+                                                  Consts.buildingState.Planned); //building state
+
+                Program._aStronghold._buildingsList.AddLast(hut);
+                Treasury.withdrawGold(Consts.hut_costtobuild);
+            }//have enough money to build hut
+            else
+            {
+                Consts.writeToDebugLog("Not enough money to build hut.");
+            }
+        }
+
+        #endregion 
     }
 }
