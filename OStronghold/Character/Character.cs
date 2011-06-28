@@ -103,7 +103,7 @@ namespace OStronghold
                 {
                     this._jobID = job.JobID;
                     job.JobStatus = Consts.JobStatus.Taken;
-                    job.WorkerID = this._id;                    
+                    job.WorkerID = this._id;
                     return true;
                 }
             }
@@ -142,13 +142,14 @@ namespace OStronghold
 
         public int findPlaceToLive()
         {
-            foreach (BuildingForLiving building in Program._aStronghold._buildingsList)
+            foreach (Building building in Program._aStronghold._buildingsList)
             {
                 if (building.Type == Consts.accomodation && building.BuildingState == Consts.buildingState.Built)
                 {
-                    if (building.isPopulable(1))
+                    if (((BuildingForLiving)building).isPopulable(1))
                     {
-                        building.populateLivingBuilding(1);
+                        ((BuildingForLiving)building).TenantsID[((BuildingForLiving)building).Tenants.Current] = this._id;
+                        ((BuildingForLiving)building).populateLivingBuilding(1);                        
                         return building.BuildingID;                        
                     }
                 }//found place to live

@@ -9,10 +9,10 @@ namespace OStronghold.Generic
     {
         #region Members
 
-        private LinkedList<Job> _jobs; //list of jobs the building offers
+        private int[] _jobs; //list of jobs the building offers
         private LinkedList<InventoryItem> _inventory; //building's inventory (list of goods)
 
-        public LinkedList<Job> Jobs
+        public int[] Jobs
         {
             get { return _jobs; }
         }
@@ -31,22 +31,29 @@ namespace OStronghold.Generic
         }
 
         public BuildingWithJobsAndInventory(int buildingIDValue,int ownerIDValue, int typeValue, string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
-                                Gametime endBuildTimeValue, LinkedList<Job> jobsList, LinkedList<InventoryItem> inventoryList, Consts.buildingState buildingStateValue)
+                                Gametime endBuildTimeValue, int[] jobsList, LinkedList<InventoryItem> inventoryList, Consts.buildingState buildingStateValue)
             : base(buildingIDValue, ownerIDValue, typeValue, nameValue, hpValue, costToBuildValue, levelValue, startBuildTimeValue, endBuildTimeValue, buildingStateValue)
         {
-            Job tempJob;
-            foreach (Job job in jobsList)
+            if (jobsList != null)
             {
-                tempJob = new Job(job);
-                _jobs.AddLast(job);
+                _jobs = new int[jobsList.Length];
+                for (int i = 0; i < jobsList.Length; i++)
+                {
+                    _jobs[i] = jobsList[i];
+                }
             }
+            else _jobs = null;
 
-            InventoryItem tempItem;
-            foreach (InventoryItem item in inventoryList)
+            if (inventoryList != null)
             {
-                tempItem = new InventoryItem(item);
-                _inventory.AddLast(tempItem);
+                InventoryItem tempItem;
+                foreach (InventoryItem item in inventoryList)
+                {
+                    tempItem = new InventoryItem(item);
+                    _inventory.AddLast(tempItem);
+                }
             }
+            else _inventory = null;
         }
 
         #endregion
@@ -66,16 +73,26 @@ namespace OStronghold.Generic
             result += "Start build time: " + base.StartBuildTime + "\n";
             result += "End build time: " + base.EndBuildTime + "\n";
             result += "Building state: " + base.BuildingState + "\n";
-            result += "Jobs: " + base.EndBuildTime + "\n";
-            foreach (Job job in Jobs)
+            result += "Jobs: \n";
+            if (_jobs != null)
             {
-                result += job.getJobString();
+                for (int i = 0; i < _jobs.Length; i++)
+                {
+                    result += Program._aStronghold.searchJobByID(_jobs[i]).getJobString();
+                }
             }
-            result += "Inventory: " + base.EndBuildTime + "\n";
-            foreach (InventoryItem item in Inventory)
+            else result += "None.";
+
+            result += "Inventory: \n";
+            
+            if (_inventory != null)
             {
-                result += item.getInventoryItemString();
+                foreach (InventoryItem item in Inventory)
+                {
+                    result += item.getInventoryItemString();
+                }
             }
+            else result += "None.";
 
             return result;
         }

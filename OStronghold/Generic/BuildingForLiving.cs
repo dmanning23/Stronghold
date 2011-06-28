@@ -10,10 +10,16 @@ namespace OStronghold.Generic
         #region Members
 
         private Status _tenants;
+        private int[] _tenantsID;
 
         public Status Tenants
         {
             get { return _tenants; }            
+        }
+
+        public int[] TenantsID
+        {
+            get { return _tenantsID; }
         }
 
         #endregion
@@ -21,10 +27,20 @@ namespace OStronghold.Generic
         #region Constructor
 
         public BuildingForLiving(int idValue,int ownerIDValue, int typeValue, string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
-                                 Gametime endBuildTimeValue, Status tenantsValue, Consts.buildingState buildingStateValue)
+                                 Gametime endBuildTimeValue, Status tenantsValue, int[] tenantsIDValue, Consts.buildingState buildingStateValue)
             : base(idValue, ownerIDValue, typeValue, nameValue, hpValue, costToBuildValue, levelValue, startBuildTimeValue, endBuildTimeValue, buildingStateValue)
         {
-            _tenants = new Status(tenantsValue);                       
+            _tenants = new Status(tenantsValue);
+
+            if (tenantsIDValue != null)
+            {
+                _tenantsID = new int[tenantsIDValue.Length];
+                for (int i = 0; i < tenantsIDValue.Length; i++)
+                {
+                    _tenantsID[i] = tenantsIDValue[i];
+                }
+            }
+            else _tenantsID = null;
         }
 
         #endregion
@@ -67,7 +83,16 @@ namespace OStronghold.Generic
             result += "Start build time: " + base.StartBuildTime + "\n";
             result += "End build time: " + base.EndBuildTime + "\n";
             result += "Building state: " + base.BuildingState + "\n";
-            result += "Tenants: " + Tenants.Current + "/" + Tenants.Max + "\n";            
+            result += "Tenants: " + Tenants.Current + "/" + Tenants.Max + "\n";
+            result += "Tenants ID: \n";
+            if (null != _tenantsID || _tenantsID.Length != 0)
+            {
+                for (int i = 0; i < _tenantsID.Length; i++)
+                {
+                    result += _tenantsID[i] + "\n";
+                }
+            }
+            else result += "None.";
             
             return result;
         }

@@ -78,7 +78,7 @@ namespace OStronghold
                 commoner._bodyneeds.HungerState = Consts.hungerState.Full;
                 commoner._bodyneeds.SleepState = Consts.sleepState.Awake;
                 commoner._health.defineHP(20, 0);
-                commoner._health.defineStamina(100, 1);
+                commoner._health.defineStamina(100, 10);
                 commoner._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Idle, Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionPriority, Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionDuration));
                 commoner._characterinventory.putInInventory(new Generic.InventoryItem(Consts.FOOD_NAME, Consts.FOOD_ID, Consts.FOOD_WEIGHT, 10));
                 commoner._characterinventory.putInInventory(new Generic.InventoryItem(Consts.GOLD_NAME, Consts.GOLD_ID, Consts.GOLD_WEIGHT, 50));
@@ -178,31 +178,7 @@ namespace OStronghold
             }
             return list;
         }//returns list of all jobs with status of available
-
-        public void doSomething()
-        {
-
-            //Console.Clear();
-            //Consts.printMessage("----------------------------------------------------------");
-            //Consts.printMessage("Game time: " + Program._gametime.ToString());
-            //Consts.printMessage("Stronghold GP: " + Program._aStronghold.Treasury.Gold);
-            //Consts.printMessage("Jobs available: " + Program._aStronghold.getAllAvailableJobs().Count);
-            //Program._aStronghold.printJobs();
-            //Consts.printMessage();
-            //Program._aStronghold.printPopulation();
-
-            if (Program._gametime.Hour == 0)
-            {
-                int end = Consts.rand.Next(1, 5);
-                for (int i = 0; i < end; i++)
-                {
-                    int jobId = Program._aStronghold._allJobs.Count + 1;
-                    Generic.Job job = new Generic.Job(jobId, 9999, -1, "Farmer#" + jobId, Program._gametime, Program._gametime + Consts.rand.Next(0, 3600), new Gametime(0, Consts.rand.Next(0, 8)), new Gametime(0, Consts.rand.Next(12, 23)), Consts.rand.Next(1, 15), Consts.JobStatus.Available);
-                    Program._aStronghold._allJobs.AddLast(job);
-                }
-            }
-        }
-        
+       
         #endregion
 
         #region Methods for constructing buildings
@@ -221,7 +197,8 @@ namespace OStronghold
                                                   new Generic.Status(1, Consts.hut_maxlevel), //building level
                                                   Program._gametime, //building start build time
                                                   Program._gametime + Consts.hut_buildtime, //building end build time
-                                                  new Generic.Status(0, 10), //building tenants
+                                                  new Generic.Status(0, Consts.hut_maxtenants), //building tenants
+                                                  new int[Consts.hut_maxtenants],
                                                   Consts.buildingState.Planned); //building state
 
                 Program._aStronghold._buildingsList.AddLast(hut);
@@ -230,6 +207,58 @@ namespace OStronghold
             else
             {
                 Consts.writeToDebugLog("Not enough money to build hut.");
+            }
+        }
+
+        public void buildFarm()
+        {
+            if (Treasury.haveEnoughToWithdraw(Consts.farm_costtobuild))
+            {
+                int jobID, buildingID;
+                Job farmerJob;
+                int[] farmJobs = new int[Consts.numberOfFarmersPerFarm];
+
+                buildingID = Program._aStronghold._buildingsList.Count + 1;
+                
+                for (int i = 0; i < Consts.numberOfFarmersPerFarm; i++)
+                {
+                    jobID = Program._aStronghold._allJobs.Count + 1;
+                    farmerJob = new Job(jobID,
+                                        buildingID,
+                                        _leader._id,
+                                        Consts.noworker,
+                                        "Farmer",
+                                        Program._gametime,
+                                        Program._gametime + Consts.oneMonth,
+                                        new Gametime(0, 5, 0),
+                                        new Gametime(0, 15, 0),
+                                        Consts.farmerPayroll,
+                                        Consts.JobStatus.Available);
+                    _allJobs.AddLast(farmerJob);
+                    farmJobs[i] = jobID;
+                } //creates jobs for the farmer
+
+
+                Generic.BuildingWithJobsAndInventory farm =
+                    new BuildingWithJobsAndInventory(buildingID, //building ID
+                                                     _leader._id, //owner ID
+                                                     Consts.farm, //type
+                                                     Consts.farm_name, //name
+                                                     Consts.farm_hp, //hp
+                                                     Consts.farm_costtobuild, //cost to build
+                                                     new Generic.Status(1, Consts.farm_maxlevel), //level
+                                                     Program._gametime, //start build time
+                                                     Program._gametime + Consts.farm_buildtime,  //end build time
+                                                     farmJobs,//jobs
+                                                     null,//inventory
+                                                     Consts.buildingState.Planned);
+                
+                Program._aStronghold._buildingsList.AddLast(farm);
+                Treasury.withdrawGold(Consts.farm_costtobuild);
+            }//have enough money to build farm
+            else
+            {
+                Consts.writeToDebugLog("Not enough money to build farm.");
             }
         }
 

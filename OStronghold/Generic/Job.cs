@@ -78,12 +78,13 @@ namespace OStronghold.Generic
         {
         }
 
-        public Job(int jobID, int ownerID, int workerID, string jobName, Gametime startDate, Gametime endDate, Gametime startTime, Gametime endTime, int payroll, Consts.JobStatus jobStatus)
+        public Job(int jobID, int buildingID, int ownerID, int workerID, string jobName, Gametime startDate, Gametime endDate, Gametime startTime, Gametime endTime, int payroll, Consts.JobStatus jobStatus)
         {
             if (startDate <= endDate &&
                 startTime <= endTime)
             {
                 _jobID = jobID;
+                _buildingID = buildingID;
                 _ownerID = ownerID;
                 _workerID = workerID;
                 _jobName = String.Copy(jobName);
@@ -112,6 +113,7 @@ namespace OStronghold.Generic
         public void Clone(Job targetJob)
         {
             _jobID = targetJob.JobID;
+            _buildingID = targetJob.BuildingID;
             _ownerID = targetJob.OwnerID;
             _workerID = targetJob.WorkerID;
             _jobName = String.Copy(targetJob.JobName);

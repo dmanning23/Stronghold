@@ -21,13 +21,14 @@ namespace OStronghold
             while (true)
             {
                 Console.Clear();
-                Consts.printMessage("------------------------------------------------");                
-                Consts.printMessage("                 Debug Menu");
                 Consts.printMessage("------------------------------------------------");
-                Consts.printMessage("<add|show> hut");
-                Consts.printMessage("<add|show> person <number>");
+                Consts.printMessage("                 Debug Menu         " + Program._gametime);
+                Consts.printMessage("------------------------------------------------");
+                Consts.printMessage("add farm");
+                Consts.printMessage("add|show hut");
+                Consts.printMessage("add|show person <number>");
                 Consts.printMessage("dump <person|building|job> <id|all>");
-                Consts.printMessage("<show|suspend|resume|stop> game time");
+                Consts.printMessage("show|suspend|resume|stop game time");
                 Consts.printMessage("quit");
                 Consts.printMessage("");
                 Console.Write("Enter input: ");
@@ -51,6 +52,12 @@ namespace OStronghold
                             _aStronghold.buildHut();
                             Consts.printMessage("Hut added.");
                             Consts.writeToDebugLog("Hut added.");
+                        }
+                        else if (words[1] == "farm")
+                        {
+                            _aStronghold.buildFarm();
+                            Consts.printMessage("Farm added.");
+                            Consts.writeToDebugLog("Farm added.");
                         }
                         else Consts.printMessage("Invalid command.");
                         break;

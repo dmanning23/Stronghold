@@ -262,8 +262,14 @@ namespace OStronghold
             {
                 Consts.writeToDebugLog("==========================================================================");
                 Consts.writeToDebugLog(Program._gametime.ToString());
-                Consts.writeToDebugLog(((Character)Program._aStronghold._commoners[1]).getCharacterString());
-                Consts.writeToDebugLog(Program._aStronghold.searchBuildingByID(1).getBuildingString());
+                for (int i = 1; i <= Program._aStronghold._commoners.Count; i++)
+                {
+                    Consts.writeToDebugLog(((Character)Program._aStronghold._commoners[i]).getCharacterString());
+                }
+                for (int i = 1; i <= Program._aStronghold._buildingsList.Count; i++)
+                {
+                    Consts.writeToDebugLog(Program._aStronghold.searchBuildingByID(i).getBuildingString());
+                }
             }
             catch (Exception ex)
             {
@@ -391,7 +397,12 @@ namespace OStronghold
                                 LinkedList<Generic.Job> listOfAvailableJobs = Program._aStronghold.getAllAvailableJobs();
                                 if (listOfAvailableJobs.Count > 0)
                                 {
-                                    person.applyForJob(Program._aStronghold.getAllAvailableJobs().First.Value.JobID); //need to decide how the person determines what job he/she wants to apply for
+                                    Generic.Job availableJob = listOfAvailableJobs.First.Value;//need to decide how the person determines what job he/she wants to apply for
+                                    
+                                    if (Program._aStronghold.searchBuildingByID(availableJob.BuildingID).BuildingState == Consts.buildingState.Built)
+                                    {
+                                        person.applyForJob(availableJob.JobID); 
+                                    }//building that is providing with the job must be built first
                                 }
                             }//person applies for first job in the list
                             else
@@ -422,7 +433,7 @@ namespace OStronghold
                             #endregion
                             #region Accomondation check
 
-                            if (person._locationID == Consts.stronghold_yard)
+                            if (person._locationID == Consts.stronghold_yard && person._homeID == Consts.stronghold_yard)
                             {
                                 finishTime = Program._gametime;
                                 person._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.LookingForPlaceToLive, Consts.actionsData[(int)Consts.characterGeneralActions.LookingForPlaceToLive]._actionPriority, finishTime));
@@ -465,11 +476,11 @@ namespace OStronghold
 
             foreach (Generic.Building building in Program._aStronghold._buildingsList)
             {
-                if (Program._gametime >= building.StartBuildTime && Program._gametime < building.EndBuildTime)
+                if (Program._gametime >= building.StartBuildTime && Program._gametime <= building.EndBuildTime)
                 {
                     building.BuildingState = Consts.buildingState.UnderConstruction;
                 }//building is underconstruction
-                else if (Program._gametime >= building.EndBuildTime)
+                else if (Program._gametime > building.EndBuildTime)
                 {
                     building.BuildingState = Consts.buildingState.Built;
                 }//building is finished

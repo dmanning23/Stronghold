@@ -62,6 +62,7 @@ namespace OStronghold
         public static int oneHour = 60;
         public static int halfDay = 720;
         public static int oneDay = 1440;
+        public static int oneMonth = 43200;
 
         #endregion
 
@@ -80,7 +81,11 @@ namespace OStronghold
         #region job related
 
         public enum JobStatus { Available, Taken , Closed};
+        public static int noworker = -1;
 
+        public static int farmerJobDuration = oneMonth;
+        public static int farmerPayroll = 3;
+        public static int numberOfFarmersPerFarm = 5;
         #endregion
 
         #region ID numbers reserved (1-99)
@@ -113,11 +118,13 @@ namespace OStronghold
         public static int hut_costtobuild = 25;
         public static int hut_maxlevel = 5;
         public static int hut_buildtime = halfDay;
+        public static int hut_maxtenants = 10;
 
         public static string farm_name = "Farm";
         public static OStronghold.Generic.Status farm_hp;
         public static int farm_costtobuild = 20;
         public static int farm_maxlevel = 3;
+        public static int farm_buildtime = halfDay;
 
         #endregion
 
