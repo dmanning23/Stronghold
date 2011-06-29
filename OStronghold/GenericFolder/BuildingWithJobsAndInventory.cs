@@ -10,14 +10,14 @@ namespace OStronghold.GenericFolder
         #region Members
 
         private int[] _jobs; //list of jobs the building offers
-        private LinkedList<InventoryItem> _inventory; //building's inventory (list of goods)
+        private InventoryItem[] _inventory; //building's inventory (list of goods)
         private Status _maxInventoryCapacity; //maximum amount of items can be hold by inventory
 
         public int[] Jobs
         {
             get { return _jobs; }
         }
-        public LinkedList<InventoryItem> Inventory
+        public InventoryItem[] Inventory
         {
             get { return _inventory; }
         }
@@ -36,7 +36,7 @@ namespace OStronghold.GenericFolder
         }
 
         public BuildingWithJobsAndInventory(int buildingIDValue,int ownerIDValue, int typeValue, string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
-                                Gametime endBuildTimeValue, int[] jobsList, LinkedList<InventoryItem> inventoryList, Consts.buildingState buildingStateValue, Status maxInvCapacityValue)
+                                Gametime endBuildTimeValue, int[] jobsList, InventoryItem[] inventoryList, Consts.buildingState buildingStateValue, Status maxInvCapacityValue)
             : base(buildingIDValue, ownerIDValue, typeValue, nameValue, hpValue, costToBuildValue, levelValue, startBuildTimeValue, endBuildTimeValue, buildingStateValue)
         {
             if (jobsList != null)
@@ -48,15 +48,21 @@ namespace OStronghold.GenericFolder
                 }
             }
             else _jobs = null;
-
+            
             if (inventoryList != null)
             {
-                InventoryItem tempItem;
-                foreach (InventoryItem item in inventoryList)
+                _inventory = new InventoryItem[inventoryList.Length];
+                for (int i = 0; i < inventoryList.Length; i++)
                 {
-                    tempItem = new InventoryItem(item);
-                    _inventory.AddLast(tempItem);
-                }
+                    if (inventoryList[i] == null)
+                    {
+                        _inventory[i] = null;
+                    }
+                    else
+                    {
+                        _inventory[i] = new InventoryItem(inventoryList[i]);
+                    }
+                }                
             }
             else _inventory = null;
 
@@ -92,12 +98,15 @@ namespace OStronghold.GenericFolder
 
             result += "Max Inv Capacity: " + _maxInventoryCapacity.Current + "/" + MaxInventoryCapacity.Max + "\n";
             result += "Inventory: \n";
-            
+
             if (_inventory != null)
             {
-                foreach (InventoryItem item in Inventory)
+                for (int i = 0; i < _inventory.Length; i++)
                 {
-                    result += item.getInventoryItemString();
+                    if (_inventory[i] != null)
+                    {
+                        result += _inventory[i].getInventoryItemString();
+                    }
                 }
             }
             else result += "None.";

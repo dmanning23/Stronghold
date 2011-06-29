@@ -100,6 +100,7 @@ namespace OStronghold
         public static int numberOfGranaryKeepersPerGranary = 1;
         public static Gametime granaryKeeperBeginTime;
         public static Gametime granaryKeeperEndTime;
+        public static int granaryMaxInventory = 1000;
 
         #endregion
 

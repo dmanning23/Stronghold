@@ -260,6 +260,7 @@ namespace OStronghold.StrongholdFolder
                 int buildingID;
                 Job granaryKeeperJob;
                 int[] granaryJobs = new int[Consts.numberOfGranaryKeepersPerGranary];
+                InventoryItem[] granaryInventory = new InventoryItem[Consts.granaryMaxInventory];
 
                 buildingID = Program._aStronghold._buildingsList.Count + 1;
 
@@ -282,9 +283,9 @@ namespace OStronghold.StrongholdFolder
                                                      Program._gametime, //start build time
                                                      Program._gametime + Consts.granary_buildtime,  //end build time
                                                      granaryJobs,//jobs
-                                                     new LinkedList<InventoryItem>(),//inventory
+                                                     granaryInventory,//inventory
                                                      Consts.buildingState.Planned,
-                                                     new Status(0, 0));
+                                                     new Status(0, Consts.granaryMaxInventory));
 
                 Program._aStronghold._buildingsList.AddLast(granary);
                 Treasury.withdrawGold(Consts.granary_costtobuild);
