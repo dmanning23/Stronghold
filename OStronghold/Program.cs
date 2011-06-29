@@ -5,6 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
+using OStronghold.StrongholdFolder;
+using OStronghold.GenericFolder;
+using OStronghold.CharacterFolder;
+
 namespace OStronghold
 {
     class Program
@@ -25,6 +29,7 @@ namespace OStronghold
                 Consts.printMessage("                 Debug Menu         " + Program._gametime);
                 Consts.printMessage("------------------------------------------------");
                 Consts.printMessage("add farm");
+                Consts.printMessage("add granary");
                 Consts.printMessage("add|show hut");
                 Consts.printMessage("add|show person <number>");
                 Consts.printMessage("dump <person|building|job> <id|all>");
@@ -58,6 +63,12 @@ namespace OStronghold
                             _aStronghold.buildFarm();
                             Consts.printMessage("Farm added.");
                             Consts.writeToDebugLog("Farm added.");
+                        }
+                        else if (words[1] == "granary")
+                        {
+                            _aStronghold.buildGranary();
+                            Consts.printMessage("Granary added.");
+                            Consts.writeToDebugLog("Granary added.");
                         }
                         else Consts.printMessage("Invalid command.");
                         break;
@@ -102,7 +113,7 @@ namespace OStronghold
                             {
                                 if (words[2] == "all")
                                 {
-                                    foreach (Generic.Job job in _aStronghold._allJobs)
+                                    foreach (Job job in _aStronghold._allJobs)
                                     {
                                         Consts.writeToDebugLog(job.getJobString());
                                     }
@@ -132,7 +143,7 @@ namespace OStronghold
                             {
                                 if (words[2] == "all")
                                 {
-                                    foreach (Generic.Building building in _aStronghold._buildingsList)
+                                    foreach (Building building in _aStronghold._buildingsList)
                                     {
                                         Consts.writeToDebugLog(building.getBuildingString());
                                     }

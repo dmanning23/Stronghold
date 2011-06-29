@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.IO;
 
+using OStronghold.CharacterFolder;
+using OStronghold.GenericFolder;
+using OStronghold.StrongholdFolder;
+
 namespace OStronghold
 {
     public class Consts
@@ -83,9 +87,20 @@ namespace OStronghold
         public enum JobStatus { Available, Taken , Closed};
         public static int noworker = -1;
 
+        public static string farmerName = "Farmer";
         public static int farmerJobDuration = oneMonth;
         public static int farmerPayroll = 3;
         public static int numberOfFarmersPerFarm = 5;
+        public static Gametime farmerBeginTime;
+        public static Gametime farmerEndTime;
+
+        public static string granaryKeeperName = "Granary Keeper";
+        public static int granaryKeeperJobDuration = oneMonth;
+        public static int granaryKeeperPayroll = 5;
+        public static int numberOfGranaryKeepersPerGranary = 1;
+        public static Gametime granaryKeeperBeginTime;
+        public static Gametime granaryKeeperEndTime;
+
         #endregion
 
         #region ID numbers reserved (1-99)
@@ -94,6 +109,7 @@ namespace OStronghold
 
         public static int accomodation = 100;
         public static int farm = 101;
+        public static int granary = 102;
 
         public static int stronghold_yard = 5000;        
 
@@ -113,18 +129,30 @@ namespace OStronghold
 
         #region Building information
 
+        #region hut
         public static string hut_name = "Hut";
-        public static OStronghold.Generic.Status hut_hp;
+        public static Status hut_hp;
         public static int hut_costtobuild = 25;
         public static int hut_maxlevel = 5;
         public static int hut_buildtime = halfDay;
         public static int hut_maxtenants = 10;
+        #endregion
 
+        #region farm
         public static string farm_name = "Farm";
-        public static OStronghold.Generic.Status farm_hp;
+        public static Status farm_hp;        
         public static int farm_costtobuild = 20;
         public static int farm_maxlevel = 3;
         public static int farm_buildtime = halfDay;
+        #endregion
+
+        #region granary
+        public static string granary_name = "Granary";
+        public static Status granary_hp;
+        public static int granary_costtobuild = 50;
+        public static int granary_maxlevel = 2;
+        public static int granary_buildtime = oneDay;
+        #endregion
 
         #endregion
 
@@ -149,10 +177,17 @@ namespace OStronghold
             actionsData[(int)Consts.characterGeneralActions.Idle]._actionDuration = 0;
             actionsData[(int)Consts.characterGeneralActions.Idle]._actionPriority = 99;
 
-            hut_hp = new Generic.Status(100);
-            farm_hp = new Generic.Status(50);
+            hut_hp = new Status(100);
+            farm_hp = new Status(50);
+            granary_hp = new Status(200);
 
             debugSW = new StreamWriter(@"..\\..\\logs\\debug.log");
+
+            farmerBeginTime = new Gametime(0, 5, 0);
+            farmerEndTime = new Gametime(0, 15, 0);
+
+            granaryKeeperBeginTime = new Gametime(0, 8, 0);
+            granaryKeeperEndTime = new Gametime(0, 20, 0);
         }
 
         #endregion

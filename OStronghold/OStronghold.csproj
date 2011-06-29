@@ -47,26 +47,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Character\CharacterAction.cs" />
-    <Compile Include="Character\CharacterBodyNeeds.cs" />
-    <Compile Include="Character\Character.cs" />
-    <Compile Include="Character\CharacterHealth.cs" />
-    <Compile Include="Character\CharacterInventory.cs" />
-    <Compile Include="Character\CharacterMindset.cs" />
+    <Compile Include="CharacterFolder\CharacterAction.cs" />
+    <Compile Include="CharacterFolder\CharacterBodyNeeds.cs" />
+    <Compile Include="CharacterFolder\Character.cs" />
+    <Compile Include="CharacterFolder\CharacterHealth.cs" />
+    <Compile Include="CharacterFolder\CharacterInventory.cs" />
+    <Compile Include="CharacterFolder\CharacterMindset.cs" />
     <Compile Include="Consts.cs" />
     <Compile Include="Gametime.cs" />
-    <Compile Include="Generic\Building.cs" />
-    <Compile Include="Generic\BuildingForLiving.cs" />
-    <Compile Include="Generic\BuildingWithJobsAndInventory.cs" />
-    <Compile Include="Generic\InventoryItem.cs" />
-    <Compile Include="Generic\Job.cs" />
-    <Compile Include="Generic\MyPriorityQueue.cs" />
-    <Compile Include="Generic\Status.cs" />
-    <Compile Include="Generic\Treasury.cs" />
+    <Compile Include="GenericFolder\Building.cs" />
+    <Compile Include="GenericFolder\BuildingForLiving.cs" />
+    <Compile Include="GenericFolder\BuildingWithJobsAndInventory.cs" />
+    <Compile Include="GenericFolder\InventoryItem.cs" />
+    <Compile Include="GenericFolder\Job.cs" />
+    <Compile Include="GenericFolder\MyPriorityQueue.cs" />
+    <Compile Include="GenericFolder\Status.cs" />
+    <Compile Include="GenericFolder\Treasury.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stronghold\Stronghold.cs" />
-    <Compile Include="Stronghold\StrongholdLeader.cs" />
+    <Compile Include="StrongholdFolder\Job_creater.cs" />
+    <Compile Include="StrongholdFolder\Stronghold.cs" />
+    <Compile Include="StrongholdFolder\StrongholdLeader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

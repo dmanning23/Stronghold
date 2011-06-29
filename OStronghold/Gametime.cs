@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Collections;
 
+using OStronghold.CharacterFolder;
+using OStronghold.GenericFolder;
+
 namespace OStronghold
 {
     public class Gametime
@@ -254,8 +257,8 @@ namespace OStronghold
             LinkedList<int> numberLinkList = new LinkedList<int>();
             int[] commonerUpdateOrder = new int[Program._aStronghold._commoners.Count];
             int index, buildingID;
-            Generic.InventoryItem item;
-            Generic.Job job;
+            InventoryItem item;
+            Job job;
             Character person;
 
             try
@@ -348,7 +351,7 @@ namespace OStronghold
                                 }//person has gold
                                 else
                                 {
-                                    person._characterinventory.putInInventory(new Generic.InventoryItem(Consts.GOLD_NAME, Consts.GOLD_ID, Consts.GOLD_WEIGHT, job.Payroll));
+                                    person._characterinventory.putInInventory(new InventoryItem(Consts.GOLD_NAME, Consts.GOLD_ID, Consts.GOLD_WEIGHT, job.Payroll));
                                 }//person doesn't have gold, put gold into inventory        
                                 break;
                         }
@@ -394,10 +397,10 @@ namespace OStronghold
                             #region Employment check
                             if (person._jobID == -1) //&& person wants to look for job)
                             {
-                                LinkedList<Generic.Job> listOfAvailableJobs = Program._aStronghold.getAllAvailableJobs();
+                                LinkedList<Job> listOfAvailableJobs = Program._aStronghold.getAllAvailableJobs();
                                 if (listOfAvailableJobs.Count > 0)
                                 {
-                                    Generic.Job availableJob = listOfAvailableJobs.First.Value;//need to decide how the person determines what job he/she wants to apply for
+                                    Job availableJob = listOfAvailableJobs.First.Value;//need to decide how the person determines what job he/she wants to apply for
                                     
                                     if (Program._aStronghold.searchBuildingByID(availableJob.BuildingID).BuildingState == Consts.buildingState.Built)
                                     {
@@ -474,7 +477,7 @@ namespace OStronghold
 
             #region update building actions
 
-            foreach (Generic.Building building in Program._aStronghold._buildingsList)
+            foreach (Building building in Program._aStronghold._buildingsList)
             {
                 if (Program._gametime >= building.StartBuildTime && Program._gametime <= building.EndBuildTime)
                 {

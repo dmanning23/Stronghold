@@ -2,15 +2,15 @@
 ========================================
 [doing]
 (00022)
-- Need to think of another way of applying to jobs (what to do if there are two vacant jobs.
-- Stronghold -> think of charging money for rent - auto calculate according to cost + returns.
+- Add farm to produce food and store in granary.
 
 [to do]
 - Game -> Add load/save (Serializable)
 - Game -> Move constants in code to xml files
-- Character -> Add location for Character (Area class) -> walking action
+- Character -> Add walking action?
 - Character -> Add attributes (i.e: Strength, Intelligence, etc.)
 - Character -> Add level (how level up affect stats)
+- Stronghold -> think of charging money for rent - auto calculate according to cost + returns.
 - Stronghold -> Add list for all population (includes commoners AND stronghold leader for example) - since SHleader doesn't get hungry now.
 - Stronghold -> Start populating characters in Stronghold and create daily life routines.
 - Stronghold -> Add Arena for battles
@@ -22,6 +22,7 @@
 - Classes - Add classes (i.e: Fighter, Mage, Priest, Thief)
 - BattleEngine - Add battle engine for fights (have to generic: i.e: 1v1, 2v2, 3v3, etc.)
 - Job - Added minimum requirements for applying to job (need Attributes)
+- Job -> Need to think of another way of applying to jobs (what to do if there are two vacant jobs.
 
 [future thoughts]
 - Add guilds (sort of a mini Stronghold according to class)
@@ -33,6 +34,7 @@
 - Foods has satiety rate
 ====================================================================================================
 (update)  [notes]
+(00022) - Added Granary.
 (00021) - Added ownerID and buildingState in Building Class.
         - Added building construction phases.
         - Added Farm building with jobs.

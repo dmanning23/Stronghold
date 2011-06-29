@@ -38,11 +38,19 @@ A character must comply to the following requirements:
 
 6. Buildings
 ------------
-6.1 Lord Kaliet's keep (Level 1)
+6.1 Lord Kaliet's keep
 This keep is where the Lord of Stronghold confines (Lord Kaliet in the start of the game). The Stronghold treasury resides in the keep to avoid looting and theft. Game ends when Lord Kaliet's keep is destroyed.
 
-6.2 Wall (Level 1)
+6.2 Wall
 A very simple wall to separate wild animals from the people living in Stronghold.
 
-6.3 Hut (Level 1)
+6.3 Hut
 A straw hut made to accomondate 10 people. It only provides some protection from the night's cold and allow the person to rest completely.
+
+6.4 Farm
+Farm hires commoners to become farmers and produce food for Stronghold. The food produced in a farm are transferred to the local Granary for storage.
+
+7. Jobs
+-------
+7.1 Farmer
+A farmer works in the fields of the farm and produces food for Stronghold.
