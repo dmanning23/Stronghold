@@ -1,0 +1,36 @@
+﻿What Stronghold will have at the end...
+---------------------------------------
+
+Stronghold will become a busy 'city' where many people will be living and working there to help Stronghold become a bigger city. Stronghold represents a small county where people are loyal to it and will die fighting for their own 'county'. 
+A basic commoner life is as follows:
+- born to two commoners
+- work in commoner career
+- earning enough to buy food and basic necessity goods for survival.
+- live in very basic housing
+
+
+every once in a while a 'talented' commoner will be born and will break the rules of the commoner and advance above the commoner class.
+
+Feudal class
+------------
+Commoners
+Talented Commoners / Less nobles
+Nobles
+Royals
+Stronghold leader
+
+Commoners - 'slaves' of Stronghold. The ones doing the dirty work.
+Talented commoners / Less nobles - Attributed characters that can improve attributes which opens more options for character's life (player starts here). Participate in same class battles only. Top fighters have chance to become noble - must have minimum noble fame requirement.
+Nobles - more job oppurtunities, more money to buy more equipment.
+Royals - high leveled / famed characters that run the stronghold
+Stronghold leader - boss of all. controls and directs Stronghold to which direction it will evolve.
+
+
+The leader of Stronghold is responsible for all the activites in Stronghold:
+- internal (people, living standards, etc.)
+- army (readiness, supplies, skill)
+- economy (trading, standard of living, prices)
+
+As time goes along, guilds will slowly form when there are enough of people of the same class and have enough money to do so.
+
+All transactions done in Stronghold are taxed.

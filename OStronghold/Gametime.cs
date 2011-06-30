@@ -477,8 +477,10 @@ namespace OStronghold
 
             #region update building actions
 
+            int totalFoodProduced = 0;
             foreach (Building building in Program._aStronghold._buildingsList)
             {
+                #region building construction phases
                 //update building constructor status
                 if (Program._gametime >= building.StartBuildTime && Program._gametime <= building.EndBuildTime)
                 {
@@ -488,9 +490,9 @@ namespace OStronghold
                 {
                     building.BuildingState = Consts.buildingState.Built;
                 }//building is finished
+                #endregion
 
-                //transfer farm foods to granary at end of the day
-                int totalFoodProduced = 0;                
+                //transfer farm foods to granary at end of the day                
                 if (Program._gametime == new Gametime(0, 0))
                 {
                     if (building.Type == Consts.farm)

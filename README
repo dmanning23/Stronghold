@@ -54,3 +54,6 @@ Farm hires commoners to become farmers and produce food for Stronghold. The food
 -------
 7.1 Farmer
 A farmer works in the fields of the farm and produces food for Stronghold.
+
+7.2 Granary Keeper
+A granary keeper is in charge of taking care of the granary. Without a granary keeper, the granary is not functional.

@@ -93,6 +93,7 @@ namespace OStronghold
         public static int numberOfFarmersPerFarm = 5;
         public static Gametime farmerBeginTime;
         public static Gametime farmerEndTime;
+        public static int numberOfFoodProducedPerFarmer = 2;
 
         public static string granaryKeeperName = "Granary Keeper";
         public static int granaryKeeperJobDuration = oneMonth;
