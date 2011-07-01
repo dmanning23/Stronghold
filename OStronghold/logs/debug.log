@@ -1,13 +1,206 @@
 ==========================================================================
 Day 0 Hour 1 Minutes 0
+Farm added.
 ==========================================================================
 Day 0 Hour 2 Minutes 0
+Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Planned
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 2
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
 ==========================================================================
 Day 0 Hour 3 Minutes 0
+Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 2
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
 Granary added.
 ==========================================================================
 Day 0 Hour 4 Minutes 0
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 2
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -15,10 +208,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
+End build time: Day 0 Hour 3 Minutes 0
 Building state: Planned
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -35,16 +228,80 @@ Inventory:
 Day 0 Hour 5 Minutes 0
 Building ID: 1
 Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 2
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
+Owner ID: 9999
 Building type: 102
 Building name: Granary
 Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -57,9 +314,74 @@ Job status: Available
 Max Inv Capacity: 0/1000
 Inventory: 
 
+Hut added.
 ==========================================================================
 Day 0 Hour 6 Minutes 0
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 2
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -67,10 +389,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -82,21 +404,108 @@ Payroll: 5
 Job status: Available
 Max Inv Capacity: 0/1000
 Inventory: 
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Planned
+Tenants: 0/10
+Tenants ID: 
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
 
 ==========================================================================
 Day 0 Hour 7 Minutes 0
 Building ID: 1
 Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 2
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
+Owner ID: 9999
 Building type: 102
 Building name: Granary
 Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -109,9 +518,163 @@ Job status: Available
 Max Inv Capacity: 0/1000
 Inventory: 
 
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 0/10
+Tenants ID: 
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+2 Person(s) added.
 ==========================================================================
 Day 0 Hour 8 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 7 Minutes 0
+Current Action Finish time: Day 0 Hour 0 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 3
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: -1
+Location ID: 5000
+Home ID: 5000
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 7 Minutes 0
+Current Action Finish time: Day 0 Hour 0 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 3
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: -1
+Location ID: 5000
+Home ID: 5000
+
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 2
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -119,10 +682,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -134,10 +697,165 @@ Payroll: 5
 Job status: Available
 Max Inv Capacity: 0/1000
 Inventory: 
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 0/10
+Tenants ID: 
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
 
 ==========================================================================
 Day 0 Hour 9 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 7 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+LookingForPlaceToLive (10) Day 0 Hour 8 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 3
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: 2
+Location ID: 5000
+Home ID: 5000
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 7 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+LookingForPlaceToLive (10) Day 0 Hour 8 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 3
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: 1
+Location ID: 5000
+Home ID: 5000
+
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -145,10 +863,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -160,10 +878,165 @@ Payroll: 5
 Job status: Available
 Max Inv Capacity: 0/1000
 Inventory: 
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 0/10
+Tenants ID: 
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
 
 ==========================================================================
 Day 0 Hour 10 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 7 Minutes 0
+Current Action Finish time: Day 0 Hour 8 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Working (50) Day 0 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 3
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: 2
+Location ID: 3
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 7 Minutes 0
+Current Action Finish time: Day 0 Hour 8 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Working (50) Day 0 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 3
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: 1
+Location ID: 3
+Home ID: 3
+
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -171,10 +1044,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -186,10 +1059,165 @@ Payroll: 5
 Job status: Available
 Max Inv Capacity: 0/1000
 Inventory: 
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
 
 ==========================================================================
 Day 0 Hour 11 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 7 Minutes 0
+Current Action Finish time: Day 0 Hour 15 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Working (50) Day 0 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 3
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 7 Minutes 0
+Current Action Finish time: Day 0 Hour 15 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Working (50) Day 0 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 3
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -197,10 +1225,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -212,10 +1240,165 @@ Payroll: 5
 Job status: Available
 Max Inv Capacity: 0/1000
 Inventory: 
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
 
 ==========================================================================
 Day 0 Hour 12 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 7 Minutes 0
+Current Action Finish time: Day 0 Hour 15 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Working (50) Day 0 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 3
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 7 Minutes 0
+Current Action Finish time: Day 0 Hour 15 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Working (50) Day 0 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 3
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -223,10 +1406,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -238,10 +1421,165 @@ Payroll: 5
 Job status: Available
 Max Inv Capacity: 0/1000
 Inventory: 
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
 
 ==========================================================================
 Day 0 Hour 13 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 7 Minutes 0
+Current Action Finish time: Day 0 Hour 15 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Working (50) Day 0 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 3
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 7 Minutes 0
+Current Action Finish time: Day 0 Hour 15 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Working (50) Day 0 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 3
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -249,10 +1587,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -264,10 +1602,165 @@ Payroll: 5
 Job status: Available
 Max Inv Capacity: 0/1000
 Inventory: 
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
 
 ==========================================================================
 Day 0 Hour 14 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 7 Minutes 0
+Current Action Finish time: Day 0 Hour 15 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Working (50) Day 0 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 3
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 7 Minutes 0
+Current Action Finish time: Day 0 Hour 15 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Working (50) Day 0 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 3
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -275,10 +1768,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -290,10 +1783,165 @@ Payroll: 5
 Job status: Available
 Max Inv Capacity: 0/1000
 Inventory: 
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
 
 ==========================================================================
 Day 0 Hour 15 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 7 Minutes 0
+Current Action Finish time: Day 0 Hour 15 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Working (50) Day 0 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 3
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 7 Minutes 0
+Current Action Finish time: Day 0 Hour 15 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Working (50) Day 0 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 3
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 50
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -301,10 +1949,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -316,10 +1964,163 @@ Payroll: 5
 Job status: Available
 Max Inv Capacity: 0/1000
 Inventory: 
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
 
 ==========================================================================
 Day 0 Hour 16 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Normal
+Hunger timer: Normal
+Last ate: Day 0 Hour 7 Minutes 0
+Current Action Finish time: Day 0 Hour 15 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 56/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 3
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Normal
+Hunger timer: Normal
+Last ate: Day 0 Hour 7 Minutes 0
+Current Action Finish time: Day 0 Hour 15 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 56/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 3
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -327,10 +2128,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -342,10 +2143,165 @@ Payroll: 5
 Job status: Available
 Max Inv Capacity: 0/1000
 Inventory: 
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
 
 ==========================================================================
 Day 0 Hour 17 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Hungry
+Hunger timer: Hungry
+Last ate: Day 0 Hour 7 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Eating (5) Day 0 Hour 17 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 55/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 2
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Hungry
+Hunger timer: Hungry
+Last ate: Day 0 Hour 7 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Eating (5) Day 0 Hour 17 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 55/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 2
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -353,10 +2309,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -368,10 +2324,163 @@ Payroll: 5
 Job status: Available
 Max Inv Capacity: 0/1000
 Inventory: 
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
 
 ==========================================================================
 Day 0 Hour 18 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 17 Minutes 0
+Current Action Finish time: Day 0 Hour 17 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 55/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 2
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 17 Minutes 0
+Current Action Finish time: Day 0 Hour 17 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 55/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 2
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -379,10 +2488,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -394,10 +2503,163 @@ Payroll: 5
 Job status: Available
 Max Inv Capacity: 0/1000
 Inventory: 
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
 
 ==========================================================================
 Day 0 Hour 19 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 17 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 55/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 2
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 17 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 55/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 2
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -405,10 +2667,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -420,10 +2682,163 @@ Payroll: 5
 Job status: Available
 Max Inv Capacity: 0/1000
 Inventory: 
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
 
 ==========================================================================
 Day 0 Hour 20 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 17 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 55/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 2
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 17 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 55/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 2
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -431,10 +2846,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -446,10 +2861,163 @@ Payroll: 5
 Job status: Available
 Max Inv Capacity: 0/1000
 Inventory: 
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
 
 ==========================================================================
 Day 0 Hour 21 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 17 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 55/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 2
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 0 Hour 17 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 55/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 2
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -457,10 +3025,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -472,10 +3040,163 @@ Payroll: 5
 Job status: Available
 Max Inv Capacity: 0/1000
 Inventory: 
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
 
 ==========================================================================
 Day 0 Hour 22 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Normal
+Hunger timer: Normal
+Last ate: Day 0 Hour 17 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 55/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 2
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Normal
+Hunger timer: Normal
+Last ate: Day 0 Hour 17 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 55/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 2
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -483,10 +3204,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -498,10 +3219,163 @@ Payroll: 5
 Job status: Available
 Max Inv Capacity: 0/1000
 Inventory: 
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
 
 ==========================================================================
 Day 0 Hour 23 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Normal
+Hunger timer: Normal
+Last ate: Day 0 Hour 17 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 55/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 2
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Normal
+Hunger timer: Normal
+Last ate: Day 0 Hour 17 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 55/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 2
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -509,10 +3383,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -524,10 +3398,163 @@ Payroll: 5
 Job status: Available
 Max Inv Capacity: 0/1000
 Inventory: 
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
 
 ==========================================================================
 Day 1 Hour 0 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Normal
+Hunger timer: Normal
+Last ate: Day 0 Hour 17 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 55/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 2
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Normal
+Hunger timer: Normal
+Last ate: Day 0 Hour 17 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 55/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 2
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -535,10 +3562,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -551,9 +3578,163 @@ Job status: Available
 Max Inv Capacity: 0/1000
 Inventory: 
 
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
+
+12 food transferred to granary.
 ==========================================================================
 Day 1 Hour 1 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Normal
+Hunger timer: Normal
+Last ate: Day 0 Hour 17 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 55/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 2
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Normal
+Hunger timer: Normal
+Last ate: Day 0 Hour 17 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 55/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 2
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -561,10 +3742,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -574,12 +3755,171 @@ Start time: Day 0 Hour 8 Minutes 0
 End time: Day 0 Hour 20 Minutes 0
 Payroll: 5
 Job status: Available
-Max Inv Capacity: 0/1000
+Max Inv Capacity: 24/1000
 Inventory: 
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 24
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
 
 ==========================================================================
 Day 1 Hour 2 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Hungry
+Hunger timer: Hungry
+Last ate: Day 0 Hour 17 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Eating (5) Day 1 Hour 2 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 54/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 1
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Hungry
+Hunger timer: Hungry
+Last ate: Day 0 Hour 17 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Eating (5) Day 1 Hour 2 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 54/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 1
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -587,10 +3927,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -600,12 +3940,171 @@ Start time: Day 0 Hour 8 Minutes 0
 End time: Day 0 Hour 20 Minutes 0
 Payroll: 5
 Job status: Available
-Max Inv Capacity: 0/1000
+Max Inv Capacity: 24/1000
 Inventory: 
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 24
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
 
 ==========================================================================
 Day 1 Hour 3 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 1 Hour 2 Minutes 0
+Current Action Finish time: Day 1 Hour 2 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Sleeping (20) Day 1 Hour 10 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 54/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 1
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 1 Hour 2 Minutes 0
+Current Action Finish time: Day 1 Hour 2 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Sleeping (20) Day 1 Hour 10 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 54/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 1
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -613,10 +4112,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -626,12 +4125,171 @@ Start time: Day 0 Hour 8 Minutes 0
 End time: Day 0 Hour 20 Minutes 0
 Payroll: 5
 Job status: Available
-Max Inv Capacity: 0/1000
+Max Inv Capacity: 24/1000
 Inventory: 
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 24
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
 
 ==========================================================================
 Day 1 Hour 4 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 1 Hour 2 Minutes 0
+Current Action Finish time: Day 1 Hour 10 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Sleeping (20) Day 1 Hour 10 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 54/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 1
+Job ID: 2
+Location ID: 3
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 1 Hour 2 Minutes 0
+Current Action Finish time: Day 1 Hour 10 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Sleeping (20) Day 1 Hour 10 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 54/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 1
+Job ID: 1
+Location ID: 3
+Home ID: 3
+
 Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
 Owner ID: 9999
 Building type: 102
 Building name: Granary
@@ -639,10 +4297,10 @@ Building HP: 200/200
 Cost to build: 50
 Building level: 1/2
 Start build time: Day 0 Hour 3 Minutes 0
-End build time: Day 1 Hour 3 Minutes 0
-Building state: UnderConstruction
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
 Jobs: 
-Job ID: 1
+Job ID: 6
 Owner ID: 9999
 Worker ID: -1
 Job Name: Granary Keeper
@@ -652,6 +4310,2625 @@ Start time: Day 0 Hour 8 Minutes 0
 End time: Day 0 Hour 20 Minutes 0
 Payroll: 5
 Job status: Available
-Max Inv Capacity: 0/1000
+Max Inv Capacity: 24/1000
 Inventory: 
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 24
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
+
+==========================================================================
+Day 1 Hour 5 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 1 Hour 2 Minutes 0
+Current Action Finish time: Day 1 Hour 10 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Sleeping (20) Day 1 Hour 10 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 54/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 1
+Job ID: 2
+Location ID: 3
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 1 Hour 2 Minutes 0
+Current Action Finish time: Day 1 Hour 10 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Sleeping (20) Day 1 Hour 10 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 54/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 1
+Job ID: 1
+Location ID: 3
+Home ID: 3
+
+Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
+Owner ID: 9999
+Building type: 102
+Building name: Granary
+Building HP: 200/200
+Cost to build: 50
+Building level: 1/2
+Start build time: Day 0 Hour 3 Minutes 0
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 6
+Owner ID: 9999
+Worker ID: -1
+Job Name: Granary Keeper
+Start date: Day 0 Hour 3 Minutes 0
+End date: Day 30 Hour 3 Minutes 0
+Start time: Day 0 Hour 8 Minutes 0
+End time: Day 0 Hour 20 Minutes 0
+Payroll: 5
+Job status: Available
+Max Inv Capacity: 24/1000
+Inventory: 
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 24
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
+
+==========================================================================
+Day 1 Hour 6 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Hungry
+Hunger timer: Hungry
+Last ate: Day 1 Hour 2 Minutes 0
+Current Action Finish time: Day 1 Hour 10 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Eating (5) Day 1 Hour 6 Minutes 0
+Sleeping (20) Day 1 Hour 10 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 0
+Job ID: 2
+Location ID: 3
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Hungry
+Hunger timer: Hungry
+Last ate: Day 1 Hour 2 Minutes 0
+Current Action Finish time: Day 1 Hour 10 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Eating (5) Day 1 Hour 6 Minutes 0
+Sleeping (20) Day 1 Hour 10 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 0
+Job ID: 1
+Location ID: 3
+Home ID: 3
+
+Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
+Owner ID: 9999
+Building type: 102
+Building name: Granary
+Building HP: 200/200
+Cost to build: 50
+Building level: 1/2
+Start build time: Day 0 Hour 3 Minutes 0
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 6
+Owner ID: 9999
+Worker ID: -1
+Job Name: Granary Keeper
+Start date: Day 0 Hour 3 Minutes 0
+End date: Day 30 Hour 3 Minutes 0
+Start time: Day 0 Hour 8 Minutes 0
+End time: Day 0 Hour 20 Minutes 0
+Payroll: 5
+Job status: Available
+Max Inv Capacity: 24/1000
+Inventory: 
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 24
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
+
+==========================================================================
+Day 1 Hour 7 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: JustAte
+Hunger timer: Hungry
+Last ate: Day 1 Hour 6 Minutes 0
+Current Action Finish time: Day 1 Hour 6 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Sleeping (20) Day 1 Hour 10 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 0
+Job ID: 2
+Location ID: 3
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: JustAte
+Hunger timer: Hungry
+Last ate: Day 1 Hour 6 Minutes 0
+Current Action Finish time: Day 1 Hour 6 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Sleeping (20) Day 1 Hour 10 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 0
+Job ID: 1
+Location ID: 3
+Home ID: 3
+
+Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
+Owner ID: 9999
+Building type: 102
+Building name: Granary
+Building HP: 200/200
+Cost to build: 50
+Building level: 1/2
+Start build time: Day 0 Hour 3 Minutes 0
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 6
+Owner ID: 9999
+Worker ID: -1
+Job Name: Granary Keeper
+Start date: Day 0 Hour 3 Minutes 0
+End date: Day 30 Hour 3 Minutes 0
+Start time: Day 0 Hour 8 Minutes 0
+End time: Day 0 Hour 20 Minutes 0
+Payroll: 5
+Job status: Available
+Max Inv Capacity: 24/1000
+Inventory: 
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 24
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
+
+==========================================================================
+Day 1 Hour 8 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: JustAte
+Hunger timer: Hungry
+Last ate: Day 1 Hour 6 Minutes 0
+Current Action Finish time: Day 1 Hour 10 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Sleeping (20) Day 1 Hour 10 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 0
+Job ID: 2
+Location ID: 3
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: JustAte
+Hunger timer: Hungry
+Last ate: Day 1 Hour 6 Minutes 0
+Current Action Finish time: Day 1 Hour 10 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Sleeping (20) Day 1 Hour 10 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 0
+Job ID: 1
+Location ID: 3
+Home ID: 3
+
+Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
+Owner ID: 9999
+Building type: 102
+Building name: Granary
+Building HP: 200/200
+Cost to build: 50
+Building level: 1/2
+Start build time: Day 0 Hour 3 Minutes 0
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 6
+Owner ID: 9999
+Worker ID: -1
+Job Name: Granary Keeper
+Start date: Day 0 Hour 3 Minutes 0
+End date: Day 30 Hour 3 Minutes 0
+Start time: Day 0 Hour 8 Minutes 0
+End time: Day 0 Hour 20 Minutes 0
+Payroll: 5
+Job status: Available
+Max Inv Capacity: 24/1000
+Inventory: 
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 24
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
+
+==========================================================================
+Day 1 Hour 9 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: JustAte
+Hunger timer: Hungry
+Last ate: Day 1 Hour 6 Minutes 0
+Current Action Finish time: Day 1 Hour 10 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Sleeping (20) Day 1 Hour 10 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 0
+Job ID: 2
+Location ID: 3
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: JustAte
+Hunger timer: Hungry
+Last ate: Day 1 Hour 6 Minutes 0
+Current Action Finish time: Day 1 Hour 10 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Sleeping (20) Day 1 Hour 10 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 0
+Job ID: 1
+Location ID: 3
+Home ID: 3
+
+Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
+Owner ID: 9999
+Building type: 102
+Building name: Granary
+Building HP: 200/200
+Cost to build: 50
+Building level: 1/2
+Start build time: Day 0 Hour 3 Minutes 0
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 6
+Owner ID: 9999
+Worker ID: -1
+Job Name: Granary Keeper
+Start date: Day 0 Hour 3 Minutes 0
+End date: Day 30 Hour 3 Minutes 0
+Start time: Day 0 Hour 8 Minutes 0
+End time: Day 0 Hour 20 Minutes 0
+Payroll: 5
+Job status: Available
+Max Inv Capacity: 24/1000
+Inventory: 
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 24
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
+
+==========================================================================
+Day 1 Hour 10 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: JustAte
+Hunger timer: Hungry
+Last ate: Day 1 Hour 6 Minutes 0
+Current Action Finish time: Day 1 Hour 10 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Sleeping (20) Day 1 Hour 10 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 0
+Job ID: 2
+Location ID: 3
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: JustAte
+Hunger timer: Hungry
+Last ate: Day 1 Hour 6 Minutes 0
+Current Action Finish time: Day 1 Hour 10 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Sleeping (20) Day 1 Hour 10 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 0
+Job ID: 1
+Location ID: 3
+Home ID: 3
+
+Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
+Owner ID: 9999
+Building type: 102
+Building name: Granary
+Building HP: 200/200
+Cost to build: 50
+Building level: 1/2
+Start build time: Day 0 Hour 3 Minutes 0
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 6
+Owner ID: 9999
+Worker ID: -1
+Job Name: Granary Keeper
+Start date: Day 0 Hour 3 Minutes 0
+End date: Day 30 Hour 3 Minutes 0
+Start time: Day 0 Hour 8 Minutes 0
+End time: Day 0 Hour 20 Minutes 0
+Payroll: 5
+Job status: Available
+Max Inv Capacity: 24/1000
+Inventory: 
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 24
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
+
+==========================================================================
+Day 1 Hour 11 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Hungry
+Hunger timer: Hungry
+Last ate: Day 1 Hour 6 Minutes 0
+Current Action Finish time: Day 1 Hour 10 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+BuyingFood (4) Day 1 Hour 11 Minutes 0
+Working (50) Day 1 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 0
+Job ID: 2
+Location ID: 3
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Hungry
+Hunger timer: Hungry
+Last ate: Day 1 Hour 6 Minutes 0
+Current Action Finish time: Day 1 Hour 10 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+BuyingFood (4) Day 1 Hour 11 Minutes 0
+Working (50) Day 1 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 53/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 53
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 0
+Job ID: 1
+Location ID: 3
+Home ID: 3
+
+Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
+Owner ID: 9999
+Building type: 102
+Building name: Granary
+Building HP: 200/200
+Cost to build: 50
+Building level: 1/2
+Start build time: Day 0 Hour 3 Minutes 0
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 6
+Owner ID: 9999
+Worker ID: -1
+Job Name: Granary Keeper
+Start date: Day 0 Hour 3 Minutes 0
+End date: Day 30 Hour 3 Minutes 0
+Start time: Day 0 Hour 8 Minutes 0
+End time: Day 0 Hour 20 Minutes 0
+Payroll: 5
+Job status: Available
+Max Inv Capacity: 24/1000
+Inventory: 
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 24
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
+
+==========================================================================
+Day 1 Hour 12 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Hungry
+Hunger timer: Hungry
+Last ate: Day 1 Hour 6 Minutes 0
+Current Action Finish time: Day 1 Hour 11 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Eating (5) Day 1 Hour 12 Minutes 0
+Working (50) Day 1 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 52/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 45
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 7
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Hungry
+Hunger timer: Hungry
+Last ate: Day 1 Hour 6 Minutes 0
+Current Action Finish time: Day 1 Hour 11 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Eating (5) Day 1 Hour 12 Minutes 0
+Working (50) Day 1 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 52/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 41
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 11
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
+Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
+Owner ID: 9999
+Building type: 102
+Building name: Granary
+Building HP: 200/200
+Cost to build: 50
+Building level: 1/2
+Start build time: Day 0 Hour 3 Minutes 0
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 6
+Owner ID: 9999
+Worker ID: -1
+Job Name: Granary Keeper
+Start date: Day 0 Hour 3 Minutes 0
+End date: Day 30 Hour 3 Minutes 0
+Start time: Day 0 Hour 8 Minutes 0
+End time: Day 0 Hour 20 Minutes 0
+Payroll: 5
+Job status: Available
+Max Inv Capacity: 4/1000
+Inventory: 
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 4
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
+
+==========================================================================
+Day 1 Hour 13 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: JustAte
+Hunger timer: Hungry
+Last ate: Day 1 Hour 12 Minutes 0
+Current Action Finish time: Day 1 Hour 12 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Working (50) Day 1 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 52/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 45
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 7
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: JustAte
+Hunger timer: Hungry
+Last ate: Day 1 Hour 12 Minutes 0
+Current Action Finish time: Day 1 Hour 12 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Working (50) Day 1 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 52/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 41
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 11
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
+Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
+Owner ID: 9999
+Building type: 102
+Building name: Granary
+Building HP: 200/200
+Cost to build: 50
+Building level: 1/2
+Start build time: Day 0 Hour 3 Minutes 0
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 6
+Owner ID: 9999
+Worker ID: -1
+Job Name: Granary Keeper
+Start date: Day 0 Hour 3 Minutes 0
+End date: Day 30 Hour 3 Minutes 0
+Start time: Day 0 Hour 8 Minutes 0
+End time: Day 0 Hour 20 Minutes 0
+Payroll: 5
+Job status: Available
+Max Inv Capacity: 4/1000
+Inventory: 
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 4
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
+
+==========================================================================
+Day 1 Hour 14 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: JustAte
+Hunger timer: Hungry
+Last ate: Day 1 Hour 12 Minutes 0
+Current Action Finish time: Day 1 Hour 15 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Working (50) Day 1 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 52/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 45
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 7
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: JustAte
+Hunger timer: Hungry
+Last ate: Day 1 Hour 12 Minutes 0
+Current Action Finish time: Day 1 Hour 15 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Working (50) Day 1 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 52/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 41
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 11
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
+Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
+Owner ID: 9999
+Building type: 102
+Building name: Granary
+Building HP: 200/200
+Cost to build: 50
+Building level: 1/2
+Start build time: Day 0 Hour 3 Minutes 0
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 6
+Owner ID: 9999
+Worker ID: -1
+Job Name: Granary Keeper
+Start date: Day 0 Hour 3 Minutes 0
+End date: Day 30 Hour 3 Minutes 0
+Start time: Day 0 Hour 8 Minutes 0
+End time: Day 0 Hour 20 Minutes 0
+Payroll: 5
+Job status: Available
+Max Inv Capacity: 4/1000
+Inventory: 
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 4
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
+
+==========================================================================
+Day 1 Hour 15 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: JustAte
+Hunger timer: Hungry
+Last ate: Day 1 Hour 12 Minutes 0
+Current Action Finish time: Day 1 Hour 15 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Working (50) Day 1 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 52/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 45
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 7
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: JustAte
+Hunger timer: Hungry
+Last ate: Day 1 Hour 12 Minutes 0
+Current Action Finish time: Day 1 Hour 15 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Working (50) Day 1 Hour 15 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 52/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 41
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 11
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
+Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
+Owner ID: 9999
+Building type: 102
+Building name: Granary
+Building HP: 200/200
+Cost to build: 50
+Building level: 1/2
+Start build time: Day 0 Hour 3 Minutes 0
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 6
+Owner ID: 9999
+Worker ID: -1
+Job Name: Granary Keeper
+Start date: Day 0 Hour 3 Minutes 0
+End date: Day 30 Hour 3 Minutes 0
+Start time: Day 0 Hour 8 Minutes 0
+End time: Day 0 Hour 20 Minutes 0
+Payroll: 5
+Job status: Available
+Max Inv Capacity: 4/1000
+Inventory: 
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 4
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
+
+==========================================================================
+Day 1 Hour 16 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 1 Hour 12 Minutes 0
+Current Action Finish time: Day 1 Hour 15 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 55/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 7
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 48
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 1 Hour 12 Minutes 0
+Current Action Finish time: Day 1 Hour 15 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 55/1000
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 11
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 44
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
+Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
+Owner ID: 9999
+Building type: 102
+Building name: Granary
+Building HP: 200/200
+Cost to build: 50
+Building level: 1/2
+Start build time: Day 0 Hour 3 Minutes 0
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 6
+Owner ID: 9999
+Worker ID: -1
+Job Name: Granary Keeper
+Start date: Day 0 Hour 3 Minutes 0
+End date: Day 30 Hour 3 Minutes 0
+Start time: Day 0 Hour 8 Minutes 0
+End time: Day 0 Hour 20 Minutes 0
+Payroll: 5
+Job status: Available
+Max Inv Capacity: 4/1000
+Inventory: 
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 4
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
+
+==========================================================================
+Day 1 Hour 17 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Hungry
+Hunger timer: Hungry
+Last ate: Day 1 Hour 12 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Eating (5) Day 1 Hour 17 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 54/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 48
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 6
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Hungry
+Hunger timer: Hungry
+Last ate: Day 1 Hour 12 Minutes 0
+Current Action Finish time: Day 0 Hour 7 Minutes 0
+HP: 20/20 (0) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Eating (5) Day 1 Hour 17 Minutes 0
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 54/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 44
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 10
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
+Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
+Owner ID: 9999
+Building type: 102
+Building name: Granary
+Building HP: 200/200
+Cost to build: 50
+Building level: 1/2
+Start build time: Day 0 Hour 3 Minutes 0
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 6
+Owner ID: 9999
+Worker ID: -1
+Job Name: Granary Keeper
+Start date: Day 0 Hour 3 Minutes 0
+End date: Day 30 Hour 3 Minutes 0
+Start time: Day 0 Hour 8 Minutes 0
+End time: Day 0 Hour 20 Minutes 0
+Payroll: 5
+Job status: Available
+Max Inv Capacity: 4/1000
+Inventory: 
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 4
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
+
+==========================================================================
+Day 1 Hour 18 Minutes 0
+ID: 1
+Name: P#1
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 61
+Fame scale: 3
+XP scale: 36
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 1 Hour 17 Minutes 0
+Current Action Finish time: Day 1 Hour 17 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 54/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 48
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 6
+Job ID: 2
+Location ID: 1
+Home ID: 3
+
+ID: 2
+Name: P#2
+Age: 18
+Gender: Male
+Fame: 0
+Money scale: 71
+Fame scale: 5
+XP scale: 24
+Hunger state: Full
+Hunger timer: Full
+Last ate: Day 1 Hour 17 Minutes 0
+Current Action Finish time: Day 1 Hour 17 Minutes 0
+HP: 20/20 (1) 
+MP: 0/0 (0) 
+Stamina: 100/100 (10) 
+Stamina used this tick: 0
+Health state: Alive
+Character actions: 
+Idle (99) Day 0 Hour 7 Minutes 0
+Character inventory: 
+capacity: 54/1000
+Item ID: 1000
+Item name: Gold
+Item weight: 0.1
+Item quantity: 44
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 10
+Job ID: 1
+Location ID: 1
+Home ID: 3
+
+Building ID: 1
+Owner ID: 9999
+Building type: 101
+Building name: Farm
+Building HP: 50/50
+Cost to build: 20
+Building level: 1/3
+Start build time: Day 0 Hour 1 Minutes 0
+End build time: Day 0 Hour 1 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 1
+Owner ID: 9999
+Worker ID: 2
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 2
+Owner ID: 9999
+Worker ID: 1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Taken
+Job ID: 3
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 4
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Job ID: 5
+Owner ID: 9999
+Worker ID: -1
+Job Name: Farmer
+Start date: Day 0 Hour 1 Minutes 0
+End date: Day 30 Hour 1 Minutes 0
+Start time: Day 0 Hour 5 Minutes 0
+End time: Day 0 Hour 15 Minutes 0
+Payroll: 3
+Job status: Available
+Max Inv Capacity: 0/0
+Inventory: 
+None.
+Building ID: 2
+Owner ID: 9999
+Building type: 102
+Building name: Granary
+Building HP: 200/200
+Cost to build: 50
+Building level: 1/2
+Start build time: Day 0 Hour 3 Minutes 0
+End build time: Day 0 Hour 3 Minutes 0
+Building state: Built
+Jobs: 
+Job ID: 6
+Owner ID: 9999
+Worker ID: -1
+Job Name: Granary Keeper
+Start date: Day 0 Hour 3 Minutes 0
+End date: Day 30 Hour 3 Minutes 0
+Start time: Day 0 Hour 8 Minutes 0
+End time: Day 0 Hour 20 Minutes 0
+Payroll: 5
+Job status: Available
+Max Inv Capacity: 4/1000
+Inventory: 
+Item ID: 1001
+Item name: Food
+Item weight: 0.1
+Item quantity: 4
+
+Building ID: 3
+Owner ID: 9999
+Building type: 100
+Building name: Hut
+Building HP: 100/100
+Cost to build: 25
+Building level: 1/5
+Start build time: Day 0 Hour 5 Minutes 0
+End build time: Day 0 Hour 5 Minutes 0
+Building state: Built
+Tenants: 2/10
+Tenants ID: 
+1
+2
+0
+0
+0
+0
+0
+0
+0
+0
 

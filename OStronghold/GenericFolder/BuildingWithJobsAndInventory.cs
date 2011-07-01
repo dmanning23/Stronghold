@@ -10,20 +10,20 @@ namespace OStronghold.GenericFolder
         #region Members
 
         private int[] _jobs; //list of jobs the building offers
-        private InventoryItem[] _inventory; //building's inventory (list of goods)
-        private Status _maxInventoryCapacity; //maximum amount of items can be hold by inventory
+        private LinkedList<InventoryItem> _inventory; //building's inventory (list of goods)
+        private Status _inventoryCapacity; //maximum amount of items can be hold by inventory
 
         public int[] Jobs
         {
             get { return _jobs; }
         }
-        public InventoryItem[] Inventory
+        private LinkedList<InventoryItem> Inventory //private because method created for adding inventory
         {
             get { return _inventory; }
         }
-        public Status MaxInventoryCapacity
+        public Status InventoryCapacity
         {
-            get { return _maxInventoryCapacity; }
+            get { return _inventoryCapacity; }
         }
 
         #endregion
@@ -36,7 +36,7 @@ namespace OStronghold.GenericFolder
         }
 
         public BuildingWithJobsAndInventory(int buildingIDValue,int ownerIDValue, int typeValue, string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
-                                Gametime endBuildTimeValue, int[] jobsList, InventoryItem[] inventoryList, Consts.buildingState buildingStateValue, Status maxInvCapacityValue)
+                                Gametime endBuildTimeValue, int[] jobsList, LinkedList<InventoryItem> inventoryList, Consts.buildingState buildingStateValue, Status maxInvCapacityValue)
             : base(buildingIDValue, ownerIDValue, typeValue, nameValue, hpValue, costToBuildValue, levelValue, startBuildTimeValue, endBuildTimeValue, buildingStateValue)
         {
             if (jobsList != null)
@@ -48,25 +48,20 @@ namespace OStronghold.GenericFolder
                 }
             }
             else _jobs = null;
-            
+
+            _inventory = new LinkedList<InventoryItem>();
             if (inventoryList != null)
             {
-                _inventory = new InventoryItem[inventoryList.Length];
-                for (int i = 0; i < inventoryList.Length; i++)
+                InventoryItem tempItem;
+                foreach (InventoryItem item in inventoryList)
                 {
-                    if (inventoryList[i] == null)
-                    {
-                        _inventory[i] = null;
-                    }
-                    else
-                    {
-                        _inventory[i] = new InventoryItem(inventoryList[i]);
-                    }
+                    tempItem = new InventoryItem(item);
+                    _inventory.AddLast(tempItem);
                 }                
             }
             else _inventory = null;
 
-            _maxInventoryCapacity = new Status(maxInvCapacityValue);
+            _inventoryCapacity = new Status(maxInvCapacityValue);
         }
 
         #endregion
@@ -96,17 +91,14 @@ namespace OStronghold.GenericFolder
             }
             else result += "None.";
 
-            result += "Max Inv Capacity: " + _maxInventoryCapacity.Current + "/" + MaxInventoryCapacity.Max + "\n";
+            result += "Max Inv Capacity: " + _inventoryCapacity.Current + "/" + InventoryCapacity.Max + "\n";
             result += "Inventory: \n";
 
             if (_inventory != null)
             {
-                for (int i = 0; i < _inventory.Length; i++)
+                foreach (InventoryItem item in _inventory)
                 {
-                    if (_inventory[i] != null)
-                    {
-                        result += _inventory[i].getInventoryItemString();
-                    }
+                    result += item.getInventoryItemString();
                 }
             }
             else result += "None.";
@@ -114,6 +106,66 @@ namespace OStronghold.GenericFolder
             return result;
         }
 
+        public bool hasEnoughStorageSpace(int insertAmount)
+        {
+            return (_inventoryCapacity.Max - _inventoryCapacity.Current >= insertAmount);            
+        }
+
+        public void addToInventory(InventoryItem targetItem)
+        {
+            if (_inventory.Count == 0)
+            {
+                _inventory.AddLast(targetItem);
+            }//empty inventory
+            foreach (InventoryItem item in _inventory)
+            {
+                if (item.Name == targetItem.Name)
+                {
+                    item.Quantity += targetItem.Quantity;
+                }//item already exists - need to update quantity
+                else
+                {
+                    _inventory.AddLast(targetItem);    
+                }//no similar item in inventory
+            }
+            _inventoryCapacity.Current += targetItem.Quantity;                
+        }
+
+        public bool removeFromInventory(string targetName ,int quantityToRemove)
+        {
+            foreach (InventoryItem item in _inventory)
+            {
+                if (item.Name == targetName)
+                {
+                    if (quantityToRemove > item.Quantity) return false;
+                    else
+                    {
+                        item.Quantity -= quantityToRemove;
+                        _inventoryCapacity.Current -= quantityToRemove;
+                        return true;
+                    }
+                }//item exists - need to update quantity                
+            }
+            return false;            
+        }//return false if item does not exists in inventory or trying to remove too much 
+
+        public LinkedList<InventoryItem> getInventory()
+        {
+            return _inventory;
+        }
+
+        public InventoryItem searchInventoryByID(int targetID)
+        {
+            foreach (InventoryItem item in _inventory)
+            {
+                if (item.ID == targetID)
+                {
+                    return item;
+                }               
+            }
+            return null;
+        }
+    
         #endregion
     }//building with jobs and inventory
 }

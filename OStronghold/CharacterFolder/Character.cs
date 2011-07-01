@@ -110,6 +110,32 @@ namespace OStronghold.CharacterFolder
             return false;
         }//applies for job - true = successfully applied, false = failed to apply
 
+        public void buyFood(int buildingID)
+        {
+            Building building;
+            Program._aStronghold.searchBuildingByID(buildingID, out building);
+            InventoryItem gold = this._characterinventory.retrieveItemInInventory(Consts.GOLD_NAME, -1);
+            InventoryItem food = this._characterinventory.retrieveItemInInventory(Consts.FOOD_NAME, -1);
+            InventoryItem foodInStock = ((BuildingWithJobsAndInventory)building).searchInventoryByID(Consts.FOOD_ID);
+            int amountAffordedFood = gold.Quantity / Consts.FOOD_PRICE;
+            int amountFoodInStock;
+
+            if (foodInStock != null)
+            {
+                amountFoodInStock = foodInStock.Quantity;
+                //determine how much of food to buy
+                int amountToBuy = Consts.rand.Next(1, Math.Min(amountFoodInStock, amountAffordedFood)); //minimum between amount of food in stock and amount affordable
+
+
+                gold.Quantity -= amountToBuy * Consts.FOOD_PRICE;
+                food.Quantity += amountToBuy;
+                Program._aStronghold.Treasury.depositGold(amountToBuy * Consts.FOOD_PRICE);
+                this._characterinventory.putInInventory(gold);
+                this._characterinventory.putInInventory(food);
+                ((BuildingWithJobsAndInventory)building).removeFromInventory(Consts.FOOD_NAME, amountToBuy);
+            }
+        }//buy food from building ID
+
         public string getCharacterString()
         {
             string result = "";
@@ -164,12 +190,21 @@ namespace OStronghold.CharacterFolder
 
         public void OnHungryEventHandler(object sender, EventArgs e)
         {
+            Gametime finishTime;
             if (getFoodFromInventory().Quantity > 0)
             {
-                Gametime finishTime = Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.Eating]._actionDuration;
+                finishTime = Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.Eating]._actionDuration;
                 _characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Eating, Consts.actionsData[(int)Consts.characterGeneralActions.Eating]._actionPriority, finishTime));
                 eatAction();
             }//eat only if there is enough food in inventory otherwise stay hungry
+            else
+            {
+                if (!_characterActions.actionExistsInQueue(Consts.characterGeneralActions.BuyingFood))
+                {
+                    finishTime = Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.BuyingFood]._actionDuration;
+                    _characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.BuyingFood, Consts.actionsData[(int)Consts.characterGeneralActions.BuyingFood]._actionPriority, finishTime));
+                }//if action does not exists yet
+            }//go buy food
         }//actions to do when character is hungry
 
         #endregion

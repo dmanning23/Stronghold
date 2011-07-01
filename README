@@ -25,7 +25,7 @@ In the start, Stronghold consists of only very basic buildings:
 3. Character (micro)
 --------------------
 A character must comply to the following requirements:
-	- Needs to eat every 8 hours.
+	- Needs to eat every 8 hours (3 times a day)
 	- Needs to sleep 6 hours per day (but must find a suitable accomondation to sleep)
 	- Rest of the day - up to the character to decide (i.e: work and earn money, fight and earn fame, etc.)
 
@@ -45,15 +45,15 @@ This keep is where the Lord of Stronghold confines (Lord Kaliet in the start of 
 A very simple wall to separate wild animals from the people living in Stronghold.
 
 6.3 Hut
-A straw hut made to accomondate 10 people. It only provides some protection from the night's cold and allow the person to rest completely.
+A straw hut made to accomondate 10 people maximum. It only provides some protection from the night's cold and allow the person to rest completely.
 
 6.4 Farm
-Farm hires commoners to become farmers and produce food for Stronghold. The food produced in a farm are transferred to the local Granary for storage.
+Farm hires commoners to become farmers and produce food for Stronghold. The food produced in a farm are transferred to the local Granary for storage. Each farm has maximum of 5 farmers.
 
 7. Jobs
 -------
 7.1 Farmer
-A farmer works in the fields of the farm and produces food for Stronghold.
+A farmer works in the fields of the farm and produces food for Stronghold. Each farmer produces 6 food at the end of each day.
 
 7.2 Granary Keeper
 A granary keeper is in charge of taking care of the granary. Without a granary keeper, the granary is not functional.

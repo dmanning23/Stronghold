@@ -157,7 +157,12 @@ namespace OStronghold
         private void incOneHour()
         {
             Hour++;            
-        }        
+        }
+
+        public bool isMidnight()
+        {
+            return (_hour == 0 && _minute == 0);            
+        }
 
         #endregion
 
@@ -263,6 +268,7 @@ namespace OStronghold
 
             try
             {
+                Building building;
                 Consts.writeToDebugLog("==========================================================================");
                 Consts.writeToDebugLog(Program._gametime.ToString());
                 for (int i = 1; i <= Program._aStronghold._commoners.Count; i++)
@@ -271,8 +277,13 @@ namespace OStronghold
                 }
                 for (int i = 1; i <= Program._aStronghold._buildingsList.Count; i++)
                 {
-                    Consts.writeToDebugLog(Program._aStronghold.searchBuildingByID(i).getBuildingString());
+                    Program._aStronghold.searchBuildingByID(i, out building);
+                    Consts.writeToDebugLog(building.getBuildingString());
                 }
+                //for (int i = 0; i <= Program._aStronghold._allJobs.Count; i++)
+                //{
+                //    Consts.writeToDebugLog(Program._aStronghold._allJobs.ElementAt(i).getJobString());
+                //}
             }
             catch (Exception ex)
             {
@@ -314,6 +325,49 @@ namespace OStronghold
                     {
                         switch (person._characterActions.Peek().Action)
                         {
+                            case Consts.characterGeneralActions.BuyingFood:
+                                LinkedList<Building> granaries = Program._aStronghold.searchBuildingsByType(Consts.granary);
+                                InventoryItem food;
+                                int totalFood = 0;
+                                int granaryIDToBuy = -1;
+
+                                foreach (BuildingWithJobsAndInventory granary in granaries)
+                                {
+                                    food = granary.searchInventoryByID(Consts.FOOD_ID);
+                                    if (food != null)
+                                    {
+                                        totalFood += food.Quantity;
+                                        if (granary.InventoryCapacity.Current != 0)
+                                        {
+                                            granaryIDToBuy = granary.BuildingID;
+                                        }
+                                    }
+                                }
+
+                                if (person._characterinventory.searchForItemByName(Consts.GOLD_NAME).Quantity == 0)
+                                {
+                                    //person has no money
+                                }
+                                else if (granaries.Count == 0)
+                                {
+                                    //no granaries
+                                }
+                                else if (totalFood == 0)
+                                {
+                                    //no food in granaries
+                                }
+                                else
+                                {
+                                    if (granaryIDToBuy != -1)
+                                    {
+                                        person.buyFood(granaryIDToBuy);
+                                        person._characterActions.Dequeue();
+                                    }
+                                    //else no granaries were found
+                                }//else buy food from granaryIDTobuy
+                                
+
+                                break;
                             case Consts.characterGeneralActions.Eating:
                                 person._bodyneeds.HungerState = Consts.hungerState.JustAte;
                                 person._bodyneeds.LastAteTime.CopyGameTime(Program._gametime);
@@ -401,8 +455,10 @@ namespace OStronghold
                                 if (listOfAvailableJobs.Count > 0)
                                 {
                                     Job availableJob = listOfAvailableJobs.First.Value;//need to decide how the person determines what job he/she wants to apply for
-                                    
-                                    if (Program._aStronghold.searchBuildingByID(availableJob.BuildingID).BuildingState == Consts.buildingState.Built)
+                                    Building building = new Building();
+                                    Program._aStronghold.searchBuildingByID(availableJob.BuildingID,out building);
+
+                                    if (building.BuildingState == Consts.buildingState.Built)
                                     {
                                         person.applyForJob(availableJob.JobID); 
                                     }//building that is providing with the job must be built first
@@ -491,17 +547,52 @@ namespace OStronghold
                     building.BuildingState = Consts.buildingState.Built;
                 }//building is finished
                 #endregion
-
-                //transfer farm foods to granary at end of the day                
-                if (Program._gametime == new Gametime(0, 0))
+                
+                if (Program._gametime.isMidnight())
                 {
-                    if (building.Type == Consts.farm)
-                    {
-
-                    }
+                    if (building.Type == Consts.farm && building.BuildingState == Consts.buildingState.Built)
+                    {                        
+                        int[] jobList = ((BuildingWithJobsAndInventory)building).Jobs;
+                        for (int i = 0; i < jobList.Length; i++)
+                        {
+                            if (null != jobList && jobList[i] > 0)
+                            {
+                                if (Program._aStronghold.searchJobByID(jobList[i]).JobStatus == Consts.JobStatus.Taken)
+                                {
+                                    totalFoodProduced += Consts.numberOfFoodProducedPerFarmer;
+                                }//job is taken and hence producing food
+                            }//job list has jobs
+                        }
+                    }//transfer farm foods to granary at end of the day                
                 }//occurs at the end of each day                
             }
 
+            bool transferred = false;
+            InventoryItem foodTransferredToGranary = new InventoryItem(Consts.FOOD_NAME, Consts.FOOD_ID, Consts.FOOD_WEIGHT, totalFoodProduced);
+            if (totalFoodProduced > 0)
+            {
+                foreach (Building building in Program._aStronghold._buildingsList)
+                {
+                    if (building.Type == Consts.granary && !transferred)
+                    {
+                        BuildingWithJobsAndInventory granary = building as BuildingWithJobsAndInventory;
+                        if (granary.hasEnoughStorageSpace(totalFoodProduced))
+                        {
+                            Building result;
+                            Program._aStronghold.searchBuildingByID(granary.BuildingID, out result);                            
+                            ((BuildingWithJobsAndInventory)result).addToInventory(foodTransferredToGranary);                            
+                            //((BuildingWithJobsAndInventory)Program._aStronghold.searchBuildingByID(granary.BuildingID)).addToInventory(foodTransferredToGranary);//update the original list.
+                            transferred = true;
+                            Consts.writeToDebugLog(totalFoodProduced + " food transferred to granary.");
+                        }//granary has enough room to store
+                    }
+                }
+                if (!transferred)
+                {
+                    //food wasted
+                    Consts.writeToDebugLog("Food not transferred - " + totalFoodProduced + " wasted.");
+                }
+            }//transfer food only if food produced is > 0
             #endregion
         }//actions to do in every game tick
 

@@ -17,7 +17,8 @@ namespace OStronghold
         #region action related
         public enum characterGeneralActions
         {
-            Undefined = 1,            
+            Undefined = 1, 
+            BuyingFood,
             Eating,
             Idle,           
             LookingForPlaceToLive,
@@ -93,7 +94,7 @@ namespace OStronghold
         public static int numberOfFarmersPerFarm = 5;
         public static Gametime farmerBeginTime;
         public static Gametime farmerEndTime;
-        public static int numberOfFoodProducedPerFarmer = 2;
+        public static int numberOfFoodProducedPerFarmer = 6;
 
         public static string granaryKeeperName = "Granary Keeper";
         public static int granaryKeeperJobDuration = oneMonth;
@@ -158,6 +159,12 @@ namespace OStronghold
 
         #endregion
 
+        #region Economy prices (in gold)
+
+        public static int FOOD_PRICE = 1;
+
+        #endregion
+
         #region streamwriter
 
         public static StreamWriter debugSW;
@@ -170,6 +177,8 @@ namespace OStronghold
         public Consts()
         {
             actionsData = new actionStruct[(int)Consts.characterGeneralActions.Count];
+            actionsData[(int)Consts.characterGeneralActions.BuyingFood]._actionDuration = 60;
+            actionsData[(int)Consts.characterGeneralActions.BuyingFood]._actionPriority = 4;
             actionsData[(int)Consts.characterGeneralActions.Eating]._actionDuration = 60;
             actionsData[(int)Consts.characterGeneralActions.Eating]._actionPriority = 5;
             actionsData[(int)Consts.characterGeneralActions.LookingForPlaceToLive]._actionPriority = 10;

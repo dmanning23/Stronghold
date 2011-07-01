@@ -18,7 +18,7 @@ namespace OStronghold.GenericFolder
         private Status _level; //level of building
         private Gametime _startBuildTime; //timestamp of when started to build
         private Gametime _endBuildTime; //timestamp of when building finish
-        private Consts.buildingState _buildingState; //state of the building
+        private Consts.buildingState _buildingState; //state of the building               
 
         public int BuildingID
         {

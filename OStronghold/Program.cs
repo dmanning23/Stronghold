@@ -28,22 +28,24 @@ namespace OStronghold
                 Consts.printMessage("------------------------------------------------");
                 Consts.printMessage("                 Debug Menu         " + Program._gametime);
                 Consts.printMessage("------------------------------------------------");
-                Consts.printMessage("add farm");
-                Consts.printMessage("add granary");
-                Consts.printMessage("add|show hut");
+                Consts.printMessage("add farm <im>");
+                Consts.printMessage("add granary <im>");
+                Consts.printMessage("add|show hut <im>");
                 Consts.printMessage("add|show person <number>");
                 Consts.printMessage("dump <person|building|job> <id|all>");
+                Consts.printMessage("makeallhungry");
                 Consts.printMessage("show|suspend|resume|stop game time");
                 Consts.printMessage("quit");
                 Consts.printMessage("");
                 Console.Write("Enter input: ");
                 string input = Console.ReadLine();
                 string[] words = input.Split(' ');
-                int numberParam;
+                int numberParam, buildingID;
 
                 switch (words[0])
                 {
                     case "add":
+                        Building building;
                         if (words[1] == "person")
                         {
                             if (words.Length == 2) numberParam = 1;
@@ -53,20 +55,35 @@ namespace OStronghold
                             Consts.writeToDebugLog(numberParam + " Person(s) added.");
                         }
                         else if (words[1] == "hut")
-                        {
-                            _aStronghold.buildHut();
+                        {                            
+                            buildingID = _aStronghold.buildHut();
+                            if (words.Length == 3 && words[2] == "im")
+                            {
+                                Program._aStronghold.searchBuildingByID(buildingID, out building);
+                                building.EndBuildTime.CopyGameTime(building.StartBuildTime);
+                            }
                             Consts.printMessage("Hut added.");
                             Consts.writeToDebugLog("Hut added.");
                         }
                         else if (words[1] == "farm")
                         {
-                            _aStronghold.buildFarm();
+                            buildingID = _aStronghold.buildFarm();
+                            if (words.Length == 3 && words[2] == "im")
+                            {
+                                Program._aStronghold.searchBuildingByID(buildingID, out building);
+                                building.EndBuildTime.CopyGameTime(building.StartBuildTime);
+                            }
                             Consts.printMessage("Farm added.");
                             Consts.writeToDebugLog("Farm added.");
                         }
                         else if (words[1] == "granary")
                         {
-                            _aStronghold.buildGranary();
+                            buildingID = _aStronghold.buildGranary();
+                            if (words.Length == 3 && words[2] == "im")
+                            {
+                                Program._aStronghold.searchBuildingByID(buildingID, out building);
+                                building.EndBuildTime.CopyGameTime(building.StartBuildTime);
+                            }
                             Consts.printMessage("Granary added.");
                             Consts.writeToDebugLog("Granary added.");
                         }
@@ -143,9 +160,9 @@ namespace OStronghold
                             {
                                 if (words[2] == "all")
                                 {
-                                    foreach (Building building in _aStronghold._buildingsList)
+                                    foreach (Building build in _aStronghold._buildingsList)
                                     {
-                                        Consts.writeToDebugLog(building.getBuildingString());
+                                        Consts.writeToDebugLog(build.getBuildingString());
                                     }
                                 }
                                 else if (words.Length == 3)
@@ -157,13 +174,22 @@ namespace OStronghold
                                     }
                                     else
                                     {
-                                        Consts.writeToDebugLog(_aStronghold.searchBuildingByID(numberParam).getBuildingString());
+                                        Building buildingparam = new Building();
+                                        _aStronghold.searchBuildingByID(numberParam,out buildingparam);
+                                        Consts.writeToDebugLog(buildingparam.getBuildingString());
                                     }
                                 }
                                 else Consts.printMessage("Invalid command.");
                             }
                         }
                         else Consts.printMessage("Invalid command.");
+                        break;
+                    case "makeallhungry":
+                        for (int i = 1; i <= _aStronghold._commoners.Count; i++)
+                        {
+                            ((Character)_aStronghold._commoners[i])._bodyneeds.HungerState = Consts.hungerState.Hungry;
+                        }
+                        Consts.printMessage("Made everyone hungry.");
                         break;
                     case "resume":
                         if (words[1] == "game" && words[2] == "time")

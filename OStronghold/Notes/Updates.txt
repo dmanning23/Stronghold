@@ -1,8 +1,9 @@
 ﻿Stronghold - Simcity/Arena-like RPG game
 ========================================
 [doing]
-(00022)
-- Add farm to produce food and store in granary.
+(00023)
+- add constructor job in the beginning
+- make generic transfer of goods method (relationship between two buildings)
 
 [to do]
 - Game -> Add load/save (Serializable)
@@ -10,6 +11,7 @@
 - Character -> Add walking action?
 - Character -> Add attributes (i.e: Strength, Intelligence, etc.)
 - Character -> Add level (how level up affect stats)
+- Building -> Add maintenance cost and degradation.
 - Stronghold -> think of charging money for rent - auto calculate according to cost + returns.
 - Stronghold -> Add list for all population (includes commoners AND stronghold leader for example) - since SHleader doesn't get hungry now.
 - Stronghold -> Start populating characters in Stronghold and create daily life routines.
@@ -34,6 +36,8 @@
 - Foods has satiety rate
 ====================================================================================================
 (update)  [notes]
+(00023) - Added food transfer from Farm to Granary. Farm produces food.
+        - Added new Character action: BuyingFood.
 (00022) - Added Granary.
 (00021) - Added ownerID and buildingState in Building Class.
         - Added building construction phases.

@@ -67,6 +67,18 @@ namespace OStronghold.GenericFolder
             }
         }//inserts item into queue based on priority
 
+        public bool actionExistsInQueue(Consts.characterGeneralActions targetAction)
+        {
+            foreach (CharacterAction action in this)
+            {
+                if (action.Action == targetAction)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }//returns if targetAction is already in queue
+
         #endregion
     }
 }

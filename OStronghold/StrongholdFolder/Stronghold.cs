@@ -81,7 +81,7 @@ namespace OStronghold.StrongholdFolder
                 commoner._health.defineHP(20, 0);
                 commoner._health.defineStamina(100, 10);
                 commoner._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Idle, Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionPriority, Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionDuration));
-                commoner._characterinventory.putInInventory(new InventoryItem(Consts.FOOD_NAME, Consts.FOOD_ID, Consts.FOOD_WEIGHT, 10));
+                commoner._characterinventory.putInInventory(new InventoryItem(Consts.FOOD_NAME, Consts.FOOD_ID, Consts.FOOD_WEIGHT, 3));
                 commoner._characterinventory.putInInventory(new InventoryItem(Consts.GOLD_NAME, Consts.GOLD_ID, Consts.GOLD_WEIGHT, 50));
 
                 _commoners.Add(commoner._id, commoner);
@@ -155,17 +155,32 @@ namespace OStronghold.StrongholdFolder
             return null;
         }//search job according to id
 
-        public Building searchBuildingByID(int buildingID)
+        public void searchBuildingByID(int buildingID, out Building result)
         {
             foreach (Building building in _buildingsList)
             {
                 if (building.BuildingID == buildingID)
                 {
-                    return building;
+                    result = building;
+                    return;
                 }
             }
-            return null;
+            result = null;
         }//search building according to id
+
+        public LinkedList<Building> searchBuildingsByType(int buildingType)
+        {
+            LinkedList<Building> results = new LinkedList<Building>();
+
+            foreach (Building building in _buildingsList)
+            {
+                if (building.Type == buildingType)
+                {
+                    results.AddLast(building);
+                }//found building with right type - add to result link list
+            }
+            return results;
+        }//search building by type
 
         public LinkedList<Job> getAllAvailableJobs()
         {
@@ -184,23 +199,26 @@ namespace OStronghold.StrongholdFolder
 
         #region Methods for constructing buildings
 
-        public void buildHut()
+        public int buildHut()
         {
+            int buildingID = -1;
+
             if (Treasury.haveEnoughToWithdraw(Consts.hut_costtobuild))
             {
+                buildingID = Program._aStronghold._buildingsList.Count + 1;
                 BuildingForLiving hut =
-                    new BuildingForLiving(Program._aStronghold._buildingsList.Count + 1, //building ID
-                                                  _leader._id, //owner ID
-                                                  Consts.accomodation, //building type
-                                                  Consts.hut_name, //building name
-                                                  Consts.hut_hp, //building HP
-                                                  Consts.hut_costtobuild, //building cost to build
-                                                  new Status(1, Consts.hut_maxlevel), //building level
-                                                  Program._gametime, //building start build time
-                                                  Program._gametime + Consts.hut_buildtime, //building end build time
-                                                  new Status(0, Consts.hut_maxtenants), //building tenants
-                                                  new int[Consts.hut_maxtenants],
-                                                  Consts.buildingState.Planned); //building state
+                    new BuildingForLiving(buildingID, //building ID
+                                          _leader._id, //owner ID
+                                          Consts.accomodation, //building type
+                                          Consts.hut_name, //building name
+                                          Consts.hut_hp, //building HP
+                                          Consts.hut_costtobuild, //building cost to build
+                                          new Status(1, Consts.hut_maxlevel), //building level
+                                          Program._gametime, //building start build time
+                                          Program._gametime + Consts.hut_buildtime, //building end build time
+                                          new Status(0, Consts.hut_maxtenants), //building tenants
+                                          new int[Consts.hut_maxtenants],
+                                          Consts.buildingState.Planned); //building state
 
                 Program._aStronghold._buildingsList.AddLast(hut);
                 Treasury.withdrawGold(Consts.hut_costtobuild);
@@ -209,13 +227,14 @@ namespace OStronghold.StrongholdFolder
             {
                 Consts.writeToDebugLog("Not enough money to build hut.");
             }
-        }
+            return buildingID;
+        }//returns the building id
 
-        public void buildFarm()
+        public int buildFarm()
         {
+            int buildingID = -1;
             if (Treasury.haveEnoughToWithdraw(Consts.farm_costtobuild))
-            {
-                int buildingID;
+            {                
                 Job farmerJob;
                 int[] farmJobs = new int[Consts.numberOfFarmersPerFarm];
 
@@ -251,16 +270,17 @@ namespace OStronghold.StrongholdFolder
             {
                 Consts.writeToDebugLog("Not enough money to build farm.");
             }
-        }
+            return buildingID;
+        }//returns building ID
 
-        public void buildGranary()
+        public int buildGranary()
         {
+            int buildingID = -1;
             if (Treasury.haveEnoughToWithdraw(Consts.granary_costtobuild))
-            {
-                int buildingID;
+            {                
                 Job granaryKeeperJob;
                 int[] granaryJobs = new int[Consts.numberOfGranaryKeepersPerGranary];
-                InventoryItem[] granaryInventory = new InventoryItem[Consts.granaryMaxInventory];
+                LinkedList<InventoryItem> granaryInventory = new LinkedList<InventoryItem>();
 
                 buildingID = Program._aStronghold._buildingsList.Count + 1;
 
@@ -294,7 +314,8 @@ namespace OStronghold.StrongholdFolder
             {
                 Consts.writeToDebugLog("Not enough money to build granary.");
             }
-        }
+            return buildingID;
+        }//returns building ID
 
         #endregion 
     }

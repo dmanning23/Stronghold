@@ -2,6 +2,7 @@
 ---------------------------------------
 
 Stronghold will become a busy 'city' where many people will be living and working there to help Stronghold become a bigger city. Stronghold represents a small county where people are loyal to it and will die fighting for their own 'county'. 
+Every x days will attract a random number of newcomers to live in Stronghold.
 A basic commoner life is as follows:
 - born to two commoners
 - work in commoner career
@@ -34,3 +35,26 @@ The leader of Stronghold is responsible for all the activites in Stronghold:
 As time goes along, guilds will slowly form when there are enough of people of the same class and have enough money to do so.
 
 All transactions done in Stronghold are taxed.
+
+Food produced in farms at the end of the day are transferred to the granary for storing. Granary is storage to hold food only. Commoners with 0 food may come and purchase from Granary food and money goes to Stronghold Treasury.
+
+Each building needs to have maintenance cost and has degradation.
+
+At start of the game, stronghold creates constructor jobs to build buildings. Based on number of constructors per building determines how fast the building will be built (limited amount of constructors per building)
+
+Professions gain experience as they work and productivity increases.
+
+Add raw materials later for building requirements.
+
+Battle
+------
+
+battle grid is 3x3
+
+---
+---
+---
+
+a person can be attacked from 8 different directions (each direction causes a different amount of damage).
+blocking is done per 3 squares only(north, south, east, west)
+back attack causes highest damage
