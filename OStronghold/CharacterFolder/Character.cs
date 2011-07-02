@@ -70,10 +70,11 @@ namespace OStronghold.CharacterFolder
         public bool eatAction()
         {
             InventoryItem food = _characterinventory.retrieveItemInInventory(Consts.FOOD_NAME, -1);
+            int amountOfFoodToEat = 1;
 
             if (food.Quantity > 0)
             {
-                food.DeductQuantity(1);
+                food.DeductQuantity(amountOfFoodToEat);
                 if (food.Quantity == 0)
                 {
                     _characterinventory.Inventory.Remove(food);
@@ -81,10 +82,12 @@ namespace OStronghold.CharacterFolder
                 //if food quantity is greater than 1 then deduct one and put back to inventory
                 //if food quantity is exactly 1 then food is finished and no need to put back to inventory                                        
                 _characterinventory.putInInventory(food);
+                Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") ate " + amountOfFoodToEat + " " + Consts.FOOD_NAME + ".", Consts.eventType.Character,Consts.EVENT_DEBUG_MIN);
                 return true;
             }
             else
             {
+                Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") has no " + Consts.FOOD_NAME + " to eat.", Consts.eventType.Character, Consts.EVENT_DEBUG_MIN);
                 return false;
                 //character cannot eat
             }
@@ -104,9 +107,11 @@ namespace OStronghold.CharacterFolder
                     this._jobID = job.JobID;
                     job.JobStatus = Consts.JobStatus.Taken;
                     job.WorkerID = this._id;
+                    Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") applied for the job " + job.JobName + " (" + job.JobID + ").", Consts.eventType.Character, Consts.EVENT_DEBUG_MIN);
                     return true;
                 }
             }
+            Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") failed to apply for a job (" + jobID + ".", Consts.eventType.Character, Consts.EVENT_DEBUG_MIN);
             return false;
         }//applies for job - true = successfully applied, false = failed to apply
 
@@ -123,7 +128,7 @@ namespace OStronghold.CharacterFolder
             if (foodInStock != null)
             {
                 amountFoodInStock = foodInStock.Quantity;
-                //determine how much of food to buy
+                //determine how much of food to buy - random at the moment
                 int amountToBuy = Consts.rand.Next(1, Math.Min(amountFoodInStock, amountAffordedFood)); //minimum between amount of food in stock and amount affordable
 
 
@@ -133,6 +138,7 @@ namespace OStronghold.CharacterFolder
                 this._characterinventory.putInInventory(gold);
                 this._characterinventory.putInInventory(food);
                 ((BuildingWithJobsAndInventory)building).removeFromInventory(Consts.FOOD_NAME, amountToBuy);
+                Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") bought " + amountToBuy + " " + Consts.FOOD_NAME + " from " + building.Name + " (" + building.BuildingID + ").", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
             }
         }//buy food from building ID
 
@@ -175,12 +181,13 @@ namespace OStronghold.CharacterFolder
                     if (((BuildingForLiving)building).isPopulable(1))
                     {
                         ((BuildingForLiving)building).TenantsID[((BuildingForLiving)building).Tenants.Current] = this._id;
-                        ((BuildingForLiving)building).populateLivingBuilding(1);                        
+                        ((BuildingForLiving)building).populateLivingBuilding(1);
+                        Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") found a " + building.Name + " (" + building.BuildingID + ") to live in.", Consts.eventType.Character, Consts.EVENT_DEBUG_MIN);       
                         return building.BuildingID;                        
                     }
                 }//found place to live
             }
-
+            Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") did not find any place to live.", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMALPLUS);     
             return Consts.stronghold_yard;
         }
 
@@ -195,6 +202,7 @@ namespace OStronghold.CharacterFolder
             {
                 finishTime = Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.Eating]._actionDuration;
                 _characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Eating, Consts.actionsData[(int)Consts.characterGeneralActions.Eating]._actionPriority, finishTime));
+                Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") is going to eat " + Consts.FOOD_NAME + ".", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
                 eatAction();
             }//eat only if there is enough food in inventory otherwise stay hungry
             else
@@ -202,6 +210,7 @@ namespace OStronghold.CharacterFolder
                 if (!_characterActions.actionExistsInQueue(Consts.characterGeneralActions.BuyingFood))
                 {
                     finishTime = Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.BuyingFood]._actionDuration;
+                    Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") is going to buy " + Consts.FOOD_NAME + ".", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
                     _characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.BuyingFood, Consts.actionsData[(int)Consts.characterGeneralActions.BuyingFood]._actionPriority, finishTime));
                 }//if action does not exists yet
             }//go buy food

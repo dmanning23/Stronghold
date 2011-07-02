@@ -61,11 +61,13 @@ namespace OStronghold.GenericFolder
             if (isPopulable(numberOfNewTenants))
             {
                 Tenants.Current += numberOfNewTenants;
+                Consts.globalEvent.writeEvent(numberOfNewTenants + " populated a " + this.Name + ".", Consts.eventType.Building, Consts.EVENT_DEBUG_NORMAL);
                 return 0;                
             }
             else
             {
                 Tenants.Current = Tenants.Max;
+                Consts.globalEvent.writeEvent(this.Name + " is too full. Some tenants are forced to leave.", Consts.eventType.Building, Consts.EVENT_DEBUG_NORMAL);
                 return (numberOfNewTenants - (Tenants.Max - Tenants.Current));
             }// overpopulating the buildling - returns the amount not populated
         }//returns the number of unsuccessful populated tenants (i.e: 8/10 hut and populates 3 ppl will return 1. popuating 1 or 2 will return 0.

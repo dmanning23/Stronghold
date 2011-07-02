@@ -50,12 +50,14 @@ namespace OStronghold.CharacterFolder
         {
             if (_currentInventoryCapacity + item.Quantity > _maxInventoryCapacity)
             {
+                Consts.globalEvent.writeEvent("Inventory has no room for " + item.Name + ".", Consts.eventType.Character, Consts.EVENT_DEBUG_MAX);
                 return false;
             }
             else
             {
                 _inventory.AddLast(item);
                 _currentInventoryCapacity += item.Quantity;
+                Consts.globalEvent.writeEvent(item.Name + " added to Inventory.", Consts.eventType.Character, Consts.EVENT_DEBUG_MAX);
                 return true;
             }
         }//puts an item into the inventory and returns results.
@@ -66,12 +68,14 @@ namespace OStronghold.CharacterFolder
             {
                 if (_currentInventoryCapacity + item.Quantity > _maxInventoryCapacity)
                 {
+                    Consts.globalEvent.writeEvent("Inventory has no room for " + item.Name + ".", Consts.eventType.Character, Consts.EVENT_DEBUG_MAX);
                     return false;
                 }
                 else
                 {
                     _inventory.AddLast(item);
-                    _currentInventoryCapacity += item.Quantity;                    
+                    _currentInventoryCapacity += item.Quantity;
+                    Consts.globalEvent.writeEvent(item.Name + " added to Inventory.", Consts.eventType.Character, Consts.EVENT_DEBUG_MAX);
                 }
             }
             return true;
@@ -114,6 +118,7 @@ namespace OStronghold.CharacterFolder
             }
             _currentInventoryCapacity -= itemSearched.Quantity; //frees up inventory capacity
             _inventory.Remove(itemSearched);
+            Consts.globalEvent.writeEvent(itemSearched.Name + " removed from Inventory.", Consts.eventType.Character, Consts.EVENT_DEBUG_MAX);
             return itemSearched;            
         }//if targetName = null or "", then searchbyID else if targetID = -1 then search by Name
 

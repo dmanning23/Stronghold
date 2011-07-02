@@ -165,9 +165,28 @@ namespace OStronghold
 
         #endregion
 
+        #region Events related
+
+        public enum eventType { Character, Building , Stronghold};
+
+        public static GenericEvent globalEvent;
+        public static GenericEventHandlerClass globalEventHandler;
+        public static int EVENT_DEBUG_MIN = 1;
+        public static int EVENT_DEBUG_MINPLUS = 2; 
+        public static int EVENT_DEBUG_NORMAL = 3;
+        public static int EVENT_DEBUG_NORMALPLUS = 4; 
+        public static int EVENT_DEBUG_MAX = 5; 
+
+        public static int EVENT_DEBUG_LEVEL = 3; //1=min, 5=max
+
+        #endregion
+
         #region streamwriter
 
         public static StreamWriter debugSW;
+        public static StreamWriter characterEventSW;
+        public static StreamWriter buildingEventSW;
+        public static StreamWriter strongholdEventSW;
 
         #endregion
         #endregion
@@ -193,12 +212,19 @@ namespace OStronghold
             granary_hp = new Status(200);
 
             debugSW = new StreamWriter(@"..\\..\\logs\\debug.log");
+            characterEventSW = new StreamWriter(@"..\\..\\logs\\characterEvents.log");
+            buildingEventSW = new StreamWriter(@"..\\..\\logs\\buildingEvents.log");
+            strongholdEventSW = new StreamWriter(@"..\\..\\logs\\strongholdEvents.log");
 
             farmerBeginTime = new Gametime(0, 5, 0);
             farmerEndTime = new Gametime(0, 15, 0);
 
             granaryKeeperBeginTime = new Gametime(0, 8, 0);
             granaryKeeperEndTime = new Gametime(0, 20, 0);
+
+            //create global events
+            globalEvent = new GenericEvent();
+            globalEventHandler = new GenericEventHandlerClass(globalEvent);
         }
 
         #endregion
@@ -214,6 +240,24 @@ namespace OStronghold
         {            
             debugSW.WriteLine(message);
             debugSW.Flush();
+        }
+
+        public static void writeToCharacterEventLog(string message)
+        {
+            characterEventSW.WriteLine("[" + Program._gametime + "]: " + message);
+            characterEventSW.Flush();
+        }
+
+        public static void writeToBuildingEventLog(string message)
+        {
+            buildingEventSW.WriteLine("[" + Program._gametime + "]: " + message);
+            buildingEventSW.Flush();
+        }
+
+        public static void writeToStrongholdEventLog(string message)
+        {
+            strongholdEventSW.WriteLine("[" + Program._gametime + "]: " + message);
+            strongholdEventSW.Flush();
         }
 
         #endregion

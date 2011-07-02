@@ -325,7 +325,7 @@ namespace OStronghold
                     {
                         switch (person._characterActions.Peek().Action)
                         {
-                            case Consts.characterGeneralActions.BuyingFood:
+                            case Consts.characterGeneralActions.BuyingFood:                                
                                 LinkedList<Building> granaries = Program._aStronghold.searchBuildingsByType(Consts.granary);
                                 InventoryItem food;
                                 int totalFood = 0;
@@ -365,13 +365,14 @@ namespace OStronghold
                                     }
                                     //else no granaries were found
                                 }//else buy food from granaryIDTobuy
-                                
 
+                                Consts.globalEvent.writeEvent(person._name + " (" + person._id + ") finished buying " + Consts.FOOD_NAME + ".", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
                                 break;
                             case Consts.characterGeneralActions.Eating:
                                 person._bodyneeds.HungerState = Consts.hungerState.JustAte;
                                 person._bodyneeds.LastAteTime.CopyGameTime(Program._gametime);
                                 person._characterActions.Dequeue(); //action is finished 
+                                Consts.globalEvent.writeEvent(person._name + " (" + person._id + ") finished eating.", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
                                 break;
                             case Consts.characterGeneralActions.LookingForPlaceToLive:
                                 if (person._homeID == Consts.stronghold_yard)
@@ -379,6 +380,7 @@ namespace OStronghold
                                     buildingID = person.findPlaceToLive();
                                     person._homeID = buildingID;
                                     person._locationID = buildingID;
+                                    Consts.globalEvent.writeEvent(person._name + " (" + person._id + ") finished looking for a place to live.", Consts.eventType.Character, Consts.EVENT_DEBUG_MAX);
                                 }//person is looking for place to live, returns STRONGHOLD_YARD if does not find any
               
                                 if (person._homeID != Consts.stronghold_yard)
@@ -394,6 +396,7 @@ namespace OStronghold
                                 person._bodyneeds.SleepState = Consts.sleepState.Awake;
                                 person._bodyneeds.LastSleptTime.CopyGameTime(Program._gametime);
                                 person._characterActions.Dequeue();
+                                Consts.globalEvent.writeEvent(person._name + " (" + person._id + ") finished sleeping.", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
                                 break;
                             case Consts.characterGeneralActions.Working:
                                 person._characterActions.Dequeue();
@@ -407,6 +410,7 @@ namespace OStronghold
                                 {
                                     person._characterinventory.putInInventory(new InventoryItem(Consts.GOLD_NAME, Consts.GOLD_ID, Consts.GOLD_WEIGHT, job.Payroll));
                                 }//person doesn't have gold, put gold into inventory        
+                                Consts.globalEvent.writeEvent(person._name + " (" + person._id + ") finished working.", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
                                 break;
                         }
                     }
@@ -436,6 +440,7 @@ namespace OStronghold
                             }//pass hungry hunger time
                             else if (person._bodyneeds.HungerState == Consts.hungerState.Hungry)
                             {
+                                Consts.globalEvent.writeEvent(person._name + " (" + person._id + ") is hungry.", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
                                 person._bodyneeds.HungerState = Consts.hungerState.Hungry;
                                 person._health.hp.Regeneration = -1;
                             }//if hungry and then remains hungry and loses hp every game tick
@@ -443,6 +448,7 @@ namespace OStronghold
                             #region Sleep check                            
                             if (Program._gametime > person._bodyneeds.LastSleptTime + (int)Consts.sleepTimer.Awake)
                             {
+                                Consts.globalEvent.writeEvent(person._name + " (" + person._id + ") is sleepy.", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
                                 person._bodyneeds.SleepState = Consts.sleepState.MustSleep;
                                 finishTime = Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.Sleeping]._actionDuration;
                                 person._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Sleeping, Consts.actionsData[(int)Consts.characterGeneralActions.Sleeping]._actionPriority, finishTime));
@@ -479,11 +485,13 @@ namespace OStronghold
                                                 finishTime = workTimeRelative;
                                             }
                                             else finishTime = job.EndDate;
+                                            Consts.globalEvent.writeEvent(person._name + "(" + person._id + ") is working in his job (" + person._jobID + ").", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
                                             person._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Working, Consts.actionsData[(int)Consts.characterGeneralActions.Working]._actionPriority, finishTime));
                                         }//gametime is between job start time and end time
                                     }//job position is open     
                                     else
                                     {
+                                        Consts.globalEvent.writeEvent("The " + job.JobName + " (" + job.JobID + ") has just expired.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_MIN);
                                         Program._aStronghold._allJobs.Find(job).Value.JobStatus = Consts.JobStatus.Closed;
                                         person._jobID = -1;
                                     }//job is no longer available - taken off the market
@@ -538,13 +546,15 @@ namespace OStronghold
             {
                 #region building construction phases
                 //update building constructor status
-                if (Program._gametime >= building.StartBuildTime && Program._gametime <= building.EndBuildTime)
+                if (Program._gametime >= building.StartBuildTime && Program._gametime <= building.EndBuildTime && building.BuildingState != Consts.buildingState.UnderConstruction)
                 {
                     building.BuildingState = Consts.buildingState.UnderConstruction;
+                    Consts.globalEvent.writeEvent("The " + building.Name + " is still under construction. " + (building.EndBuildTime - Program._gametime) + " minutes left.", Consts.eventType.Building, Consts.EVENT_DEBUG_MIN);
                 }//building is underconstruction
-                else if (Program._gametime > building.EndBuildTime)
+                else if (Program._gametime > building.EndBuildTime && building.BuildingState != Consts.buildingState.Built)
                 {
                     building.BuildingState = Consts.buildingState.Built;
+                    Consts.globalEvent.writeEvent("The " + building.Name + " has finished building.", Consts.eventType.Building, Consts.EVENT_DEBUG_MIN);
                 }//building is finished
                 #endregion
                 
@@ -573,7 +583,7 @@ namespace OStronghold
             {
                 foreach (Building building in Program._aStronghold._buildingsList)
                 {
-                    if (building.Type == Consts.granary && !transferred)
+                    if (building.Type == Consts.granary && !transferred && building.BuildingState == Consts.buildingState.Built)
                     {
                         BuildingWithJobsAndInventory granary = building as BuildingWithJobsAndInventory;
                         if (granary.hasEnoughStorageSpace(totalFoodProduced))
@@ -584,12 +594,14 @@ namespace OStronghold
                             //((BuildingWithJobsAndInventory)Program._aStronghold.searchBuildingByID(granary.BuildingID)).addToInventory(foodTransferredToGranary);//update the original list.
                             transferred = true;
                             Consts.writeToDebugLog(totalFoodProduced + " food transferred to granary.");
+                            Consts.globalEvent.writeEvent(totalFoodProduced + " food transferred to " + granary.Name + " (" + granary.BuildingID + ").", Consts.eventType.Building, Consts.EVENT_DEBUG_MIN);
                         }//granary has enough room to store
                     }
                 }
                 if (!transferred)
                 {
                     //food wasted
+                    Consts.globalEvent.writeEvent(totalFoodProduced + " was thrown away.", Consts.eventType.Building, Consts.EVENT_DEBUG_MIN);
                     Consts.writeToDebugLog("Food not transferred - " + totalFoodProduced + " wasted.");
                 }
             }//transfer food only if food produced is > 0

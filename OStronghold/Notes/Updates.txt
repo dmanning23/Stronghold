@@ -1,8 +1,7 @@
 ﻿Stronghold - Simcity/Arena-like RPG game
 ========================================
 [doing]
-(00023)
-- make separate logs for differnet actions.
+(00024)
 - add constructor job in the beginning
 - make generic transfer of goods method (relationship between two buildings)
 
@@ -37,6 +36,7 @@
 - Foods has satiety rate
 ====================================================================================================
 (update)  [notes]
+(00024) - Added global event for writing log files on actions done.
 (00023) - Added food transfer from Farm to Granary. Farm produces food.
         - Added new Character action: BuyingFood.
 (00022) - Added Granary.

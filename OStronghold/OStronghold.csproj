@@ -58,6 +58,7 @@
     <Compile Include="GenericFolder\Building.cs" />
     <Compile Include="GenericFolder\BuildingForLiving.cs" />
     <Compile Include="GenericFolder\BuildingWithJobsAndInventory.cs" />
+    <Compile Include="GenericFolder\GenericEvent.cs" />
     <Compile Include="GenericFolder\InventoryItem.cs" />
     <Compile Include="GenericFolder\Job.cs" />
     <Compile Include="GenericFolder\MyPriorityQueue.cs" />

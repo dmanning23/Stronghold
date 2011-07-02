@@ -128,7 +128,8 @@ namespace OStronghold.GenericFolder
                     _inventory.AddLast(targetItem);    
                 }//no similar item in inventory
             }
-            _inventoryCapacity.Current += targetItem.Quantity;                
+            _inventoryCapacity.Current += targetItem.Quantity;
+            Consts.globalEvent.writeEvent(targetItem.Name + " added to " + this.Name + "'s inventory.", Consts.eventType.Building, Consts.EVENT_DEBUG_MAX);
         }
 
         public bool removeFromInventory(string targetName ,int quantityToRemove)
@@ -142,10 +143,12 @@ namespace OStronghold.GenericFolder
                     {
                         item.Quantity -= quantityToRemove;
                         _inventoryCapacity.Current -= quantityToRemove;
+                        Consts.globalEvent.writeEvent(item.Name + " removed from " + this.Name + "'s inventory.", Consts.eventType.Building, Consts.EVENT_DEBUG_MAX);
                         return true;
                     }
                 }//item exists - need to update quantity                
             }
+            Consts.globalEvent.writeEvent(targetName + " does not exist in " + this.Name + "'s inventory.", Consts.eventType.Building, Consts.EVENT_DEBUG_MAX);
             return false;            
         }//return false if item does not exists in inventory or trying to remove too much 
 
