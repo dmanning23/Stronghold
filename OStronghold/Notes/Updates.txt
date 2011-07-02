@@ -2,6 +2,7 @@
 ========================================
 [doing]
 (00023)
+- make separate logs for differnet actions.
 - add constructor job in the beginning
 - make generic transfer of goods method (relationship between two buildings)
 
