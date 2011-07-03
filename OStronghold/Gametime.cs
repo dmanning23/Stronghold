@@ -6,6 +6,7 @@ using System.Collections;
 
 using OStronghold.CharacterFolder;
 using OStronghold.GenericFolder;
+using OStronghold.StrongholdFolder;
 
 namespace OStronghold
 {
@@ -288,6 +289,50 @@ namespace OStronghold
             catch (Exception ex)
             {
             }
+            #region updateStrongholdLeaderDecisionMaker
+
+            if (Program._aStronghold._leader._decisionmaker.listOfActionsToDo.Count != 0)
+            {
+                foreach (ActionsToDo todo in Program._aStronghold._leader._decisionmaker.listOfActionsToDo)
+                {
+                    if (todo._action == action.Build)
+                    {
+                        if (todo._objectTypeID == Consts.hut)
+                        {
+                            Consts.globalEvent.writeEvent("Stronghold leader decides to build a hut.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
+                            if (Program._aStronghold.buildHut() == -1)
+                            {
+                                Program._aStronghold._leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.stronghold_treasury, subobject.Capacity, behaviour.Empty);
+                                //not enough money to build hut -> need to add action to make money
+                            }
+                        }
+                        else if (todo._objectTypeID == Consts.granary)
+                        {
+                            Consts.globalEvent.writeEvent("Stronghold leader decides to build a granary.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
+                            if (Program._aStronghold.buildGranary() == -1)
+                            {
+                                Program._aStronghold._leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.stronghold_treasury, subobject.Capacity, behaviour.Empty);
+                                //not enough money to build granary-> need to add action to make money
+                            }
+                        }
+                        else if (todo._objectTypeID == Consts.farm)
+                        {
+                            Consts.globalEvent.writeEvent("Stronghold leader decides to build a farm.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
+                            if (Program._aStronghold.buildFarm() == -1)
+                            {
+                                Program._aStronghold._leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.stronghold_treasury, subobject.Capacity, behaviour.Empty);
+                                //not enough money to build farm -> need to add action to make money
+                            }
+                        }
+                    }                    
+                }
+                Program._aStronghold._leader._decisionmaker.listOfActionsToDo.Clear();
+                Program._aStronghold._leader._decisionmaker.listOfPhenomenons.Clear();
+
+            }//there are some actions to do
+
+            #endregion
+
             #region randomize update order for characters
             //create commonerUpdateOrderArray
             for (int x = 1; x <= Program._aStronghold._commoners.Count; x++)
@@ -389,6 +434,7 @@ namespace OStronghold
                                 }//person found place to live
                                 else
                                 {
+                                    
                                     //do nothing
                                 }//do not dequeue the action and remains for next update - person did not find any accomondations
                                 break;

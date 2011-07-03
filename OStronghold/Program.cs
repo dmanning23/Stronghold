@@ -108,7 +108,7 @@ namespace OStronghold
                                 else if (words.Length == 3)
                                 {
                                     numberParam = Int32.Parse(words[2]);
-                                    if (numberParam > Consts.accomodation + _aStronghold._commoners.Count)
+                                    if (numberParam > Consts.hut + _aStronghold._commoners.Count)
                                     {
                                         Consts.printMessage("Invalid command.");
                                     }

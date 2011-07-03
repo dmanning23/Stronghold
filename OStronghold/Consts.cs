@@ -110,11 +110,13 @@ namespace OStronghold
         #endregion
         #region ID types for buildings (100 -> 500)
 
-        public static int accomodation = 100;
+        public static int hut = 100;
         public static int farm = 101;
         public static int granary = 102;
 
-        public static int stronghold_yard = 5000;        
+        public static int stronghold_treasury = 498;
+        public static int stronghold_yard = 499;
+        public static int stronghold = 500;        
 
 
         #endregion
@@ -178,6 +180,7 @@ namespace OStronghold
         public static int EVENT_DEBUG_MAX = 5; 
 
         public static int EVENT_DEBUG_LEVEL = 3; //1=min, 5=max
+        public static int DEBUG_LOG = 0;
 
         #endregion
 
@@ -237,9 +240,12 @@ namespace OStronghold
         }
 
         public static void writeToDebugLog(string message)
-        {            
-            debugSW.WriteLine(message);
-            debugSW.Flush();
+        {
+            if (Consts.DEBUG_LOG == 0)
+            {
+                debugSW.WriteLine(message);
+                debugSW.Flush();
+            }
         }
 
         public static void writeToCharacterEventLog(string message)

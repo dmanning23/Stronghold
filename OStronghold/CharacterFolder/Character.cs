@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 
 using OStronghold.GenericFolder;
+using OStronghold.StrongholdFolder;
 
 namespace OStronghold.CharacterFolder
 {
@@ -21,7 +22,7 @@ namespace OStronghold.CharacterFolder
         public CharacterBodyNeeds _bodyneeds; //character body needs (i.e: hunger, sleep, etc)        
         public Gametime _currentActionFinishTime;
         public CharacterHealth _health; //character health related
-        public MyPriorityQueue _characterActions; //character actions
+        public characterActionPriorityQueue _characterActions; //character actions
         public CharacterInventory _characterinventory; //character inventory
         public int _jobID; // job ID , -1 if not working       
         public int _homeID; //home ID - where the person sleeps at night
@@ -42,7 +43,7 @@ namespace OStronghold.CharacterFolder
             _bodyneeds = new CharacterBodyNeeds();
             _currentActionFinishTime = new Gametime(0, 0, 0);
             _health = new CharacterHealth();
-            _characterActions = new MyPriorityQueue(); //the list of actions the character wants to do
+            _characterActions = new characterActionPriorityQueue(); //the list of actions the character wants to do
             _characterinventory = new CharacterInventory();
             _locationID = Consts.stronghold_yard;
             _homeID = Consts.stronghold_yard;
@@ -176,7 +177,7 @@ namespace OStronghold.CharacterFolder
         {
             foreach (Building building in Program._aStronghold._buildingsList)
             {
-                if (building.Type == Consts.accomodation && building.BuildingState == Consts.buildingState.Built)
+                if (building.Type == Consts.hut && building.BuildingState == Consts.buildingState.Built)
                 {
                     if (((BuildingForLiving)building).isPopulable(1))
                     {
@@ -187,7 +188,14 @@ namespace OStronghold.CharacterFolder
                     }
                 }//found place to live
             }
-            Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") did not find any place to live.", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMALPLUS);     
+            Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") did not find any place to live.", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMALPLUS);
+            
+            //if no hut is currently under construction
+            if (!Program._aStronghold.isCurrentlyPlannedOrUnderConstruction(Consts.hut))
+            {
+                Program._aStronghold._leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.hut, subobject.Capacity, behaviour.Full);
+            }
+            
             return Consts.stronghold_yard;
         }
 

@@ -10,6 +10,9 @@ namespace OStronghold.StrongholdFolder
     public class StrongholdLeader : Character
     {
         #region Members
+
+        public DecisionMaker _decisionmaker;
+
         #endregion
 
         #region Constructor
@@ -17,6 +20,10 @@ namespace OStronghold.StrongholdFolder
         public StrongholdLeader()
             : base()
         {
+            _decisionmaker = new DecisionMaker();
+
+            _decisionmaker.insertPhenomenon(Consts.stronghold, Consts.hut, subobject.Existence, behaviour.Empty);
+            _decisionmaker.insertPhenomenon(Consts.stronghold, Consts.granary, subobject.Existence, behaviour.Empty);
         }
 
         #endregion
