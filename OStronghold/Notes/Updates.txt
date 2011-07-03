@@ -2,7 +2,7 @@
 ========================================
 [doing]
 (00024)
-- add constructor job in the beginning
+- add builder job in the beginning (make construction company for hiring builders)
 - make generic transfer of goods method (relationship between two buildings)
 
 [to do]

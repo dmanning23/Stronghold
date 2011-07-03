@@ -40,6 +40,17 @@ Food produced in farms at the end of the day are transferred to the granary for 
 
 Each building needs to have maintenance cost and has degradation.
 
+New buildings:
+- stables for horses
+- armorsmith
+- weaponsmith
+- magic shop
+- temple for healing and prayers
+- guilds
+- inns (an improved hut?)
+- heavy weapons (catapults , seige weapons for against other strongholds)
+- 
+
 At start of the game, stronghold creates constructor jobs to build buildings. Based on number of constructors per building determines how fast the building will be built (limited amount of constructors per building)
 
 Professions gain experience as they work and productivity increases.
@@ -58,3 +69,15 @@ battle grid is 3x3
 a person can be attacked from 8 different directions (each direction causes a different amount of damage).
 blocking is done per 3 squares only(north, south, east, west)
 back attack causes highest damage
+
+guild battles grid 8x8
+--------
+--------
+--------
+--------
+--------
+--------
+--------
+--------
+
+maximum amount of participants is 16 per guild. ideally would be melee attacks in the front and ranged attackers in the back.
