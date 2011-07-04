@@ -4,6 +4,7 @@
 (00025)
 - improve decision making
 - exception caught when trying to create 3 huts - treasury runs out of money
+- Change mypriorityqueue to inheritance for characterionactions and actionstodo
 
 [to do]
 - Game -> Add load/save (Serializable)
@@ -11,6 +12,8 @@
 - Character -> Add walking action?
 - Character -> Add attributes (i.e: Strength, Intelligence, etc.)
 - Character -> Add level (how level up affect stats)
+- Character -> Add family for generation tree.
+- Character -> Add relationship between characters (friends, marriage, etc.)
 - Building -> Add maintenance cost and degradation.
 - Stronghold -> make generic transfer of goods method (relationship between two buildings)
 - Stronghold -> add builder job in the beginning (make construction company for hiring builders)
@@ -20,6 +23,7 @@
 - Stronghold -> Add Arena for battles
 - Stronghold -> Setup economy with buildings and shops
 - Stronghold -> Need to think about multiple job applicants (job experience?)
+- Stronghold -> Need to add anomalities
 - StrongholdLeader -> Autocontrol economy
 - CharacterMindSet -> Enhance character mindset thinking into effects.
 - InventoryItem -> Add Categories for Items
