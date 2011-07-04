@@ -2,8 +2,7 @@
 ========================================
 [doing]
 (00025)
-- improve decision making
-- exception caught when trying to create 3 huts - treasury runs out of money
+- DecisionMaker -> think of scenarios for need to build granary and farms.
 - Change mypriorityqueue to inheritance for characterionactions and actionstodo
 
 [to do]
@@ -42,6 +41,7 @@
 - Foods has satiety rate
 ====================================================================================================
 (update)  [notes]
+(00026) - Fixed DecisionMaker to allow multiple construction of same building types.
 (00025) - Added DecisionMaker class for Stronghold leader decision making.
         - Modified MyPriorityQueue to characterActionPriorityQueue.
         - Added actionsToDoPriorityQueue class.

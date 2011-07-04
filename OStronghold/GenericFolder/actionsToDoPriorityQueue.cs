@@ -35,7 +35,7 @@ namespace OStronghold.GenericFolder
         {
             actionsToDoPriorityQueue temp = new actionsToDoPriorityQueue();            
             bool flag = false;
-
+            
             if (this.Count == 0)
             {
                 this.Enqueue(newItem);
@@ -50,21 +50,21 @@ namespace OStronghold.GenericFolder
                         {
                             temp.Enqueue(newItem);
                             temp.Enqueue(queueItem);
-                            flag = true;                            
+                            flag = true;
                         }
                         else temp.Enqueue(queueItem);
                     }
                     else
                     {
                         temp.Enqueue(queueItem);
-                    }                    
+                    }
                 }
                 if (!flag)
                 {
                     temp.Enqueue(newItem); //if flag remains false then newItem has highest priority                    
-                }                
+                }
                 this.Clone(temp);
-            }
+            }            
         }//inserts item into queue based on priority
 
         #endregion

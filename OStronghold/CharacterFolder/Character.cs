@@ -174,7 +174,7 @@ namespace OStronghold.CharacterFolder
         }
 
         public int findPlaceToLive()
-        {
+        {            
             foreach (Building building in Program._aStronghold._buildingsList)
             {
                 if (building.Type == Consts.hut && building.BuildingState == Consts.buildingState.Built)
@@ -189,11 +189,12 @@ namespace OStronghold.CharacterFolder
                 }//found place to live
             }
             Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") did not find any place to live.", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMALPLUS);
-            
-            //if no hut is currently under construction
-            if (!Program._aStronghold.isCurrentlyPlannedOrUnderConstruction(Consts.hut))
+
+            //no places to live -> causes stronghold leader to build more huts
+            if (!Program._aStronghold.hasEnoughPlannedOrConstruction(Consts.hut))  //has enough huts planned for all population
             {
-                Program._aStronghold._leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.hut, subobject.Capacity, behaviour.Full);
+                Consts.globalEvent.writeEvent("Stronghold leader recognizes the need for more huts.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
+                Program._aStronghold._leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.hut, subobject.Capacity, behaviour.Full);                
             }
             
             return Consts.stronghold_yard;

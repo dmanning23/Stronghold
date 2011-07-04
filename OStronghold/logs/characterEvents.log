@@ -1,62 +1,214 @@
-[Day 0 Hour 15 Minutes 0]: P#5 (5) found a Hut (2) to live in.
-[Day 0 Hour 15 Minutes 0]: P#9 (9) found a Hut (2) to live in.
-[Day 0 Hour 15 Minutes 0]: P#11 (11) found a Hut (2) to live in.
-[Day 0 Hour 15 Minutes 0]: P#10 (10) found a Hut (2) to live in.
-[Day 0 Hour 15 Minutes 0]: P#3 (3) found a Hut (2) to live in.
-[Day 0 Hour 15 Minutes 0]: P#2 (2) found a Hut (2) to live in.
-[Day 0 Hour 15 Minutes 0]: P#4 (4) found a Hut (2) to live in.
-[Day 0 Hour 15 Minutes 0]: P#1 (1) found a Hut (2) to live in.
-[Day 0 Hour 15 Minutes 0]: P#8 (8) found a Hut (2) to live in.
-[Day 0 Hour 15 Minutes 0]: P#6 (6) found a Hut (2) to live in.
-[Day 0 Hour 16 Minutes 0]: P#9 (9) is going to eat Food.
-[Day 0 Hour 16 Minutes 0]: P#9 (9) ate 1 Food.
-[Day 0 Hour 16 Minutes 0]: P#4 (4) is going to eat Food.
-[Day 0 Hour 16 Minutes 0]: P#4 (4) ate 1 Food.
-[Day 0 Hour 16 Minutes 0]: P#1 (1) is going to eat Food.
-[Day 0 Hour 16 Minutes 0]: P#1 (1) ate 1 Food.
-[Day 0 Hour 16 Minutes 0]: P#6 (6) is going to eat Food.
-[Day 0 Hour 16 Minutes 0]: P#6 (6) ate 1 Food.
-[Day 0 Hour 16 Minutes 0]: P#11 (11) is going to eat Food.
-[Day 0 Hour 16 Minutes 0]: P#11 (11) ate 1 Food.
-[Day 0 Hour 16 Minutes 0]: P#8 (8) is going to eat Food.
-[Day 0 Hour 16 Minutes 0]: P#8 (8) ate 1 Food.
-[Day 0 Hour 16 Minutes 0]: P#5 (5) is going to eat Food.
-[Day 0 Hour 16 Minutes 0]: P#5 (5) ate 1 Food.
-[Day 0 Hour 16 Minutes 0]: P#10 (10) is going to eat Food.
-[Day 0 Hour 16 Minutes 0]: P#10 (10) ate 1 Food.
-[Day 0 Hour 16 Minutes 0]: P#3 (3) is going to eat Food.
-[Day 0 Hour 16 Minutes 0]: P#3 (3) ate 1 Food.
-[Day 0 Hour 16 Minutes 0]: P#2 (2) is going to eat Food.
-[Day 0 Hour 16 Minutes 0]: P#2 (2) ate 1 Food.
-[Day 0 Hour 17 Minutes 0]: P#9 (9) finished eating.
-[Day 0 Hour 17 Minutes 0]: P#2 (2) finished eating.
-[Day 0 Hour 17 Minutes 0]: P#11 (11) finished eating.
-[Day 0 Hour 17 Minutes 0]: P#3 (3) finished eating.
-[Day 0 Hour 17 Minutes 0]: P#6 (6) finished eating.
-[Day 0 Hour 17 Minutes 0]: P#5 (5) finished eating.
-[Day 0 Hour 17 Minutes 0]: P#10 (10) finished eating.
-[Day 0 Hour 17 Minutes 0]: P#1 (1) finished eating.
-[Day 0 Hour 17 Minutes 0]: P#4 (4) finished eating.
-[Day 0 Hour 17 Minutes 0]: P#8 (8) finished eating.
-[Day 0 Hour 23 Minutes 0]: P#4 (4) is sleepy.
-[Day 0 Hour 23 Minutes 0]: P#11 (11) is sleepy.
-[Day 0 Hour 23 Minutes 0]: P#8 (8) is sleepy.
-[Day 0 Hour 23 Minutes 0]: P#2 (2) is sleepy.
-[Day 0 Hour 23 Minutes 0]: P#10 (10) is sleepy.
-[Day 0 Hour 23 Minutes 0]: P#1 (1) is sleepy.
-[Day 0 Hour 23 Minutes 0]: P#9 (9) is sleepy.
-[Day 0 Hour 23 Minutes 0]: P#6 (6) is sleepy.
-[Day 0 Hour 23 Minutes 0]: P#5 (5) is sleepy.
-[Day 0 Hour 23 Minutes 0]: P#3 (3) is sleepy.
-[Day 1 Hour 3 Minutes 0]: P#15 (15) applied for the job Granary Keeper (1).
-[Day 1 Hour 6 Minutes 0]: P#21 (21) found a Hut (3) to live in.
-[Day 1 Hour 6 Minutes 0]: P#13 (13) found a Hut (3) to live in.
-[Day 1 Hour 6 Minutes 0]: P#15 (15) found a Hut (3) to live in.
-[Day 1 Hour 6 Minutes 0]: P#14 (14) found a Hut (3) to live in.
-[Day 1 Hour 6 Minutes 0]: P#16 (16) found a Hut (3) to live in.
-[Day 1 Hour 6 Minutes 0]: P#19 (19) found a Hut (3) to live in.
-[Day 1 Hour 6 Minutes 0]: P#7 (7) found a Hut (3) to live in.
-[Day 1 Hour 6 Minutes 0]: P#7 (7) is sleepy.
-[Day 1 Hour 6 Minutes 0]: P#18 (18) found a Hut (3) to live in.
-[Day 1 Hour 6 Minutes 0]: P#22 (22) found a Hut (3) to live in.
-[Day 1 Hour 6 Minutes 0]: P#20 (20) found a Hut (3) to live in.
+[Day 1 Hour 0 Minutes 0]: P#3 (3) found a Hut (2) to live in.
+[Day 1 Hour 0 Minutes 0]: P#10 (10) found a Hut (2) to live in.
+[Day 1 Hour 0 Minutes 0]: P#2 (2) found a Hut (2) to live in.
+[Day 1 Hour 0 Minutes 0]: P#11 (11) found a Hut (2) to live in.
+[Day 1 Hour 0 Minutes 0]: P#12 (12) found a Hut (2) to live in.
+[Day 1 Hour 0 Minutes 0]: P#1 (1) found a Hut (2) to live in.
+[Day 1 Hour 0 Minutes 0]: P#7 (7) found a Hut (2) to live in.
+[Day 1 Hour 0 Minutes 0]: P#4 (4) found a Hut (2) to live in.
+[Day 1 Hour 0 Minutes 0]: P#5 (5) found a Hut (2) to live in.
+[Day 1 Hour 0 Minutes 0]: P#6 (6) found a Hut (2) to live in.
+[Day 1 Hour 1 Minutes 0]: P#6 (6) is going to eat Food.
+[Day 1 Hour 1 Minutes 0]: P#6 (6) ate 1 Food.
+[Day 1 Hour 1 Minutes 0]: P#2 (2) is going to eat Food.
+[Day 1 Hour 1 Minutes 0]: P#2 (2) ate 1 Food.
+[Day 1 Hour 1 Minutes 0]: P#1 (1) is going to eat Food.
+[Day 1 Hour 1 Minutes 0]: P#1 (1) ate 1 Food.
+[Day 1 Hour 1 Minutes 0]: P#4 (4) is going to eat Food.
+[Day 1 Hour 1 Minutes 0]: P#4 (4) ate 1 Food.
+[Day 1 Hour 1 Minutes 0]: P#3 (3) is going to eat Food.
+[Day 1 Hour 1 Minutes 0]: P#3 (3) ate 1 Food.
+[Day 1 Hour 1 Minutes 0]: P#5 (5) is going to eat Food.
+[Day 1 Hour 1 Minutes 0]: P#5 (5) ate 1 Food.
+[Day 1 Hour 1 Minutes 0]: P#7 (7) is going to eat Food.
+[Day 1 Hour 1 Minutes 0]: P#7 (7) ate 1 Food.
+[Day 1 Hour 2 Minutes 0]: P#1 (1) finished eating.
+[Day 1 Hour 2 Minutes 0]: P#1 (1) is sleepy.
+[Day 1 Hour 2 Minutes 0]: P#5 (5) finished eating.
+[Day 1 Hour 2 Minutes 0]: P#5 (5) is sleepy.
+[Day 1 Hour 2 Minutes 0]: P#7 (7) finished eating.
+[Day 1 Hour 2 Minutes 0]: P#7 (7) is sleepy.
+[Day 1 Hour 2 Minutes 0]: P#6 (6) finished eating.
+[Day 1 Hour 2 Minutes 0]: P#6 (6) is sleepy.
+[Day 1 Hour 2 Minutes 0]: P#4 (4) finished eating.
+[Day 1 Hour 2 Minutes 0]: P#4 (4) is sleepy.
+[Day 1 Hour 2 Minutes 0]: P#3 (3) finished eating.
+[Day 1 Hour 2 Minutes 0]: P#3 (3) is sleepy.
+[Day 1 Hour 2 Minutes 0]: P#2 (2) finished eating.
+[Day 1 Hour 2 Minutes 0]: P#2 (2) is sleepy.
+[Day 1 Hour 3 Minutes 0]: P#10 (10) applied for the job Granary Keeper (1).
+[Day 1 Hour 5 Minutes 0]: P#12 (12) is going to eat Food.
+[Day 1 Hour 5 Minutes 0]: P#12 (12) ate 1 Food.
+[Day 1 Hour 5 Minutes 0]: P#10 (10) is going to eat Food.
+[Day 1 Hour 5 Minutes 0]: P#10 (10) ate 1 Food.
+[Day 1 Hour 5 Minutes 0]: P#11 (11) is going to eat Food.
+[Day 1 Hour 5 Minutes 0]: P#11 (11) ate 1 Food.
+[Day 1 Hour 6 Minutes 0]: P#11 (11) finished eating.
+[Day 1 Hour 6 Minutes 0]: P#10 (10) finished eating.
+[Day 1 Hour 6 Minutes 0]: P#12 (12) finished eating.
+[Day 1 Hour 8 Minutes 0]: P#10(10) is working in his job (1).
+[Day 1 Hour 10 Minutes 0]: P#6 (6) finished sleeping.
+[Day 1 Hour 10 Minutes 0]: P#1 (1) finished sleeping.
+[Day 1 Hour 10 Minutes 0]: P#2 (2) finished sleeping.
+[Day 1 Hour 10 Minutes 0]: P#5 (5) finished sleeping.
+[Day 1 Hour 10 Minutes 0]: P#4 (4) finished sleeping.
+[Day 1 Hour 10 Minutes 0]: P#7 (7) finished sleeping.
+[Day 1 Hour 10 Minutes 0]: P#3 (3) finished sleeping.
+[Day 1 Hour 11 Minutes 0]: P#1 (1) is going to eat Food.
+[Day 1 Hour 11 Minutes 0]: P#1 (1) ate 1 Food.
+[Day 1 Hour 11 Minutes 0]: P#5 (5) is going to eat Food.
+[Day 1 Hour 11 Minutes 0]: P#5 (5) ate 1 Food.
+[Day 1 Hour 11 Minutes 0]: P#4 (4) is going to eat Food.
+[Day 1 Hour 11 Minutes 0]: P#4 (4) ate 1 Food.
+[Day 1 Hour 11 Minutes 0]: P#6 (6) is going to eat Food.
+[Day 1 Hour 11 Minutes 0]: P#6 (6) ate 1 Food.
+[Day 1 Hour 11 Minutes 0]: P#3 (3) is going to eat Food.
+[Day 1 Hour 11 Minutes 0]: P#3 (3) ate 1 Food.
+[Day 1 Hour 11 Minutes 0]: P#7 (7) is going to eat Food.
+[Day 1 Hour 11 Minutes 0]: P#7 (7) ate 1 Food.
+[Day 1 Hour 11 Minutes 0]: P#2 (2) is going to eat Food.
+[Day 1 Hour 11 Minutes 0]: P#2 (2) ate 1 Food.
+[Day 1 Hour 12 Minutes 0]: P#7 (7) finished eating.
+[Day 1 Hour 12 Minutes 0]: P#3 (3) finished eating.
+[Day 1 Hour 12 Minutes 0]: P#5 (5) finished eating.
+[Day 1 Hour 12 Minutes 0]: P#6 (6) finished eating.
+[Day 1 Hour 12 Minutes 0]: P#4 (4) finished eating.
+[Day 1 Hour 12 Minutes 0]: P#2 (2) finished eating.
+[Day 1 Hour 12 Minutes 0]: P#1 (1) finished eating.
+[Day 1 Hour 13 Minutes 0]: P#8 (8) found a Hut (3) to live in.
+[Day 1 Hour 13 Minutes 0]: P#9 (9) found a Hut (3) to live in.
+[Day 1 Hour 14 Minutes 0]: P#9 (9) is going to eat Food.
+[Day 1 Hour 14 Minutes 0]: P#9 (9) ate 1 Food.
+[Day 1 Hour 14 Minutes 0]: P#12 (12) is going to eat Food.
+[Day 1 Hour 14 Minutes 0]: P#12 (12) ate 1 Food.
+[Day 1 Hour 14 Minutes 0]: P#11 (11) is going to eat Food.
+[Day 1 Hour 14 Minutes 0]: P#11 (11) ate 1 Food.
+[Day 1 Hour 14 Minutes 0]: P#8 (8) is going to eat Food.
+[Day 1 Hour 14 Minutes 0]: P#8 (8) ate 1 Food.
+[Day 1 Hour 15 Minutes 0]: P#11 (11) finished eating.
+[Day 1 Hour 15 Minutes 0]: P#9 (9) finished eating.
+[Day 1 Hour 15 Minutes 0]: P#12 (12) finished eating.
+[Day 1 Hour 15 Minutes 0]: P#8 (8) finished eating.
+[Day 1 Hour 16 Minutes 0]: P#8 (8) is sleepy.
+[Day 1 Hour 16 Minutes 0]: P#9 (9) is sleepy.
+[Day 1 Hour 16 Minutes 0]: P#12 (12) is sleepy.
+[Day 1 Hour 16 Minutes 0]: P#11 (11) is sleepy.
+[Day 1 Hour 20 Minutes 0]: P#10 (10) finished working.
+[Day 1 Hour 20 Minutes 0]: P#10 (10) is sleepy.
+[Day 1 Hour 20 Minutes 0]: P#3 (3) is going to eat Food.
+[Day 1 Hour 20 Minutes 0]: P#3 (3) ate 1 Food.
+[Day 1 Hour 20 Minutes 0]: P#6 (6) is going to eat Food.
+[Day 1 Hour 20 Minutes 0]: P#6 (6) ate 1 Food.
+[Day 1 Hour 20 Minutes 0]: P#1 (1) is going to eat Food.
+[Day 1 Hour 20 Minutes 0]: P#1 (1) ate 1 Food.
+[Day 1 Hour 20 Minutes 0]: P#4 (4) is going to eat Food.
+[Day 1 Hour 20 Minutes 0]: P#4 (4) ate 1 Food.
+[Day 1 Hour 20 Minutes 0]: P#7 (7) is going to eat Food.
+[Day 1 Hour 20 Minutes 0]: P#7 (7) ate 1 Food.
+[Day 1 Hour 20 Minutes 0]: P#2 (2) is going to eat Food.
+[Day 1 Hour 20 Minutes 0]: P#2 (2) ate 1 Food.
+[Day 1 Hour 20 Minutes 0]: P#5 (5) is going to eat Food.
+[Day 1 Hour 20 Minutes 0]: P#5 (5) ate 1 Food.
+[Day 1 Hour 21 Minutes 0]: P#3 (3) finished eating.
+[Day 1 Hour 21 Minutes 0]: P#2 (2) finished eating.
+[Day 1 Hour 21 Minutes 0]: P#7 (7) finished eating.
+[Day 1 Hour 21 Minutes 0]: P#6 (6) finished eating.
+[Day 1 Hour 21 Minutes 0]: P#5 (5) finished eating.
+[Day 1 Hour 21 Minutes 0]: P#4 (4) finished eating.
+[Day 1 Hour 21 Minutes 0]: P#1 (1) finished eating.
+[Day 2 Hour 0 Minutes 0]: P#12 (12) finished sleeping.
+[Day 2 Hour 0 Minutes 0]: P#8 (8) finished sleeping.
+[Day 2 Hour 0 Minutes 0]: P#11 (11) finished sleeping.
+[Day 2 Hour 0 Minutes 0]: P#9 (9) finished sleeping.
+[Day 2 Hour 1 Minutes 0]: P#12 (12) is going to eat Food.
+[Day 2 Hour 1 Minutes 0]: P#12 (12) ate 1 Food.
+[Day 2 Hour 1 Minutes 0]: P#9 (9) is going to eat Food.
+[Day 2 Hour 1 Minutes 0]: P#9 (9) ate 1 Food.
+[Day 2 Hour 1 Minutes 0]: P#11 (11) is going to eat Food.
+[Day 2 Hour 1 Minutes 0]: P#11 (11) ate 1 Food.
+[Day 2 Hour 1 Minutes 0]: P#8 (8) is going to eat Food.
+[Day 2 Hour 1 Minutes 0]: P#8 (8) ate 1 Food.
+[Day 2 Hour 2 Minutes 0]: P#8 (8) finished eating.
+[Day 2 Hour 2 Minutes 0]: P#9 (9) finished eating.
+[Day 2 Hour 2 Minutes 0]: P#12 (12) finished eating.
+[Day 2 Hour 2 Minutes 0]: P#11 (11) finished eating.
+[Day 2 Hour 4 Minutes 0]: P#10 (10) finished sleeping.
+[Day 2 Hour 4 Minutes 0]: P#10 (10) is going to eat Food.
+[Day 2 Hour 4 Minutes 0]: P#10 (10) ate 1 Food.
+[Day 2 Hour 5 Minutes 0]: P#1 (1) is going to buy Food.
+[Day 2 Hour 5 Minutes 0]: P#1 (1) is sleepy.
+[Day 2 Hour 5 Minutes 0]: P#10 (10) finished eating.
+[Day 2 Hour 5 Minutes 0]: P#6 (6) is going to buy Food.
+[Day 2 Hour 5 Minutes 0]: P#6 (6) is sleepy.
+[Day 2 Hour 5 Minutes 0]: P#3 (3) is going to buy Food.
+[Day 2 Hour 5 Minutes 0]: P#3 (3) is sleepy.
+[Day 2 Hour 5 Minutes 0]: P#7 (7) is going to buy Food.
+[Day 2 Hour 5 Minutes 0]: P#7 (7) is sleepy.
+[Day 2 Hour 5 Minutes 0]: P#5 (5) is going to buy Food.
+[Day 2 Hour 5 Minutes 0]: P#5 (5) is sleepy.
+[Day 2 Hour 5 Minutes 0]: P#2 (2) is going to buy Food.
+[Day 2 Hour 5 Minutes 0]: P#2 (2) is sleepy.
+[Day 2 Hour 5 Minutes 0]: P#4 (4) is going to buy Food.
+[Day 2 Hour 5 Minutes 0]: P#4 (4) is sleepy.
+[Day 2 Hour 6 Minutes 0]: P#2 (2) finished buying Food.
+[Day 2 Hour 6 Minutes 0]: P#4 (4) finished buying Food.
+[Day 2 Hour 6 Minutes 0]: P#1 (1) finished buying Food.
+[Day 2 Hour 6 Minutes 0]: P#3 (3) finished buying Food.
+[Day 2 Hour 6 Minutes 0]: P#7 (7) finished buying Food.
+[Day 2 Hour 6 Minutes 0]: P#6 (6) finished buying Food.
+[Day 2 Hour 6 Minutes 0]: P#5 (5) finished buying Food.
+[Day 2 Hour 7 Minutes 0]: P#4 (4) finished buying Food.
+[Day 2 Hour 7 Minutes 0]: P#6 (6) finished buying Food.
+[Day 2 Hour 7 Minutes 0]: P#7 (7) finished buying Food.
+[Day 2 Hour 7 Minutes 0]: P#2 (2) finished buying Food.
+[Day 2 Hour 7 Minutes 0]: P#1 (1) finished buying Food.
+[Day 2 Hour 7 Minutes 0]: P#3 (3) finished buying Food.
+[Day 2 Hour 7 Minutes 0]: P#5 (5) finished buying Food.
+[Day 2 Hour 8 Minutes 0]: P#7 (7) finished buying Food.
+[Day 2 Hour 8 Minutes 0]: P#5 (5) finished buying Food.
+[Day 2 Hour 8 Minutes 0]: P#4 (4) finished buying Food.
+[Day 2 Hour 8 Minutes 0]: P#3 (3) finished buying Food.
+[Day 2 Hour 8 Minutes 0]: P#1 (1) finished buying Food.
+[Day 2 Hour 8 Minutes 0]: P#10(10) is working in his job (1).
+[Day 2 Hour 8 Minutes 0]: P#2 (2) finished buying Food.
+[Day 2 Hour 8 Minutes 0]: P#6 (6) finished buying Food.
+[Day 2 Hour 9 Minutes 0]: P#3 (3) finished buying Food.
+[Day 2 Hour 9 Minutes 0]: P#6 (6) finished buying Food.
+[Day 2 Hour 9 Minutes 0]: P#2 (2) finished buying Food.
+[Day 2 Hour 9 Minutes 0]: P#7 (7) finished buying Food.
+[Day 2 Hour 9 Minutes 0]: P#1 (1) finished buying Food.
+[Day 2 Hour 9 Minutes 0]: P#4 (4) finished buying Food.
+[Day 2 Hour 9 Minutes 0]: P#5 (5) finished buying Food.
+[Day 2 Hour 10 Minutes 0]: P#9 (9) is going to eat Food.
+[Day 2 Hour 10 Minutes 0]: P#9 (9) ate 1 Food.
+[Day 2 Hour 10 Minutes 0]: P#1 (1) finished buying Food.
+[Day 2 Hour 10 Minutes 0]: P#12 (12) is going to buy Food.
+[Day 2 Hour 10 Minutes 0]: P#7 (7) finished buying Food.
+[Day 2 Hour 10 Minutes 0]: P#11 (11) is going to buy Food.
+[Day 2 Hour 10 Minutes 0]: P#6 (6) finished buying Food.
+[Day 2 Hour 10 Minutes 0]: P#2 (2) finished buying Food.
+[Day 2 Hour 10 Minutes 0]: P#3 (3) finished buying Food.
+[Day 2 Hour 10 Minutes 0]: P#5 (5) finished buying Food.
+[Day 2 Hour 10 Minutes 0]: P#4 (4) finished buying Food.
+[Day 2 Hour 10 Minutes 0]: P#8 (8) is going to eat Food.
+[Day 2 Hour 10 Minutes 0]: P#8 (8) ate 1 Food.
+[Day 2 Hour 11 Minutes 0]: P#2 (2) finished buying Food.
+[Day 2 Hour 11 Minutes 0]: P#6 (6) finished buying Food.
+[Day 2 Hour 11 Minutes 0]: P#7 (7) finished buying Food.
+[Day 2 Hour 11 Minutes 0]: P#11 (11) finished buying Food.
+[Day 2 Hour 11 Minutes 0]: P#8 (8) finished eating.
+[Day 2 Hour 11 Minutes 0]: P#1 (1) finished buying Food.
+[Day 2 Hour 11 Minutes 0]: P#3 (3) finished buying Food.
+[Day 2 Hour 11 Minutes 0]: P#5 (5) finished buying Food.
+[Day 2 Hour 11 Minutes 0]: P#12 (12) finished buying Food.
+[Day 2 Hour 11 Minutes 0]: P#9 (9) finished eating.
+[Day 2 Hour 11 Minutes 0]: P#4 (4) finished buying Food.
+[Day 2 Hour 12 Minutes 0]: P#6 (6) finished buying Food.
+[Day 2 Hour 12 Minutes 0]: P#1 (1) finished buying Food.
+[Day 2 Hour 12 Minutes 0]: P#5 (5) finished buying Food.
+[Day 2 Hour 12 Minutes 0]: P#2 (2) finished buying Food.
+[Day 2 Hour 12 Minutes 0]: P#3 (3) finished buying Food.
+[Day 2 Hour 12 Minutes 0]: P#7 (7) finished buying Food.
+[Day 2 Hour 12 Minutes 0]: P#12 (12) finished buying Food.
+[Day 2 Hour 12 Minutes 0]: P#11 (11) finished buying Food.
+[Day 2 Hour 12 Minutes 0]: P#4 (4) finished buying Food.

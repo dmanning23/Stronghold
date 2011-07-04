@@ -198,15 +198,27 @@ namespace OStronghold.StrongholdFolder
 
         #region Methods for constructing buildings
 
-        public bool isCurrentlyPlannedOrUnderConstruction(int buildingType)
+        public bool hasEnoughPlannedOrConstruction(int buildingType)
         {
-            foreach (Building building in _buildingsList)
+            LinkedList<Building> listOfBuildings;
+            int totalPotentialCapacity = 0;
+
+            if (buildingType == Consts.hut)
             {
-                if (building.Type == buildingType && 
-                    (building.BuildingState == Consts.buildingState.UnderConstruction || building.BuildingState == Consts.buildingState.Planned))
+                listOfBuildings = searchBuildingsByType(Consts.hut);
+                foreach (Building hut in listOfBuildings)
                 {
-                    return true;
-                }
+                    totalPotentialCapacity += ((BuildingForLiving)hut).Tenants.Max;
+                }//adds all potential tenant space of all huts that are built/under construction/planned
+                foreach (ActionsToDo todo in _leader._decisionmaker.listOfActionsToDo)
+                {
+                    if (todo._action == action.Build &&
+                        todo._objectTypeID == Consts.hut)
+                    {
+                        totalPotentialCapacity += Consts.hut_maxtenants;
+                    }
+                }//adds all potential tenant space of all going-to-be-built huts that are already on the list of actions to do
+                return (totalPotentialCapacity >= _commoners.Count);
             }
             return false;
         }
@@ -237,7 +249,7 @@ namespace OStronghold.StrongholdFolder
             }//have enough money to build hut
             else
             {
-                Consts.globalEvent.writeEvent("Not enough money in Treasury to build a hut.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
+                Consts.globalEvent.writeEvent("Not enough money in Treasury to build a hut. Treasury currently has " + _treasury.Gold + " gold.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
                 Consts.writeToDebugLog("Not enough money to build hut.");
             }
             return buildingID;
@@ -281,7 +293,7 @@ namespace OStronghold.StrongholdFolder
             }//have enough money to build farm
             else
             {
-                Consts.globalEvent.writeEvent("Not enough money in Treasury to build a farm.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
+                Consts.globalEvent.writeEvent("Not enough money in Treasury to build a farm. Treasury currently has " + _treasury.Gold + " gold.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
                 Consts.writeToDebugLog("Not enough money to build farm.");
             }
             return buildingID;
@@ -326,7 +338,7 @@ namespace OStronghold.StrongholdFolder
             }//have enough money to build farm
             else
             {
-                Consts.globalEvent.writeEvent("Not enough money in Treasury to build a granary.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
+                Consts.globalEvent.writeEvent("Not enough money in Treasury to build a granary. Treasury currently has " + _treasury.Gold + " gold.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
                 Consts.writeToDebugLog("Not enough money to build granary.");
             }
             return buildingID;

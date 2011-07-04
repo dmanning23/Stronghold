@@ -293,41 +293,45 @@ namespace OStronghold
 
             if (Program._aStronghold._leader._decisionmaker.listOfActionsToDo.Count != 0)
             {
+                bool notEnoughFunds = false;
+
                 foreach (ActionsToDo todo in Program._aStronghold._leader._decisionmaker.listOfActionsToDo)
                 {
                     if (todo._action == action.Build)
                     {
                         if (todo._objectTypeID == Consts.hut)
                         {
-                            Consts.globalEvent.writeEvent("Stronghold leader decides to build a hut.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
+                            Consts.globalEvent.writeEvent("Stronghold leader orders to build a hut.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
                             if (Program._aStronghold.buildHut() == -1)
                             {
-                                Program._aStronghold._leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.stronghold_treasury, subobject.Capacity, behaviour.Empty);
-                                //not enough money to build hut -> need to add action to make money
+                                notEnoughFunds = true;                                
                             }
                         }
                         else if (todo._objectTypeID == Consts.granary)
                         {
-                            Consts.globalEvent.writeEvent("Stronghold leader decides to build a granary.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
+                            Consts.globalEvent.writeEvent("Stronghold leader orders to build a granary.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
                             if (Program._aStronghold.buildGranary() == -1)
                             {
-                                Program._aStronghold._leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.stronghold_treasury, subobject.Capacity, behaviour.Empty);
-                                //not enough money to build granary-> need to add action to make money
+                                notEnoughFunds = true;
                             }
                         }
                         else if (todo._objectTypeID == Consts.farm)
                         {
-                            Consts.globalEvent.writeEvent("Stronghold leader decides to build a farm.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
+                            Consts.globalEvent.writeEvent("Stronghold leader orders to build a farm.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
                             if (Program._aStronghold.buildFarm() == -1)
                             {
-                                Program._aStronghold._leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.stronghold_treasury, subobject.Capacity, behaviour.Empty);
-                                //not enough money to build farm -> need to add action to make money
+                                notEnoughFunds = true;
                             }
                         }
                     }                    
                 }
                 Program._aStronghold._leader._decisionmaker.listOfActionsToDo.Clear();
                 Program._aStronghold._leader._decisionmaker.listOfPhenomenons.Clear();
+
+                if (notEnoughFunds)
+                {
+                    Program._aStronghold._leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.stronghold_treasury, subobject.Capacity, behaviour.Empty);
+                }
 
             }//there are some actions to do
 

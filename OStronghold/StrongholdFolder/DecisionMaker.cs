@@ -69,7 +69,7 @@ namespace OStronghold.StrongholdFolder
             {
                 if (targetPhenomenon._objectID == Consts.stronghold_treasury)
                 {
-                    Program._aStronghold.Treasury.depositGold(100); //solution in the meantime
+                    Program._aStronghold.Treasury.depositGold(100); //solution in the meantime                      
                 }//treasury is running out of money
             }//capacity is empty
 
@@ -80,7 +80,28 @@ namespace OStronghold.StrongholdFolder
         {
             Phenomenon targetPhenomenon = new Phenomenon(targetOwnerID, targetObjectTypeID, targetSubObject, targetBehaviour);
             listOfPhenomenons.AddLast(targetPhenomenon);
-            listOfActionsToDo.insertItemIntoQueue(analyzePhenomenon(targetPhenomenon));            
+
+            ActionsToDo toDo = analyzePhenomenon(targetPhenomenon);
+
+            if (toDo != null)
+            {
+                listOfActionsToDo.insertItemIntoQueue(toDo);
+            }//only if there is something to do.
         }
+
+        public bool phenomenonExists(Phenomenon targetPhenomenon)
+        {
+            foreach (Phenomenon ph in this.listOfPhenomenons)
+            {
+                if (ph._behaviour == targetPhenomenon._behaviour &&
+                    ph._objectID == targetPhenomenon._objectID &&
+                    ph._ownerID == targetPhenomenon._ownerID &&
+                    ph._subobject == targetPhenomenon._subobject)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }//checks if phenomenon exists already in the list of phenomenons
     }
 }

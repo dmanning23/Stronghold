@@ -21,8 +21,7 @@ namespace OStronghold.StrongholdFolder
             : base()
         {
             _decisionmaker = new DecisionMaker();
-
-            _decisionmaker.insertPhenomenon(Consts.stronghold, Consts.hut, subobject.Existence, behaviour.Empty);
+            
             _decisionmaker.insertPhenomenon(Consts.stronghold, Consts.granary, subobject.Existence, behaviour.Empty);
         }
 

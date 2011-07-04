@@ -1,9 +1,8 @@
-[Day 0 Hour 1 Minutes 0]: Stronghold leader decides to build a granary.
-[Day 0 Hour 1 Minutes 0]: 50 gold withdrawn from the Treasury.
-[Day 0 Hour 1 Minutes 0]: Stronghold leader decides to build a hut.
-[Day 0 Hour 1 Minutes 0]: 25 gold withdrawn from the Treasury.
-[Day 0 Hour 16 Minutes 0]: Stronghold leader decides to build a hut.
-[Day 0 Hour 16 Minutes 0]: 25 gold withdrawn from the Treasury.
-[Day 1 Hour 7 Minutes 0]: Stronghold leader decides to build a hut.
-[Day 1 Hour 7 Minutes 0]: Not enough money in Treasury to build a hut.
-[Day 1 Hour 7 Minutes 0]: 100 gold deposited into the Treasury.
+[Day 0 Hour 1 Minutes 0]: Stronghold leader orders to build a granary.
+[Day 0 Hour 1 Minutes 0]: 50 gold withdrawn from the Treasury. Treasury now has 50 gold.
+[Day 0 Hour 9 Minutes 0]: Stronghold leader recognizes the need for more huts.
+[Day 0 Hour 10 Minutes 0]: Stronghold leader orders to build a hut.
+[Day 0 Hour 10 Minutes 0]: 25 gold withdrawn from the Treasury. Treasury now has 25 gold.
+[Day 0 Hour 22 Minutes 0]: Stronghold leader recognizes the need for more huts.
+[Day 0 Hour 23 Minutes 0]: Stronghold leader orders to build a hut.
+[Day 0 Hour 23 Minutes 0]: 25 gold withdrawn from the Treasury. Treasury now has 0 gold.

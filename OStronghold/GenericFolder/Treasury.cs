@@ -34,15 +34,15 @@ namespace OStronghold.GenericFolder
         #region Methods
 
         public void depositGold(int amount)
-        {
-            Consts.globalEvent.writeEvent(amount + " gold deposited into the Treasury.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_MIN);
+        {            
             _gold += amount;
+            Consts.globalEvent.writeEvent(amount + " gold deposited into the Treasury. Treasury now has " + this.Gold + " gold.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_MIN);
         }
 
         public void withdrawGold(int amount)
-        {
-            Consts.globalEvent.writeEvent(amount + " gold withdrawn from the Treasury.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_MIN);
+        {            
             _gold -= amount;
+            Consts.globalEvent.writeEvent(amount + " gold withdrawn from the Treasury. Treasury now has " + this.Gold + " gold.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_MIN);
         }
 
         public bool haveEnoughToWithdraw(int amount)

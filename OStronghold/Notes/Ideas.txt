@@ -81,3 +81,12 @@ guild battles grid 8x8
 --------
 
 maximum amount of participants is 16 per guild. ideally would be melee attacks in the front and ranged attackers in the back.
+
+family + relationship between characters. family will allow generations to be passed on (including property + items) , relationships to build families (marriage, etc.)
+
+add anomalities into the game -> people dying, buildings get destroyed, items get lost/burned/destroyed.
+introduce mortality rate + birth rate + joiners from outside.
+
+add alignment in game (evil commoners likes to steal, good likes to protect from evil)
+
+attributes for character includes clumsiness related to dexterity for example.
