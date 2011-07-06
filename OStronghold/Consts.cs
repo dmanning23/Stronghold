@@ -167,7 +167,7 @@ namespace OStronghold
 
         #endregion
 
-        #region Events related
+        #region Events + Debug related
 
         public enum eventType { Character, Building , Stronghold};
 

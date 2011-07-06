@@ -9,6 +9,9 @@ using OStronghold.StrongholdFolder;
 
 namespace OStronghold.CharacterFolder
 {
+    /// <summary>
+    /// Class that represent a single NPC character.
+    /// </summary>
     public class Character
     {
         #region Members
@@ -63,14 +66,20 @@ namespace OStronghold.CharacterFolder
 
         #region Methods        
 
+        /// <summary>
+        /// Retrieve food from character's inventory
+        /// </summary>
+        /// <returns>
+        /// Food inventory item
+        /// </returns>
         public InventoryItem getFoodFromInventory()
         {
-            return _characterinventory.searchForItemByID(Consts.FOOD_ID);
+            return _characterinventory.searchForItemByID(Consts.FOOD_ID);            
         }
 
         public bool eatAction()
-        {
-            InventoryItem food = _characterinventory.retrieveItemInInventory(Consts.FOOD_NAME, -1);
+        {            
+            InventoryItem food = _characterinventory.retrieveItemInInventory(Consts.FOOD_NAME, -1);            
             int amountOfFoodToEat = 1;
 
             if (food.Quantity > 0)
@@ -94,6 +103,11 @@ namespace OStronghold.CharacterFolder
             }
         }//character eats , return true if ate , false if not ate
 
+        /// <summary>
+        /// Character tries to apply for target job.
+        /// </summary>
+        /// <param name="jobID">ID of the target job the character wants to apply for</param>
+        /// <returns>true if character successfully applied for the job. false if character failed to apply for the job.</returns>
         public bool applyForJob(int jobID)
         {
             //search if jobID exists

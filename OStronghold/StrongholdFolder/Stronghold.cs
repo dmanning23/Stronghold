@@ -59,7 +59,7 @@ namespace OStronghold.StrongholdFolder
             //buildings
             _buildingsList = new LinkedList<Building>();
 
-            
+            Consts.globalEvent.writeEvent("Stronghold has been found!", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_MIN);
         }//Constructor
 
         #endregion

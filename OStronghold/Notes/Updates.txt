@@ -4,6 +4,7 @@
 (00025)
 - DecisionMaker -> think of scenarios for need to build granary and farms.
 - Change mypriorityqueue to inheritance for characterionactions and actionstodo
+- Start documenting and commenting the code
 
 [to do]
 - Game -> Add load/save (Serializable)

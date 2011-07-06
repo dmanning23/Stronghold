@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OStronghold</name>
+    </assembly>
+    <members>
+        <member name="T:OStronghold.CharacterFolder.Character">
+            <summary>
+            Class that represent a single NPC character.
+            </summary>
+        </member>
+        <member name="M:OStronghold.CharacterFolder.Character.getFoodFromInventory">
+            <summary>
+            Retrieve food from character's inventory
+            </summary>
+            <returns>
+            Food inventory item
+            </returns>
+        </member>
+        <member name="M:OStronghold.CharacterFolder.Character.applyForJob(System.Int32)">
+            <summary>
+            Character tries to apply for target job.
+            </summary>
+            <param name="jobID">ID of the target job the character wants to apply for</param>
+            <returns>true if character successfully applied for the job. false if character failed to apply for the job.</returns>
+        </member>
+    </members>
+</doc>

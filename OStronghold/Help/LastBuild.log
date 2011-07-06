@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shfbBuild product="Sandcastle Help File Builder Utilities" version="1.9.3.0" projectFile="C:\Users\RONI\Stronghold\OStronghold\OStronghold.shfbproj" started="7/6/2011 9:07:07 AM">
+<buildStep step="Initializing">
+</buildStep>
+<buildStep step="FindingTools">
+Finding tools...
+Searching for Sandcastle tools...
+    Last step completed in 00:00:00.0107
+</buildStep>
+<buildStep step="Failed">
+
+SHFB: Error BE0035: Could not find the path to the Microsoft Sandcastle documentation compiler tools.  See the error number topic in the help file for details.
+
+
+</buildStep>
+</shfbBuild>
