@@ -111,6 +111,28 @@ namespace OStronghold.GenericFolder
             return (_inventoryCapacity.Max - _inventoryCapacity.Current >= insertAmount);            
         }
 
+        public bool hasAvailableJobs()
+        {
+            Job job;
+
+            for (int i = 0; i < _jobs.Length; i++)
+            {
+                job = Program._aStronghold.searchJobByID(_jobs[i]);
+                if (job != null)
+                {
+                    if (job.JobStatus == Consts.JobStatus.Available)
+                    {
+                        return true;
+                    }
+                }//job shoudn't be null
+                else
+                {
+                    Consts.writeToDebugLog("FATAL ERROR! Job should not be null.");
+                }
+            }
+            return false;
+        }
+
         public void addToInventory(InventoryItem targetItem)
         {
             if (_inventory.Count == 0)
@@ -167,8 +189,8 @@ namespace OStronghold.GenericFolder
                 }               
             }
             return null;
-        }
-    
+        }           
+
         #endregion
     }//building with jobs and inventory
 }

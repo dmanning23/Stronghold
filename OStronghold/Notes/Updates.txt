@@ -1,8 +1,8 @@
 ﻿Stronghold - Simcity/Arena-like RPG game
 ========================================
 [doing]
-(00025)
-- DecisionMaker -> think of scenarios for need to build granary and farms.
+(00027)
+- Add debug mode in enter/exit of methods.
 - Change mypriorityqueue to inheritance for characterionactions and actionstodo
 - Start documenting and commenting the code
 
@@ -42,6 +42,8 @@
 - Foods has satiety rate
 ====================================================================================================
 (update)  [notes]
+(00027) - Added decision for building farms and granary.
+        - Added option to disable event logs individually.        
 (00026) - Fixed DecisionMaker to allow multiple construction of same building types.
 (00025) - Added DecisionMaker class for Stronghold leader decision making.
         - Modified MyPriorityQueue to characterActionPriorityQueue.

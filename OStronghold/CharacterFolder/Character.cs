@@ -92,12 +92,12 @@ namespace OStronghold.CharacterFolder
                 //if food quantity is greater than 1 then deduct one and put back to inventory
                 //if food quantity is exactly 1 then food is finished and no need to put back to inventory                                        
                 _characterinventory.putInInventory(food);
-                Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") ate " + amountOfFoodToEat + " " + Consts.FOOD_NAME + ".", Consts.eventType.Character,Consts.EVENT_DEBUG_MIN);
+                Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") ate " + amountOfFoodToEat + " " + Consts.FOOD_NAME + ".", Consts.eventType.Character,Consts.EVENT_DEBUG_NORMAL);
                 return true;
             }
             else
             {
-                Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") has no " + Consts.FOOD_NAME + " to eat.", Consts.eventType.Character, Consts.EVENT_DEBUG_MIN);
+                Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") has no " + Consts.FOOD_NAME + " to eat.", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
                 return false;
                 //character cannot eat
             }
@@ -122,11 +122,12 @@ namespace OStronghold.CharacterFolder
                     this._jobID = job.JobID;
                     job.JobStatus = Consts.JobStatus.Taken;
                     job.WorkerID = this._id;
-                    Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") applied for the job " + job.JobName + " (" + job.JobID + ").", Consts.eventType.Character, Consts.EVENT_DEBUG_MIN);
+                    Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") applied for the job " + job.JobName + " (" + job.JobID + ").", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
+                    Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") applied for the job " + job.JobName + " (" + job.JobID + ").", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
                     return true;
                 }
             }
-            Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") failed to apply for a job (" + jobID + ".", Consts.eventType.Character, Consts.EVENT_DEBUG_MIN);
+            Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") failed to apply for a job (" + jobID + ".", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
             return false;
         }//applies for job - true = successfully applied, false = failed to apply
 
@@ -205,7 +206,7 @@ namespace OStronghold.CharacterFolder
             Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") did not find any place to live.", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMALPLUS);
 
             //no places to live -> causes stronghold leader to build more huts
-            if (!Program._aStronghold.hasEnoughPlannedOrConstruction(Consts.hut))  //has enough huts planned for all population
+            if (!Program._aStronghold.hasEnoughPlannedOrConstruction(Consts.hut))  //does not have enough huts planned for all population
             {
                 Consts.globalEvent.writeEvent("Stronghold leader recognizes the need for more huts.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
                 Program._aStronghold._leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.hut, subobject.Capacity, behaviour.Full);                

@@ -71,6 +71,10 @@ namespace OStronghold.StrongholdFolder
                 {
                     Program._aStronghold.Treasury.depositGold(100); //solution in the meantime                      
                 }//treasury is running out of money
+                else if (targetPhenomenon._objectID == Consts.stronghold_jobs)
+                {                    
+                    result = new ActionsToDo(action.Build, Consts.farm, priority.High);                    
+                }//no jobs available in stronghold
             }//capacity is empty
 
             return result;

@@ -32,7 +32,7 @@ namespace OStronghold.StrongholdFolder
         public Stronghold()
         {            
             _commoners = new Hashtable();
-            _treasury = new Treasury(100);
+            _treasury = new Treasury(50);
             _leader = new StrongholdLeader();            
 
             //configure leader
@@ -88,6 +88,7 @@ namespace OStronghold.StrongholdFolder
             }
         }//Populating by giving birth to x people
 
+        #region Print outputs
         public void printPopulation()
         {
             Character person = new Character();
@@ -137,11 +138,9 @@ namespace OStronghold.StrongholdFolder
                 }
             }
         }
+        #endregion
 
-        public void activateIdleCommoners()
-        {                                                        
-        }//Decide what idle commoners should be doing
-
+        #region Searches
         public Job searchJobByID(int jobID)
         {
             foreach (Job job in _allJobs)
@@ -181,6 +180,8 @@ namespace OStronghold.StrongholdFolder
             return results;
         }//search building by type
 
+        #endregion
+
         public LinkedList<Job> getAllAvailableJobs()
         {
             LinkedList<Job> list = new LinkedList<Job>();
@@ -193,15 +194,29 @@ namespace OStronghold.StrongholdFolder
             }
             return list;
         }//returns list of all jobs with status of available
-       
-        #endregion
 
-        #region Methods for constructing buildings
+        #region Checks
+
+        public bool buildingPlannedToBeBuild (int buildingtype)
+        {
+            bool buildingPlanned = false;
+
+            foreach (ActionsToDo todo in _leader._decisionmaker.listOfActionsToDo)
+            {
+                if (todo._action == action.Build &&
+                    todo._objectTypeID == buildingtype)
+                {
+                    buildingPlanned = true;
+                }
+            }
+            return buildingPlanned;
+        }
 
         public bool hasEnoughPlannedOrConstruction(int buildingType)
         {
             LinkedList<Building> listOfBuildings;
             int totalPotentialCapacity = 0;
+            bool buildingPlanned = false;
 
             if (buildingType == Consts.hut)
             {
@@ -220,8 +235,53 @@ namespace OStronghold.StrongholdFolder
                 }//adds all potential tenant space of all going-to-be-built huts that are already on the list of actions to do
                 return (totalPotentialCapacity >= _commoners.Count);
             }
+            else if (buildingType == Consts.farm)
+            {
+                return buildingPlannedToBeBuild(buildingType);
+            }
+            else if (buildingType == Consts.granary)
+            {
+                listOfBuildings = searchBuildingsByType(Consts.granary);
+                if (listOfBuildings.Count != 0)
+                {
+                    foreach (Building granary in listOfBuildings)
+                    {
+                        if (((BuildingWithJobsAndInventory)granary).InventoryCapacity.Current != ((BuildingWithJobsAndInventory)granary).InventoryCapacity.Max)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
             return false;
         }
+
+        public bool farmsHasAvailableJobs()
+        {
+            LinkedList<Building> farms = searchBuildingsByType(Consts.farm);
+
+            if (farms == null)
+            {
+                return false;
+            }//no farms
+            else
+            {
+                foreach (Building farm in farms)
+                {
+                    if (((BuildingWithJobsAndInventory)farm).hasAvailableJobs())
+                    {
+                        return true;
+                    }
+                }//checks in all farms if there are any jobs available
+            }
+            return false;
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Methods for constructing buildings
 
         public int buildHut()
         {

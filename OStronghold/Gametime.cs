@@ -380,42 +380,49 @@ namespace OStronghold
                                 int totalFood = 0;
                                 int granaryIDToBuy = -1;
 
-                                foreach (BuildingWithJobsAndInventory granary in granaries)
+                                if (granaries.Count != 0)
                                 {
-                                    food = granary.searchInventoryByID(Consts.FOOD_ID);
-                                    if (food != null)
+                                    foreach (BuildingWithJobsAndInventory granary in granaries)
                                     {
-                                        totalFood += food.Quantity;
-                                        if (granary.InventoryCapacity.Current != 0)
+                                        food = granary.searchInventoryByID(Consts.FOOD_ID);
+                                        if (food != null)
                                         {
-                                            granaryIDToBuy = granary.BuildingID;
+                                            totalFood += food.Quantity;
+                                            if (granary.InventoryCapacity.Current != 0)
+                                            {
+                                                granaryIDToBuy = granary.BuildingID;
+                                            }
                                         }
                                     }
-                                }
 
-                                if (person._characterinventory.searchForItemByName(Consts.GOLD_NAME).Quantity == 0)
-                                {
-                                    //person has no money
-                                }
-                                else if (granaries.Count == 0)
-                                {
-                                    //no granaries
-                                }
-                                else if (totalFood == 0)
-                                {
-                                    //no food in granaries
+                                    if (person._characterinventory.searchForItemByName(Consts.GOLD_NAME).Quantity == 0)
+                                    {
+                                        //person has no money
+                                    }
+                                    else if (granaries.Count == 0)
+                                    {
+                                        //no granaries
+                                    }
+                                    else if (totalFood == 0)
+                                    {
+                                        //no food in granaries
+                                    }
+                                    else
+                                    {
+                                        if (granaryIDToBuy != -1)
+                                        {
+                                            person.buyFood(granaryIDToBuy);
+                                            person._characterActions.Dequeue();
+                                        }
+                                        //else no granaries were found
+                                    }//else buy food from granaryIDTobuy
+
+                                    Consts.globalEvent.writeEvent(person._name + " (" + person._id + ") finished buying " + Consts.FOOD_NAME + ".", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
                                 }
                                 else
                                 {
-                                    if (granaryIDToBuy != -1)
-                                    {
-                                        person.buyFood(granaryIDToBuy);
-                                        person._characterActions.Dequeue();
-                                    }
-                                    //else no granaries were found
-                                }//else buy food from granaryIDTobuy
-
-                                Consts.globalEvent.writeEvent(person._name + " (" + person._id + ") finished buying " + Consts.FOOD_NAME + ".", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
+                                    Consts.globalEvent.writeEvent(person._name + " (" + person._id + ") cannot buy any " + Consts.FOOD_NAME + " since there are no granaries.", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
+                                }
                                 break;
                             case Consts.characterGeneralActions.Eating:
                                 person._bodyneeds.HungerState = Consts.hungerState.JustAte;
@@ -512,13 +519,21 @@ namespace OStronghold
                                 {
                                     Job availableJob = listOfAvailableJobs.First.Value;//need to decide how the person determines what job he/she wants to apply for
                                     Building building = new Building();
-                                    Program._aStronghold.searchBuildingByID(availableJob.BuildingID,out building);
+                                    Program._aStronghold.searchBuildingByID(availableJob.BuildingID, out building);
 
                                     if (building.BuildingState == Consts.buildingState.Built)
                                     {
-                                        person.applyForJob(availableJob.JobID); 
+                                        person.applyForJob(availableJob.JobID);
                                     }//building that is providing with the job must be built first
-                                }
+                                }//there are jobs in stronghold
+                                else
+                                {
+                                    if (!Program._aStronghold.farmsHasAvailableJobs() && !Program._aStronghold.hasEnoughPlannedOrConstruction(Consts.farm))
+                                    {
+                                        Consts.globalEvent.writeEvent("Stronghold leader recognizes the need for jobs.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
+                                        Program._aStronghold._leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.stronghold_jobs, subobject.Capacity, behaviour.Empty); //no jobs
+                                    }//if there are no available jobs in the farms and no farms are currently planned or under construction
+                                }//no available jobs in stronghold
                             }//person applies for first job in the list
                             else
                             {
@@ -651,8 +666,14 @@ namespace OStronghold
                 if (!transferred)
                 {
                     //food wasted
-                    Consts.globalEvent.writeEvent(totalFoodProduced + " was thrown away.", Consts.eventType.Building, Consts.EVENT_DEBUG_MIN);
+                    Consts.globalEvent.writeEvent(totalFoodProduced + " was thrown away.", Consts.eventType.Building, Consts.EVENT_DEBUG_NORMAL);
                     Consts.writeToDebugLog("Food not transferred - " + totalFoodProduced + " wasted.");
+
+                    if (!Program._aStronghold.hasEnoughPlannedOrConstruction(Consts.granary))
+                    {
+                        Consts.globalEvent.writeEvent("Stronghold leader recognizes the need for a granary.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
+                        Program._aStronghold._leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.granary, subobject.Existence, behaviour.Empty);
+                    }
                 }
             }//transfer food only if food produced is > 0
             #endregion

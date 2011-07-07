@@ -20,9 +20,7 @@ namespace OStronghold.StrongholdFolder
         public StrongholdLeader()
             : base()
         {
-            _decisionmaker = new DecisionMaker();
-            
-            _decisionmaker.insertPhenomenon(Consts.stronghold, Consts.granary, subobject.Existence, behaviour.Empty);
+            _decisionmaker = new DecisionMaker();                        
         }
 
         #endregion

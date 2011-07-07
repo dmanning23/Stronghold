@@ -10,3 +10,4 @@ d:\NSN\Code\C#\Stronghold\OStronghold\bin\Debug\OStronghold.pdb
 d:\NSN\Code\C#\Stronghold\OStronghold\obj\x86\Debug\ResolveAssemblyReference.cache
 d:\NSN\Code\C#\Stronghold\OStronghold\obj\x86\Debug\OStronghold.exe
 d:\NSN\Code\C#\Stronghold\OStronghold\obj\x86\Debug\OStronghold.pdb
+C:\Users\RONI\Stronghold\OStronghold\bin\Debug\OStronghold.xml

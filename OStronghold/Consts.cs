@@ -114,6 +114,7 @@ namespace OStronghold
         public static int farm = 101;
         public static int granary = 102;
 
+        public static int stronghold_jobs = 497;
         public static int stronghold_treasury = 498;
         public static int stronghold_yard = 499;
         public static int stronghold = 500;        
@@ -179,8 +180,11 @@ namespace OStronghold
         public static int EVENT_DEBUG_NORMALPLUS = 4; 
         public static int EVENT_DEBUG_MAX = 5; 
 
-        public static int EVENT_DEBUG_LEVEL = 3; //1=min, 5=max
-        public static int DEBUG_LOG = 0;
+        public static int CURRENT_EVENT_DEBUG_LEVEL = 3; //1=min, 5=max
+        public static int CURRENT_DEBUG_LOG = 0; //0 = off, 1 = on
+        public static int CURRENT_BUILDINGEVENTS_LOG = 1;
+        public static int CURRENT_CHARACTEREVENTS_LOG = 0;
+        public static int CURRENT_STRONGHOLDEVENTS_LOG = 1;
 
         #endregion
 
@@ -241,7 +245,7 @@ namespace OStronghold
 
         public static void writeToDebugLog(string message)
         {
-            if (Consts.DEBUG_LOG == 0)
+            if (Consts.CURRENT_DEBUG_LOG == 1)
             {
                 debugSW.WriteLine(message);
                 debugSW.Flush();
@@ -250,20 +254,29 @@ namespace OStronghold
 
         public static void writeToCharacterEventLog(string message)
         {
-            characterEventSW.WriteLine("[" + Program._gametime + "]: " + message);
-            characterEventSW.Flush();
+            if (Consts.CURRENT_CHARACTEREVENTS_LOG == 1)
+            {
+                characterEventSW.WriteLine("[" + Program._gametime + "]: " + message);
+                characterEventSW.Flush();
+            }
         }
 
         public static void writeToBuildingEventLog(string message)
         {
-            buildingEventSW.WriteLine("[" + Program._gametime + "]: " + message);
-            buildingEventSW.Flush();
+            if (Consts.CURRENT_BUILDINGEVENTS_LOG == 1)
+            {
+                buildingEventSW.WriteLine("[" + Program._gametime + "]: " + message);
+                buildingEventSW.Flush();
+            }
         }
 
         public static void writeToStrongholdEventLog(string message)
         {
-            strongholdEventSW.WriteLine("[" + Program._gametime + "]: " + message);
-            strongholdEventSW.Flush();
+            if (Consts.CURRENT_STRONGHOLDEVENTS_LOG == 1)
+            {
+                strongholdEventSW.WriteLine("[" + Program._gametime + "]: " + message);
+                strongholdEventSW.Flush();
+            }
         }
 
         #endregion

@@ -42,7 +42,7 @@ namespace OStronghold.GenericFolder
 
         public void eventWritingToFile(object sender, GenericEventArgs e)
         {
-            if (e._eventlevel <= Consts.EVENT_DEBUG_LEVEL)
+            if (e._eventlevel <= Consts.CURRENT_EVENT_DEBUG_LEVEL)
             {
                 switch (e._eventType)
                 {
