@@ -55,7 +55,7 @@ namespace OStronghold.StrongholdFolder
 
         private ActionsToDo analyzePhenomenon(Phenomenon targetPhenomenon)
         {
-            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             ActionsToDo result = null;
             
             if (targetPhenomenon._subobject == subobject.Existence && targetPhenomenon._behaviour == behaviour.Empty)
@@ -77,13 +77,13 @@ namespace OStronghold.StrongholdFolder
                     result = new ActionsToDo(action.Build, Consts.farm, priority.High);                    
                 }//no jobs available in stronghold
             }//capacity is empty
-            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             return result;
         }
 
         public void insertPhenomenon(int targetOwnerID, int targetObjectTypeID, subobject targetSubObject, behaviour targetBehaviour)
         {
-            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             Phenomenon targetPhenomenon = new Phenomenon(targetOwnerID, targetObjectTypeID, targetSubObject, targetBehaviour);
             listOfPhenomenons.AddLast(targetPhenomenon);
 
@@ -93,12 +93,12 @@ namespace OStronghold.StrongholdFolder
             {
                 listOfActionsToDo.insertItemIntoQueue(toDo);
             }//only if there is something to do.
-            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
         public bool phenomenonExists(Phenomenon targetPhenomenon)
         {
-            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             foreach (Phenomenon ph in this.listOfPhenomenons)
             {
                 if (ph._behaviour == targetPhenomenon._behaviour &&
@@ -106,11 +106,11 @@ namespace OStronghold.StrongholdFolder
                     ph._ownerID == targetPhenomenon._ownerID &&
                     ph._subobject == targetPhenomenon._subobject)
                 {
-                    Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return true;
                 }
             }
-            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             return false;
         }//checks if phenomenon exists already in the list of phenomenons
     }

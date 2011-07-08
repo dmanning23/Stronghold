@@ -27,11 +27,11 @@ namespace OStronghold.GenericFolder
 
         public void writeEvent(string message, Consts.eventType eventType, int eventLevel)
         {
-            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             GenericEventArgs eventArgs = new GenericEventArgs(message, eventType, eventLevel);
 
             writeEventToFile(this, eventArgs);
-            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
     }
 
@@ -44,7 +44,7 @@ namespace OStronghold.GenericFolder
 
         public void eventWritingToFile(object sender, GenericEventArgs e)
         {
-            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             if (e._eventlevel <= Consts.CURRENT_EVENT_DEBUG_LEVEL)
             {
                 switch (e._eventType)
@@ -60,7 +60,7 @@ namespace OStronghold.GenericFolder
                         break;
                 }
             }
-            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
     }

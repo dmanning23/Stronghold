@@ -181,7 +181,7 @@ namespace OStronghold
         public static int EVENT_DEBUG_MAX = 5; 
 
         public static int CURRENT_EVENT_DEBUG_LEVEL = 3; //1=min, 5=max
-        public static int CURRENT_DEBUG_LOG = 1; //0 = off, 1 = on
+        public static int CURRENT_DEBUG_LOG = 0; //0 = off, 1 = on
         public static int CURRENT_BUILDINGEVENTS_LOG = 1;
         public static int CURRENT_CHARACTEREVENTS_LOG = 0;
         public static int CURRENT_STRONGHOLDEVENTS_LOG = 1;

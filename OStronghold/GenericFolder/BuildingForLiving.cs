@@ -49,41 +49,41 @@ namespace OStronghold.GenericFolder
 
         public bool isPopulable(int numberOfNewTenants)
         {
-            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             if (numberOfNewTenants > (Tenants.Max - Tenants.Current))
             {
-                Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
                 return false;
             }//overpopulating building
             else
             {
-                Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
                 return true;
             }
         }
 
         public int populateLivingBuilding(int numberOfNewTenants)
         {
-            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             if (isPopulable(numberOfNewTenants))
             {
                 Tenants.Current += numberOfNewTenants;
                 Consts.globalEvent.writeEvent(numberOfNewTenants + " populated a " + this.Name + ".", Consts.eventType.Building, Consts.EVENT_DEBUG_NORMAL);
-                Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
                 return 0;                
             }
             else
             {
                 Tenants.Current = Tenants.Max;
                 Consts.globalEvent.writeEvent(this.Name + " is too full. Some tenants are forced to leave.", Consts.eventType.Building, Consts.EVENT_DEBUG_NORMAL);
-                Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
                 return (numberOfNewTenants - (Tenants.Max - Tenants.Current));
             }// overpopulating the buildling - returns the amount not populated
         }//returns the number of unsuccessful populated tenants (i.e: 8/10 hut and populates 3 ppl will return 1. popuating 1 or 2 will return 0.
 
         public override string getBuildingString()
         {
-            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             string result = "";
             result += "Building ID: " + base.BuildingID + "\n";
             result += "Owner ID: " + base.OwnerID + "\n";
@@ -105,7 +105,7 @@ namespace OStronghold.GenericFolder
                 }
             }
             else result += "None.";
-            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             return result;
         }
 

@@ -260,7 +260,7 @@ namespace OStronghold
 
         public void OnGameTickPassedHandler(object sender, EventArgs e)
         {
-            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             LinkedList<int> numberLinkList = new LinkedList<int>();
             int[] commonerUpdateOrder = new int[Program._aStronghold._commoners.Count];
             int index, buildingID;
@@ -689,7 +689,7 @@ namespace OStronghold
                     }
                 }
             }//transfer food only if food produced is > 0
-            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             #endregion
         }//actions to do in every game tick
 

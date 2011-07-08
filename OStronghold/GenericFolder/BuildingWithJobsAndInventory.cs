@@ -70,7 +70,7 @@ namespace OStronghold.GenericFolder
 
         public override string getBuildingString()
         {
-            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             string result = "";
             result += "Building ID: " + base.BuildingID + "\n";
             result += "Owner ID: " + base.OwnerID + "\n";
@@ -103,20 +103,20 @@ namespace OStronghold.GenericFolder
                 }
             }
             else result += "None.";
-            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             return result;
         }
 
         public bool hasEnoughStorageSpace()
         {
-            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
-            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             return (_inventoryCapacity.Max != _inventoryCapacity.Current);            
         }
 
         public bool hasAvailableJobs()
         {
-            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             Job job;
 
             for (int i = 0; i < _jobs.Length; i++)
@@ -126,7 +126,7 @@ namespace OStronghold.GenericFolder
                 {
                     if (job.JobStatus == Consts.JobStatus.Available)
                     {
-                        Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+                        Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
                         return true;
                     }
                 }//job shoudn't be null
@@ -135,13 +135,13 @@ namespace OStronghold.GenericFolder
                     Consts.writeToDebugLog("FATAL ERROR! Job should not be null.");
                 }
             }
-            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             return false;
         }
 
         public void addToInventory(InventoryItem targetItem)
         {
-            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             bool itemAlreadyExistsInInventory = false;
 
             if (_inventory.Count == 0)
@@ -165,12 +165,12 @@ namespace OStronghold.GenericFolder
             }//inventory already has items
             _inventoryCapacity.Current += targetItem.Quantity;
             Consts.globalEvent.writeEvent(targetItem.Name + " added to " + this.Name + "'s inventory.", Consts.eventType.Building, Consts.EVENT_DEBUG_MAX);
-            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
         public bool removeFromInventory(string targetName ,int quantityToRemove)
         {
-            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             foreach (InventoryItem item in _inventory)
             {
                 if (item.Name == targetName)
@@ -181,35 +181,35 @@ namespace OStronghold.GenericFolder
                         item.Quantity -= quantityToRemove;
                         _inventoryCapacity.Current -= quantityToRemove;
                         Consts.globalEvent.writeEvent(item.Name + " removed from " + this.Name + "'s inventory.", Consts.eventType.Building, Consts.EVENT_DEBUG_MAX);
-                        Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+                        Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
                         return true;
                     }
                 }//item exists - need to update quantity                
             }
             Consts.globalEvent.writeEvent(targetName + " does not exist in " + this.Name + "'s inventory.", Consts.eventType.Building, Consts.EVENT_DEBUG_MAX);
-            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             return false;            
         }//return false if item does not exists in inventory or trying to remove too much 
 
         public LinkedList<InventoryItem> getInventory()
         {
-            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
-            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             return _inventory;
         }
 
         public InventoryItem searchInventoryByID(int targetID)
         {
-            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             foreach (InventoryItem item in _inventory)
             {
                 if (item.ID == targetID)
                 {
-                    Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return item;
                 }               
             }
-            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             return null;
         }           
 

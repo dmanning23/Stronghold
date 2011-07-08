@@ -2,7 +2,6 @@
 ========================================
 [doing]
 (00027)
-- Add debug mode in enter/exit of methods.
 - Start documenting and commenting the code
 
 [to do]
@@ -42,6 +41,7 @@
 ====================================================================================================
 (update)  [notes]
 (00028) - Fixed granary add inventory problem.
+        - Added for debug mode when enter/exit of methods.
 (00027) - Added decision for building farms and granary.
         - Added option to disable event logs individually.        
 (00026) - Fixed DecisionMaker to allow multiple construction of same building types.

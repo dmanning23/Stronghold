@@ -24,18 +24,18 @@ namespace OStronghold.GenericFolder
 
         public void Clone(actionsToDoPriorityQueue target)
         {
-            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             this.Clear();
             foreach (ActionsToDo val in target)
             {
                 this.Enqueue(val);
             }
-            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
         public void insertItemIntoQueue(ActionsToDo newItem)
         {
-            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             actionsToDoPriorityQueue temp = new actionsToDoPriorityQueue();            
             bool flag = false;
             
@@ -68,7 +68,7 @@ namespace OStronghold.GenericFolder
                 }
                 this.Clone(temp);
             }
-            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }//inserts item into queue based on priority
 
         #endregion
