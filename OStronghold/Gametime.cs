@@ -260,6 +260,7 @@ namespace OStronghold
 
         public void OnGameTickPassedHandler(object sender, EventArgs e)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             LinkedList<int> numberLinkList = new LinkedList<int>();
             int[] commonerUpdateOrder = new int[Program._aStronghold._commoners.Count];
             int index, buildingID;
@@ -267,28 +268,28 @@ namespace OStronghold
             Job job;
             Character person;
 
-            try
-            {
-                Building building;
-                Consts.writeToDebugLog("==========================================================================");
-                Consts.writeToDebugLog(Program._gametime.ToString());
-                for (int i = 1; i <= Program._aStronghold._commoners.Count; i++)
-                {
-                    Consts.writeToDebugLog(((Character)Program._aStronghold._commoners[i]).getCharacterString());
-                }
-                for (int i = 1; i <= Program._aStronghold._buildingsList.Count; i++)
-                {
-                    Program._aStronghold.searchBuildingByID(i, out building);
-                    Consts.writeToDebugLog(building.getBuildingString());
-                }
-                //for (int i = 0; i <= Program._aStronghold._allJobs.Count; i++)
-                //{
-                //    Consts.writeToDebugLog(Program._aStronghold._allJobs.ElementAt(i).getJobString());
-                //}
-            }
-            catch (Exception ex)
-            {
-            }
+            //try
+            //{
+            //    Building building;
+            //    Consts.writeToDebugLog("==========================================================================");
+            //    Consts.writeToDebugLog(Program._gametime.ToString());
+            //    for (int i = 1; i <= Program._aStronghold._commoners.Count; i++)
+            //    {
+            //        Consts.writeToDebugLog(((Character)Program._aStronghold._commoners[i]).getCharacterString());
+            //    }
+            //    for (int i = 1; i <= Program._aStronghold._buildingsList.Count; i++)
+            //    {
+            //        Program._aStronghold.searchBuildingByID(i, out building);
+            //        Consts.writeToDebugLog(building.getBuildingString());
+            //    }
+            //    //for (int i = 0; i <= Program._aStronghold._allJobs.Count; i++)
+            //    //{
+            //    //    Consts.writeToDebugLog(Program._aStronghold._allJobs.ElementAt(i).getJobString());
+            //    //}
+            //}
+            //catch (Exception ex)
+            //{
+            //}
             #region updateStrongholdLeaderDecisionMaker
 
             if (Program._aStronghold._leader._decisionmaker.listOfActionsToDo.Count != 0)
@@ -642,32 +643,44 @@ namespace OStronghold
                 }//occurs at the end of each day                
             }
 
-            bool transferred = false;
+            bool notthrown = false;            
             InventoryItem foodTransferredToGranary = new InventoryItem(Consts.FOOD_NAME, Consts.FOOD_ID, Consts.FOOD_WEIGHT, totalFoodProduced);
+            int foodLeftAfterTransfer = totalFoodProduced;
             if (totalFoodProduced > 0)
             {
                 foreach (Building building in Program._aStronghold._buildingsList)
                 {
-                    if (building.Type == Consts.granary && !transferred && building.BuildingState == Consts.buildingState.Built)
+                    if (building.Type == Consts.granary && !notthrown && building.BuildingState == Consts.buildingState.Built)
                     {
                         BuildingWithJobsAndInventory granary = building as BuildingWithJobsAndInventory;
-                        if (granary.hasEnoughStorageSpace(totalFoodProduced))
+                        if (granary.hasEnoughStorageSpace())
                         {
-                            Building result;
-                            Program._aStronghold.searchBuildingByID(granary.BuildingID, out result);                            
-                            ((BuildingWithJobsAndInventory)result).addToInventory(foodTransferredToGranary);                            
-                            //((BuildingWithJobsAndInventory)Program._aStronghold.searchBuildingByID(granary.BuildingID)).addToInventory(foodTransferredToGranary);//update the original list.
-                            transferred = true;
-                            Consts.writeToDebugLog(totalFoodProduced + " food transferred to granary.");
-                            Consts.globalEvent.writeEvent(totalFoodProduced + " food transferred to " + granary.Name + " (" + granary.BuildingID + ").", Consts.eventType.Building, Consts.EVENT_DEBUG_MIN);
+                            //Building result;
+                            
+                            //Program._aStronghold.searchBuildingByID(granary.BuildingID, out result);
+
+                            if (granary.InventoryCapacity.Max - granary.InventoryCapacity.Current >= foodTransferredToGranary.Quantity)
+                            {
+                                foodLeftAfterTransfer = 0;
+                                notthrown = true;
+                            }//no surplus of food left after transfer
+                            else
+                            {
+                                foodLeftAfterTransfer = foodTransferredToGranary.Quantity - (granary.InventoryCapacity.Max - granary.InventoryCapacity.Current);                                
+                            }//surplus of food , need to throw some out
+
+                            granary.addToInventory(foodTransferredToGranary);
+
+                            Consts.writeToDebugLog(totalFoodProduced - foodLeftAfterTransfer + " food transferred to granary.");
+                            Consts.globalEvent.writeEvent(totalFoodProduced - foodLeftAfterTransfer + " food transferred to " + granary.Name + " (" + granary.BuildingID + "). Granary capacity is: " + granary.InventoryCapacity.Current + "/" + granary.InventoryCapacity.Max, Consts.eventType.Building, Consts.EVENT_DEBUG_MIN);
                         }//granary has enough room to store
                     }
                 }
-                if (!transferred)
-                {
+                if (!notthrown)
+                {                    
                     //food wasted
-                    Consts.globalEvent.writeEvent(totalFoodProduced + " was thrown away.", Consts.eventType.Building, Consts.EVENT_DEBUG_NORMAL);
-                    Consts.writeToDebugLog("Food not transferred - " + totalFoodProduced + " wasted.");
+                    Consts.globalEvent.writeEvent(foodLeftAfterTransfer + " food was thrown away.", Consts.eventType.Building, Consts.EVENT_DEBUG_NORMAL);
+                    Consts.writeToDebugLog("Food not transferred - " + foodLeftAfterTransfer + " wasted.");
 
                     if (!Program._aStronghold.hasEnoughPlannedOrConstruction(Consts.granary))
                     {
@@ -676,6 +689,7 @@ namespace OStronghold
                     }
                 }
             }//transfer food only if food produced is > 0
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             #endregion
         }//actions to do in every game tick
 

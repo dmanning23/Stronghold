@@ -79,7 +79,7 @@ namespace OStronghold.GenericFolder
         }
 
         public Job(int jobID, int buildingID, int ownerID, int workerID, string jobName, Gametime startDate, Gametime endDate, Gametime startTime, Gametime endTime, int payroll, Consts.JobStatus jobStatus)
-        {
+        {            
             if (startDate <= endDate &&
                 startTime <= endTime)
             {
@@ -98,12 +98,12 @@ namespace OStronghold.GenericFolder
                 _endTime.CopyGameTime(endTime);
                 _payroll = payroll;
                 _jobStatus = jobStatus;
-            }
+            }            
         }
 
         public Job(Job targetJob)
-        {
-            Clone(targetJob);
+        {            
+            Clone(targetJob);            
         }
 
         #endregion
@@ -112,6 +112,7 @@ namespace OStronghold.GenericFolder
 
         public void Clone(Job targetJob)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             _jobID = targetJob.JobID;
             _buildingID = targetJob.BuildingID;
             _ownerID = targetJob.OwnerID;
@@ -127,10 +128,12 @@ namespace OStronghold.GenericFolder
             _endTime.CopyGameTime(targetJob.EndTime);
             _payroll = targetJob.Payroll;
             _jobStatus = targetJob.JobStatus;
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
         public string getJobString()
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             string result = "";
             result += "Job ID: " + _jobID + "\n";
             result += "Owner ID: " + _ownerID + "\n";
@@ -142,7 +145,7 @@ namespace OStronghold.GenericFolder
             result += "End time: " + _endTime + "\n";
             result += "Payroll: " + _payroll + "\n";
             result += "Job status: " + _jobStatus + "\n";
-
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             return result;
         }
 

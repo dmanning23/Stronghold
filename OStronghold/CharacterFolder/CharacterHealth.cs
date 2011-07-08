@@ -64,7 +64,7 @@ namespace OStronghold.CharacterFolder
         #region Constructor
 
         public CharacterHealth()
-        {
+        {            
             hp.Current = 0;
             hp.Max = 0;
             hp.Regeneration = 0;
@@ -83,34 +83,41 @@ namespace OStronghold.CharacterFolder
 
         public void defineHP(int value, int regenValue)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             hp.Max = value;
             hp.Current = value;
-            hp.Regeneration = regenValue;            
+            hp.Regeneration = regenValue;
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
         public void defineMP(int value, int regenValue)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             mp.Max = value;
             mp.Current = value;
             mp.Regeneration = regenValue;
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
         public void defineStamina(int value, int regenValue)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             stamina.Max = value;
             stamina.Current = value;
             stamina.Regeneration = regenValue;
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
         public string getCharacterHealthString()
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             string result = "";
             result += "HP: " + this.hp.Current + "/" + this.hp.Max + " (" + this.hp.Regeneration + ") \n";
             result += "MP: " + this.mp.Current + "/" + this.mp.Max + " (" + this.mp.Regeneration + ") \n";
             result += "Stamina: " + this.stamina.Current + "/" + this.stamina.Max + " (" + this.stamina.Regeneration + ") \n";
             result += "Stamina used this tick: " + this.staminaUsedThisTick + "\n";
             result += "Health state: " + this.hp.HealthState + "\n";
-
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             return result;
         }
 

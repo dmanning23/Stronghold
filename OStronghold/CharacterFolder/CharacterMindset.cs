@@ -37,10 +37,10 @@ namespace OStronghold.CharacterFolder
         #region Constructor
 
         public CharacterMindset()
-        {
+        {            
             _moneyScale = Consts.rand.Next(0, 100);
             _fameScale = Consts.rand.Next(0, 100 - _moneyScale);
-            _xpScale = 100 - _moneyScale - _fameScale;
+            _xpScale = 100 - _moneyScale - _fameScale;            
         }
 
         #endregion
@@ -49,11 +49,12 @@ namespace OStronghold.CharacterFolder
 
         public string getCharacterMindsetString()
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             string result = "";
             result += "Money scale: " + this._moneyScale + "\n";
             result += "Fame scale: " + this._fameScale + "\n";
             result += "XP scale: " + this._xpScale + "\n";
-
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             return result;
         }
 

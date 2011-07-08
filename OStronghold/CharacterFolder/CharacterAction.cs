@@ -33,14 +33,14 @@ namespace OStronghold.CharacterFolder
         #region Constructor
 
         public CharacterAction()
-        {
+        {            
             _action = Consts.characterGeneralActions.Undefined;
             _priority = -1;
-            _finishtime = new Gametime();
+            _finishtime = new Gametime();            
         }
 
         public CharacterAction(Consts.characterGeneralActions actionValue, int priorityValue, Gametime finishTimeValue)
-        {
+        {            
             _action = actionValue;
             _priority = priorityValue;
             _finishtime = new Gametime(finishTimeValue);            

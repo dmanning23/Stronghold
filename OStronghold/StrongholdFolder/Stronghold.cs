@@ -32,7 +32,7 @@ namespace OStronghold.StrongholdFolder
         public Stronghold()
         {            
             _commoners = new Hashtable();
-            _treasury = new Treasury(50);
+            _treasury = new Treasury(500);
             _leader = new StrongholdLeader();            
 
             //configure leader
@@ -59,7 +59,7 @@ namespace OStronghold.StrongholdFolder
             //buildings
             _buildingsList = new LinkedList<Building>();
 
-            Consts.globalEvent.writeEvent("Stronghold has been found!", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_MIN);
+            Consts.globalEvent.writeEvent("Stronghold has been found!", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_MIN);            
         }//Constructor
 
         #endregion
@@ -68,6 +68,8 @@ namespace OStronghold.StrongholdFolder
 
         public void populate(int numberofCommonersToProduce)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             int count = _commoners.Count;
             for (int i = count + 1; i < count + 1 + numberofCommonersToProduce; i++)
             {
@@ -86,11 +88,14 @@ namespace OStronghold.StrongholdFolder
                 _commoners.Add(commoner._id, commoner);
 
             }
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
         }//Populating by giving birth to x people
 
         #region Print outputs
         public void printPopulation()
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             Character person = new Character();
             Job job;
 
@@ -111,10 +116,13 @@ namespace OStronghold.StrongholdFolder
                     Consts.printMessage(person._name + " is currently " + person._characterActions.Peek().Action + " as a " + job.JobName + " and has " + person._characterinventory.searchForItemByID(Consts.GOLD_ID).Quantity + " Gold (" + person._characterActions.Peek().FinishTime + ")");
                 }
             }
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
         }//Prints in output all the commoner information
 
         public void printPerson(int ID)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             Character person = ((Character)_commoners[ID]);
             Job job = searchJobByID(person._jobID);
 
@@ -126,10 +134,13 @@ namespace OStronghold.StrongholdFolder
             {
                 Consts.printMessage(person._name + " is currently " + person._characterActions.Peek().Action + " as a " + job.JobName + " and has " + person._characterinventory.searchForItemByID(Consts.GOLD_ID).Quantity + " Gold (" + person._characterActions.Peek().FinishTime + ")");
             }
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
         public void printJobs()
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             foreach (Job job in _allJobs)
             {
                 if (job.JobStatus == Consts.JobStatus.Available)
@@ -137,37 +148,48 @@ namespace OStronghold.StrongholdFolder
                     Consts.printMessage("Name: " + job.JobName + " Status: " + job.JobStatus + " Payroll: " + job.Payroll + " End date: " + job.EndDate);
                 }
             }
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
         #endregion
 
         #region Searches
         public Job searchJobByID(int jobID)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             foreach (Job job in _allJobs)
             {
                 if (job.JobID == jobID)
                 {
+                    Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return job;
                 }
             }
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             return null;
         }//search job according to id
 
         public void searchBuildingByID(int buildingID, out Building result)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             foreach (Building building in _buildingsList)
             {
                 if (building.BuildingID == buildingID)
                 {
                     result = building;
+                    Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return;
                 }
             }
             result = null;
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
         }//search building according to id
 
         public LinkedList<Building> searchBuildingsByType(int buildingType)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             LinkedList<Building> results = new LinkedList<Building>();
 
             foreach (Building building in _buildingsList)
@@ -177,6 +199,7 @@ namespace OStronghold.StrongholdFolder
                     results.AddLast(building);
                 }//found building with right type - add to result link list
             }
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             return results;
         }//search building by type
 
@@ -184,6 +207,8 @@ namespace OStronghold.StrongholdFolder
 
         public LinkedList<Job> getAllAvailableJobs()
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             LinkedList<Job> list = new LinkedList<Job>();
             foreach (Job job in _allJobs)
             {
@@ -192,6 +217,7 @@ namespace OStronghold.StrongholdFolder
                     list.AddLast(job);
                 }
             }
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             return list;
         }//returns list of all jobs with status of available
 
@@ -199,6 +225,8 @@ namespace OStronghold.StrongholdFolder
 
         public bool buildingPlannedToBeBuild (int buildingtype)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             bool buildingPlanned = false;
 
             foreach (ActionsToDo todo in _leader._decisionmaker.listOfActionsToDo)
@@ -209,11 +237,14 @@ namespace OStronghold.StrongholdFolder
                     buildingPlanned = true;
                 }
             }
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             return buildingPlanned;
         }
 
         public bool hasEnoughPlannedOrConstruction(int buildingType)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             LinkedList<Building> listOfBuildings;
             int totalPotentialCapacity = 0;
             bool buildingPlanned = false;
@@ -233,6 +264,7 @@ namespace OStronghold.StrongholdFolder
                         totalPotentialCapacity += Consts.hut_maxtenants;
                     }
                 }//adds all potential tenant space of all going-to-be-built huts that are already on the list of actions to do
+                Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
                 return (totalPotentialCapacity >= _commoners.Count);
             }
             else if (buildingType == Consts.farm)
@@ -248,16 +280,20 @@ namespace OStronghold.StrongholdFolder
                     {
                         if (((BuildingWithJobsAndInventory)granary).InventoryCapacity.Current != ((BuildingWithJobsAndInventory)granary).InventoryCapacity.Max)
                         {
+                            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
                             return true;
                         }
                     }
                 }
             }
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             return false;
         }
 
         public bool farmsHasAvailableJobs()
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             LinkedList<Building> farms = searchBuildingsByType(Consts.farm);
 
             if (farms == null)
@@ -270,10 +306,12 @@ namespace OStronghold.StrongholdFolder
                 {
                     if (((BuildingWithJobsAndInventory)farm).hasAvailableJobs())
                     {
+                        Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
                         return true;
                     }
                 }//checks in all farms if there are any jobs available
             }
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             return false;
         }
 
@@ -285,6 +323,8 @@ namespace OStronghold.StrongholdFolder
 
         public int buildHut()
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             int buildingID = -1;
 
             if (Treasury.haveEnoughToWithdraw(Consts.hut_costtobuild))
@@ -312,11 +352,14 @@ namespace OStronghold.StrongholdFolder
                 Consts.globalEvent.writeEvent("Not enough money in Treasury to build a hut. Treasury currently has " + _treasury.Gold + " gold.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
                 Consts.writeToDebugLog("Not enough money to build hut.");
             }
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             return buildingID;
         }//returns the building id
 
         public int buildFarm()
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             int buildingID = -1;
             if (Treasury.haveEnoughToWithdraw(Consts.farm_costtobuild))
             {                
@@ -356,11 +399,14 @@ namespace OStronghold.StrongholdFolder
                 Consts.globalEvent.writeEvent("Not enough money in Treasury to build a farm. Treasury currently has " + _treasury.Gold + " gold.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
                 Consts.writeToDebugLog("Not enough money to build farm.");
             }
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             return buildingID;
         }//returns building ID
 
         public int buildGranary()
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             int buildingID = -1;
             if (Treasury.haveEnoughToWithdraw(Consts.granary_costtobuild))
             {                
@@ -401,6 +447,7 @@ namespace OStronghold.StrongholdFolder
                 Consts.globalEvent.writeEvent("Not enough money in Treasury to build a granary. Treasury currently has " + _treasury.Gold + " gold.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
                 Consts.writeToDebugLog("Not enough money to build granary.");
             }
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             return buildingID;
         }//returns building ID
 

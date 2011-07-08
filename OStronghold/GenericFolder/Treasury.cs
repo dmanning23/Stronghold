@@ -25,8 +25,8 @@ namespace OStronghold.GenericFolder
         }
 
         public Treasury(int startingGold)
-        {
-            _gold = startingGold;
+        {            
+            _gold = startingGold;            
         }
 
         #endregion
@@ -34,19 +34,25 @@ namespace OStronghold.GenericFolder
         #region Methods
 
         public void depositGold(int amount)
-        {            
+        {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             _gold += amount;
             Consts.globalEvent.writeEvent(amount + " gold deposited into the Treasury. Treasury now has " + this.Gold + " gold.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_MIN);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
         public void withdrawGold(int amount)
-        {            
+        {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             _gold -= amount;
             Consts.globalEvent.writeEvent(amount + " gold withdrawn from the Treasury. Treasury now has " + this.Gold + " gold.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_MIN);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
         public bool haveEnoughToWithdraw(int amount)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             return (amount <= _gold);
         }
 

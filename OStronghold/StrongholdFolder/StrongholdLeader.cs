@@ -19,8 +19,8 @@ namespace OStronghold.StrongholdFolder
 
         public StrongholdLeader()
             : base()
-        {
-            _decisionmaker = new DecisionMaker();                        
+        {            
+            _decisionmaker = new DecisionMaker();            
         }
 
         #endregion

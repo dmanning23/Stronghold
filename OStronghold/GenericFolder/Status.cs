@@ -50,15 +50,15 @@ namespace OStronghold.GenericFolder
         }
 
         public Status(int currentValue, int maxValue)
-        {
+        {            
             _current = currentValue;
-            _max = maxValue;
+            _max = maxValue;            
         }
 
 
         public Status(Status target)
-        {
-            Clone(target);
+        {            
+            Clone(target);            
         }
 
         #endregion
@@ -67,8 +67,10 @@ namespace OStronghold.GenericFolder
 
         public void Clone(Status targetStatus)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             this.Max = targetStatus.Max;
-            this.Current = targetStatus.Current;            
+            this.Current = targetStatus.Current;
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
         #endregion

@@ -12,6 +12,7 @@ namespace OStronghold.StrongholdFolder
         #region Farmer
         public static Job createFarmerJob(int buildingID)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             int jobID = Program._aStronghold._allJobs.Count + 1;
 
             Job farmerJob = new Job(jobID,
@@ -25,6 +26,7 @@ namespace OStronghold.StrongholdFolder
                                     Consts.farmerEndTime,
                                     Consts.farmerPayroll,
                                     Consts.JobStatus.Available);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             return farmerJob;
         }//create farmer job
         #endregion
@@ -32,6 +34,7 @@ namespace OStronghold.StrongholdFolder
         #region Granary keeper
         public static Job createGranaryKeeper(int buildingID)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             int jobID = Program._aStronghold._allJobs.Count + 1;
             Job granaryKeeperJob = new Job(jobID,
                                            buildingID,
@@ -44,6 +47,7 @@ namespace OStronghold.StrongholdFolder
                                            Consts.granaryKeeperEndTime,
                                            Consts.granaryKeeperPayroll,
                                            Consts.JobStatus.Available);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             return granaryKeeperJob;
         }
         #endregion

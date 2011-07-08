@@ -101,8 +101,7 @@ namespace OStronghold
         public static int granaryKeeperPayroll = 5;
         public static int numberOfGranaryKeepersPerGranary = 1;
         public static Gametime granaryKeeperBeginTime;
-        public static Gametime granaryKeeperEndTime;
-        public static int granaryMaxInventory = 1000;
+        public static Gametime granaryKeeperEndTime;        
 
         #endregion
 
@@ -147,7 +146,7 @@ namespace OStronghold
         #region farm
         public static string farm_name = "Farm";
         public static Status farm_hp;        
-        public static int farm_costtobuild = 20;
+        public static int farm_costtobuild = 50;
         public static int farm_maxlevel = 3;
         public static int farm_buildtime = halfDay;
         #endregion
@@ -155,9 +154,10 @@ namespace OStronghold
         #region granary
         public static string granary_name = "Granary";
         public static Status granary_hp;
-        public static int granary_costtobuild = 50;
+        public static int granary_costtobuild = 200;
         public static int granary_maxlevel = 2;
         public static int granary_buildtime = oneDay;
+        public static int granaryMaxInventory = 200;
         #endregion
 
         #endregion
@@ -181,7 +181,7 @@ namespace OStronghold
         public static int EVENT_DEBUG_MAX = 5; 
 
         public static int CURRENT_EVENT_DEBUG_LEVEL = 3; //1=min, 5=max
-        public static int CURRENT_DEBUG_LOG = 0; //0 = off, 1 = on
+        public static int CURRENT_DEBUG_LOG = 1; //0 = off, 1 = on
         public static int CURRENT_BUILDINGEVENTS_LOG = 1;
         public static int CURRENT_CHARACTEREVENTS_LOG = 0;
         public static int CURRENT_STRONGHOLDEVENTS_LOG = 1;
@@ -276,6 +276,24 @@ namespace OStronghold
             {
                 strongholdEventSW.WriteLine("[" + Program._gametime + "]: " + message);
                 strongholdEventSW.Flush();
+            }
+        }
+
+        public static void writeEnteringMethodToDebugLog(string message)
+        {
+            if (Consts.CURRENT_DEBUG_LOG == 1)
+            {
+                debugSW.WriteLine("[" + Program._gametime + "]: ->" + message + "()");
+                debugSW.Flush();
+            }
+        }
+
+        public static void writeExitingMethodToDebugLog(string message)
+        {
+            if (Consts.CURRENT_DEBUG_LOG == 1)
+            {
+                debugSW.WriteLine("[" + Program._gametime + "]: <-" + message + "()");
+                debugSW.Flush();
             }
         }
 

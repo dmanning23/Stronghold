@@ -13,10 +13,10 @@ namespace OStronghold.GenericFolder
         public int _eventlevel;
 
         public GenericEventArgs(string targetMessage, Consts.eventType targetEventType, int targetEventLevel)
-        {
+        {            
             _message = string.Copy(targetMessage);
             _eventType = targetEventType;
-            _eventlevel = targetEventLevel;
+            _eventlevel = targetEventLevel;            
         }
     }
 
@@ -27,21 +27,24 @@ namespace OStronghold.GenericFolder
 
         public void writeEvent(string message, Consts.eventType eventType, int eventLevel)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             GenericEventArgs eventArgs = new GenericEventArgs(message, eventType, eventLevel);
 
             writeEventToFile(this, eventArgs);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
     }
 
     public class GenericEventHandlerClass
     {
         public GenericEventHandlerClass(GenericEvent targetEvent)
-        {
-            targetEvent.writeEventToFile += new GenericEvent.GenericEventHandler(eventWritingToFile);
+        {            
+            targetEvent.writeEventToFile += new GenericEvent.GenericEventHandler(eventWritingToFile);            
         }
 
         public void eventWritingToFile(object sender, GenericEventArgs e)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             if (e._eventlevel <= Consts.CURRENT_EVENT_DEBUG_LEVEL)
             {
                 switch (e._eventType)
@@ -57,6 +60,7 @@ namespace OStronghold.GenericFolder
                         break;
                 }
             }
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
     }

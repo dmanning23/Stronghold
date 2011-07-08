@@ -76,11 +76,11 @@ namespace OStronghold.CharacterFolder
         #region Constructor
 
         public CharacterBodyNeeds()
-        {
+        {            
             _eating._lastAteTime = new Gametime();
             _eating._lastAteTime.CopyGameTime(Program._gametime);
             _sleeping._lastSleptTime = new Gametime();
-            _sleeping._lastSleptTime.CopyGameTime(Program._gametime);
+            _sleeping._lastSleptTime.CopyGameTime(Program._gametime);            
         }
 
         #endregion
@@ -89,11 +89,12 @@ namespace OStronghold.CharacterFolder
 
         public string getCharacterBodyNeedsString()
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             string result = "";
             result += "Hunger state: " + _eating._hungerState + "\n";
             result += "Hunger timer: " + _eating._hungryTimer + "\n";
             result += "Last ate: " + _eating._lastAteTime + "\n";
-            
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             return result;
         }
 
@@ -106,10 +107,12 @@ namespace OStronghold.CharacterFolder
 
         protected virtual void OnHungry(System.EventArgs e)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             if (_hungryEvent != null)
             {
                 _hungryEvent(this, e);
             }
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
         #endregion

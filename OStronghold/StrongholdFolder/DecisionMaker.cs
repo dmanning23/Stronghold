@@ -20,11 +20,11 @@ namespace OStronghold.StrongholdFolder
         public behaviour _behaviour;
 
         public Phenomenon(int targetOwnerID, int targetObjectID, subobject targetSubObject, behaviour targetBehaviour)
-        {
+        {            
             _ownerID = targetOwnerID;
             _objectID = targetObjectID;
             _subobject = targetSubObject;
-            _behaviour = targetBehaviour;
+            _behaviour = targetBehaviour;            
         }
     }
 
@@ -35,10 +35,10 @@ namespace OStronghold.StrongholdFolder
         public priority _priority;
 
         public ActionsToDo(action targetAction, int targetObjectTypeID, priority targetPriority)
-        {
+        {            
             _action = targetAction;
             _priority = targetPriority;
-            _objectTypeID = targetObjectTypeID;
+            _objectTypeID = targetObjectTypeID;           
         }
     }
 
@@ -48,13 +48,14 @@ namespace OStronghold.StrongholdFolder
         public actionsToDoPriorityQueue listOfActionsToDo;
 
         public DecisionMaker()
-        {
+        {            
             listOfPhenomenons = new LinkedList<Phenomenon>();
-            listOfActionsToDo = new actionsToDoPriorityQueue();
+            listOfActionsToDo = new actionsToDoPriorityQueue();            
         }
 
         private ActionsToDo analyzePhenomenon(Phenomenon targetPhenomenon)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             ActionsToDo result = null;
             
             if (targetPhenomenon._subobject == subobject.Existence && targetPhenomenon._behaviour == behaviour.Empty)
@@ -76,12 +77,13 @@ namespace OStronghold.StrongholdFolder
                     result = new ActionsToDo(action.Build, Consts.farm, priority.High);                    
                 }//no jobs available in stronghold
             }//capacity is empty
-
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             return result;
         }
 
         public void insertPhenomenon(int targetOwnerID, int targetObjectTypeID, subobject targetSubObject, behaviour targetBehaviour)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             Phenomenon targetPhenomenon = new Phenomenon(targetOwnerID, targetObjectTypeID, targetSubObject, targetBehaviour);
             listOfPhenomenons.AddLast(targetPhenomenon);
 
@@ -91,10 +93,12 @@ namespace OStronghold.StrongholdFolder
             {
                 listOfActionsToDo.insertItemIntoQueue(toDo);
             }//only if there is something to do.
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
         public bool phenomenonExists(Phenomenon targetPhenomenon)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             foreach (Phenomenon ph in this.listOfPhenomenons)
             {
                 if (ph._behaviour == targetPhenomenon._behaviour &&
@@ -102,9 +106,11 @@ namespace OStronghold.StrongholdFolder
                     ph._ownerID == targetPhenomenon._ownerID &&
                     ph._subobject == targetPhenomenon._subobject)
                 {
+                    Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return true;
                 }
             }
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             return false;
         }//checks if phenomenon exists already in the list of phenomenons
     }

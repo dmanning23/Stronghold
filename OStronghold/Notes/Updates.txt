@@ -3,7 +3,6 @@
 [doing]
 (00027)
 - Add debug mode in enter/exit of methods.
-- Change mypriorityqueue to inheritance for characterionactions and actionstodo
 - Start documenting and commenting the code
 
 [to do]
@@ -21,11 +20,11 @@
 - Stronghold -> Add list for all population (includes commoners AND stronghold leader for example) - since SHleader doesn't get hungry now.
 - Stronghold -> Start populating characters in Stronghold and create daily life routines.
 - Stronghold -> Add Arena for battles
-- Stronghold -> Setup economy with buildings and shops
+- Stronghold -> Add shops for buying items
 - Stronghold -> Need to think about multiple job applicants (job experience?)
 - Stronghold -> Need to add anomalities
-- StrongholdLeader -> Autocontrol economy
 - CharacterMindSet -> Enhance character mindset thinking into effects.
+- PriorityQueue -> Change mypriorityqueue to inheritance for characterionactions and actionstodo????
 - InventoryItem -> Add Categories for Items
 - Classes - Add classes (i.e: Fighter, Mage, Priest, Thief)
 - BattleEngine - Add battle engine for fights (have to generic: i.e: 1v1, 2v2, 3v3, etc.)
@@ -42,6 +41,7 @@
 - Foods has satiety rate
 ====================================================================================================
 (update)  [notes]
+(00028) - Fixed granary add inventory problem.
 (00027) - Added decision for building farms and granary.
         - Added option to disable event logs individually.        
 (00026) - Fixed DecisionMaker to allow multiple construction of same building types.

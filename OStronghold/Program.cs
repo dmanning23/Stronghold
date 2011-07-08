@@ -19,8 +19,7 @@ namespace OStronghold
         public static Thread startGameTimeThread = new Thread(new ThreadStart(startGameTime));
 
         public static void startGUI()
-        {
-
+        {            
 
             while (true)
             {
@@ -230,15 +229,14 @@ namespace OStronghold
                     case "quit":                        
                         break;
                         
-                }
-
+                }                
                 Thread.Sleep(500);
             }
         
         }
 
         public static void startGameTime()
-        {
+        {            
             while (true)
             {
                 TimeSpan _timespan = new TimeSpan(DateTime.Now.Ticks - _gametime.LastGameTick);
@@ -255,11 +253,11 @@ namespace OStronghold
                 Thread.Sleep(1000*Consts.gametickperSecond);               
 
                 //update game time according to ticks
-            }
+            }            
         }
 
         static void Main(string[] args)
-        {
+        {            
             startGameTimeThread.Start();
             startGUI();            
         }

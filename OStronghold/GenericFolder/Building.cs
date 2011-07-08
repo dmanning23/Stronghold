@@ -73,7 +73,7 @@ namespace OStronghold.GenericFolder
 
         public Building(int buildingIDValue, int ownerIDValue, int typeValue, string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
                         Gametime endBuildTimeValue, Consts.buildingState buildStateValue)
-        {
+        {            
             _buildingID = buildingIDValue;
             _ownerID = ownerIDValue;
             _type = typeValue;
@@ -83,7 +83,7 @@ namespace OStronghold.GenericFolder
             _level = new Status(levelValue);
             _startBuildTime = new Gametime(startBuildTimeValue);
             _endBuildTime = new Gametime(endBuildTimeValue);
-            _buildingState = buildStateValue;
+            _buildingState = buildStateValue;            
         }
 
         #endregion

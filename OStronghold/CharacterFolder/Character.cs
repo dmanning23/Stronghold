@@ -74,11 +74,16 @@ namespace OStronghold.CharacterFolder
         /// </returns>
         public InventoryItem getFoodFromInventory()
         {
-            return _characterinventory.searchForItemByID(Consts.FOOD_ID);            
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return _characterinventory.searchForItemByID(Consts.FOOD_ID);
+            
         }
 
         public bool eatAction()
-        {            
+        {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             InventoryItem food = _characterinventory.retrieveItemInInventory(Consts.FOOD_NAME, -1);            
             int amountOfFoodToEat = 1;
 
@@ -93,14 +98,17 @@ namespace OStronghold.CharacterFolder
                 //if food quantity is exactly 1 then food is finished and no need to put back to inventory                                        
                 _characterinventory.putInInventory(food);
                 Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") ate " + amountOfFoodToEat + " " + Consts.FOOD_NAME + ".", Consts.eventType.Character,Consts.EVENT_DEBUG_NORMAL);
+                Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
                 return true;
             }
             else
             {
                 Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") has no " + Consts.FOOD_NAME + " to eat.", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
+                Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
                 return false;
                 //character cannot eat
             }
+            
         }//character eats , return true if ate , false if not ate
 
         /// <summary>
@@ -110,6 +118,7 @@ namespace OStronghold.CharacterFolder
         /// <returns>true if character successfully applied for the job. false if character failed to apply for the job.</returns>
         public bool applyForJob(int jobID)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             //search if jobID exists
             //check for qualifications for job (minimum requirements?)
             //need confirmation from owner of job.
@@ -124,15 +133,19 @@ namespace OStronghold.CharacterFolder
                     job.WorkerID = this._id;
                     Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") applied for the job " + job.JobName + " (" + job.JobID + ").", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
                     Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") applied for the job " + job.JobName + " (" + job.JobID + ").", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
+                    Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return true;
                 }
             }
             Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") failed to apply for a job (" + jobID + ".", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
-            return false;
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return false;                       
         }//applies for job - true = successfully applied, false = failed to apply
 
         public void buyFood(int buildingID)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             Building building;
             Program._aStronghold.searchBuildingByID(buildingID, out building);
             InventoryItem gold = this._characterinventory.retrieveItemInInventory(Consts.GOLD_NAME, -1);
@@ -156,10 +169,13 @@ namespace OStronghold.CharacterFolder
                 ((BuildingWithJobsAndInventory)building).removeFromInventory(Consts.FOOD_NAME, amountToBuy);
                 Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") bought " + amountToBuy + " " + Consts.FOOD_NAME + " from " + building.Name + " (" + building.BuildingID + ").", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
             }
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
         }//buy food from building ID
 
         public string getCharacterString()
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             string result = "";
             result += "ID: " + this._id + "\n";
             result += "Name: " + this._name + "\n";
@@ -185,11 +201,14 @@ namespace OStronghold.CharacterFolder
             result += "Location ID: " + this._locationID + "\n";
             result += "Home ID: " + this._homeID + "\n";
 
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             return result;
         }
 
         public int findPlaceToLive()
-        {            
+        {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             foreach (Building building in Program._aStronghold._buildingsList)
             {
                 if (building.Type == Consts.hut && building.BuildingState == Consts.buildingState.Built)
@@ -198,7 +217,8 @@ namespace OStronghold.CharacterFolder
                     {
                         ((BuildingForLiving)building).TenantsID[((BuildingForLiving)building).Tenants.Current] = this._id;
                         ((BuildingForLiving)building).populateLivingBuilding(1);
-                        Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") found a " + building.Name + " (" + building.BuildingID + ") to live in.", Consts.eventType.Character, Consts.EVENT_DEBUG_MIN);       
+                        Consts.globalEvent.writeEvent(this._name + " (" + this._id + ") found a " + building.Name + " (" + building.BuildingID + ") to live in.", Consts.eventType.Character, Consts.EVENT_DEBUG_MIN);
+                        Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
                         return building.BuildingID;                        
                     }
                 }//found place to live
@@ -211,7 +231,7 @@ namespace OStronghold.CharacterFolder
                 Consts.globalEvent.writeEvent("Stronghold leader recognizes the need for more huts.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
                 Program._aStronghold._leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.hut, subobject.Capacity, behaviour.Full);                
             }
-            
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
             return Consts.stronghold_yard;
         }
 
@@ -221,6 +241,8 @@ namespace OStronghold.CharacterFolder
 
         public void OnHungryEventHandler(object sender, EventArgs e)
         {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             Gametime finishTime;
             if (getFoodFromInventory().Quantity > 0)
             {
@@ -238,6 +260,7 @@ namespace OStronghold.CharacterFolder
                     _characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.BuyingFood, Consts.actionsData[(int)Consts.characterGeneralActions.BuyingFood]._actionPriority, finishTime));
                 }//if action does not exists yet
             }//go buy food
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().Name);
         }//actions to do when character is hungry
 
         #endregion
