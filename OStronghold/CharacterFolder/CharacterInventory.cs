@@ -154,6 +154,19 @@ namespace OStronghold.CharacterFolder
             Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             return output;
         }
+
+        public string searchItemByIDAndPrintInfo(int targetItemID)
+        {
+            string result = "";
+            foreach (InventoryItem item in _inventory)
+            {
+                if (item.ID == targetItemID)
+                {
+                    result = item.Name + " x " + item.Quantity;
+                }
+            }
+            return result;
+        }
         
         #endregion
     }//character inventory

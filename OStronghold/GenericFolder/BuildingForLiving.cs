@@ -27,8 +27,8 @@ namespace OStronghold.GenericFolder
         #region Constructor
 
         public BuildingForLiving(int idValue,int ownerIDValue, int typeValue, string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
-                                 Gametime endBuildTimeValue, Status tenantsValue, int[] tenantsIDValue, Consts.buildingState buildingStateValue)
-            : base(idValue, ownerIDValue, typeValue, nameValue, hpValue, costToBuildValue, levelValue, startBuildTimeValue, endBuildTimeValue, buildingStateValue)
+                                 int numberOfManBuildingHoursValue, Status tenantsValue, int[] tenantsIDValue, Consts.buildingState buildingStateValue)
+            : base(idValue, ownerIDValue, typeValue, nameValue, hpValue, costToBuildValue, levelValue, startBuildTimeValue, numberOfManBuildingHoursValue, buildingStateValue)
         {            
             _tenants = new Status(tenantsValue);
 
@@ -93,7 +93,8 @@ namespace OStronghold.GenericFolder
             result += "Cost to build: " + base.CostToBuild + "\n";
             result += "Building level: " + base.Level.Current + "/" + base.Level.Max + "\n";
             result += "Start build time: " + base.StartBuildTime + "\n";
-            result += "End build time: " + base.EndBuildTime + "\n";
+            result += "Build time: " + base.NumberOfManBuildingHoursLeft + "\n";
+            result += "Number of current builders: " + base.NumberOfCurrentBuilders + "\n";
             result += "Building state: " + base.BuildingState + "\n";
             result += "Tenants: " + Tenants.Current + "/" + Tenants.Max + "\n";
             result += "Tenants ID: \n";

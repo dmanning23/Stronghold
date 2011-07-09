@@ -268,70 +268,87 @@ namespace OStronghold
             Job job;
             Character person;
 
-            //try
-            //{
-            //    Building building;
-            //    Consts.writeToDebugLog("==========================================================================");
-            //    Consts.writeToDebugLog(Program._gametime.ToString());
-            //    for (int i = 1; i <= Program._aStronghold._commoners.Count; i++)
-            //    {
-            //        Consts.writeToDebugLog(((Character)Program._aStronghold._commoners[i]).getCharacterString());
-            //    }
-            //    for (int i = 1; i <= Program._aStronghold._buildingsList.Count; i++)
-            //    {
-            //        Program._aStronghold.searchBuildingByID(i, out building);
-            //        Consts.writeToDebugLog(building.getBuildingString());
-            //    }
-            //    //for (int i = 0; i <= Program._aStronghold._allJobs.Count; i++)
-            //    //{
-            //    //    Consts.writeToDebugLog(Program._aStronghold._allJobs.ElementAt(i).getJobString());
-            //    //}
-            //}
-            //catch (Exception ex)
-            //{
-            //}
             #region updateStrongholdLeaderDecisionMaker
 
             if (Program._aStronghold._leader._decisionmaker.listOfActionsToDo.Count != 0)
             {
                 bool notEnoughFunds = false;
+                int buildResults = -1;
 
                 foreach (ActionsToDo todo in Program._aStronghold._leader._decisionmaker.listOfActionsToDo)
                 {
+                    #region build to do action
                     if (todo._action == action.Build)
                     {
+                        #region build hut todo
                         if (todo._objectTypeID == Consts.hut)
                         {
                             Consts.globalEvent.writeEvent("Stronghold leader orders to build a hut.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
-                            if (Program._aStronghold.buildHut() == -1)
+                            if (todo._parameters == parameters.None)
                             {
-                                notEnoughFunds = true;                                
+                                buildResults = Program._aStronghold.buildHut(Consts.hut_buildtime);
+                            }
+                            else if (todo._parameters == parameters.BuildImmediate)
+                            {
+                                buildResults = Program._aStronghold.buildHut(Consts.immediatebuildtime);
                             }
                         }
+                        #endregion
+                        #region build granary todo
                         else if (todo._objectTypeID == Consts.granary)
                         {
                             Consts.globalEvent.writeEvent("Stronghold leader orders to build a granary.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
-                            if (Program._aStronghold.buildGranary() == -1)
+                            if (todo._parameters == parameters.None)
                             {
-                                notEnoughFunds = true;
+                                buildResults = Program._aStronghold.buildGranary(Consts.granary_buildtime);
+                            }
+                            else if (todo._parameters == parameters.BuildImmediate)
+                            {
+                                buildResults = Program._aStronghold.buildGranary(Consts.immediatebuildtime);
                             }
                         }
+                        #endregion
+                        #region build farm todo
                         else if (todo._objectTypeID == Consts.farm)
                         {
                             Consts.globalEvent.writeEvent("Stronghold leader orders to build a farm.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
-                            if (Program._aStronghold.buildFarm() == -1)
+                            if (todo._parameters == parameters.None)
                             {
-                                notEnoughFunds = true;
+                                buildResults = Program._aStronghold.buildFarm(Consts.farm_buildtime);
+                            }
+                            else if (todo._parameters == parameters.BuildImmediate)
+                            {
+                                buildResults = Program._aStronghold.buildFarm(Consts.immediatebuildtime);
                             }
                         }
-                    }                    
+                        #endregion
+                        #region build employmentoffice todo
+                        else if (todo._objectTypeID == Consts.employmentoffice)
+                        {
+                            Consts.globalEvent.writeEvent("Stronghold leader orders to build an employment office.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
+                            if (todo._parameters == parameters.None)
+                            {
+                                buildResults = Program._aStronghold.buildEmploymentOffice(Consts.employmentoffice_buildtime);
+                            }
+                            else if (todo._parameters == parameters.BuildImmediate)
+                            {
+                                buildResults = Program._aStronghold.buildEmploymentOffice(Consts.immediatebuildtime);
+                            }
+                        }
+                        #endregion
+                        if (buildResults == -1)
+                        {
+                            notEnoughFunds = true;
+                        }
+                    }
+                    #endregion
                 }
                 Program._aStronghold._leader._decisionmaker.listOfActionsToDo.Clear();
                 Program._aStronghold._leader._decisionmaker.listOfPhenomenons.Clear();
 
                 if (notEnoughFunds)
                 {
-                    Program._aStronghold._leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.stronghold_treasury, subobject.Capacity, behaviour.Empty);
+                    Program._aStronghold._leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.stronghold_treasury, subobject.Capacity, behaviour.Empty,parameters.None);
                 }
 
             }//there are some actions to do
@@ -365,7 +382,15 @@ namespace OStronghold
 
                     job = Program._aStronghold.searchJobByID(person._jobID);
 
-                    person._currentActionFinishTime = person._characterActions.Peek().FinishTime;
+                    if (person._characterActions.Count > 0)
+                    {
+                        person._currentActionFinishTime = person._characterActions.Peek().FinishTime;
+                    }
+                    else
+                    {
+                        //FATAL ERROR! Character action should have minimum Idle action.
+                        Consts.globalEvent.writeEvent("FATAL ERROR!" + person._name + " (" + person._id + ") has no actions in queue. Needs at least Idle action.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_MIN);
+                    }
 
                     if (person._currentActionFinishTime > Program._gametime)
                     {
@@ -375,62 +400,77 @@ namespace OStronghold
                     {
                         switch (person._characterActions.Peek().Action)
                         {
-                            case Consts.characterGeneralActions.BuyingFood:                                
-                                LinkedList<Building> granaries = Program._aStronghold.searchBuildingsByType(Consts.granary);
-                                InventoryItem food;
-                                int totalFood = 0;
-                                int granaryIDToBuy = -1;
-
-                                if (granaries.Count != 0)
+                            #region buyingfood
+                            case Consts.characterGeneralActions.BuyingFood:
+                                if (person._characterPreviousActions.Last()._action == Consts.characterGeneralActions.BuyingFood)
                                 {
-                                    foreach (BuildingWithJobsAndInventory granary in granaries)
+                                    
+                                }//if person has been trying to buy food twice in a row then have the 
+                                else
+                                {
+                                    LinkedList<Building> granaries = Program._aStronghold.searchBuildingsByType(Consts.granary);
+                                    InventoryItem food;
+                                    int totalFood = 0;
+                                    int granaryIDToBuy = -1;
+
+                                    if (granaries.Count != 0)
                                     {
-                                        food = granary.searchInventoryByID(Consts.FOOD_ID);
-                                        if (food != null)
+                                        foreach (BuildingWithJobsAndInventory granary in granaries)
                                         {
-                                            totalFood += food.Quantity;
-                                            if (granary.InventoryCapacity.Current != 0)
+                                            if (granary.BuildingState == Consts.buildingState.Built)
                                             {
-                                                granaryIDToBuy = granary.BuildingID;
+                                                food = granary.searchInventoryByID(Consts.FOOD_ID);
+                                                if (food != null)
+                                                {
+                                                    totalFood += food.Quantity;
+                                                    if (granary.InventoryCapacity.Current != 0)
+                                                    {
+                                                        granaryIDToBuy = granary.BuildingID;
+                                                    }
+                                                }
                                             }
                                         }
-                                    }
 
-                                    if (person._characterinventory.searchForItemByName(Consts.GOLD_NAME).Quantity == 0)
-                                    {
-                                        //person has no money
-                                    }
-                                    else if (granaries.Count == 0)
-                                    {
-                                        //no granaries
-                                    }
-                                    else if (totalFood == 0)
-                                    {
-                                        //no food in granaries
+                                        if (person._characterinventory.searchForItemByName(Consts.GOLD_NAME).Quantity == 0)
+                                        {
+                                            person._characterActions.Dequeue();
+                                            Consts.globalEvent.writeEvent(person._name + " (" + person._id + ") has no money to buy " + Consts.FOOD_NAME + ".", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
+                                        }
+                                        else if (totalFood == 0)
+                                        {
+                                            person._characterActions.Dequeue();
+                                            Consts.globalEvent.writeEvent("There are no food in the granaries for " + person._name + " (" + person._id + ") to buy.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
+                                        }
+                                        else
+                                        {
+                                            if (granaryIDToBuy != -1)
+                                            {
+                                                person.buyFood(granaryIDToBuy);
+                                                person._characterActions.Dequeue();
+                                                Consts.globalEvent.writeEvent(person._name + " (" + person._id + ") finished buying " + Consts.FOOD_NAME + ".", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
+                                            }
+                                            //else no granaries were found                                        
+                                        }//else buy food from granaryIDTobuy                                    
                                     }
                                     else
                                     {
-                                        if (granaryIDToBuy != -1)
-                                        {
-                                            person.buyFood(granaryIDToBuy);
-                                            person._characterActions.Dequeue();
-                                        }
-                                        //else no granaries were found
-                                    }//else buy food from granaryIDTobuy
-
-                                    Consts.globalEvent.writeEvent(person._name + " (" + person._id + ") finished buying " + Consts.FOOD_NAME + ".", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
-                                }
-                                else
-                                {
-                                    Consts.globalEvent.writeEvent(person._name + " (" + person._id + ") cannot buy any " + Consts.FOOD_NAME + " since there are no granaries.", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
+                                        person._characterActions.Dequeue();
+                                        Consts.globalEvent.writeEvent(person._name + " (" + person._id + ") cannot buy any " + Consts.FOOD_NAME + " since there are no granaries.", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
+                                    }
+                                    person.addNewPreviousAction(Consts.characterGeneralActions.BuyingFood);
                                 }
                                 break;
+                            #endregion
+                            #region eating
                             case Consts.characterGeneralActions.Eating:
                                 person._bodyneeds.HungerState = Consts.hungerState.JustAte;
                                 person._bodyneeds.LastAteTime.CopyGameTime(Program._gametime);
-                                person._characterActions.Dequeue(); //action is finished 
+                                person._characterActions.Dequeue(); //action is finished                                 
                                 Consts.globalEvent.writeEvent(person._name + " (" + person._id + ") finished eating.", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
+                                person.addNewPreviousAction(Consts.characterGeneralActions.Eating);
                                 break;
+                            #endregion
+                            #region lookingforplacetolive
                             case Consts.characterGeneralActions.LookingForPlaceToLive:
                                 if (person._homeID == Consts.stronghold_yard)
                                 {
@@ -449,13 +489,19 @@ namespace OStronghold
                                     
                                     //do nothing
                                 }//do not dequeue the action and remains for next update - person did not find any accomondations
+                                person.addNewPreviousAction(Consts.characterGeneralActions.LookingForPlaceToLive);
                                 break;
+                            #endregion
+                            #region sleeping
                             case Consts.characterGeneralActions.Sleeping:
                                 person._bodyneeds.SleepState = Consts.sleepState.Awake;
                                 person._bodyneeds.LastSleptTime.CopyGameTime(Program._gametime);
                                 person._characterActions.Dequeue();
                                 Consts.globalEvent.writeEvent(person._name + " (" + person._id + ") finished sleeping.", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
+                                person.addNewPreviousAction(Consts.characterGeneralActions.Sleeping);
                                 break;
+                            #endregion
+                            #region working
                             case Consts.characterGeneralActions.Working:
                                 person._characterActions.Dequeue();
                                 item = person._characterinventory.retrieveItemInInventory(null, Consts.GOLD_ID);
@@ -469,10 +515,24 @@ namespace OStronghold
                                     person._characterinventory.putInInventory(new InventoryItem(Consts.GOLD_NAME, Consts.GOLD_ID, Consts.GOLD_WEIGHT, job.Payroll));
                                 }//person doesn't have gold, put gold into inventory        
                                 Consts.globalEvent.writeEvent(person._name + " (" + person._id + ") finished working.", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
+                                if (String.Compare(job.JobName, Consts.builderName) == 0)
+                                {
+                                    Building building;
+                                    Program._aStronghold.searchBuildingByID(job.BuildingID,out building);
+
+                                    if (building != null)
+                                    {
+                                        building.NumberOfCurrentBuilders--;
+                                        job.BuildingID = Consts.stronghold_yard;
+                                    }
+                                }//builder stops working , need to take builder off building
+                                person.addNewPreviousAction(Consts.characterGeneralActions.Working);
                                 break;
+                            #endregion
                         }
                     }
 
+                    #region person current action
                     if (person._characterActions.Count > 0)
                     {
                         if (person._characterActions.Peek().Action == Consts.characterGeneralActions.Idle)
@@ -506,7 +566,7 @@ namespace OStronghold
                             #region Sleep check                            
                             if (Program._gametime > person._bodyneeds.LastSleptTime + (int)Consts.sleepTimer.Awake)
                             {
-                                Consts.globalEvent.writeEvent(person._name + " (" + person._id + ") is sleepy.", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
+                                Consts.globalEvent.writeEvent(person._name + " (" + person._id + ") is sleeping.", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
                                 person._bodyneeds.SleepState = Consts.sleepState.MustSleep;
                                 finishTime = Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.Sleeping]._actionDuration;
                                 person._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Sleeping, Consts.actionsData[(int)Consts.characterGeneralActions.Sleeping]._actionPriority, finishTime));
@@ -518,7 +578,18 @@ namespace OStronghold
                                 LinkedList<Job> listOfAvailableJobs = Program._aStronghold.getAllAvailableJobs();
                                 if (listOfAvailableJobs.Count > 0)
                                 {
-                                    Job availableJob = listOfAvailableJobs.First.Value;//need to decide how the person determines what job he/she wants to apply for
+                                    Job availableJob = new Job();
+                                    
+                                    if (Program._aStronghold.hasAtLeastOneBuilderEmployed())
+                                    {
+                                        //randomly picks an available job
+                                        availableJob = listOfAvailableJobs.ElementAt(Consts.rand.Next(0, listOfAvailableJobs.Count - 1));
+                                    }//if there is at least one builder in stronghold
+                                    else
+                                    {
+                                        availableJob = Program._aStronghold.searchFirstAvailableJobByName(Consts.builderName);
+                                    }//choose builder job for applying
+                                                                        
                                     Building building = new Building();
                                     Program._aStronghold.searchBuildingByID(availableJob.BuildingID, out building);
 
@@ -532,7 +603,7 @@ namespace OStronghold
                                     if (!Program._aStronghold.farmsHasAvailableJobs() && !Program._aStronghold.hasEnoughPlannedOrConstruction(Consts.farm))
                                     {
                                         Consts.globalEvent.writeEvent("Stronghold leader recognizes the need for jobs.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
-                                        Program._aStronghold._leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.stronghold_jobs, subobject.Capacity, behaviour.Empty); //no jobs
+                                        Program._aStronghold._leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.stronghold_jobs, subobject.Capacity, behaviour.Empty, parameters.None); //no jobs
                                     }//if there are no available jobs in the farms and no farms are currently planned or under construction
                                 }//no available jobs in stronghold
                             }//person applies for first job in the list
@@ -545,14 +616,34 @@ namespace OStronghold
                                         if (Program._gametime.compareTimeOnly(job.StartTime) <= 0 && //gametime >= job start time
                                             Program._gametime.compareTimeOnly(job.EndTime) > 0) //gametime <= job end time
                                         {
-                                            Gametime workTimeRelative = new Gametime(Program._gametime.Day, job.EndTime.Hour, job.EndTime.Minute);
-                                            if (job.EndDate >= workTimeRelative)
+                                            bool needToWork = true;
+                                            if (String.Compare(job.JobName, Consts.builderName) == 0)
                                             {
-                                                finishTime = workTimeRelative;
+                                                LinkedList<Building> allPlannedBuildings = Program._aStronghold.searchBuildingsByBuildingState(Consts.buildingState.UnderConstruction);
+                                                if (allPlannedBuildings.Count == 0)
+                                                {
+                                                    person._currentActionFinishTime.CopyGameTime(Program._gametime);
+                                                    needToWork = false;
+
+                                                }//no buildings to build so finish working
+                                                else if (job.BuildingID != allPlannedBuildings.First.Value.BuildingID)
+                                                {
+                                                    allPlannedBuildings.First.Value.NumberOfCurrentBuilders++;
+                                                    job.BuildingID = allPlannedBuildings.First.Value.BuildingID;
+                                                }//assign builder to building only if the builder is not already assigned
+                                            }//if person is a builder
+
+                                            if (needToWork)
+                                            {
+                                                Gametime workTimeRelative = new Gametime(Program._gametime.Day, job.EndTime.Hour, job.EndTime.Minute);
+                                                if (job.EndDate >= workTimeRelative)
+                                                {
+                                                    finishTime = workTimeRelative;
+                                                }
+                                                else finishTime = job.EndDate;
+                                                Consts.globalEvent.writeEvent(person._name + " (" + person._id + ") is working in his job (" + person._jobID + ").", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
+                                                person._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Working, Consts.actionsData[(int)Consts.characterGeneralActions.Working]._actionPriority, finishTime));
                                             }
-                                            else finishTime = job.EndDate;
-                                            Consts.globalEvent.writeEvent(person._name + "(" + person._id + ") is working in his job (" + person._jobID + ").", Consts.eventType.Character, Consts.EVENT_DEBUG_NORMAL);
-                                            person._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Working, Consts.actionsData[(int)Consts.characterGeneralActions.Working]._actionPriority, finishTime));
                                         }//gametime is between job start time and end time
                                     }//job position is open     
                                     else
@@ -590,16 +681,26 @@ namespace OStronghold
                         else if (person._characterActions.Peek().Action == Consts.characterGeneralActions.Working)
                         {
                             person._health.staminaUsedThisTick = 10;
-                            person._locationID = job.BuildingID;                            
+                            person._locationID = job.BuildingID;
+                            if (String.Compare(job.JobName, Consts.builderName) == 0)
+                            {
+                                LinkedList<Building> allPlannedBuildings = Program._aStronghold.searchBuildingsByBuildingState(Consts.buildingState.UnderConstruction);
+                                if (allPlannedBuildings.Count == 0)
+                                {
+                                    person._currentActionFinishTime.CopyGameTime(Program._gametime);
+                                }//no buildings to build so finish working
+                            }
                         }
-
                     }
+                    #endregion
 
+                    #region person health update
                     //person health is updated at the end of each tick
                     person._health.hp.Current += person._health.hp.Regeneration;
                     person._health.mp.Current += person._health.mp.Regeneration;
                     person._health.stamina.Current = person._health.stamina.Current + person._health.stamina.Regeneration - person._health.staminaUsedThisTick;
                     person._health.staminaUsedThisTick = 0; //reset the stamina usage at the end of gametick
+                    #endregion
                 }//if person is alive then update actions
             }
 
@@ -611,17 +712,24 @@ namespace OStronghold
             foreach (Building building in Program._aStronghold._buildingsList)
             {
                 #region building construction phases
-                //update building constructor status
-                if (Program._gametime >= building.StartBuildTime && Program._gametime <= building.EndBuildTime && building.BuildingState != Consts.buildingState.UnderConstruction)
+
+                if (building.BuildingState != Consts.buildingState.Built)
                 {
-                    building.BuildingState = Consts.buildingState.UnderConstruction;
-                    Consts.globalEvent.writeEvent("The " + building.Name + " is still under construction. " + (building.EndBuildTime - Program._gametime) + " minutes left.", Consts.eventType.Building, Consts.EVENT_DEBUG_MIN);
-                }//building is underconstruction
-                else if (Program._gametime > building.EndBuildTime && building.BuildingState != Consts.buildingState.Built)
-                {
-                    building.BuildingState = Consts.buildingState.Built;
-                    Consts.globalEvent.writeEvent("The " + building.Name + " has finished building.", Consts.eventType.Building, Consts.EVENT_DEBUG_MIN);
-                }//building is finished
+                    //update man working hours
+                    building.NumberOfManBuildingHoursLeft -= building.NumberOfCurrentBuilders;
+
+                    //update building constructor status
+                    if ((building.NumberOfManBuildingHoursLeft < 0 && building.BuildingState != Consts.buildingState.Built))
+                    {
+                        building.BuildingState = Consts.buildingState.Built;
+                        Consts.globalEvent.writeEvent("Construction of a " + building.Name + " has been finished.", Consts.eventType.Building, Consts.EVENT_DEBUG_MIN);
+                    }//building is finished
+                    else if (Program._gametime >= building.StartBuildTime && building.NumberOfManBuildingHoursLeft >= 0) //&& building.BuildingState != Consts.buildingState.UnderConstruction)
+                    {
+                        building.BuildingState = Consts.buildingState.UnderConstruction;
+                        Consts.globalEvent.writeEvent("The " + building.Name + " is being constructed. " + building.NumberOfManBuildingHoursLeft + " man working hours left.", Consts.eventType.Building, Consts.EVENT_DEBUG_MIN);
+                    }//building is underconstruction                
+                }//update building phases only if the building is not built
                 #endregion
                 
                 if (Program._gametime.isMidnight())
@@ -685,7 +793,7 @@ namespace OStronghold
                     if (!Program._aStronghold.hasEnoughPlannedOrConstruction(Consts.granary))
                     {
                         Consts.globalEvent.writeEvent("Stronghold leader recognizes the need for a granary.", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_NORMAL);
-                        Program._aStronghold._leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.granary, subobject.Existence, behaviour.Empty);
+                        Program._aStronghold._leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.granary, subobject.Existence, behaviour.Empty,parameters.None);
                     }
                 }
             }//transfer food only if food produced is > 0

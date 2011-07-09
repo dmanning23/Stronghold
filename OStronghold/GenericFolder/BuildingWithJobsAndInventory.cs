@@ -36,8 +36,8 @@ namespace OStronghold.GenericFolder
         }
 
         public BuildingWithJobsAndInventory(int buildingIDValue,int ownerIDValue, int typeValue, string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
-                                Gametime endBuildTimeValue, int[] jobsList, LinkedList<InventoryItem> inventoryList, Consts.buildingState buildingStateValue, Status maxInvCapacityValue)
-            : base(buildingIDValue, ownerIDValue, typeValue, nameValue, hpValue, costToBuildValue, levelValue, startBuildTimeValue, endBuildTimeValue, buildingStateValue)
+                                int numberOfManBuildingHoursValue, int[] jobsList, LinkedList<InventoryItem> inventoryList, Consts.buildingState buildingStateValue, Status maxInvCapacityValue)
+            : base(buildingIDValue, ownerIDValue, typeValue, nameValue, hpValue, costToBuildValue, levelValue, startBuildTimeValue, numberOfManBuildingHoursValue, buildingStateValue)
         {            
             if (jobsList != null)
             {
@@ -80,7 +80,8 @@ namespace OStronghold.GenericFolder
             result += "Cost to build: " + base.CostToBuild + "\n";
             result += "Building level: " + base.Level.Current + "/" + base.Level.Max + "\n";
             result += "Start build time: " + base.StartBuildTime + "\n";
-            result += "End build time: " + base.EndBuildTime + "\n";
+            result += "Build time: " + base.NumberOfManBuildingHoursLeft + "\n";
+            result += "Number of current builders: " + base.NumberOfCurrentBuilders + "\n";
             result += "Building state: " + base.BuildingState + "\n";
             result += "Jobs: \n";
             if (_jobs != null)

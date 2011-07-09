@@ -2,7 +2,9 @@
 ========================================
 [doing]
 (00027)
-- Start documenting and commenting the code
+- Stronghold -> builders are not being efficient. not building buildings when they can.
+             -> in the middle of delaying buying food action.
+- Stronghold -> no granaries and need to buy food, what to do then?
 
 [to do]
 - Game -> Add load/save (Serializable)
@@ -14,9 +16,9 @@
 - Character -> Add relationship between characters (friends, marriage, etc.)
 - Building -> Add maintenance cost and degradation.
 - Stronghold -> make generic transfer of goods method (relationship between two buildings)
-- Stronghold -> add builder job in the beginning (make construction company for hiring builders)
 - Stronghold -> think of charging money for rent - auto calculate according to cost + returns.
 - Stronghold -> Add list for all population (includes commoners AND stronghold leader for example) - since SHleader doesn't get hungry now.
+- Stronghold -> Start documenting and commenting the code
 - Stronghold -> Start populating characters in Stronghold and create daily life routines.
 - Stronghold -> Add Arena for battles
 - Stronghold -> Add shops for buying items
@@ -40,6 +42,9 @@
 - Foods has satiety rate
 ====================================================================================================
 (update)  [notes]
+(00029) - Added Employment office.
+        - Added new job: Builder.
+        - Modified buildings to have number of man working hours for construction.        
 (00028) - Fixed granary add inventory problem.
         - Added for debug mode when enter/exit of methods.
 (00027) - Added decision for building farms and granary.

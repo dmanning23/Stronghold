@@ -47,17 +47,15 @@ namespace OStronghold.StrongholdFolder
             _leader._characterinventory.putInInventory(new InventoryItem(Consts.FOOD_NAME, Consts.FOOD_ID, Consts.FOOD_WEIGHT, 10));            
 
             //testing out job
-
-            _allJobs = new LinkedList<Job>();
-            //Job job;
-            //for (int i = 1; i <= 5; i++)
-            //{
-            //    job = new Job(i, 9999, -1, "Farmer#" + i, Program._gametime, Program._gametime + Consts.rand.Next(0, 3600), new Gametime(0, Consts.rand.Next(0, 8)), new Gametime(0, Consts.rand.Next(12, 23)), Consts.rand.Next(1, 15), Consts.JobStatus.Available);
-            //    _allJobs.AddLast(job);
-            //}
+            _allJobs = new LinkedList<Job>();            
 
             //buildings
             _buildingsList = new LinkedList<Building>();
+
+            //order to build employment office
+            _leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.employmentoffice, subobject.Existence, behaviour.Empty,parameters.BuildImmediate);
+            _leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.hut, subobject.Existence, behaviour.Empty,parameters.BuildImmediate);
+            _leader._decisionmaker.insertPhenomenon(Consts.stronghold, Consts.farm, subobject.Existence, behaviour.Empty, parameters.BuildImmediate);
 
             Consts.globalEvent.writeEvent("Stronghold has been found!", Consts.eventType.Stronghold, Consts.EVENT_DEBUG_MIN);            
         }//Constructor
@@ -82,7 +80,7 @@ namespace OStronghold.StrongholdFolder
                 commoner._health.defineHP(20, 0);
                 commoner._health.defineStamina(100, 10);
                 commoner._characterActions.insertItemIntoQueue(new CharacterAction(Consts.characterGeneralActions.Idle, Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionPriority, Program._gametime + Consts.actionsData[(int)Consts.characterGeneralActions.Idle]._actionDuration));
-                commoner._characterinventory.putInInventory(new InventoryItem(Consts.FOOD_NAME, Consts.FOOD_ID, Consts.FOOD_WEIGHT, 3));
+                commoner._characterinventory.putInInventory(new InventoryItem(Consts.FOOD_NAME, Consts.FOOD_ID, Consts.FOOD_WEIGHT, 1));
                 commoner._characterinventory.putInInventory(new InventoryItem(Consts.GOLD_NAME, Consts.GOLD_ID, Consts.GOLD_WEIGHT, 50));
 
                 _commoners.Add(commoner._id, commoner);
@@ -169,6 +167,21 @@ namespace OStronghold.StrongholdFolder
             return null;
         }//search job according to id
 
+        public Job searchFirstAvailableJobByName(string jobName)
+        {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            foreach (Job job in _allJobs)
+            {
+                if ((String.Compare(job.JobName,jobName) == 0) && job.JobStatus == Consts.JobStatus.Available)
+                {
+                    Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return job;
+                }
+            }
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return null;
+        }//search first available job according to id
+
         public void searchBuildingByID(int buildingID, out Building result)
         {
             Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -203,6 +216,24 @@ namespace OStronghold.StrongholdFolder
             return results;
         }//search building by type
 
+        public LinkedList<Building> searchBuildingsByBuildingState(Consts.buildingState state)
+        {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            LinkedList<Building> results = new LinkedList<Building>();
+            foreach (Building building in _buildingsList)
+            {
+                if (building.BuildingState == state)
+                {
+                    results.AddLast(building);
+                }//found building with right building state
+            }
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return results;
+        }
+
+
+
+
         #endregion
 
         public LinkedList<Job> getAllAvailableJobs()
@@ -219,7 +250,7 @@ namespace OStronghold.StrongholdFolder
             }
             Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
             return list;
-        }//returns list of all jobs with status of available
+        }//returns list of all jobs with status of available        
 
         #region Checks
 
@@ -246,8 +277,7 @@ namespace OStronghold.StrongholdFolder
             Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             LinkedList<Building> listOfBuildings;
-            int totalPotentialCapacity = 0;
-            bool buildingPlanned = false;
+            int totalPotentialCapacity = 0;            
 
             if (buildingType == Consts.hut)
             {
@@ -315,13 +345,69 @@ namespace OStronghold.StrongholdFolder
             return false;
         }
 
+        public bool hasAtLeastOneBuilderEmployed()
+        {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            foreach (Job job in _allJobs)
+            {
+                if (job.JobStatus == Consts.JobStatus.Taken && (String.Compare(job.JobName, Consts.builderName) == 0))
+                {
+                    Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return true;
+                }//builder job is taken
+            }
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return false;
+        }
+
         #endregion
 
         #endregion
 
         #region Methods for constructing buildings
 
-        public int buildHut()
+        public int buildEmploymentOffice(int buildTime)
+        {
+            Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            int buildingID = -1;
+
+            Job builderJob;
+            int[] builderJobs = new int[Consts.numberOfInitialBuilders];
+
+            buildingID = Program._aStronghold._buildingsList.Count + 1;
+
+            if (Treasury.haveEnoughToWithdraw(Consts.employmentoffice_costtobuild))
+            {
+                for (int i = 0; i < Consts.numberOfInitialBuilders; i++)
+                {
+                    builderJob = Job_creater.createBuilderJob(buildingID);
+                    builderJobs[i] = builderJob.JobID;
+                    _allJobs.AddLast(builderJob);                    
+                } //creates jobs for builders
+
+                
+                BuildingWithJobsAndInventory employmentoffice =
+                    new BuildingWithJobsAndInventory(buildingID,
+                                                     _leader._id,
+                                                     Consts.employmentoffice,
+                                                     Consts.employmentoffice_name,
+                                                     Consts.employmentoffice_hp,
+                                                     Consts.employmentoffice_costtobuild,
+                                                     new Status(1, Consts.employmentoffice_maxlevel),
+                                                     Program._gametime,
+                                                     buildTime,
+                                                     builderJobs,
+                                                     null,
+                                                     Consts.buildingState.Planned,
+                                                     new Status(0, 0));
+                Program._aStronghold._buildingsList.AddFirst(employmentoffice);
+                Treasury.withdrawGold(Consts.employmentoffice_costtobuild);
+            }//have enough money to build employment office
+            Consts.writeExitingMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return buildingID;
+        }
+
+        public int buildHut(int buildTime)
         {
             Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
@@ -339,7 +425,7 @@ namespace OStronghold.StrongholdFolder
                                           Consts.hut_costtobuild, //building cost to build
                                           new Status(1, Consts.hut_maxlevel), //building level
                                           Program._gametime, //building start build time
-                                          Program._gametime + Consts.hut_buildtime, //building end build time
+                                          buildTime, //building build time
                                           new Status(0, Consts.hut_maxtenants), //building tenants
                                           new int[Consts.hut_maxtenants],
                                           Consts.buildingState.Planned); //building state
@@ -356,7 +442,7 @@ namespace OStronghold.StrongholdFolder
             return buildingID;
         }//returns the building id
 
-        public int buildFarm()
+        public int buildFarm(int buildTime)
         {
             Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
@@ -385,7 +471,7 @@ namespace OStronghold.StrongholdFolder
                                                      Consts.farm_costtobuild, //cost to build
                                                      new Status(1, Consts.farm_maxlevel), //level
                                                      Program._gametime, //start build time
-                                                     Program._gametime + Consts.farm_buildtime,  //end build time
+                                                     buildTime,  //build time 
                                                      farmJobs,//jobs
                                                      null,//inventory
                                                      Consts.buildingState.Planned,
@@ -403,7 +489,7 @@ namespace OStronghold.StrongholdFolder
             return buildingID;
         }//returns building ID
 
-        public int buildGranary()
+        public int buildGranary(int buildTime)
         {
             Consts.writeEnteringMethodToDebugLog(System.Reflection.MethodBase.GetCurrentMethod().ReflectedType + "." + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
@@ -433,7 +519,7 @@ namespace OStronghold.StrongholdFolder
                                                      Consts.granary_costtobuild, //cost to build
                                                      new Status(1, Consts.granary_maxlevel), //level
                                                      Program._gametime, //start build time
-                                                     Program._gametime + Consts.granary_buildtime,  //end build time
+                                                     buildTime,  //build time
                                                      granaryJobs,//jobs
                                                      granaryInventory,//inventory
                                                      Consts.buildingState.Planned,

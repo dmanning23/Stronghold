@@ -32,6 +32,7 @@ namespace OStronghold.GenericFolder
         public int BuildingID
         {
             get { return _buildingID; }
+            set { _buildingID = value; }
         }
         public int WorkerID
         {

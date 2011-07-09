@@ -17,8 +17,9 @@ namespace OStronghold.GenericFolder
         private int _costToBuild; //cost to build building for each level
         private Status _level; //level of building
         private Gametime _startBuildTime; //timestamp of when started to build
-        private Gametime _endBuildTime; //timestamp of when building finish
-        private Consts.buildingState _buildingState; //state of the building               
+        private int _numberOfManBuildingHoursLeft; //timestamp of when building finish        
+        private Consts.buildingState _buildingState; //state of the building
+        private int _numberOfCurrentBuilders;
 
         public int BuildingID
         {
@@ -52,14 +53,20 @@ namespace OStronghold.GenericFolder
         {
             get { return _startBuildTime; }
         }
-        public Gametime EndBuildTime
+        public int NumberOfManBuildingHoursLeft
         {
-            get { return _endBuildTime; }
+            get { return _numberOfManBuildingHoursLeft; }
+            set { _numberOfManBuildingHoursLeft = value; }
         }
         public Consts.buildingState BuildingState
         {
             get { return _buildingState; }
             set { _buildingState = value; }
+        }
+        public int NumberOfCurrentBuilders
+        {
+            get { return _numberOfCurrentBuilders; }
+            set { _numberOfCurrentBuilders = value; }
         }
 
 
@@ -72,7 +79,7 @@ namespace OStronghold.GenericFolder
         }
 
         public Building(int buildingIDValue, int ownerIDValue, int typeValue, string nameValue, Status hpValue, int costToBuildValue, Status levelValue, Gametime startBuildTimeValue,
-                        Gametime endBuildTimeValue, Consts.buildingState buildStateValue)
+                        int numberOfManBuildingHoursValue, Consts.buildingState buildStateValue)
         {            
             _buildingID = buildingIDValue;
             _ownerID = ownerIDValue;
@@ -82,8 +89,9 @@ namespace OStronghold.GenericFolder
             _costToBuild = costToBuildValue;
             _level = new Status(levelValue);
             _startBuildTime = new Gametime(startBuildTimeValue);
-            _endBuildTime = new Gametime(endBuildTimeValue);
-            _buildingState = buildStateValue;            
+            _numberOfManBuildingHoursLeft = numberOfManBuildingHoursValue;
+            _buildingState = buildStateValue;
+            _numberOfCurrentBuilders = 0;
         }
 
         #endregion

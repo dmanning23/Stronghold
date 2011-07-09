@@ -19,8 +19,8 @@ namespace OStronghold
         public static Thread startGameTimeThread = new Thread(new ThreadStart(startGameTime));
 
         public static void startGUI()
-        {            
-
+        {
+            _aStronghold.populate(3);
             while (true)
             {
                 Console.Clear();
@@ -55,33 +55,33 @@ namespace OStronghold
                         }
                         else if (words[1] == "hut")
                         {                            
-                            buildingID = _aStronghold.buildHut();
+                            buildingID = _aStronghold.buildHut(Consts.hut_buildtime);
                             if (words.Length == 3 && words[2] == "im")
                             {
                                 Program._aStronghold.searchBuildingByID(buildingID, out building);
-                                building.EndBuildTime.CopyGameTime(building.StartBuildTime);
+                                building.NumberOfManBuildingHoursLeft = 0;
                             }
                             Consts.printMessage("Hut added.");
                             Consts.writeToDebugLog("Hut added.");
                         }
                         else if (words[1] == "farm")
                         {
-                            buildingID = _aStronghold.buildFarm();
+                            buildingID = _aStronghold.buildFarm(Consts.farm_buildtime);
                             if (words.Length == 3 && words[2] == "im")
                             {
                                 Program._aStronghold.searchBuildingByID(buildingID, out building);
-                                building.EndBuildTime.CopyGameTime(building.StartBuildTime);
+                                building.NumberOfManBuildingHoursLeft = 0;
                             }
                             Consts.printMessage("Farm added.");
                             Consts.writeToDebugLog("Farm added.");
                         }
                         else if (words[1] == "granary")
                         {
-                            buildingID = _aStronghold.buildGranary();
+                            buildingID = _aStronghold.buildGranary(Consts.granary_buildtime);
                             if (words.Length == 3 && words[2] == "im")
                             {
                                 Program._aStronghold.searchBuildingByID(buildingID, out building);
-                                building.EndBuildTime.CopyGameTime(building.StartBuildTime);
+                                building.NumberOfManBuildingHoursLeft = 0;
                             }
                             Consts.printMessage("Granary added.");
                             Consts.writeToDebugLog("Granary added.");

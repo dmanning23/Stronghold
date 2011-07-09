@@ -46,6 +46,13 @@ namespace OStronghold.CharacterFolder
             _finishtime = new Gametime(finishTimeValue);            
         }
 
+        public CharacterAction(CharacterAction targetCharacterAction)
+        {
+            _action = targetCharacterAction.Action;
+            _priority = targetCharacterAction.Priority;
+            _finishtime = new Gametime(targetCharacterAction.FinishTime); 
+        }
+
         #endregion
     }
 }
