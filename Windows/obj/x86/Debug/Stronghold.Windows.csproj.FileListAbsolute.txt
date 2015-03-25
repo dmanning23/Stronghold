@@ -1,7 +1,0 @@
-C:\Projects\Stronghold\Windows\bin\Debug\Stronghold.Windows.exe.config
-C:\Projects\Stronghold\Windows\bin\Debug\Stronghold.Windows.exe
-C:\Projects\Stronghold\Windows\bin\Debug\Stronghold.Windows.pdb
-C:\Projects\Stronghold\Windows\bin\Debug\OStronghold.xml
-C:\Projects\Stronghold\Windows\obj\x86\Debug\Stronghold.Windows.exe
-C:\Projects\Stronghold\Windows\obj\x86\Debug\Stronghold.Windows.pdb
-C:\Projects\Stronghold\Windows\obj\x86\Debug\Stronghold.Windows.csprojResolveAssemblyReference.cache
