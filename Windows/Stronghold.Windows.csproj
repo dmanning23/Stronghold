@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E783B0F1-401E-4727-93E5-A95F92B3956F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Stronghold.Windows</RootNamespace>
+    <AssemblyName>Stronghold.Windows</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>OStronghold.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>Stronghold.Windows.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Stronghold.Windows.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Source\Building\Building.cs">
+      <Link>Building\Building.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Building\BuildingForLiving.cs">
+      <Link>Building\BuildingForLiving.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Building\BuildingState.cs">
+      <Link>Building\BuildingState.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Building\BuildingWithJobsAndInventory.cs">
+      <Link>Building\BuildingWithJobsAndInventory.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Character\Character.cs">
+      <Link>Character\Character.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Character\CharacterAction.cs">
+      <Link>Character\CharacterAction.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Character\CharacterBodyNeeds.cs">
+      <Link>Character\CharacterBodyNeeds.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Character\CharacterHealth.cs">
+      <Link>Character\CharacterHealth.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Character\CharacterInventory.cs">
+      <Link>Character\CharacterInventory.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Character\CharacterMindset.cs">
+      <Link>Character\CharacterMindset.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Character\CharacterState.cs">
+      <Link>Character\CharacterState.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Character\Gender.cs">
+      <Link>Character\Gender.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Character\HealthState.cs">
+      <Link>Character\HealthState.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Character\HungerState.cs">
+      <Link>Character\HungerState.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Character\SleepState.cs">
+      <Link>Character\SleepState.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Generic\actionsToDoPriorityQueue.cs">
+      <Link>Generic\actionsToDoPriorityQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Generic\characterActionPriorityQueue.cs">
+      <Link>Generic\characterActionPriorityQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Generic\InventoryItem.cs">
+      <Link>Generic\InventoryItem.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Generic\Job.cs">
+      <Link>Generic\Job.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Generic\Status.cs">
+      <Link>Generic\Status.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Generic\Treasury.cs">
+      <Link>Generic\Treasury.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Job\JobStatus.cs">
+      <Link>Job\JobStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Stronghold\Consts.cs">
+      <Link>Stronghold\Consts.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Stronghold\DecisionMaker.cs">
+      <Link>Stronghold\DecisionMaker.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Stronghold\Gametime.cs">
+      <Link>Stronghold\Gametime.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Stronghold\Job_creater.cs">
+      <Link>Stronghold\Job_creater.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Stronghold\Stronghold.cs">
+      <Link>Stronghold\Stronghold.cs</Link>
+    </Compile>
+    <Compile Include="..\Source\Stronghold\StrongholdLeader.cs">
+      <Link>Stronghold\StrongholdLeader.cs</Link>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
